@@ -3,7 +3,7 @@
 ### A visual snapshot of progress from Day 1 through Day 20.
 ---
 
-## Day 1
+## Day 1 Functions
 
 <img src="./Day%201/1.png" width="250">
 <img src="./Day%201/2.png" width="250">
@@ -14,7 +14,7 @@
 
 ---
 
-## Day 2
+## Day 2 Functions & Limits
 
 <img src="./Day%202/1.png" width="250">
 <img src="./Day%202/2.png" width="250">
@@ -26,7 +26,7 @@
 
 ---
 
-## Day 3
+## Day 3 Limits & Continuity
 
 <img src="./Day%203/1.png" width="250">
 <img src="./Day%203/2.png" width="250">
