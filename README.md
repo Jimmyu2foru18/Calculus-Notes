@@ -13,7 +13,6 @@ A visual snapshot of progress from Day 1 through Day 20.
 
 <img src="./Day%201/4.png" width="250">
 <img src="./Day%201/5.png" width="250">
-<img src="./Day%201/6.png" width="250">
 
 ---
 
