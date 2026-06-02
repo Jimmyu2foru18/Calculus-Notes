@@ -23,6 +23,8 @@
 <img src="./Day%202/4.png" width="250">
 <img src="./Day%202/5.png" width="250">
 <img src="./Day%202/6.png" width="250">
+<img src="./Day%202/7.png" width="250">
+<img src="./Day%202/8.png" width="250">
 
 ---
 
