@@ -1,8 +1,6 @@
 # Calculus-Notes
-# 20 Days Calculus Notes
-
-A visual snapshot of progress from Day 1 through Day 20.
-
+## 20 Days Calculus Notes
+### A visual snapshot of progress from Day 1 through Day 20.
 ---
 
 ## Day 1
