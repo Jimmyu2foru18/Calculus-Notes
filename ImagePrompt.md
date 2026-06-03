@@ -1,6 +1,7 @@
 ## How To Properly Prompt
 
-### IMPORTANT: This is a standalone page. Treat the currently uploaded image as a completely new and independent document. Ignore all previously uploaded images, notes, pages, conversations, instructions, and generated outputs. Use only the content visible in the currently uploaded image. Do not merge, continue, reference, combine, or carry over information from any previous page. Generate exactly one document page based solely on the current image. Output exactly one page and never combine multiple source pages into a single generated page unless explicitly instructed to do so.
+### IMPORTANT: 
+**This is a standalone page. Treat the currently uploaded image as a completely new and independent document. Ignore all previously uploaded images, notes, pages, conversations, instructions, and generated outputs. Use only the content visible in the currently uploaded image. Do not merge, continue, reference, combine, or carry over information from any previous page. Generate exactly one document page based solely on the current image. Output exactly one page and never combine multiple source pages into a single generated page unless explicitly instructed to do so.**
 
 Create a high-resolution, professionally designed study-note document from the uploaded class notes.
 
