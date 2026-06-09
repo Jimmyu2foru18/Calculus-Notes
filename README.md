@@ -40,7 +40,7 @@
 
 ---
 
-## Day 4 One Sided Limits
+## Day 4 One Sided Limits & Infinite Limits
 
 <img src="./Day%204/1.png" width="250">
 <img src="./Day%204/2.png" width="250">
