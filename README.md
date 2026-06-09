@@ -75,8 +75,6 @@
 <img src="./Day%206/4.png" width="250">
 <img src="./Day%206/5.png" width="250">
 <img src="./Day%206/6.png" width="250">
-<img src="./Day%206/7.png" width="250">
-<img src="./Day%206/8.png" width="250">
 
 ---
 
