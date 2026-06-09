@@ -28,7 +28,7 @@
 
 ---
 
-## Day 3 Limits & Continuity
+## Day 3 Limits intro
 
 <img src="./Day%203/1.png" width="250">
 <img src="./Day%203/2.png" width="250">
@@ -40,7 +40,7 @@
 
 ---
 
-## Day 4
+## Day 4 One Sided Limits
 
 <img src="./Day%204/1.png" width="250">
 <img src="./Day%204/2.png" width="250">
@@ -53,7 +53,7 @@
 
 ---
 
-## Day 5
+## Day 5 Limits & Continuity
 
 <img src="./Day%205/1.png" width="250">
 <img src="./Day%205/2.png" width="250">
@@ -66,7 +66,7 @@
 
 ---
 
-## Day 6
+## Day 6 Discontinuity & Deriveratives
 
 <img src="./Day%206/1.png" width="250">
 <img src="./Day%206/2.png" width="250">
@@ -80,7 +80,7 @@
 
 ---
 
-## Day 7
+## Day 7 Deriveratives and Basic Rules
 
 <img src="./Day%207/1.png" width="250">
 <img src="./Day%207/2.png" width="250">
@@ -94,7 +94,7 @@
 
 ---
 
-## Day 8
+## Day 8 Deriveratives and Chain Rule
 
 <img src="./Day%208/1.png" width="250">
 <img src="./Day%208/2.png" width="250">
