@@ -75,6 +75,8 @@
 <img src="./Day%206/4.png" width="250">
 <img src="./Day%206/5.png" width="250">
 <img src="./Day%206/6.png" width="250">
+<img src="./Day%206/7.png" width="250">
+<img src="./Day%206/8.png" width="250">
 
 ---
 
@@ -87,6 +89,8 @@
 <img src="./Day%207/4.png" width="250">
 <img src="./Day%207/5.png" width="250">
 <img src="./Day%207/6.png" width="250">
+<img src="./Day%207/7.png" width="250">
+<img src="./Day%207/8.png" width="250">
 
 ---
 
@@ -99,6 +103,8 @@
 <img src="./Day%208/4.png" width="250">
 <img src="./Day%208/5.png" width="250">
 <img src="./Day%208/6.png" width="250">
+<img src="./Day%208/7.png" width="250">
+<img src="./Day%208/8.png" width="250">
 
 ---
 
@@ -111,6 +117,8 @@
 <img src="./Day%209/4.png" width="250">
 <img src="./Day%209/5.png" width="250">
 <img src="./Day%209/6.png" width="250">
+<img src="./Day%209/7.png" width="250">
+<img src="./Day%209/8.png" width="250">
 
 ---
 
@@ -123,6 +131,8 @@
 <img src="./Day%2010/4.png" width="250">
 <img src="./Day%2010/5.png" width="250">
 <img src="./Day%2010/6.png" width="250">
+<img src="./Day%2010/7.png" width="250">
+<img src="./Day%2010/8.png" width="250">
 
 ---
 
@@ -135,6 +145,8 @@
 <img src="./Day%2011/4.png" width="250">
 <img src="./Day%2011/5.png" width="250">
 <img src="./Day%2011/6.png" width="250">
+<img src="./Day%2011/7.png" width="250">
+<img src="./Day%2011/8.png" width="250">
 
 ---
 
@@ -147,6 +159,8 @@
 <img src="./Day%2012/4.png" width="250">
 <img src="./Day%2012/5.png" width="250">
 <img src="./Day%2012/6.png" width="250">
+<img src="./Day%2012/7.png" width="250">
+<img src="./Day%2012/8.png" width="250">
 
 ---
 
@@ -159,6 +173,8 @@
 <img src="./Day%2013/4.png" width="250">
 <img src="./Day%2013/5.png" width="250">
 <img src="./Day%2013/6.png" width="250">
+<img src="./Day%2013/7.png" width="250">
+<img src="./Day%2013/8.png" width="250">
 
 ---
 
@@ -171,6 +187,8 @@
 <img src="./Day%2014/4.png" width="250">
 <img src="./Day%2014/5.png" width="250">
 <img src="./Day%2014/6.png" width="250">
+<img src="./Day%2014/7.png" width="250">
+<img src="./Day%2014/8.png" width="250">
 
 ---
 
@@ -183,6 +201,8 @@
 <img src="./Day%2015/4.png" width="250">
 <img src="./Day%2015/5.png" width="250">
 <img src="./Day%2015/6.png" width="250">
+<img src="./Day%2015/7.png" width="250">
+<img src="./Day%2015/8.png" width="250">
 
 ---
 
@@ -195,6 +215,8 @@
 <img src="./Day%2016/4.png" width="250">
 <img src="./Day%2016/5.png" width="250">
 <img src="./Day%2016/6.png" width="250">
+<img src="./Day%2016/7.png" width="250">
+<img src="./Day%2016/8.png" width="250">
 
 ---
 
@@ -207,6 +229,8 @@
 <img src="./Day%2017/4.png" width="250">
 <img src="./Day%2017/5.png" width="250">
 <img src="./Day%2017/6.png" width="250">
+<img src="./Day%2017/7.png" width="250">
+<img src="./Day%2017/8.png" width="250">
 
 ---
 
@@ -219,6 +243,8 @@
 <img src="./Day%2018/4.png" width="250">
 <img src="./Day%2018/5.png" width="250">
 <img src="./Day%2018/6.png" width="250">
+<img src="./Day%2018/7.png" width="250">
+<img src="./Day%2018/8.png" width="250">
 
 ---
 
@@ -231,6 +257,8 @@
 <img src="./Day%2019/4.png" width="250">
 <img src="./Day%2019/5.png" width="250">
 <img src="./Day%2019/6.png" width="250">
+<img src="./Day%2019/7.png" width="250">
+<img src="./Day%2019/8.png" width="250">
 
 ---
 
@@ -243,3 +271,4 @@
 <img src="./Day%2020/4.png" width="250">
 <img src="./Day%2020/5.png" width="250">
 <img src="./Day%2020/6.png" width="250">
+<img src="./Day%2020/7.png" width="250">
