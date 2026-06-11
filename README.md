@@ -78,7 +78,7 @@
 
 ---
 
-## Day 7 Deriveratives and Basic Rules
+## Day 7 Deriveratives and All Rules
 
 <img src="./Day%207/1.png" width="250">
 <img src="./Day%207/2.png" width="250">
@@ -92,7 +92,7 @@
 
 ---
 
-## Day 8 Deriveratives and Chain Rule
+## Day 8 High Order Deriveratives and Implicit Differentiation
 
 <img src="./Day%208/1.png" width="250">
 <img src="./Day%208/2.png" width="250">
