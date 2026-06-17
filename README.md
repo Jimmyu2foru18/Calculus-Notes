@@ -122,8 +122,8 @@
 
 ## Day 10
 
-<img src="./Day%2010/Mid1.png" width="250">
-<img src="./Day%2010/Mid2.png" width="250">
+<img src="./Day%2010%20Midterm/Mid1.png" width="250">
+<img src="./Day%2010%20Midterm/Mid2.png" width="250">
 
 ---
 
