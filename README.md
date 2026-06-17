@@ -5,132 +5,125 @@
 
 ## Day 1 Functions
 
-<img src="./Day%201/1.png" width="250">
-<img src="./Day%201/2.png" width="250">
-<img src="./Day%201/3.png" width="250">
+<img src="./Day%2001/1.png" width="250">
+<img src="./Day%2001/2.png" width="250">
+<img src="./Day%2001/3.png" width="250">
 
-<img src="./Day%201/4.png" width="250">
-<img src="./Day%201/5.png" width="250">
+<img src="./Day%2001/4.png" width="250">
+<img src="./Day%2001/5.png" width="250">
 
 ---
 
 ## Day 2 Functions & Limits
 
-<img src="./Day%202/1.png" width="250">
-<img src="./Day%202/2.png" width="250">
-<img src="./Day%202/3.png" width="250">
+<img src="./Day%2002/1.png" width="250">
+<img src="./Day%2002/2.png" width="250">
+<img src="./Day%2002/3.png" width="250">
 
-<img src="./Day%202/4.png" width="250">
-<img src="./Day%202/5.png" width="250">
-<img src="./Day%202/6.png" width="250">
-<img src="./Day%202/7.png" width="250">
-<img src="./Day%202/8.png" width="250">
+<img src="./Day%2002/4.png" width="250">
+<img src="./Day%2002/5.png" width="250">
+<img src="./Day%2002/6.png" width="250">
+<img src="./Day%2002/7.png" width="250">
+<img src="./Day%2002/8.png" width="250">
 
 ---
 
 ## Day 3 Limits intro
 
-<img src="./Day%203/1.png" width="250">
-<img src="./Day%203/2.png" width="250">
-<img src="./Day%203/3.png" width="250">
+<img src="./Day%2003/1.png" width="250">
+<img src="./Day%2003/2.png" width="250">
+<img src="./Day%2003/3.png" width="250">
 
-<img src="./Day%203/4.png" width="250">
-<img src="./Day%203/5.png" width="250">
-<img src="./Day%203/6.png" width="250">
+<img src="./Day%2003/4.png" width="250">
+<img src="./Day%2003/5.png" width="250">
+<img src="./Day%2003/6.png" width="250">
 
 ---
 
 ## Day 4 One Sided Limits & Infinite Limits
 
-<img src="./Day%204/1.png" width="250">
-<img src="./Day%204/2.png" width="250">
-<img src="./Day%204/3.png" width="250">
+<img src="./Day%2004/1.png" width="250">
+<img src="./Day%2004/2.png" width="250">
+<img src="./Day%2004/3.png" width="250">
 
-<img src="./Day%204/4.png" width="250">
-<img src="./Day%204/5.png" width="250">
-<img src="./Day%204/6.png" width="250">
-<img src="./Day%204/7.png" width="250">
+<img src="./Day%2004/4.png" width="250">
+<img src="./Day%2004/5.png" width="250">
+<img src="./Day%2004/6.png" width="250">
+<img src="./Day%2004/7.png" width="250">
 
 ---
 
 ## Day 5 Limits & Continuity
 
-<img src="./Day%205/1.png" width="250">
-<img src="./Day%205/2.png" width="250">
-<img src="./Day%205/3.png" width="250">
+<img src="./Day%2005/1.png" width="250">
+<img src="./Day%2005/2.png" width="250">
+<img src="./Day%2005/3.png" width="250">
 
-<img src="./Day%205/4.png" width="250">
-<img src="./Day%205/5.png" width="250">
-<img src="./Day%205/6.png" width="250">
-<img src="./Day%205/7.png" width="250">
+<img src="./Day%2005/4.png" width="250">
+<img src="./Day%2005/5.png" width="250">
+<img src="./Day%2005/6.png" width="250">
+<img src="./Day%2005/7.png" width="250">
 
 ---
 
 ## Day 6 Discontinuity & Deriveratives
 
-<img src="./Day%206/1.png" width="250">
-<img src="./Day%206/2.png" width="250">
-<img src="./Day%206/3.png" width="250">
+<img src="./Day%2006/1.png" width="250">
+<img src="./Day%2006/2.png" width="250">
+<img src="./Day%2006/3.png" width="250">
 
-<img src="./Day%206/4.png" width="250">
-<img src="./Day%206/5.png" width="250">
-<img src="./Day%206/6.png" width="250">
+<img src="./Day%2006/4.png" width="250">
+<img src="./Day%2006/5.png" width="250">
+<img src="./Day%2006/6.png" width="250">
 
 ---
 
 ## Day 7 Deriveratives and All Rules
 
-<img src="./Day%207/1.png" width="250">
-<img src="./Day%207/2.png" width="250">
-<img src="./Day%207/3.png" width="250">
+<img src="./Day%2007/1.png" width="250">
+<img src="./Day%2007/2.png" width="250">
+<img src="./Day%2007/3.png" width="250">
 
-<img src="./Day%207/4.png" width="250">
-<img src="./Day%207/5.png" width="250">
-<img src="./Day%207/6.png" width="250">
-<img src="./Day%207/7.png" width="250">
-<img src="./Day%207/8.png" width="250">
+<img src="./Day%2007/4.png" width="250">
+<img src="./Day%2007/5.png" width="250">
+<img src="./Day%2007/6.png" width="250">
+<img src="./Day%2007/7.png" width="250">
+<img src="./Day%2007/8.png" width="250">
 
 ---
 
 ## Day 8 High Order Deriveratives and Implicit Differentiation
 
-<img src="./Day%208/1.png" width="250">
-<img src="./Day%208/2.png" width="250">
-<img src="./Day%208/3.png" width="250">
+<img src="./Day%2008/1.png" width="250">
+<img src="./Day%2008/2.png" width="250">
+<img src="./Day%2008/3.png" width="250">
 
-<img src="./Day%208/4.png" width="250">
-<img src="./Day%208/5.png" width="250">
-<img src="./Day%208/6.png" width="250">
-<img src="./Day%208/7.png" width="250">
-<img src="./Day%208/8.png" width="250">
+<img src="./Day%2008/4.png" width="250">
+<img src="./Day%2008/5.png" width="250">
+<img src="./Day%2008/6.png" width="250">
+<img src="./Day%2008/7.png" width="250">
+<img src="./Day%2008/8.png" width="250">
 
 ---
 
 ## Day 9
 
-<img src="./Day%209/1.png" width="250">
-<img src="./Day%209/2.png" width="250">
-<img src="./Day%209/3.png" width="250">
+<img src="./Day%2009/1.png" width="250">
+<img src="./Day%2009/2.png" width="250">
+<img src="./Day%2009/3.png" width="250">
 
-<img src="./Day%209/4.png" width="250">
-<img src="./Day%209/5.png" width="250">
-<img src="./Day%209/6.png" width="250">
-<img src="./Day%209/7.png" width="250">
-<img src="./Day%209/8.png" width="250">
+<img src="./Day%2009/4.png" width="250">
+<img src="./Day%2009/5.png" width="250">
+<img src="./Day%2009/6.png" width="250">
+<img src="./Day%2009/7.png" width="250">
+<img src="./Day%2009/8.png" width="250">
 
 ---
 
 ## Day 10
 
-<img src="./Day%2010/1.png" width="250">
-<img src="./Day%2010/2.png" width="250">
-<img src="./Day%2010/3.png" width="250">
-
-<img src="./Day%2010/4.png" width="250">
-<img src="./Day%2010/5.png" width="250">
-<img src="./Day%2010/6.png" width="250">
-<img src="./Day%2010/7.png" width="250">
-<img src="./Day%2010/8.png" width="250">
+<img src="./Day%2010/Mid1.png" width="250">
+<img src="./Day%2010/Mid2.png" width="250">
 
 ---
 
@@ -142,9 +135,6 @@
 
 <img src="./Day%2011/4.png" width="250">
 <img src="./Day%2011/5.png" width="250">
-<img src="./Day%2011/6.png" width="250">
-<img src="./Day%2011/7.png" width="250">
-<img src="./Day%2011/8.png" width="250">
 
 ---
 
