@@ -137,7 +137,6 @@
 <img src="./Day%2012/5.png" width="250">
 <img src="./Day%2012/6.png" width="250">
 <img src="./Day%2012/7.png" width="250">
-<img src="./Day%2012/8.png" width="250">
 
 ---
 
