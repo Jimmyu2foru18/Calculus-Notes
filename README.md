@@ -145,12 +145,10 @@
 <img src="./Day%2013/1.png" width="250">
 <img src="./Day%2013/2.png" width="250">
 <img src="./Day%2013/3.png" width="250">
-
 <img src="./Day%2013/4.png" width="250">
 <img src="./Day%2013/5.png" width="250">
 <img src="./Day%2013/6.png" width="250">
 <img src="./Day%2013/7.png" width="250">
-<img src="./Day%2013/8.png" width="250">
 
 ---
 
