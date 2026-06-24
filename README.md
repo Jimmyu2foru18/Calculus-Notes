@@ -157,12 +157,9 @@
 <img src="./Day%2014/1.png" width="250">
 <img src="./Day%2014/2.png" width="250">
 <img src="./Day%2014/3.png" width="250">
-
 <img src="./Day%2014/4.png" width="250">
 <img src="./Day%2014/5.png" width="250">
 <img src="./Day%2014/6.png" width="250">
-<img src="./Day%2014/7.png" width="250">
-<img src="./Day%2014/8.png" width="250">
 
 ---
 
