@@ -168,12 +168,10 @@
 <img src="./Day%2015/1.png" width="250">
 <img src="./Day%2015/2.png" width="250">
 <img src="./Day%2015/3.png" width="250">
-
 <img src="./Day%2015/4.png" width="250">
 <img src="./Day%2015/5.png" width="250">
 <img src="./Day%2015/6.png" width="250">
 <img src="./Day%2015/7.png" width="250">
-<img src="./Day%2015/8.png" width="250">
 
 ---
 
@@ -233,13 +231,8 @@
 
 ---
 
-## Day 20
+## Day 20 Final
 
-<img src="./Day%2020/1.png" width="250">
-<img src="./Day%2020/2.png" width="250">
-<img src="./Day%2020/3.png" width="250">
-
-<img src="./Day%2020/4.png" width="250">
-<img src="./Day%2020/5.png" width="250">
-<img src="./Day%2020/6.png" width="250">
-<img src="./Day%2020/7.png" width="250">
+<img src="./Day%2020%20Final/1.png" width="250">
+<img src="./Day%2020%20Final/2.png" width="250">
+<img src="./Day%2020%20Final/3.png" width="250">
