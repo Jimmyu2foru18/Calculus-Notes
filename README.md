@@ -194,12 +194,9 @@
 <img src="./Day%2017/1.png" width="250">
 <img src="./Day%2017/2.png" width="250">
 <img src="./Day%2017/3.png" width="250">
-
 <img src="./Day%2017/4.png" width="250">
 <img src="./Day%2017/5.png" width="250">
 <img src="./Day%2017/6.png" width="250">
-<img src="./Day%2017/7.png" width="250">
-<img src="./Day%2017/8.png" width="250">
 
 ---
 
