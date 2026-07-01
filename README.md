@@ -205,7 +205,6 @@
 <img src="./Day%2018/1.png" width="250">
 <img src="./Day%2018/2.png" width="250">
 <img src="./Day%2018/3.png" width="250">
-
 <img src="./Day%2018/4.png" width="250">
 <img src="./Day%2018/5.png" width="250">
 <img src="./Day%2018/6.png" width="250">
@@ -219,12 +218,10 @@
 <img src="./Day%2019/1.png" width="250">
 <img src="./Day%2019/2.png" width="250">
 <img src="./Day%2019/3.png" width="250">
-
 <img src="./Day%2019/4.png" width="250">
 <img src="./Day%2019/5.png" width="250">
 <img src="./Day%2019/6.png" width="250">
 <img src="./Day%2019/7.png" width="250">
-<img src="./Day%2019/8.png" width="250">
 
 ---
 
@@ -232,4 +229,3 @@
 
 <img src="./Day%2020%20Final/1.png" width="250">
 <img src="./Day%2020%20Final/2.png" width="250">
-<img src="./Day%2020%20Final/3.png" width="250">
