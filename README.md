@@ -229,3 +229,6 @@
 
 <img src="./Day%2020%20Final/1.png" width="250">
 <img src="./Day%2020%20Final/2.png" width="250">
+<img src="./Day%2020%20Final/3.png" width="250">
+<img src="./Day%2020%20Final/4.png" width="250">
+<img src="./Day%2020%20Final/5.png" width="250">
