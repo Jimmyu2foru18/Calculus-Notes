@@ -31,6 +31,7 @@
             <a href="index.html">Curriculum</a>
             <a href="../reviews/index.html">Review Sheets</a>
             <a href="https://github.com/Jimmyu2foru18/Calculus-Notes" target="_blank" rel="noopener">GitHub</a>
+            <a href="#" class="note-toggle-link">Notes</a>
         </nav>
     </header>
 
@@ -175,6 +176,14 @@ Show that $\displaystyle\lim_{x \to 0^+} \ln x = -\infty$.
 <p><strong>Hint:</strong> As $x \to 0^+$, values like $e^{-10}$, $e^{-100}$, $e^{-1000}$ show 
 the logarithm dives without bound.
 </p>
+    <details>
+    <summary>Show Answer</summary>
+    <p><strong>Proof:</strong></p>
+    <p>For any $M > 0$, we need to find $\delta > 0$ such that $0 < x < \delta$ implies $\ln x < -M$.</p>
+    <p>Take $\delta = e^{-M}$. Then for $0 < x < \delta = e^{-M}$:</p>
+    $$\ln x < \ln(e^{-M}) = -M.$$
+    <p>Since $M$ was arbitrary, $\ln x \to -\infty$ as $x \to 0^+$.</p>
+    </details>
 </details>
 <details>
 <summary>Problem 2 — Squared denominator</summary>
@@ -213,3 +222,4 @@ the remaining numerator determine the direction of blow-up.
     <script src="../js/app.js"></script>
 </body>
 </html>
+

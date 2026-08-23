@@ -620,6 +620,22 @@ pre code {
     color: var(--background);
 }
 
+.note-toggle-link {
+    text-decoration: none;
+    border: 1px solid var(--text-primary);
+    padding: 0.35rem 0.9rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    transition: none;
+}
+
+.note-toggle-link:hover {
+    background: var(--text-primary);
+    color: var(--background);
+}
+
 /* Math Rendering */
 .MathJax, .katex {
     font-size: 1.05em;

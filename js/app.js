@@ -399,11 +399,24 @@ Notes are saved per chapter and persist across sessions.">${escapeHtml(currentNo
         document.body.appendChild(toggleBtn);
     }
 
+    function initNoteToggleLinks() {
+        document.querySelectorAll('.note-toggle-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const currentFile = window.location.pathname.split('/').pop();
+                const chapter = CHAPTERS.find(ch => ch.file.endsWith(currentFile));
+                const chapterId = chapter ? chapter.id : 'general';
+                openNoteSidebar(chapterId);
+            });
+        });
+    }
+
     function init() {
         initMathJax();
         initNavigation();
         initProgressBar();
         addNoteButtons();
+        initNoteToggleLinks();
         initSearch();
         initSmoothScroll();
         initKeyboardShortcuts();

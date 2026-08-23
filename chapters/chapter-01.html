@@ -31,6 +31,7 @@
             <a href="index.html">Curriculum</a>
             <a href="../reviews/index.html">Review Sheets</a>
             <a href="https://github.com/Jimmyu2foru18/Calculus-Notes" target="_blank" rel="noopener">GitHub</a>
+            <a href="#" class="note-toggle-link">Notes</a>
         </nav>
     </header>
 
@@ -98,13 +99,13 @@ may be different from $L$, or even undefined.
 <h4>Definition — Limit</h4>
 <p>
 Let $f$ be a function defined on an open interval containing $c$, except possibly at $c$ itself. 
-We say $\lim_{x \to c} f(x) = L$ if for every $\varepsilon > 0$ there exists a $\delta > 0$ such that
+We say $\lim_{x \to c} f(x) = L$ if for every $a > 0$ there exists a $d > 0$ such that
 </p>
-$$0 < |x - c| < \delta \;\Longrightarrow\; |f(x) - L| < \varepsilon.$$
+$$0 < |x - c| < d \;\Longrightarrow\; |f(x) - L| < a.$$
 <p>
 Geometrically, this means we can trap the graph of $f$ inside a horizontal band 
-$(L - \varepsilon,\, L + \varepsilon)$ by restricting $x$ to a punctured neighborhood 
-$(c - \delta,\, c) \cup (c,\, c + \delta)$.
+$(L - a,\, L + a)$ by restricting $x$ to a punctured neighborhood 
+$(c - d,\, c) \cup (c,\, c + d)$.
 </p>
 </div>
 
@@ -120,11 +121,11 @@ but the curve approaches height $y = 5$ from both sides.
     <line x1="200" y1="20" x2="200" y2="200" stroke="#000" stroke-width="1.5"/>
     <text x="205" y="15" font-size="12" fill="#000">y</text>
     <text x="385" y="184" font-size="12" fill="#000">x</text>
-    <polyline points="40,60 100,80 160,100 190,110" fill="none" stroke="#1a3a5c" stroke-width="2"/>
-    <polyline points="210,110 240,100 300,80 360,60" fill="none" stroke="#1a3a5c" stroke-width="2"/>
-    <circle cx="200" cy="110" r="4" fill="#fff" stroke="#000" stroke-width="1.5"/>
-    <line x1="200" y1="110" x2="200" y2="180" stroke="#b08800" stroke-width="1" stroke-dasharray="4,3"/>
-    <text x="210" y="105" font-size="12" fill="#000">hole at (2, 5)</text>
+    <polyline points="140,43 190,55 240,63 285,65" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+    <polyline points="295,65 340,63 390,55" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+    <circle cx="290" cy="65" r="4" fill="#fff" stroke="#000" stroke-width="1.5"/>
+    <line x1="290" y1="65" x2="290" y2="180" stroke="#b08800" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="300" y="60" font-size="12" fill="#000">hole at (2, 5)</text>
     <text x="40" y="195" font-size="11" fill="#666">-3</text>
     <text x="190" y="195" font-size="11" fill="#666">0</text>
     <text x="340" y="195" font-size="11" fill="#666">3</text>
@@ -151,18 +152,43 @@ The limit depends only on nearby values, not the value at $c$.
 <p>
 From the graph above, what is $\lim_{x \to -1} f(x)$? (Hint: trace the curve near $x = -1$.)
 </p>
-<p><strong>Answer:</strong></p>
-<details>
-<summary>Show Answer</summary>
-<p>The left and right branches both approach $y \approx 2.5$, so the limit is about $2.5$.
-(More precise values would be read directly from the plotted curve.)</p>
-</details>
+    <details>
+    <summary>Show Answer</summary>
+    <p><strong>Answer:</strong></p>
+    <p>The left and right branches both approach $y \approx 2.5$, so the limit is about $2.5$.
+    (More precise values would be read directly from the plotted curve.)</p>
+    </details>
 </details>
 <details>
 <summary>Problem 2 — When the limit differs from the function value</summary>
 <p>
 Suppose $g(4) = 7$ but $\lim_{x \to 4} g(x) = 3$. Sketch a rough graph illustrating this.
 </p>
+    <div class="visual-aid">
+    <h4>Figure — Limit Differs from Function Value</h4>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:420px;border:1px solid #ccc;background:#fafafa;">
+        <line x1="30" y1="180" x2="380" y2="180" stroke="#000" stroke-width="1.5"/>
+        <line x1="200" y1="20" x2="200" y2="200" stroke="#000" stroke-width="1.5"/>
+        <text x="385" y="184" font-size="12" fill="#000">x</text>
+        <text x="205" y="15" font-size="12" fill="#000">y</text>
+        <path d="M 60,140 C 120,130 160,110 190,100 S 210,90 230,80 S 300,60 360,50" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+        <line x1="200" y1="90" x2="200" y2="180" stroke="#b08800" stroke-width="1" stroke-dasharray="4,3"/>
+        <circle cx="200" cy="70" r="4" fill="#b08800"/>
+        <text x="210" y="65" font-size="11" fill="#b08800">(4, 7)</text>
+        <text x="210" y="105" font-size="11" fill="#1a3a5c">limit = 3</text>
+        <circle cx="200" cy="90" r="3.5" fill="#fff" stroke="#1a3a5c" stroke-width="1.5"/>
+        <text x="40" y="195" font-size="11" fill="#666">0</text>
+        <text x="190" y="195" font-size="11" fill="#666">4</text>
+        <text x="15" y="70" font-size="11" fill="#666">7</text>
+        <text x="15" y="95" font-size="11" fill="#666">3</text>
+    </svg>
+    <p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure: The curve approaches $y = 3$ as $x \to 4$, but $g(4) = 7$ (filled dot). The open circle at $(4,3)$ shows the limit; the solid dot at $(4,7)$ shows the function value.</p>
+    </div>
+    <details>
+    <summary>Show Answer</summary>
+    <p><strong>Answer:</strong></p>
+    <p>Draw a curve approaching $y = 3$ as $x \to 4$ from both sides, but place a solid dot at $(4, 7)$ above the limit. The gap between the curve height and the dot shows $f(4) \neq \lim_{x \to 4} f(x)$.</p>
+    </details>
 </details>
 <details>
 <summary>Problem 3 — Numerical estimation</summary>
@@ -170,11 +196,11 @@ Suppose $g(4) = 7$ but $\lim_{x \to 4} g(x) = 3$. Sketch a rough graph illustrat
 Estimate $\lim_{x \to 0} \dfrac{\sin x}{x}$ by evaluating the function at 
 $x = \pm 0.1, \pm 0.01, \pm 0.001$.
 </p>
-<p><strong>Answer:</strong></p>
-<details>
-<summary>Show Answer</summary>
-<p>The values approach $1$ from both sides, so the limit is $1$.</p>
-</details>
+    <details>
+    <summary>Show Answer</summary>
+    <p><strong>Answer:</strong></p>
+    <p>The values approach $1$ from both sides, so the limit is $1$.</p>
+    </details>
 </details>
 </div>
 
@@ -198,3 +224,4 @@ discontinuity can still have a well-defined limit.</p>
     <script src="../js/app.js"></script>
 </body>
 </html>
+
