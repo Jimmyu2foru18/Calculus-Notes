@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 24: Linear Approximation and Differentials — Calculus Foundations</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            tags: 'ams'
+        },
+        svg: { fontCache: 'global' },
+        options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            ignoreHtmlClass: 'no-mathjax'
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Calculus Foundations</h1>
+        <p class="subtitle">Chapter 24: Linear Approximation and Differentials</p>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="index.html">Curriculum</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main class="chapter">
+            <h2>Chapter 24: Linear Approximation and Differentials</h2>
+            <p class="lead">Linear approximation, differentials, and error estimation.</p>
+
+            <div class="video-section">
+                <h4>Core Lecture</h4>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/9vKqVkMQHKk" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/9vKqVkMQHKk" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>3Blue1Brown — Essence of Calculus</h5>
+                        <p>Visual intuition for the core concepts</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/9vKqVkMQHKk" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>Khan Academy — Calculus</h5>
+                        <p>Step-by-step tutorials and practice</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/9vKqVkMQHKk" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>Professor Leonard — Calculus Lecture</h5>
+                        <p>Full lecture coverage with worked examples</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>4.5 — Linear Approximation and Differentials</h2>
+
+<p>
+Calculus gives us two complementary ways to approximate function values near a known point. 
+<strong>Linear approximation</strong> uses the tangent line at $a$ to estimate $f(x)$ nearby. 
+<strong>Differentials</strong> formalize the error in that approximation, 
+writing $\Delta y \approx dy = f'(a)\,dx$.
+</p>
+
+<h3>Key Definitions</h3>
+<div class="notes">
+<h4>Definition — Linear Approximation</h4>
+<p>If $f$ is differentiable at $a$, then for $x$ near $a$:</p>
+$$f(x) \approx L(x) = f(a) + f'(a)(x - a)$$
+<p>The line $y = L(x)$ is the <strong>tangent line approximation</strong> to $f$ at $a$.</p>
+</div>
+
+<div class="notes">
+<h4>Definition — Differential</h4>
+<p>Let $y = f(x)$ be differentiable. The <strong>differential</strong> $dy$ is:</p>
+$$dy = f'(x)\,dx$$
+<p>If $\Delta x$ is a small change in $x$, then the actual change $\Delta y$ satisfies:</p>
+$$\Delta y \approx dy = f'(x)\,\Delta x$$
+<p>The <strong>error</strong> in the linear approximation is $E = \Delta y - dy$.</p>
+</div>
+
+<h3>Worked Example — Approximating a Square Root</h3>
+<div class="example">
+<h4>Example 4.5.1</h4>
+<p>Use linear approximation to estimate $\sqrt{17}$.</p>
+<p><strong>Step 1:</strong> Choose $f(x) = \sqrt{x}$ and a nearby perfect square $a = 16$.</p>
+$$f(16) = 4, \quad f'(x) = \frac{1}{2\sqrt{x}}, \quad f'(16) = \frac{1}{8}$$
+<p><strong>Step 2:</strong> Apply the linear approximation formula with $\Delta x = 1$.</p>
+$$\sqrt{17} \approx f(16) + f'(16)(17 - 16) = 4 + \frac{1}{8}(1) = 4.125$$
+<p class="mnemonic"><strong>Answer:</strong> $\sqrt{17} \approx \boxed{4.125}$ (actual: $4.1231\ldots$; error $\approx 0.002$).</p>
+</div>
+
+<h3>Tangent Line Approximation Diagram</h3>
+<div class="visual-aid">
+<h4>Figure 4.5 — Linear Approximation: The Tangent Line Near $x = a$</h4>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <line x1="40" y1="230" x2="460" y2="230" stroke="#000" stroke-width="1.5"/>
+    <line x1="240" y1="20" x2="240" y2="240" stroke="#000" stroke-width="1"/>
+    <text x="450" y="245" font-size="12" fill="#000">x</text>
+    <text x="250" y="30" font-size="12" fill="#000">y</text>
+    <path d="M 60,210 C 120,200 180,140 240,120 S 360,80 440,60" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+    <line x1="160" y1="160" x2="320" y2="80" stroke="#e74c3c" stroke-width="2"/>
+    <circle cx="240" cy="120" r="4" fill="#1a3a5c"/>
+    <text x="245" y="110" font-size="10" fill="#1a3a5c">$(a, f(a))$</text>
+    <line x1="240" y1="120" x2="320" y2="80" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="320" y1="80" x2="320" y2="230" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+    <circle cx="320" cy="80" r="3.5" fill="#e74c3c"/>
+    <text x="325" y="70" font-size="10" fill="#e74c3c">$L(a+\Delta x)$</text>
+    <text x="210" y="170" font-size="10" fill="#999">$\Delta y$</text>
+    <text x="330" y="115" font-size="10" fill="#e74c3c">$dy$</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 4.5: Near $x = a$, the curve $y = f(x)$ is nearly straight. The tangent line $L(x)$ approximates $f(a+\Delta x)$, and the differential $dy$ approximates the vertical error $\Delta y$.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Use linear approximation to estimate $\sqrt[3]{28}$.</li>
+<li>Estimate $\cos(31^\circ)$ using a linear approximation near $x = \pi/6$ (convert to radians first).</li>
+<li>The side of a cube is measured as $10$ cm with a possible error of $0.05$ cm. Use differentials to estimate the error in the computed volume.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Pick $a$ to be a value where $f(a)$ is easy to compute exactly.</li>
+<li>Linear approximation works best when $|\Delta x|$ is small — the tangent line is only locally accurate.</li>
+<li>Differentials measure <strong>absolute</strong> error; for <strong>relative</strong> error, divide by the original value.</li>
+<li>Remember: $\Delta y = f(x+\Delta x) - f(x)$, while $dy = f'(x)\,dx$. They are approximately equal but not identical.</li>
+</ul>
+</div>
+
+            <nav class="chapter-nav">
+                <a href="chapter-23.html" class="nav-btn prev" id="prev-chapter">Previous</a>
+                <span class="nav-indicator" id="chapter-indicator"></span>
+                <a href="chapter-25.html" class="nav-btn next" id="next-chapter">Next</a>
+            </nav>
+        </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

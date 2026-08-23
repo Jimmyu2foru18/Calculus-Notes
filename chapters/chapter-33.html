@@ -3,46 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>area-between — Area Between Curves — Calculus Foundations</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Chapter 33: Area Between Curves — Calculus Foundations</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <script>
-window.MathJax = {
-    tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        processEscapes: true,
-        tags: 'ams'
-    },
-    svg: { fontCache: 'global' },
-    options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-        ignoreHtmlClass: 'no-mathjax'
-    }
-};
-</script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            tags: 'ams'
+        },
+        svg: { fontCache: 'global' },
+        options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            ignoreHtmlClass: 'no-mathjax'
+        }
+    };
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
-<header>
-    <h1>Calculus Foundations</h1>
-    <p class="subtitle">A Structured, Beginner-Friendly Path Through Calculus</p>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="chapters/limits.html">Curriculum</a>
-        <a href="reviews/index.html">Review Sheets</a>
-        <a href="https://github.com/Jimmyu2foru18/Calculus-Notes" target="_blank" rel="noopener">GitHub</a>
-    </nav>
-</header>
+    <header>
+        <h1>Calculus Foundations</h1>
+        <p class="subtitle">Chapter 33: Area Between Curves</p>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="index.html">Curriculum</a>
+        </nav>
+    </header>
 
-<div class="container">
-    <main>
-        <p><a href="chapters/applications-integration.html" class="nav-btn">← Back to Applications of Integration</a></p>
-        <div class="chapter">
-    <h2>5.1 — Area Between Curves</h2>
-</div>
+    <div class="container">
+        <main class="chapter">
+            <h2>Chapter 33: Area Between Curves</h2>
+            <p class="lead">Area between curves using definite integrals.</p>
 
-<section class="topic-section" id="area-between">
-    <h2>5.1 — Area Between Curves</h2>
+            <div class="video-section">
+                <h4>Core Lecture</h4>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/FnJqaIESC2s" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/FnJqaIESC2s" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>3Blue1Brown — Essence of Calculus</h5>
+                        <p>Visual intuition for the core concepts</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/FnJqaIESC2s" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>Khan Academy — Calculus</h5>
+                        <p>Step-by-step tutorials and practice</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/FnJqaIESC2s" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>Professor Leonard — Calculus Lecture</h5>
+                        <p>Full lecture coverage with worked examples</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>5.1 — Area Between Curves</h2>
 
 <p>
 The definite integral $\int_a^b f(x)\,dx$ computes the signed area between the graph of $y = f(x)$ 
@@ -142,29 +174,14 @@ $$A = \int_c^d [\,f(y) - g(y)\,]\,dy$$
 </ul>
 </div>
 
-</section>
+            <nav class="chapter-nav">
+                <a href="chapter-32.html" class="nav-btn prev" id="prev-chapter">Previous</a>
+                <span class="nav-indicator" id="chapter-indicator"></span>
+                <a href="chapter-34.html" class="nav-btn next" id="next-chapter">Next</a>
+            </nav>
+        </main>
+    </div>
 
-<!-- ============================================================
-     SECTION 5.2 — Volumes of Revolution (Disks and Washers)
-     ============================================================ -->
-</section>
-
-<nav class="chapter-nav" aria-label="Section navigation">
-    
-    <span class="nav-indicator">05.Applications of Integration</span>
-    <a href="volumes-disks.html" class="nav-btn">volumes-disks — Volumes of Revolution (Disks and Washers) →</a>
-</nav>
-
-
-    </main>
-</div>
-
-<button class="note-btn note-sidebar-toggle" type="button">Notes</button>
-
-<script src="js/app.js"></script>
-<script>
-window.CalculusChapters = CHAPTERS_LIST_JSON;
-window.CurrentChapterId = "applications-integration";
-</script>
+    <script src="../js/app.js"></script>
 </body>
 </html>

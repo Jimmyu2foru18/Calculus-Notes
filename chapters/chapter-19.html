@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 19: Related Rates — Calculus Foundations</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            tags: 'ams'
+        },
+        svg: { fontCache: 'global' },
+        options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            ignoreHtmlClass: 'no-mathjax'
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Calculus Foundations</h1>
+        <p class="subtitle">Chapter 19: Related Rates</p>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="index.html">Curriculum</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main class="chapter">
+            <h2>Chapter 19: Related Rates</h2>
+            <p class="lead">Related rates: connecting the rates of change of linked quantities.</p>
+
+            <div class="video-section">
+                <h4>Core Lecture</h4>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/9vKqVkMQHKk" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/9vKqVkMQHKk" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>3Blue1Brown — Essence of Calculus</h5>
+                        <p>Visual intuition for the core concepts</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/9vKqVkMQHKk" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>Khan Academy — Calculus</h5>
+                        <p>Step-by-step tutorials and practice</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/9vKqVkMQHKk" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>Professor Leonard — Calculus Lecture</h5>
+                        <p>Full lecture coverage with worked examples</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>3.11 — Related Rates</h2>
+
+<p>
+Calculus does not describe motion — it <strong>quantifies</strong> it. 
+<strong>Related rates</strong> problems arise whenever two or more quantities change together, 
+linked by an equation. By differentiating that equation with respect to time $t$, 
+we relate their rates of change and solve for the unknown speed.
+</p>
+
+<h3>Key Definitions and Strategy</h3>
+<div class="notes">
+<h4>Definition — Related Rates</h4>
+<p>A <strong>related rates</strong> problem involves finding the rate of change of one quantity 
+when the rate of change of another (usually with respect to time $t$) is known, 
+and the two are connected by a geometric or physical equation.</p>
+<p>The general strategy is:</p>
+<ol>
+<li>Draw a diagram and label all changing quantities with variables.</li>
+<li>Write an equation relating the variables.</li>
+<li>Differentiate <em>implicitly</em> with respect to $t$.</li>
+<li>Substitute known values <em>after</em> differentiating, then solve.</li>
+</ol>
+</div>
+
+<h3>Worked Example — Expanding Circle</h3>
+<div class="example">
+<h4>Example 3.11.1</h4>
+<p>The radius of a circular oil spill increases at a constant rate of $2$ m/s. 
+How fast is the area increasing when the radius is $10$ m? 
+(Recall $A = \pi r^2$.)</p>
+<p><strong>Step 1:</strong> Identify given and wanted rates.</p>
+$$\frac{dr}{dt} = 2 \text{ m/s}, \quad r = 10 \text{ m}, \quad \text{find } \frac{dA}{dt}$$
+<p><strong>Step 2:</strong> Differentiate $A = \pi r^2$ with respect to $t$.</p>
+$$\frac{dA}{dt} = 2\pi r \frac{dr}{dt}$$
+<p><strong>Step 3:</strong> Substitute the known values.</p>
+$$\frac{dA}{dt} = 2\pi(10)(2) = 40\pi \text{ m}^2/\text{s}$$
+<p class="mnemonic"><strong>Answer:</strong> The area is growing at $\boxed{40\pi \text{ m}^2/\text{s}}$.</p>
+</div>
+
+<h3>Worked Example — Ladder Sliding</h3>
+<div class="example">
+<h4>Example 3.11.2</h4>
+<p>A $10$-ft ladder leans against a vertical wall. The bottom slides away at $1$ ft/s. 
+How fast is the top sliding down when the bottom is $6$ ft from the wall?</p>
+<p><strong>Step 1:</strong> Let $x$ = distance of base from wall, $y$ = height of top on wall.
+By the Pythagorean theorem:</p>
+$$x^2 + y^2 = 100$$
+<p><strong>Step 2:</strong> Differentiate implicitly with respect to $t$.</p>
+$$2x\frac{dx}{dt} + 2y\frac{dy}{dt} = 0$$
+<p><strong>Step 3:</strong> Solve for $\dfrac{dy}{dt}$ and substitute.</p>
+$$\frac{dy}{dt} = -\frac{x}{y}\frac{dx}{dt}$$
+When $x = 6$: $y = \sqrt{100 - 36} = 8$, and $\dfrac{dx}{dt} = 1$.
+$$\frac{dy}{dt} = -\frac{6}{8}(1) = -\frac{3}{4}$$
+<p class="mnemonic"><strong>Answer:</strong> The top is sliding down at $\boxed{0.75\text{ ft/s}}$.</p>
+</div>
+
+<h3>Related Rates Diagram — Ladder</h3>
+<div class="visual-aid">
+<h4>Figure 3.11 — Ladder Sliding Against a Wall</h4>
+<svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <line x1="50" y1="240" x2="460" y2="240" stroke="#000" stroke-width="2"/>
+    <line x1="50" y1="240" x2="50" y2="20" stroke="#000" stroke-width="2"/>
+    <line x1="50" y1="240" x2="250" y2="90" stroke="#1a3a5c" stroke-width="2.5"/>
+    <line x1="250" y1="90" x2="250" y2="240" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="50" y1="240" x2="270" y2="240" stroke="#e74c3c" stroke-width="2"/>
+    <polygon points="50,240 250,90 250,240" fill="#e8eef3" opacity="0.5"/>
+    <text x="140" y="255" font-size="11" fill="#e74c3c">$x(t)$</text>
+    <text x="255" y="165" font-size="11" fill="#666">$y(t)$</text>
+    <text x="95" y="175" font-size="10" fill="#999">ladder</text>
+    <text x="275" y="255" font-size="10" fill="#e74c3c">$\frac{dx}{dt}=1$ ft/s</text>
+    <text x="275" y="120" font-size="10" fill="#27ae60">$\frac{dy}{dt}=?$</text>
+    <text x="230" y="85" font-size="10" fill="#1a3a5c">10 ft</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.11: The ladder forms the hypotenuse of a right triangle. Differentiating $x^2 + y^2 = L^2$ with respect to $t$ links $\frac{dx}{dt}$ and $\frac{dy}{dt}$.</p>
+</div>
+
+<h3>Related Rates Diagram — Rocket</h3>
+<div class="visual-aid">
+<h4>Figure 3.12 — Rocket Launch and Angle of Elevation</h4>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <line x1="60" y1="230" x2="460" y2="230" stroke="#000" stroke-width="1.5"/>
+    <line x1="60" y1="230" x2="60" y2="20" stroke="#000" stroke-width="1.5"/>
+    <line x1="60" y1="230" x2="220" y2="50" stroke="#1a3a5c" stroke-width="2"/>
+    <line x1="220" y1="50" x2="220" y2="230" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="60" y1="230" x2="280" y2="230" stroke="#e74c3c" stroke-width="2"/>
+    <polygon points="60,230 220,50 220,230" fill="#e8eef3" opacity="0.5"/>
+    <text x="130" y="245" font-size="11" fill="#e74c3c">300 ft</text>
+    <text x="225" y="140" font-size="11" fill="#666">$y(t)$</text>
+    <text x="100" y="140" font-size="10" fill="#999">rocket</text>
+    <text x="285" y="245" font-size="10" fill="#e74c3c">$\frac{dy}{dt}=100$ ft/s</text>
+    <text x="225" y="45" font-size="10" fill="#27ae60">$\theta(t)$</text>
+    <text x="180" y="90" font-size="10" fill="#b08800">observer</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.12: Related rates connect linear and angular motion. Differentiating $\tan\theta = \frac{y}{300}$ gives the rate of change of the angle of elevation.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>A spherical balloon is inflated so that its radius increases at $3$ cm/s. How fast is the volume increasing when $r = 10$ cm? $(V = \frac{4}{3}\pi r^3)$</li>
+<li>A plane flies horizontally at $500$ mph at an altitude of $3$ miles. How fast is the distance from the plane to a point on the ground increasing when the plane is $4$ miles away horizontally?</li>
+<li>Water drains from a conical tank (height $12$ ft, radius $4$ ft) at $10$ ft$^3$/min. How fast is the water level dropping when the depth is $6$ ft?</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Draw a diagram and label every quantity with a variable <em>before</em> writing equations.</li>
+<li>Differentiate <em>implicitly</em> with respect to time — every variable depends on $t$.</li>
+<li>Substitute known values <em>after</em> differentiating; don't plug in too early or you'll lose variables.</li>
+<li>Always check units on your final answer. A negative rate means the quantity is decreasing.</li>
+</ul>
+</div>
+
+            <nav class="chapter-nav">
+                <a href="chapter-18.html" class="nav-btn prev" id="prev-chapter">Previous</a>
+                <span class="nav-indicator" id="chapter-indicator"></span>
+                <a href="chapter-20.html" class="nav-btn next" id="next-chapter">Next</a>
+            </nav>
+        </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

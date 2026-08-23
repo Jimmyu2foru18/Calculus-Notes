@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 27: Antiderivatives — Calculus Foundations</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            tags: 'ams'
+        },
+        svg: { fontCache: 'global' },
+        options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            ignoreHtmlClass: 'no-mathjax'
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Calculus Foundations</h1>
+        <p class="subtitle">Chapter 27: Antiderivatives</p>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="index.html">Curriculum</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main class="chapter">
+            <h2>Chapter 27: Antiderivatives</h2>
+            <p class="lead">Antiderivatives, indefinite integration, and the constant of integration.</p>
+
+            <div class="video-section">
+                <h4>Core Lecture</h4>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/rfG8ce4nNh0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/rfG8ce4nNh0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>3Blue1Brown — Essence of Calculus</h5>
+                        <p>Visual intuition for the core concepts</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/rfG8ce4nNh0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>Khan Academy — Calculus</h5>
+                        <p>Step-by-step tutorials and practice</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/rfG8ce4nNh0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>Professor Leonard — Calculus Lecture</h5>
+                        <p>Full lecture coverage with worked examples</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>4.9 — Antiderivatives</h2>
+
+<p>
+Differentiation takes a function and produces its slope function. 
+<strong>Antidifferentiation</strong> (or <strong>indefinite integration</strong>) reverses this process: 
+given a rate of change $f'(x)$, we search for a function $F(x)$ whose derivative is $f'(x)$. 
+Because many functions share the same derivative, the answer is always a <strong>family</strong> of curves, 
+differing by an arbitrary constant $C$.
+</p>
+
+<h3>Key Definitions</h3>
+<div class="notes">
+<h4>Definition — Antiderivative</h4>
+<p>
+A function $F$ is an <strong>antiderivative</strong> of $f$ on an interval $I$ if 
+$F'(x) = f(x)$ for every $x \in I$. 
+If $F$ is any antiderivative of $f$, then the most general antiderivative is 
+$F(x) + C$, where $C$ is an arbitrary constant.
+</p>
+<p>
+The notation for the general antiderivative is:
+</p>
+$$\int f(x)\,dx = F(x) + C$$
+<p>
+The symbol $\displaystyle\int$ is called the <strong>integral sign</strong>, $f(x)$ is the 
+<strong>integrand</strong>, and $C$ is the <strong>constant of integration</strong>.
+</p>
+</div>
+
+<div class="derivation">
+<h4>Theorem — Basic Integration Rules</h4>
+<p>The following rules are the direct inverses of the differentiation rules:</p>
+<table class="review-table">
+<thead><tr><th>Function</th><th>Antiderivative</th></tr></thead>
+<tbody>
+<tr><td>$x^n$ ($n \neq -1$)</td><td>$\dfrac{x^{n+1}}{n+1} + C$</td></tr>
+<tr><td>$x^{-1} = \dfrac{1}{x}$</td><td>$\ln|x| + C$</td></tr>
+<tr><td>$e^x$</td><td>$e^x + C$</td></tr>
+<tr><td>$a^x$ ($a > 0$)</td><td>$\dfrac{a^x}{\ln a} + C$</td></tr>
+<tr><td>$\cos x$</td><td>$\sin x + C$</td></tr>
+<tr><td>$\sin x$</td><td>$-\cos x + C$</td></tr>
+<tr><td>$\sec^2 x$</td><td>$\tan x + C$</td></tr>
+<tr><td>$\csc x \cot x$</td><td>$-\csc x + C$</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Worked Example — Finding an Antiderivative</h3>
+<div class="example">
+<h4>Example 4.9.1</h4>
+<p>Find the most general antiderivative of $f(x) = 3x^2 - 4x + 5$.</p>
+<p><strong>Step 1:</strong> Apply the Power Rule term by term (reverse of the differentiation Power Rule).</p>
+$$\int (3x^2 - 4x + 5)\,dx = 3 \cdot \frac{x^3}{3} - 4 \cdot \frac{x^2}{2} + 5x + C$$
+<p><strong>Step 2:</strong> Simplify each coefficient.</p>
+$$\int (3x^2 - 4x + 5)\,dx = x^3 - 2x^2 + 5x + C$$
+<p><strong>Step 3:</strong> Verify by differentiating.</p>
+$$\frac{d}{dx}(x^3 - 2x^2 + 5x + C) = 3x^2 - 4x + 5 = f(x)$$
+<p class="mnemonic"><strong>Answer:</strong> $F(x) = \boxed{x^3 - 2x^2 + 5x + C}$</p>
+</div>
+
+<h3>Family of Antiderivative Curves</h3>
+<div class="visual-aid">
+<h4>Figure 4.9 — A Family of Antiderivative Curves for $f(x) = 2x$</h4>
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <line x1="60" y1="260" x2="460" y2="260" stroke="#000" stroke-width="1.5"/>
+    <line x1="240" y1="20" x2="240" y2="280" stroke="#000" stroke-width="1"/>
+    <text x="450" y="275" font-size="12" fill="#000">x</text>
+    <text x="250" y="35" font-size="12" fill="#000">y</text>
+    <line x1="60" y1="130" x2="460" y2="130" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="5,4"/>
+    <text x="65" y="125" font-size="11" fill="#e74c3c">$f(x) = 2x$ (slope field)</text>
+    <path d="M 80,230 C 160,210 200,140 240,130 S 320,100 400,70" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+    <text x="85" y="220" font-size="11" fill="#1a3a5c">$C = 0$: $y = x^2$</text>
+    <path d="M 80,200 C 160,180 200,110 240,100 S 320,70 400,40" fill="none" stroke="#27ae60" stroke-width="2" stroke-dasharray="6,3"/>
+    <text x="85" y="190" font-size="11" fill="#27ae60">$C = 1$: $y = x^2 + 1$</text>
+    <path d="M 80,260 C 160,240 200,170 240,160 S 320,130 400,100" fill="none" stroke="#b08800" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="85" y="250" font-size="11" fill="#b08800">$C = -1$: $y = x^2 - 1$</text>
+    <polygon points="80,230 80,200 100,200 100,230" fill="#f7f7f7" stroke="#ccc" stroke-width="0.5"/>
+    <text x="105" y="218" font-size="9" fill="#999">vertical shift = C</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 4.9: Each antiderivative of $f(x) = 2x$ is a vertical shift of $F(x) = x^2$. The constant $C$ slides the entire curve up or down.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Find the most general antiderivative of $f(x) = 6x^2 - 8x + 3$.</li>
+<li>Find an antiderivative of $f(x) = \dfrac{1}{x} + e^x$.</li>
+<li>If $F'(x) = \cos x$ and $F(0) = 2$, find $F(x)$.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Always add $+C$ to an indefinite integral — omitting it loses half the answer.</li>
+<li>The Power Rule in reverse: increase the exponent by 1, divide by the new exponent.</li>
+<li>For $1/x$, the antiderivative is $\ln|x| + C$, not just $\ln x$ (domain matters for negative $x$).</li>
+<li>Verify your answer by differentiating it; you should recover the original integrand.</li>
+<li>Sketch a few members of the family with different $C$ values to build geometric intuition.</li>
+</ul>
+</div>
+
+            <nav class="chapter-nav">
+                <a href="chapter-26.html" class="nav-btn prev" id="prev-chapter">Previous</a>
+                <span class="nav-indicator" id="chapter-indicator"></span>
+                <a href="chapter-28.html" class="nav-btn next" id="next-chapter">Next</a>
+            </nav>
+        </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

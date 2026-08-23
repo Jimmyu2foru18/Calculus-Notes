@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 08: Introducing the Derivative — Calculus Foundations</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            tags: 'ams'
+        },
+        svg: { fontCache: 'global' },
+        options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            ignoreHtmlClass: 'no-mathjax'
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Calculus Foundations</h1>
+        <p class="subtitle">Chapter 08: Introducing the Derivative</p>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="index.html">Curriculum</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main class="chapter">
+            <h2>Chapter 08: Introducing the Derivative</h2>
+            <p class="lead">The derivative as instantaneous rate of change and the limit definition.</p>
+
+            <div class="video-section">
+                <h4>Core Lecture</h4>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/9vKqVkMQHKk" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/9vKqVkMQHKk" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>3Blue1Brown — Essence of Calculus</h5>
+                        <p>Visual intuition for the core concepts</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/HVvCbnrUxek" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>Khan Academy — Calculus</h5>
+                        <p>Step-by-step tutorials and practice</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/9vKqVkMQHKk" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>Professor Leonard — Calculus Lecture</h5>
+                        <p>Full lecture coverage with worked examples</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>3.1 — Introducing the Derivative</h2>
+
+<p>
+Calculus is the mathematics of <strong>change</strong>. While limits let us describe behavior near a point, 
+<strong>derivatives</strong> let us measure <em>how fast</em> something is changing at an instant. 
+The derivative is the single most important tool in calculus — it bridges algebra, geometry, and real-world motion.
+</p>
+
+<h3>Key Definitions</h3>
+<div class="notes">
+<h4>Definition — The Derivative</h4>
+<p>
+Let $f$ be a function defined on an open interval containing $x$. The <strong>derivative</strong> of $f$ at $x$ is
+</p>
+$$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h},$$
+<p>
+provided the limit exists. If the limit exists, we say $f$ is <strong>differentiable</strong> at $x$.
+</p>
+<p>
+The expression $\dfrac{f(x+h)-f(x)}{h}$ is the <strong>difference quotient</strong>. 
+Geometrically, it is the slope of the <strong>secant line</strong> through the points $(x, f(x))$ and $(x+h, f(x+h))$.
+As $h \to 0$, the secant line approaches the <strong>tangent line</strong>, and its slope becomes the derivative.
+</p>
+</div>
+
+<h3>Worked Example — Using the Limit Definition</h3>
+<div class="example">
+<h4>Example 3.1.1</h4>
+<p>Find $f'(x)$ for $f(x) = x^2 - 3x + 2$ using the limit definition.</p>
+<p><strong>Step 1:</strong> Write $f(x+h)$ and form the difference quotient.</p>
+$$f(x+h) = (x+h)^2 - 3(x+h) + 2 = x^2 + 2xh + h^2 - 3x - 3h + 2$$
+$$f(x+h) - f(x) = \underbrace{x^2 + 2xh + h^2 - 3x - 3h + 2}_{f(x+h)} - \underbrace{(x^2 - 3x + 2)}_{f(x)}$$
+$$= 2xh + h^2 - 3h$$
+<p><strong>Step 2:</strong> Divide by $h$ and simplify.</p>
+$$\frac{f(x+h) - f(x)}{h} = \frac{2xh + h^2 - 3h}{h} = \frac{h(2x + h - 3)}{h} = 2x + h - 3$$
+<p><strong>Step 3:</strong> Take the limit as $h \to 0$.</p>
+$$f'(x) = \lim_{h \to 0} (2x + h - 3) = 2x - 3$$
+<p class="mnemonic"><strong>Answer:</strong> $f'(x) = \boxed{2x - 3}$</p>
+</div>
+
+<h3>Visualizing the Secant-to-Tangent Transition</h3>
+<div class="visual-aid">
+<h4>Figure 3.1 — Secant Lines Approaching the Tangent Line</h4>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <defs>
+        <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="#999"/>
+        </marker>
+    </defs>
+    <line x1="40" y1="230" x2="460" y2="230" stroke="#000" stroke-width="1.5"/>
+    <line x1="240" y1="20" x2="240" y2="240" stroke="#000" stroke-width="1"/>
+    <text x="450" y="245" font-size="12" fill="#000">x</text>
+    <text x="250" y="30" font-size="12" fill="#000">y</text>
+    <path d="M 60,180 C 120,170 180,130 240,100 S 360,60 440,40" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+    <line x1="160" y1="220" x2="340" y2="80" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="5,4"/>
+    <circle cx="240" cy="100" r="3.5" fill="#1a3a5c"/>
+    <line x1="240" y1="100" x2="340" y2="80" stroke="#e74c3c" stroke-width="1.2" stroke-dasharray="3,3"/>
+    <text x="345" y="75" font-size="11" fill="#e74c3c">secant</text>
+    <line x1="240" y1="100" x2="320" y2="95" stroke="#27ae60" stroke-width="2"/>
+    <text x="325" y="90" font-size="11" fill="#27ae60">tangent</text>
+    <text x="145" y="212" font-size="10" fill="#666">x − h</text>
+    <text x="345" y="212" font-size="10" fill="#666">x + h</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.1: As $h$ shrinks, the secant line (red, dashed) rotates toward the tangent line (green) at $(x, f(x))$.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Use the limit definition to find $f'(x)$ for $f(x) = 3x - 7$.</li>
+<li>Use the limit definition to find $f'(x)$ for $f(x) = x^2 + 4$.</li>
+<li>Show that $f(x) = |x|$ is <strong>not</strong> differentiable at $x = 0$ by computing the left- and right-hand limits.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Memorize the limit definition verbatim — every other rule derives from it.</li>
+<li>When expanding $(x+h)^n$, use the binomial theorem for $n \ge 3$.</li>
+<li>Always cancel $h$ before substituting $h = 0$; a $0$ in the denominator signals an algebraic mistake.</li>
+<li>Sketch the curve and tangent line before computing; the picture tells you whether your answer is reasonable.</li>
+</ul>
+</div>
+
+            <nav class="chapter-nav">
+                <a href="chapter-07.html" class="nav-btn prev" id="prev-chapter">Previous</a>
+                <span class="nav-indicator" id="chapter-indicator"></span>
+                <a href="chapter-09.html" class="nav-btn next" id="next-chapter">Next</a>
+            </nav>
+        </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

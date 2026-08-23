@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 29: Definite Integrals — Calculus Foundations</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            tags: 'ams'
+        },
+        svg: { fontCache: 'global' },
+        options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            ignoreHtmlClass: 'no-mathjax'
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Calculus Foundations</h1>
+        <p class="subtitle">Chapter 29: Definite Integrals</p>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="index.html">Curriculum</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main class="chapter">
+            <h2>Chapter 29: Definite Integrals</h2>
+            <p class="lead">Definite integrals, signed area, and properties of integrals.</p>
+
+            <div class="video-section">
+                <h4>Core Lecture</h4>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/rfG8ce4nNh0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/rfG8ce4nNh0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>3Blue1Brown — Essence of Calculus</h5>
+                        <p>Visual intuition for the core concepts</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/rfG8ce4nNh0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>Khan Academy — Calculus</h5>
+                        <p>Step-by-step tutorials and practice</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/rfG8ce4nNh0" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>Professor Leonard — Calculus Lecture</h5>
+                        <p>Full lecture coverage with worked examples</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>5.2 — Definite Integrals</h2>
+
+<p>
+The <strong>definite integral</strong> $\displaystyle\int_a^b f(x)\,dx$ gives the net signed area 
+between the curve $y = f(x)$ and the $x$-axis on $[a, b]$. 
+The word <em>signed</em> is critical: regions below the $x$-axis contribute negative area. 
+This limit-based definition was rigorously formalized by Riemann and is the foundation of all integral calculus.
+</p>
+
+<h3>Key Definitions and Theorems</h3>
+<div class="notes">
+<h4>Definition — Definite Integral</h4>
+<p>
+Let $f$ be defined on $[a, b]$. Partition $[a, b]$ into $n$ subintervals of width $\Delta x_i$. 
+Choose any sample point $x_i^*$ in each subinterval. The <strong>definite integral</strong> is the limit:
+</p>
+$$\int_a^b f(x)\,dx = \lim_{n \to \infty} \sum_{i=1}^{n} f(x_i^*)\,\Delta x_i$$
+<p>
+provided this limit exists. When it does, we say $f$ is <strong>integrable</strong> on $[a, b]$.
+</p>
+</div>
+
+<div class="derivation">
+<h4>Theorem — Properties of Definite Integrals</h4>
+<p>For integrable functions $f$ and $g$ on $[a, b]$ and constant $c$:</p>
+<ul>
+<li>$\displaystyle\int_a^b c\,dx = c(b-a)$</li>
+<li>$\displaystyle\int_a^b [f(x) \pm g(x)]\,dx = \int_a^b f(x)\,dx \pm \int_a^b g(x)\,dx$</li>
+<li>$\displaystyle\int_a^b c \cdot f(x)\,dx = c \int_a^b f(x)\,dx$</li>
+<li>$\displaystyle\int_a^b f(x)\,dx = -\int_b^a f(x)\,dx$ (reversing limits)</li>
+<li>$\displaystyle\int_a^b f(x)\,dx + \int_b^c f(x)\,dx = \int_a^c f(x)\,dx$ (additivity)</li>
+<li>If $f(x) \ge 0$ on $[a, b]$, then $\displaystyle\int_a^b f(x)\,dx \ge 0$.</li>
+</ul>
+</div>
+
+<h3>Worked Example — Evaluating a Definite Integral</h3>
+<div class="example">
+<h4>Example 5.2.1</h4>
+<p>Evaluate $\displaystyle\int_1^3 (2x^3 - x)\,dx$ by finding an antiderivative.</p>
+<p><strong>Step 1:</strong> Find an antiderivative $F(x)$.</p>
+$$F(x) = \int (2x^3 - x)\,dx = \frac{2x^4}{4} - \frac{x^2}{2} = \frac{x^4}{2} - \frac{x^2}{2}$$
+<p><strong>Step 2:</strong> Apply the Fundamental Theorem (informally here — formalized in §5.3).</p>
+$$\int_1^3 (2x^3 - x)\,dx = F(3) - F(1)$$
+<p><strong>Step 3:</strong> Evaluate at the limits.</p>
+$$F(3) = \frac{3^4}{2} - \frac{3^2}{2} = \frac{81}{2} - \frac{9}{2} = \frac{72}{2} = 36$$
+$$F(1) = \frac{1^4}{2} - \frac{1^2}{2} = \frac{1}{2} - \frac{1}{2} = 0$$
+<p><strong>Step 4:</strong> Subtract.</p>
+$$\int_1^3 (2x^3 - x)\,dx = 36 - 0 = \boxed{36}$$
+</div>
+
+<h3>Signed Area Interpretation</h3>
+<div class="visual-aid">
+<h4>Figure 5.2 — Signed Area: Positive Above the Axis, Negative Below</h4>
+<svg viewBox="0 0 520 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:550px;background:#fafafa;border:1px solid #ccc;">
+    <line x1="60" y1="250" x2="500" y2="250" stroke="#000" stroke-width="1.5"/>
+    <line x1="60" y1="30" x2="60" y2="270" stroke="#000" stroke-width="1"/>
+    <text x="490" y="265" font-size="12" fill="#000">x</text>
+    <text x="70" y="45" font-size="12" fill="#000">y</text>
+    <path d="M 60,80 C 150,90 200,200 280,210 S 400,150 500,100" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+    <line x1="60" y1="250" x2="500" y2="250" stroke="#000" stroke-width="1.5"/>
+    <polygon points="60,250 280,210 280,250" fill="#e8f5e9" opacity="0.7"/>
+    <polygon points="280,250 280,210 500,100 500,250" fill="#fce4ec" opacity="0.6"/>
+    <text x="120" y="235" font-size="11" fill="#22863a">$+A_1$</text>
+    <text x="350" y="235" font-size="11" fill="#c62828">$-A_2$</text>
+    <text x="350" y="175" font-size="11" fill="#c62828">net = $A_1 - A_2$</text>
+    <line x1="280" y1="30" x2="280" y2="250" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+    <text x="290" y="45" font-size="10" fill="#666">root at $x=c$</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 5.2: The definite integral equals the signed area: regions above the axis add positively; regions below subtract. The net area may be smaller than the total geometric area.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Evaluate $\displaystyle\int_0^2 (4x - x^2)\,dx$. Sketch the region and identify the geometric shape.</li>
+<li>Evaluate $\displaystyle\int_{-1}^1 x^3\,dx$. Why is the answer zero even though $x^3$ is not the zero function?</li>
+<li>If $\displaystyle\int_2^5 f(x)\,dx = 7$ and $\displaystyle\int_5^9 f(x)\,dx = -3$, find $\displaystyle\int_2^9 f(x)\,dx$.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>"Signed area" is the key phrase: below the axis means negative.</li>
+<li>Always sketch the region before computing — the shape reveals symmetries and cancellation.</li>
+<li>For polynomials, find the antiderivative term by term and evaluate at the limits.</li>
+<li>The additive property $\int_a^b + \int_b^c = \int_a^c$ is useful for breaking complex intervals into pieces.</li>
+<li>If $f$ is odd and the interval is symmetric $[-a, a]$, the integral is zero.</li>
+</ul>
+</div>
+
+            <nav class="chapter-nav">
+                <a href="chapter-28.html" class="nav-btn prev" id="prev-chapter">Previous</a>
+                <span class="nav-indicator" id="chapter-indicator"></span>
+                <a href="chapter-30.html" class="nav-btn next" id="next-chapter">Next</a>
+            </nav>
+        </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>

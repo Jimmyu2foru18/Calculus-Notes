@@ -3,46 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>one-sided — One-Sided Limits — Calculus Foundations</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Chapter 04: One-Sided Limits — Calculus Foundations</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <script>
-window.MathJax = {
-    tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        processEscapes: true,
-        tags: 'ams'
-    },
-    svg: { fontCache: 'global' },
-    options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-        ignoreHtmlClass: 'no-mathjax'
-    }
-};
-</script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            tags: 'ams'
+        },
+        svg: { fontCache: 'global' },
+        options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            ignoreHtmlClass: 'no-mathjax'
+        }
+    };
+    </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
-<header>
-    <h1>Calculus Foundations</h1>
-    <p class="subtitle">A Structured, Beginner-Friendly Path Through Calculus</p>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="chapters/limits.html">Curriculum</a>
-        <a href="reviews/index.html">Review Sheets</a>
-        <a href="https://github.com/Jimmyu2foru18/Calculus-Notes" target="_blank" rel="noopener">GitHub</a>
-    </nav>
-</header>
+    <header>
+        <h1>Calculus Foundations</h1>
+        <p class="subtitle">Chapter 04: One-Sided Limits</p>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="index.html">Curriculum</a>
+        </nav>
+    </header>
 
-<div class="container">
-    <main>
-        <p><a href="chapters/limits.html" class="nav-btn">← Back to Limits</a></p>
-        <div class="chapter">
-    <h2>One-Sided Limits</h2>
-</div>
+    <div class="container">
+        <main class="chapter">
+            <h2>Chapter 04: One-Sided Limits</h2>
+            <p class="lead">One-sided limits and how they determine whether a two-sided limit exists.</p>
 
-<section class="topic-section" id="one-sided">
-    <h2>One-Sided Limits</h2>
+            <div class="video-section">
+                <h4>Core Lecture</h4>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/kfF40MiS7zA" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/kfF40MiS7zA" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>3Blue1Brown — Essence of Calculus</h5>
+                        <p>Visual intuition for the core concepts</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/kfF40MiS7zA" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>Khan Academy — Calculus</h5>
+                        <p>Step-by-step tutorials and practice</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/kfF40MiS7zA" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>Professor Leonard — Calculus Lecture</h5>
+                        <p>Full lecture coverage with worked examples</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>One-Sided Limits</h2>
 
 <p>
 A <strong>two-sided limit</strong> $\lim_{x \to c} f(x)$ requires the function to approach 
@@ -143,9 +175,8 @@ Note that $f(2) = 5 \neq 3$. The function value at $2$ does not affect the limit
 Let $f(x) = \dfrac{|x|}{x}$. Evaluate $\lim_{x \to 0^-} f(x)$ and $\lim_{x \to 0^+} f(x)$.
 Does $\lim_{x \to 0} f(x)$ exist?
 </p>
-<p><strong>Answer:</strong> $\lim_{x \to 0^-} f(x) = -1$ and $\lim_{x \to 0^+} f(x) = 1$. 
-Since they differ, the two-sided limit DNE.
-</p>
+<p><strong>Answer:</strong></p><p>$\lim_{x \to 0^-} f(x) = -1$ and $\lim_{x \to 0^+} f(x) = 1$. 
+Since they differ, the two-sided limit DNE.</p>
 </details>
 <details>
 <summary>Problem 2 — Floor function</summary>
@@ -153,9 +184,8 @@ Since they differ, the two-sided limit DNE.
 Let $g(x) = \lfloor x \rfloor$ (greatest integer $\leq x$). Find 
 $\lim_{x \to 2^-} g(x)$ and $\lim_{x \to 2^+} g(x)$.
 </p>
-<p><strong>Answer:</strong> Both one-sided limits equal $2$, so $\lim_{x \to 2} \lfloor x \rfloor = 2$.
-(At integers, the floor function has a jump in the function value but not in the limit.)
-</p>
+<p><strong>Answer:</strong></p><p>Both one-sided limits equal $2$, so $\lim_{x \to 2} \lfloor x \rfloor = 2$.
+(At integers, the floor function has a jump in the function value but not in the limit.)</p>
 </details>
 </div>
 
@@ -168,29 +198,14 @@ Mismatched values cause a DNE.</p>
 </p>
 </div>
 
-<hr class="section-divider">
+            <nav class="chapter-nav">
+                <a href="chapter-03.html" class="nav-btn prev" id="prev-chapter">Previous</a>
+                <span class="nav-indicator" id="chapter-indicator"></span>
+                <a href="chapter-05.html" class="nav-btn next" id="next-chapter">Next</a>
+            </nav>
+        </main>
+    </div>
 
-<!-- ============================================================
-     SECTION 2.4 — Infinite Limits
-     ============================================================ -->
-</section>
-
-<nav class="chapter-nav" aria-label="Section navigation">
-    <a href="2.3.html" class="nav-btn">← 2.3 — Techniques for Computing Limits</a>
-    <span class="nav-indicator">01.Limits</span>
-    <a href="2.4.html" class="nav-btn">2.4 — Infinite Limits →</a>
-</nav>
-
-
-    </main>
-</div>
-
-<button class="note-btn note-sidebar-toggle" type="button">Notes</button>
-
-<script src="js/app.js"></script>
-<script>
-window.CalculusChapters = CHAPTERS_LIST_JSON;
-window.CurrentChapterId = "limits";
-</script>
+    <script src="../js/app.js"></script>
 </body>
 </html>

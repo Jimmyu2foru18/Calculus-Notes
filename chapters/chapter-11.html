@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11: Product and Quotient Rules — Calculus Foundations</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            tags: 'ams'
+        },
+        svg: { fontCache: 'global' },
+        options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            ignoreHtmlClass: 'no-mathjax'
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Calculus Foundations</h1>
+        <p class="subtitle">Chapter 11: Product and Quotient Rules</p>
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="index.html">Curriculum</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main class="chapter">
+            <h2>Chapter 11: Product and Quotient Rules</h2>
+            <p class="lead">Product Rule and Quotient Rule for differentiating products and quotients.</p>
+
+            <div class="video-section">
+                <h4>Core Lecture</h4>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/YG15m2VwSjA" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/YG15m2VwSjA" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>3Blue1Brown — Essence of Calculus</h5>
+                        <p>Visual intuition for the core concepts</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/YG15m2VwSjA" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>Khan Academy — Calculus</h5>
+                        <p>Step-by-step tutorials and practice</p>
+                    </div>
+                </div>
+                <div class="video-card">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/YG15m2VwSjA" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-card-caption">
+                        <h5>Professor Leonard — Calculus Lecture</h5>
+                        <p>Full lecture coverage with worked examples</p>
+                    </div>
+                </div>
+            </div>
+
+            <h2>3.4 — The Product and Quotient Rules</h2>
+
+<p>
+The derivative of a sum is the sum of derivatives, but <strong>multiplication and division require special rules</strong>. 
+The Product Rule and Quotient Rule are easy to misapply — memorizing them is half the battle; using them correctly is the other half.
+</p>
+
+<h3>Key Theorems</h3>
+<div class="derivation">
+<h4>Theorem — Product Rule</h4>
+<p>If $f(x) = u(x) \cdot v(x)$, where $u$ and $v$ are differentiable:</p>
+$$f'(x) = u(x) \cdot v'(x) + v(x) \cdot u'(x)$$
+<p><em>Memory aid:</em> "First times derivative of second, plus second times derivative of first."</p>
+</div>
+
+<div class="derivation">
+<h4>Theorem — Quotient Rule</h4>
+<p>If $f(x) = \dfrac{u(x)}{v(x)}$, where $v(x) \ne 0$ and both are differentiable:</p>
+$$f'(x) = \frac{v(x) \cdot u'(x) - u(x) \cdot v'(x)}{[v(x)]^2}$$
+<p><em>Memory aid:</em> "Low d-high minus high d-low, over the square of what's below."</p>
+</div>
+
+<h3>Worked Example — Product Rule</h3>
+<div class="example">
+<h4>Example 3.4.1</h4>
+<p>Differentiate $f(x) = (3x^2 - 1)(x^3 + 2x)$.</p>
+<p><strong>Step 1:</strong> Identify $u$ and $v$ and their derivatives.</p>
+$$u(x) = 3x^2 - 1 \quad \Rightarrow \quad u'(x) = 6x$$
+$$v(x) = x^3 + 2x \quad \Rightarrow \quad v'(x) = 3x^2 + 2$$
+<p><strong>Step 2:</strong> Apply the Product Rule.</p>
+$$f'(x) = u(x) \cdot v'(x) + v(x) \cdot u'(x)$$
+$$= (3x^2 - 1)(3x^2 + 2) + (x^3 + 2x)(6x)$$
+<p><strong>Step 3:</strong> Expand and simplify.</p>
+$$= (9x^4 + 6x^2 - 3x^2 - 2) + (6x^4 + 12x^2)$$
+$$= 15x^4 + 15x^2 - 2$$
+</div>
+
+<h3>Product and Quotient Rule Diagrams</h3>
+<div class="visual-aid">
+<h4>Figure 3.4 — Visualizing the Product Rule</h4>
+<svg viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <rect x="60" y="40" width="160" height="120" fill="#e8eef3" stroke="#1a3a5c" stroke-width="1.5"/>
+    <rect x="260" y="40" width="160" height="120" fill="#fef9e7" stroke="#b08800" stroke-width="1.5"/>
+    <text x="140" y="75" font-size="13" text-anchor="middle" fill="#1a3a5c" font-weight="bold">$u(x)$</text>
+    <text x="340" y="75" font-size="13" text-anchor="middle" fill="#b08800" font-weight="bold">$v(x)$</text>
+    <text x="140" y="105" font-size="11" text-anchor="middle" fill="#333">original</text>
+    <text x="340" y="105" font-size="11" text-anchor="middle" fill="#333">original</text>
+    <text x="140" y="130" font-size="11" text-anchor="middle" fill="#e74c3c">$u'(x)$</text>
+    <text x="340" y="130" font-size="11" text-anchor="middle" fill="#e74c3c">$v'(x)$</text>
+    <text x="140" y="155" font-size="11" text-anchor="middle" fill="#666">"keep one,"</text>
+    <text x="340" y="155" font-size="11" text-anchor="middle" fill="#666">"keep one,"</text>
+    <text x="220" y="105" font-size="16" text-anchor="middle" fill="#e74c3c">+</text>
+    <text x="420" y="105" font-size="14" text-anchor="middle" fill="#333">$f' = u v' + v u'$</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.4: The Product Rule keeps one factor unchanged and differentiates the other, then adds the two results.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Differentiate $f(x) = (2x+1)(x^2 - 3x)$ using the Product Rule.</li>
+<li>Differentiate $f(x) = \dfrac{x^2 + 1}{x - 2}$ using the Quotient Rule.</li>
+<li>Simplify $(x^2+1)(x^3-2)' + (x^3-2)(x^2+1)'$ using the Product Rule.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Label $u$ and $v$ (or "high" and "low") explicitly before writing the rule — it prevents mix-ups.</li>
+<li>For the Quotient Rule, remember the <strong>minus sign</strong>: it's $v \cdot u' \mathbf{-} u \cdot v'$, not plus.</li>
+<li>Never simplify the denominator of the Quotient Rule prematurely; you may need to factor it later.</li>
+<li>The Product Rule generalizes to three or more factors: take the derivative of <em>exactly one</em> factor at a time.</li>
+</ul>
+</div>
+
+            <nav class="chapter-nav">
+                <a href="chapter-10.html" class="nav-btn prev" id="prev-chapter">Previous</a>
+                <span class="nav-indicator" id="chapter-indicator"></span>
+                <a href="chapter-12.html" class="nav-btn next" id="next-chapter">Next</a>
+            </nav>
+        </main>
+    </div>
+
+    <script src="../js/app.js"></script>
+</body>
+</html>
