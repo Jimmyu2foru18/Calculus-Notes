@@ -205,7 +205,7 @@ Notes are saved per chapter and persist across sessions.">${escapeHtml(currentNo
 
     function initNavigation() {
         const currentFile = window.location.pathname.split('/').pop() || '';
-        const currentIndex = CHAPTERS.findIndex(ch => ch.file === currentFile);
+        const currentIndex = CHAPTERS.findIndex(ch => ch.file.endsWith(currentFile));
 
         const prevBtn = document.getElementById('prev-chapter');
         const nextBtn = document.getElementById('next-chapter');
@@ -340,7 +340,15 @@ Notes are saved per chapter and persist across sessions.">${escapeHtml(currentNo
 
     function addNoteButtons() {
         const existing = document.querySelector('.note-sidebar-toggle');
-        if (existing) return;
+        if (existing) {
+            existing.addEventListener('click', () => {
+                const currentFile = window.location.pathname.split('/').pop();
+                const chapter = CHAPTERS.find(ch => ch.file === currentFile);
+                const chapterId = chapter ? chapter.id : 'general';
+                openNoteSidebar(chapterId);
+            });
+            return;
+        }
 
         const toggleBtn = document.createElement('button');
         toggleBtn.className = 'note-btn note-sidebar-toggle';
