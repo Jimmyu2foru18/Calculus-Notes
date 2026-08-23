@@ -86,7 +86,7 @@ How quickly, is the top of the ladder sliding down the wall, when the base is **
 - **WHEN:** $X = 5\text{ ft}$
 - **Equation:** $a^2 + b^2 = c^2$
 
-**So.** $x^2 + y^2 = 16^2 = 169$
+**So.** $x^2 + y^2 = 16^2 = 256$
 
 **Derivative with respect to time ($t$):**
 

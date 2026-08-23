@@ -297,22 +297,20 @@ Now solve for $\frac{dy}{dx}$
 
 **Gather $\frac{dy}{dx}$ terms**
 
-$$6x + 8y\frac{dy}{dx} = 3x^2 - 7\frac{dy}{dx}$$
+Move the $\frac{dy}{dx}$ term on the right to the left, and move $6x$ to the right:
 
-$$-6x + 7\frac{dy}{dx} = -6x + 7\frac{dy}{dx}$$
-
-$$8y\frac{dy}{dx} + 7\frac{dy}{dx} = -6x + 3x^2$$
+$$2y\frac{dy}{dx} + 7\frac{dy}{dx} = 3x^2 - 6x$$
 
 > *Factor out $\frac{dy}{dx}$ and divide.*
 
 **Combine like terms (Factor out $\frac{dy}{dx}$):**
 
-$$\frac{dy}{dx}(8y + 7) = 3x^2 - 6x$$
+$$\frac{dy}{dx}(2y + 7) = 3x^2 - 6x$$
 
 **Divide both sides by $(8y + 7)$:**
 
-$$\frac{\frac{dy}{dx}(8y + 7)}{8y + 7} = \frac{3x^2 - 6x}{8y + 7}$$
+$$\frac{\frac{dy}{dx}(2y + 7)}{2y + 7} = \frac{3x^2 - 6x}{2y + 7}$$
 
 **FINAL RESULT** *(boxed)*
 
-$$\frac{dy}{dx} = \frac{3x^2 - 6x}{8y + 7}$$
+$$\frac{dy}{dx} = \frac{3x^2 - 6x}{2y + 7}$$

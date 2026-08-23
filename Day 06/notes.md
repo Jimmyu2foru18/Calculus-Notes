@@ -19,7 +19,7 @@ Removable Discontinuity at $x=-3$
 
 Infinite discontinuity at $x=3$
 
-**Graph description:** Coordinate plane with $x$-intercepts at $x=-3$ and $x=3$. At $x=-3$, open circle indicating removable discontinuity. At $x=3$, vertical asymptote with arrows indicating infinite discontinuity. Hyperbola branches in quadrants I and III shifted/scaled.
+**Graph description:** Coordinate plane with factor labels "$x-3=0$" (vertical asymptote at $x=3$, infinite discontinuity) and "$x+3=0$" (hole/removable discontinuity at $x=-3$). Hyperbola branches in quadrants I and III shifted/scaled, with open circle at the hole and dashed vertical asymptote.
 
 ---
 
@@ -27,9 +27,9 @@ Infinite discontinuity at $x=3$
 
 $f(x)=\dfrac{(x+1)(x+5)}{(x-5)(x+5)}$
 
-$x-5=0 \Rightarrow x=5$
+$x+5=0 \Rightarrow x=-5$ — Removable discontinuity (hole) at $x=-5$
 
-$x=5$ is $x=5$ Infinite discontinuity at $x=5$
+$x-5=0 \Rightarrow x=5$ — Infinite discontinuity at $x=5$
 
 **Graph description:** Coordinate plane showing vertical asymptote at $x=5$ with arrow pointing upward indicating infinite discontinuity. Parabola-like curve with hole at $x=-5$.
 
@@ -132,9 +132,11 @@ $$f'(x)=\lim_{h\to 0}\frac{\sqrt{x+h+2}-\sqrt{x+2}}{h} \cdot \frac{\sqrt{x+h+2}+
 
 → **Technique: Multiply by Conjugate**
 
-$$f'(x)=\lim_{h\to 0}\frac{(\sqrt{x+h+2}+\sqrt{x+2})(\sqrt{x+h+2}-\sqrt{x+2})-x+2}{h(\sqrt{x+h+2}+\sqrt{x+2})}$$ [*illegible numerator*]
+$$f'(x)=\lim_{h\to 0}\frac{(\sqrt{x+h+2}+\sqrt{x+2})(\sqrt{x+h+2}-\sqrt{x+2})}{h(\sqrt{x+h+2}+\sqrt{x+2})}$$
 
-$$f'(x)=\lim_{h\to 0}\frac{x+h+2+xx+2}{h(\sqrt{x+h+2}+\sqrt{x+2})}$$ [*illegible; likely $x+h+2-x-2$*]
+→ **Technique: Multiply by Conjugate**
+
+$$f'(x)=\lim_{h\to 0}\frac{(x+h+2)-(x+2)}{h(\sqrt{x+h+2}+\sqrt{x+2})}$$
 
 $$f'(x)=\lim_{h\to 0}\frac{h}{h(\sqrt{x+h+2}+\sqrt{x+2})}$$
 
@@ -165,8 +167,6 @@ $$f'(x) = \lim_{h\to 0} \dfrac{\dfrac{1}{3(x+h)-5} - \dfrac{1}{3x-5}}{h}$$ *(bot
 $$LCD = (3x+3h-5)(3x-5)$$
 
 **Step 1: Simplify Numerator & Combine Fractions**
-
-$$f'x = \lim_{h\to 0} f(3x-5)$$
 
 *(Boxed in green:)*
 
@@ -208,7 +208,9 @@ $$f'(x) = \lim_{h\to 0} \dfrac{f(x+h)-f(x)}{h} = \lim_{h\to 0} \dfrac{\cancel{x+
 
 $$f'(x) = \lim_{h\to 0} \dfrac{f(x+h)-f(x)}{h} = \dfrac{(x+h)^2 - x^2}{h} = \dfrac{\cancel{x^2}+2xh+h^2\cancel{-x^2}}{h}$$
 
-$$= \dfrac{2x\cancel{h}+\cancel{h^2}}{\cancel{h}}$$ **\*\*plug in $h \to 0$** $\longrightarrow \; 2x + h = 2x + 0 = 2x$
+$$= \dfrac{2xh+h^2}{h} = \dfrac{h(2x+h)}{h} = 2x+h \quad \text{then plug in } h \to 0$$
+
+$$= 2x + 0 = 2x$$
 
 $$f'(x) = \boxed{2x}$$
 

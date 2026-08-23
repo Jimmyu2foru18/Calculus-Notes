@@ -136,17 +136,17 @@ $$\frac{d^2y}{dx^2} = \frac{(2y - 2)^2(-6) - 2(5 - 6x)^2}{(2y - 2)^3}$$
 
 ### 1. IMPLICIT & SECOND DERIVATIVES (Ex. 2)
 
-$$3x^2 + 4xy^2 = y - 7 \rightarrow \frac{dy}{dx} = \frac{6x + 4y^2 + 7}{1 - 8xy}$$
+$$3x^2 + 4xy^2 = y - 7 \rightarrow \frac{dy}{dx} = \frac{6x + 4y^2}{1 - 8xy}$$
 
 **Quotient Rule Solution for $\frac{d^2y}{dx^2}$**
 
 So,  Quotient Rule
 
-$$\frac{d^2y}{dx^2} = \frac{(1-8xy)\left(6+8y\frac{dy}{dx}\right) - (6x+4y^2+7)\left(-8y\frac{dy}{dx}+y(-8)\right)}{(1-8xy)^2}$$
+$$\frac{d^2y}{dx^2} = \frac{(1-8xy)\left(6+8y\frac{dy}{dx}\right) - (6x+4y^2)\left(-8y-8x\frac{dy}{dx}\right)}{(1-8xy)^2}$$
 
 Substitute $\frac{dy}{dx}$
 
-$$\frac{d^2y}{dx^2} = \frac{(1-8xy)\left(6+8y\left(\frac{6x+4y^2+7}{1-8xy}\right)\right) - \left(6x+4y^2+7\right)\left(-8y\left(\frac{6x+4y^2+7}{1-8xy}\right)+y(-8)\right)}{(1-8xy)^2}$$
+$$\frac{d^2y}{dx^2} = \frac{(1-8xy)\left(6+8y\left(\frac{6x+4y^2}{1-8xy}\right)\right) - \left(6x+4y^2\right)\left(-8y\left(\frac{6x+4y^2}{1-8xy}\right)-8y\right)}{(1-8xy)^2}$$
 
 ---
 

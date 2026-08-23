@@ -10,7 +10,7 @@
 
 **1. Evaluating Limits by Substitution & Continuity.**
 
-1. $\lim_{x \to 5} \frac{x^2+5x-2}{x^2-25}$ → Plug-in in → $\frac{5^2+5(5)-2}{5^2-25} = \frac{48}{0}$ → **Vertical Asymptote Note.**
+1. $\lim_{x \to 5} \frac{x^2+2x-35}{x^2-25}$ → Plug-in in → $\frac{5^2+2(5)-35}{5^2-25} = \frac{0}{0}$ → **Vertical Asymptote Note.**
 
 | $x$ | $f(x)$ | $x$ | $f(x)$ |
 |-----|--------|-----|--------|

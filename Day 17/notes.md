@@ -12,7 +12,7 @@
 
 Let $u = x^3 - 2$
 
-$du = 3x^2\,dx \Rightarrow \frac{2x^2\,dx}{3x^2} = \frac{du}{3x^2} = dx$
+$du = 3x^2\,dx \Rightarrow x^2\,dx = \frac{du}{3}$
 
 $\int 5x^2\sqrt{x^3-2}\,dx = \int 5\sqrt{u}\,\frac{du}{3}$
 
@@ -30,7 +30,7 @@ Let $u = x^7 + 5x$
 
 $\frac{du}{dx} = 7x^6+5 \Rightarrow du = (7x^6+5)\,dx$
 
-$\frac{du}{dx} = \frac{dx}{7x^6+5}$
+$dx = \frac{du}{7x^6+5}$
 
 $\int \frac{21x^6+15}{x^7+5x}\cdot \frac{du}{7x^6+5} = \int \frac{3(7x^6+5)}{u}\,du = \int \frac{3}{u}\,du$
 
@@ -40,7 +40,7 @@ $= 3\ln|x^7+5x| + c$
 
 **3.)** $\int 3x(10-2x)^{10}\,dx$
 
-Let $u = 10-2x \Rightarrow x = \frac{-10-u}{2} = \frac{1}{2}u+5$
+Let $u = 10-2x \Rightarrow x = \frac{10-u}{2} = 5 - \frac{u}{2}$
 
 $du = -2\,dx \Rightarrow dx = -\frac{du}{2}$
 
@@ -169,10 +169,10 @@ $A = \frac{1}{2}bh = \frac{1}{2}(4)(8) = 16$
 $$\Delta x = \frac{b-a}{n}$$
 
 **Right Riemann Sum**
-- The heights of rectangles are determined by the height of the function at the **light-hand side** of each sub-interval.
-- First, determine (if many SubInterval) we want to blenk the interval into horizontally and calculate the width, $\Delta x$ of each subsection
+- The heights of rectangles are determined by the height of the function at the **right-hand side** of each sub-interval.
+- First, determine (if many SubInterval) we want to break the interval into horizontally and calculate the width, $\Delta x$ of each subsection
 - For an internal $[a,b]$ with $A$ subsections, we have: $$\Delta x = \frac{b-a}{n}$$
-- The heights of rectangles are the Value of $f(x)$ at ant the right end of each sub interval.
+- The heights of rectangles are the Value of $f(x)$ at the right end of each sub interval.
 - So, the sums is: $$R_n = \Delta x f(a+\Delta x) + \Delta x f(a+2\Delta x) + ... + \Delta x f(b)$$ or $$R_n = \Delta x(f(a+\Delta x) + f(a+2\Delta x) + ... + f(b))$$
 
 **Ex.** Find $R_8$ for $f(x) = x^2$ on $[0,4]$
@@ -225,7 +225,7 @@ $$\boxed{M_4 = 21}$$
 $$\text{Area}_{\text{trapezoid}} = \frac{1}{2}(b_1 + b_2)h$$
 where $h = \Delta x$
 
-$$T_n = \frac{1}{2}\Delta x(f(a) + f(a+\Delta x) + f(a+2\Delta x) + ... + 2f(b-\Delta))$$
+$$T_n = \frac{1}{2}\Delta x\bigl(f(a) + 2f(a+\Delta x) + 2f(a+2\Delta x) + \dots + 2f(b-\Delta x) + f(b)\bigr)$$
 $$T_n = \frac{1}{2}\Delta x(f(a) + 2f(a+\Delta x) + 2f(a+2\Delta x) + 2f(a+3\Delta x) + ... + f(b))$$
 or $$T_n = \frac{L_n + R_n}{2}$$
 

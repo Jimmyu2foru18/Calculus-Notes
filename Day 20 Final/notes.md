@@ -12,7 +12,7 @@
 
 Evaluate the limit: $\displaystyle \lim_{x \to 0} \frac{5-\sqrt{25+5x}}{x}$
 
-**Answer:** DNE (Does Not Exist)
+**Answer:** $-\dfrac{1}{2}$
 
 TI: Press HOME → [F3] → 1: select 1:
 Type: limit((5-sqrt(25+5*x))/x,x),0)
@@ -43,7 +43,7 @@ Identify all discontinuities of the function $f(x)$:
 
 $$f(x) = \begin{cases} x^3, & \text{if } x < 0 \\ x^2+3, & \text{if } 0 \leq x < 3 \\ x-1, & \text{if } x \geq 8 \end{cases}$$
 
-**Answer:** Jump discontinuity at $x = 3$, Infinite discontinuity at $x = 8$.
+**Answer:** Jump discontinuity at $x = 0$. The function is undefined on $(3, 8)$ (domain gap between the second and third branches).
 
 TI: To graphically inspect piece-wise structures or verify domain:
 **Press [F3] then [F1] (Y=)**
@@ -58,7 +58,7 @@ Find the value of $c$ that makes the function continuous:
 
 $$2c+4 = -5c+8$$
 
-**Answer:** $c = 7$
+**Answer:** $c = \dfrac{4}{7}$
 
 TI: Press HOME. Algebra menu by pressing [F2] select 1: Solve type: solve(2c+4=-5c+8,c)
 
@@ -83,9 +83,9 @@ Differentiate the function:
 
 $$f(x) = \frac{5x^3-2x+5}{4x-3}$$
 
-$$f'(x) = \frac{20x^2-45x+14}{(4x-3)^2}$$
+$$f'(x) = \frac{40x^3 - 45x^2 - 14}{(4x-3)^2}$$
 
-**Answer:** $\displaystyle \frac{20x^2-45x+14}{(4x-3)^2}$
+**Answer:** $\displaystyle \frac{40x^3 - 45x^2 - 14}{(4x-3)^2}$
 
 Select 1: d(differentiate). Type: $d[(5*x^3-2*x+5)/(4*x-3)],x)$
 
@@ -93,7 +93,7 @@ Differentiate the function:
 
 $$f(x) = \cot(x)^4 e^{\sin(x)}$$
 
-**Answer:** $-4x^3\csc(x)^4 e^{\sin(x)} + \cot(x)^4 e^{\sin(x)}\cos(x)$
+**Answer:** $-4\cot^3(x)\csc^2(x)e^{\sin(x)} + \cot^4(x)e^{\sin(x)}\cos(x)$
 
 TI: Press HOME → [F3] → 1: select d:
 $d(\cot(x)^4*e^{\sin(x)},x)$
@@ -112,7 +112,7 @@ TI: $d(\text{sqr}((30t)^2+(40t)^2),t) \mid t=1$
 
 Find the coordinates of the vertices of the maximum area rectangle inscribed in the semicircle $y = \sqrt{9-x^2}$.
 
-**Answer:** $\left(\frac{3\sqrt{3}}{2}, \frac{3\sqrt{2}}{2}\right)$ and $\left(-\frac{3\sqrt{3}}{2}, \frac{3\sqrt{2}}{2}\right)$
+**Answer:** $\left(\frac{3\sqrt{2}}{2}, \frac{3\sqrt{2}}{2}\right)$ and $\left(-\frac{3\sqrt{2}}{2}, \frac{3\sqrt{2}}{2}\right)$
 
 TI: differentiating the area expression and setting it to zero: Press HOME → [F2] → 1: solve:
 Type: solve(12*x^2*sqrt(9-x^2)=0,x)
@@ -143,7 +143,7 @@ $d(\cos(2-x)^2),4) = \ldots$
 
 Find the third-degree Taylor polynomial for $f(x) = x^3 - 2x$ centered at $x = 3$.
 
-**Answer:** $168 + 326(x-3) + 243(x-3)^2 + 87(x-3)^3$
+**Answer:** $21 + 25(x-3) + 9(x-3)^2 + (x-3)^3$
 
 TI Note: The TI Taylor expansion command.
 Press HOME → [F3] → 9: select taylor:
@@ -163,8 +163,7 @@ TI: Press HOME → [F3] → 2: select $\int$.
 
 Analyze the asymptotes of the function $y = x + \frac{1}{x}$
 
-**Answer:** Vertical Asymptote: $x = 0$
-Horizontal Asymptote: $y = 1$
+**Answer:** Vertical Asymptote: $x = 0$. No horizontal asymptote.
 
 TI-89 Instructions: To quickly evaluate the horizontal end behavior limit analytically.
 
@@ -186,7 +185,7 @@ Press ENTER. (Use the alpha keyboard button $D$ to represent and press [2nd][$\a
 
 Differentiate the function: $f(x) = \ln(3x^2+7x)$
 
-**Answer:** $\displaystyle \frac{15x+7}{3x^2+7x}$
+**Answer:** $\displaystyle \frac{6x+7}{3x^2+7x}$
 
 TI: Press HOME → [F3] → 1: select type: $d(\ln(3*x^2+7*x),x)$
 
@@ -268,7 +267,7 @@ TI: Press HOME → [F3] → 3: select 2: type: $f(\frac{2x^2}{4x^2+4}, x)$
 
 ### Example 6: Exponential u-Substitution
 
-$$\int x^2 e^{x^2} \, dx$$
+$$\int x^2 e^{x^3} \, dx$$
 
 **Steps:**
 Let $u = x^3$, so $du = 3x^2 \, dx$
@@ -277,9 +276,9 @@ Adjust constants: $\displaystyle \frac{1}{3}\int e^u \, du$
 
 Integrate: $\displaystyle \frac{1}{3}e^u + C$
 
-Answer: $\displaystyle \frac{1}{3}e^{x^2} + C$
+Answer: $\displaystyle \frac{1}{3}e^{x^3} + C$
 
-TI: Press HOME → [F3] → 3: select 2: type: $f(x^2*e^{x^2}, x)$
+TI: Press HOME → [F3] → 3: select 2: type: $f(x^2*e^{x^3}, x)$
 (Use [2nd][$e^x$] for exponential symbol)
 
 ### Example 7: Power Rule, definite
@@ -322,7 +321,7 @@ $g(x) = \int_{1}^{x} e^{\sin(t)} dt$
 - Use the Fundamental Theorem of Calculus Part 2 Chain Rule
 - Substitute the upper limit to the function and multiply by derivative of the upper limit:
 - $e^{\sin(x)} \cdot \frac{d}{dx}(x)$
-- $= xe^{\sin(x)}$
+- $= e^{\sin(x)}$
 - TI Calculator: Press HOME -> select 1: d(
 - Next the derivative: $d\left(\int_{1}^{t} e^{\sin(t)} dt, t, 1, 3, x\right), x$
 

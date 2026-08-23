@@ -260,7 +260,7 @@ For $f(x) = \dfrac{x^2 - 1}{x^3}$, we will perform the full curve sketching anal
 - Use the quotient rule $f''(x) = \dfrac{u'v - uv'}{v^2}$ where $u = -x^2 + 3$ and $v = x^4$.
 - Then $u' = -2x$ and $v' = 4x^3$.
 - $f''(x) = \dfrac{(-2x)(x^4) - (-x^2 + 3)(4x^3)}{(x^4)^2} = \dfrac{-2x^5 - (-4x^5 + 12x^3)}{x^8} = \dfrac{2(x^5 - 6)}{x^8}$
-- Potential inflection points: Set $f''(x) = 0$. $x^2 - 6 = 0 \to x = \pm\sqrt[5]{6}$.
+- Potential inflection points: Set $f''(x) = 0$. $x^2 - 6 = 0 \to x = \pm\sqrt{6}$.
 - Verify sign changes around $x = \pm\sqrt{6}$ to confirm inflection points.
 
 **7. Relative Max and Relative Min, and Points of Inflection**

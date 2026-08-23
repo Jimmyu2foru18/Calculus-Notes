@@ -18,7 +18,7 @@ $$= \int \left(14x^3 - x^{\frac{1}{4}}\right)dx$$
 
 $$= \frac{14}{4}x^4 - \frac{4}{5}x^{\frac{5}{4}} + C$$
 
-$$= \frac{7}{2}x^4 - \frac{4}{5}\sqrt[5]{x} + C$$
+$$= \frac{7}{2}x^4 - \frac{4}{5}x^{\frac{5}{4}} + C$$
 
 ---
 
@@ -48,9 +48,9 @@ $$= -\frac{5}{x} + \frac{1}{x^3} - \frac{1}{2x^4} + C$$
 
 $$= \int \left(x^{-1} + x^{\frac{7}{2}}\right)dx$$
 
-$$= \ln|x| + \frac{2}{9}x^9 + c$$
+$$= \ln|x| + \frac{2}{9}x^{\frac{9}{2}} + c$$
 
-$$= \ln|x| + \frac{2}{9}x^9 + C$$
+$$= \ln|x| + \frac{2}{9}x^{\frac{9}{2}} + C$$
 
 ---
 

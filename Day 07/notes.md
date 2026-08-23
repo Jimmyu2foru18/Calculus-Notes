@@ -75,7 +75,7 @@ $f'(x) = 3 - 21x^{-4}$
 
 $x^{5/3} + 2x^{-2} - 5x^{-2}$
 
-$f'(x) = \frac{5}{3}x^{2/3} + 4x - 10x^{-3}$
+$f'(x) = \frac{5}{3}x^{2/3} + 4x + 10x^{-3}$
 
 **$f'(x) = \dfrac{5}{3}\sqrt[3]{x^2} + 4x + \dfrac{10}{x^3}$** *(boxed)*
 
@@ -99,11 +99,11 @@ $f'(x) = 3 - 4x^{-2} + 24x^{-4}$
 
 $$\lim_{h\to 0}\frac{f(x+h)-f(x)}{h} = \lim_{h\to 0}\frac{h(x+h)g(x+h)-h(x)g(x)}{h}$$
 
-$$\frac{d}{dx}\left(f(x)\cdot g(x)\right) = \lim_{h\to 0}\frac{h(x+h)g(x+h)+h(x+h)g(x)-h(x+h)g(x)-h(x)g(x)}{h}$$
+$$\lim_{h\to 0}\frac{h(x+h)g(x+h)-h(x)g(x)}{h} = \lim_{h\to 0}\frac{h(x+h)g(x+h)+h(x+h)g(x)-h(x+h)g(x)-h(x)g(x)}{h}$$
 
-$$\frac{d}{dx}\left(f(x)\cdot g(x)\right) = \lim_{h\to 0}\frac{h(x+h)g(x+h)-hg(x)}{h} + \lim_{h\to 0}\frac{h(x+h)g(x)-h(x)g(x)}{h}$$
+$$\lim_{h\to 0}\frac{h(x+h)g(x+h)-h(x)g(x)}{h} = \lim_{h\to 0}\frac{h(x+h)g(x+h)-h(x)g(x)}{h} + \lim_{h\to 0}\frac{h(x+h)g(x)-h(x)g(x)}{h}$$
 
-$$\frac{d}{dx}\left(f(x)\cdot g(x)\right) = \lim_{h\to 0} h(x+h)\frac{g(x+h)-g(x)}{h} + \lim_{h\to 0} g(x)\frac{h(x+h)-h(x)}{h}$$
+$$\lim_{h\to 0}\frac{h(x+h)g(x+h)-h(x)g(x)}{h} = \lim_{h\to 0} h(x+h)\frac{g(x+h)-g(x)}{h} + \lim_{h\to 0} g(x)\frac{h(x+h)-h(x)}{h}$$
 
 $$\frac{d}{dx}\left(f(x)\cdot g(x)\right) = h(x)g'(x) + g(x)h'(x)$$ *(with $h(x)g'(x) + g(x)h'(x)$ highlighted in light blue)*
 
@@ -131,7 +131,9 @@ $f'(x) = \left(4x^3-2x^2+9x\right)\left(\frac{1}{2}x^{-\frac{1}{2}}\right) + \le
 
 *(boxed)* **Quotient Rule: If $f(x) = \dfrac{h(x)}{g(x)}$, then $f'(x) = \dfrac{g(x)h'(x)-h(x)g'(x)}{(g(x))^2}$.**
 
-*(boxed)* **Definition:** $f'(x) = f'(x) = \dfrac{h'(x)}{g'(x)}$, then $\dfrac{h(x)h'(x)-h(x)g'(x)}{(g(x))^2}$
+*(boxed)* **Definition:** $f'(x) = \lim\limits_{h\to 0}\dfrac{f(x+h)-f(x)}{h}$
+
+*(boxed)* **Quotient Rule:** If $f(x) = \dfrac{h(x)}{g(x)}$, then $f'(x) = \dfrac{g(x)h'(x)-h(x)g'(x)}{(g(x))^2}$.
 
 **Proof**
 
@@ -155,7 +157,7 @@ $$f'(x) = \lim_{h\to 0}\frac{h(x+h)g(x)-h(x)g(x)}{h\cdot g(x+h)g(x)} + \lim_{h\t
 
 **Step 5** *(label boxed)* — *(highlighted in light blue)* Group terms
 
-$$f'(x) = \left(\lim_{h\to 0}\frac{h(x+h)-h(x)}{h}\right)\frac{g(x)}{h(x+h)g(x)} - h(x)\left(\lim_{h\to 0}\frac{g(x+h)-g(x)}{h}\right)\frac{1}{g(x+h)g(x)}$$
+$$f'(x) = \left(\lim_{h\to 0}\frac{h(x+h)-h(x)}{h}\right)\frac{1}{g(x+h)} - h(x)\left(\lim_{h\to 0}\frac{g(x+h)-g(x)}{h}\right)\frac{1}{g(x+h)g(x)}$$
 
 **Step 6** *(label boxed)* — *(highlighted in light blue)* Evaluate limits
 
@@ -163,7 +165,7 @@ $$f'(x) = \left(\lim_{h\to 0}\frac{h(x+h)-h(x)}{h}\right)\frac{g(x)}{h(x+h)g(x)}
 
 *(boxed in green)* $\lim\limits_{h\to 0}\dfrac{h(x+h)-h(x)}{h} = h'(x)$ *(boxed in green)* $\lim\limits_{h\to 0}\dfrac{g(x+h)-g(x)}{h} = g'(x)$
 
-$$f'(x) = g(x)\cdot\frac{h'(x)}{(h(x))^2} - h(x)\cdot\frac{g'(x)}{(g(x))^2}$$
+$$f'(x) = \frac{h'(x)}{g(x)} - \frac{h(x)g'(x)}{(g(x))^2} = \frac{g(x)h'(x)-h(x)g'(x)}{(g(x))^2}$$
 
 **Conclusion**
 
