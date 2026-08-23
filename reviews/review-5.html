@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Review: Advanced Derivatives — Calculus Foundations</title>
+<link rel="stylesheet" href="../css/styles.css">
+<script>
+
+window.MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        tags: 'ams'
+    },
+    svg: { fontCache: 'global' },
+    options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+        ignoreHtmlClass: 'no-mathjax'
+    }
+};
+
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<header>
+    <h1>Calculus Foundations</h1>
+    <p class="subtitle">A Structured, Beginner-Friendly Path Through Calculus</p>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../chapters/limits.html">Curriculum</a>
+        <a href="index.html">Review Sheets</a>
+        <a href="https://github.com/Jimmyu2foru18/Calculus-Notes" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+</header>
+
+<div class="container">
+    <main>
+        
+<div class="review-hero">
+    <h2>Review: Advanced Derivatives</h2>
+    <p>Use this sheet to test your understanding before moving forward. Try each problem without looking at your notes, then check the formulas below.</p>
+</div>
+
+<div class="review-card">
+    <h3>Key Formulas at a Glance</h3>
+    <ul>
+        <li><em>(boxed in blue)</em> <strong>Definition of Derivative</strong></li>
+<li><em>Def: \(f' = \lim\limits_{h\to 0}\dfrac{f(x+h)-f(x)}{h}\)</em></li>
+<li>\[f'(x) = \lim_{h\to 0}\frac{\left(\sqrt{3(x+h)-4}-\sqrt{3x-4}\right)\left(\sqrt{3(x+h)-4}+\sqrt{3x-4}\right)}{h\left(\sqrt{3(x+h)-4}+\sqrt{3x-4}\right)}\]</li>
+<li>\[f'(x) = \lim_{h\to 0}\frac{3x+3h-4-3x+4}{h\left(\sqrt{3(x+h)-4}+\sqrt{3x-4}\right)}\]</li>
+<li>\[f'(x) = \lim_{h\to 0}\frac{3}{h\left(\sqrt{3(x+h)-4}+\sqrt{3x-4}\right)} = \frac{3}{\sqrt{3x-4}+\sqrt{3x-4}}\]</li>
+<li>\(LCD = (4x+h+1)(4x+1)\)</li>
+<li>\[f'(x) = \lim_{h\to 0}\frac{5(4x+1+1)-5(4(x+h)+1)}{(4x+h+1)(4x+1)}\]</li>
+<li>\[f'(x) = \lim_{h\to 0}\frac{20x+5-20x-20h-5}{h(4x+h+1)(4x+1)}\]</li>
+<li>\[f'(x) = \lim_{h\to 0}\frac{-20h}{h(4x+h+1)(4x+1)} = \frac{-20}{(4x+h+1)(4x+1)}\]</li>
+<li>\(f(x) = x^{1/2} - 5x^2\)</li>
+<li>\(f'(x) = \frac{1}{2}x^{-1/2} - 10x\)</li>
+<li>\(f'(x) = \frac{1}{2\sqrt{x}} - 10x\)</li>
+<li>\(f(x) = 3x + 7x^{-3}\)</li>
+<li>\(f'(x) = 3 - 21x^{-4}\)</li>
+<li><em>(curved arrows point from \(\sqrt[3]{x^5}\) down to \(x^{5/3}\) and from \(\frac{5}{x^2}\) down to \(5x^{-2}\))</em></li>
+<li>\(x^{5/3} + 2x^{-2} - 5x^{-2}\)</li>
+<li>\(f'(x) = \frac{5}{3}x^{2/3} + 4x + 10x^{-3}\)</li>
+<li>\(f(x) = 3x + 4x^{-1} - 8x^{-3}\)</li>
+<li>\(f'(x) = 3 - 4x^{-2} + 24x^{-4}\)</li>
+<li><em>(boxed)</em> <strong>Product Rule: If \(f(x) = h(x)\cdot g(x)\) then \(f'(x) = h(x)\cdot g'(x) + g(x)\cdot h'(x)\)</strong> <em>(the formula \(f'(x) = h(x)\cdot g'(x) + g(x)\cdot h'(x)\) highlighted in light blue)</em></li>
+    </ul>
+</div>
+
+<div class="review-card">
+    <h3>Practice Problems</h3>
+    <ol>
+        <li>Complete the end-of-section practice problems.</li>
+    </ol>
+</div>
+
+<div class="review-nav">
+    <a href="../index.html" class="review-nav-btn">← Back to Home</a>
+    <span class="review-nav-indicator">Self-Check</span>
+    <a href="review-6.html" class="review-nav-btn">Next Chapter →</a>
+</div>
+
+    </main>
+</div>
+
+<button class="note-btn note-sidebar-toggle" type="button">Notes</button>
+
+<script src="../js/app.js"></script>
+<script>
+window.CalculusChapters = CHAPTERS_LIST_JSON;
+window.CurrentChapterId = "";
+</script>
+</body>
+</html>
+
+

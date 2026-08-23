@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.8 — Implicit Differentiation — Calculus Foundations</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+window.MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        tags: 'ams'
+    },
+    svg: { fontCache: 'global' },
+    options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+        ignoreHtmlClass: 'no-mathjax'
+    }
+};
+</script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<header>
+    <h1>Calculus Foundations</h1>
+    <p class="subtitle">A Structured, Beginner-Friendly Path Through Calculus</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="chapters/limits.html">Curriculum</a>
+        <a href="reviews/index.html">Review Sheets</a>
+        <a href="https://github.com/Jimmyu2foru18/Calculus-Notes" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+</header>
+
+<div class="container">
+    <main>
+        <p><a href="chapters/derivatives.html" class="nav-btn">← Back to Derivatives</a></p>
+        <div class="chapter">
+    <h2>3.8 — Implicit Differentiation</h2>
+</div>
+
+<section class="topic-section" id="3.8">
+    <h2>3.8 — Implicit Differentiation</h2>
+
+<p>
+Most curves in calculus — circles, ellipses, hyperbolas — are not functions $y = f(x)$ at all. 
+They are defined <strong>implicitly</strong> by an equation involving both $x$ and $y$, like $x^2 + y^2 = 1$. 
+<strong>Implicit differentiation</strong> lets us find $\dfrac{dy}{dx}$ without solving for $y$ explicitly, 
+by differentiating both sides of the equation and remembering that $y$ is a function of $x$.
+</p>
+
+<h3>Key Technique</h3>
+<div class="notes">
+<h4>Procedure for Implicit Differentiation</h4>
+<ol>
+<li>Differentiate both sides of the equation with respect to $x$.</li>
+<li>Treat $y$ as a function of $x$: when differentiating $y$, write $\dfrac{dy}{dx}$ (or $y'$).</li>
+<li>Collect all terms containing $\dfrac{dy}{dx}$ on one side.</li>
+<li>Factor out $\dfrac{dy}{dx}$ and solve for it.</li>
+</ol>
+</div>
+
+<h3>Worked Example — Circle</h3>
+<div class="example">
+<h4>Example 3.8.1</h4>
+<p>Find $\dfrac{dy}{dx}$ for the circle $x^2 + y^2 = 25$.</p>
+<p><strong>Step 1:</strong> Differentiate both sides with respect to $x$.</p>
+$$\frac{d}{dx}(x^2) + \frac{d}{dx}(y^2) = \frac{d}{dx}(25)$$
+$$2x + 2y\frac{dy}{dx} = 0$$
+<p><strong>Step 2:</strong> Solve for $\dfrac{dy}{dx}$.</p>
+$$2y\frac{dy}{dx} = -2x$$
+$$\frac{dy}{dx} = -\frac{x}{y}$$
+<p class="mnemonic"><strong>Answer:</strong> For any point $(x,y)$ on the circle, the slope is $\boxed{-\dfrac{x}{y}}$.</p>
+</div>
+
+<h3>Implicit Curve</h3>
+<div class="visual-aid">
+<h4>Figure 3.8 — An Implicit Curve and Its Tangent</h4>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <line x1="40" y1="230" x2="460" y2="230" stroke="#000" stroke-width="1.5"/>
+    <line x1="240" y1="20" x2="240" y2="240" stroke="#000" stroke-width="1"/>
+    <text x="450" y="245" font-size="12" fill="#000">x</text>
+    <text x="250" y="30" font-size="12" fill="#000">y</text>
+    <ellipse cx="240" cy="130" rx="150" ry="80" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+    <circle cx="340" cy="70" r="4" fill="#e74c3c"/>
+    <line x1="300" y1="130" x2="380" y2="10" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="385" y="15" font-size="10" fill="#e74c3c">tangent</text>
+    <text x="305" y="170" font-size="10" fill="#666">$(x,y)$ on curve $F(x,y)=0$</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.8: Implicit curves cannot be written as $y = f(x)$, but they still have tangent lines with slopes found by implicit differentiation.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Find $\dfrac{dy}{dx}$ for the ellipse $4x^2 + 9y^2 = 36$.</li>
+<li>Find $\dfrac{dy}{dx}$ for $x^3 + y^3 = 6xy$ (the folium of Descartes).</li>
+<li>Find the equation of the tangent line to $x^2 + xy + y^2 = 7$ at the point $(1, 2)$.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>When differentiating $y^n$, use the Chain Rule: $\dfrac{d}{dx}(y^n) = n y^{n-1} \dfrac{dy}{dx}$.</li>
+<li>Don't solve for $y$ first — that's usually harder and often impossible in closed form.</li>
+<li>After finding $\dfrac{dy}{dx}$, check its sign against the curve's shape to verify.</li>
+<li>At points where the tangent is vertical, $\dfrac{dy}{dx}$ is undefined but $\dfrac{dx}{dy}$ may be zero.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ============================================================
+     SECTION 3.9 — Derivatives of Logarithmic and Exponential Functions
+     ============================================================ -->
+</section>
+
+<nav class="chapter-nav" aria-label="Section navigation">
+    <a href="3.7.html" class="nav-btn">← 3.7 — The Chain Rule</a>
+    <span class="nav-indicator">02.Derivatives</span>
+    <a href="3.9.html" class="nav-btn">3.9 — Derivatives of Logarithmic and Exponential Functions →</a>
+</nav>
+
+
+    </main>
+</div>
+
+<button class="note-btn note-sidebar-toggle" type="button">Notes</button>
+
+<script src="js/app.js"></script>
+<script>
+window.CalculusChapters = CHAPTERS_LIST_JSON;
+window.CurrentChapterId = "derivatives";
+</script>
+</body>
+</html>

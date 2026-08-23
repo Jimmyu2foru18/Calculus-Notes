@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.9 — Derivatives of Logarithmic and Exponential Functions — Calculus Foundations</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+window.MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        tags: 'ams'
+    },
+    svg: { fontCache: 'global' },
+    options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+        ignoreHtmlClass: 'no-mathjax'
+    }
+};
+</script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<header>
+    <h1>Calculus Foundations</h1>
+    <p class="subtitle">A Structured, Beginner-Friendly Path Through Calculus</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="chapters/limits.html">Curriculum</a>
+        <a href="reviews/index.html">Review Sheets</a>
+        <a href="https://github.com/Jimmyu2foru18/Calculus-Notes" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+</header>
+
+<div class="container">
+    <main>
+        <p><a href="chapters/derivatives.html" class="nav-btn">← Back to Derivatives</a></p>
+        <div class="chapter">
+    <h2>3.9 — Derivatives of Logarithmic and Exponential Functions</h2>
+</div>
+
+<section class="topic-section" id="3.9">
+    <h2>3.9 — Derivatives of Logarithmic and Exponential Functions</h2>
+
+<p>
+Exponential and logarithmic functions model growth, decay, and information scales. 
+Their derivatives have a remarkable property: <strong>the exponential function is its own derivative</strong> (up to a constant factor). 
+This makes $e^x$ the natural choice for modeling continuous growth.
+</p>
+
+<h3>Key Theorems</h3>
+<div class="notes">
+<h4>Theorem — Exponential and Logarithmic Derivatives</h4>
+<table class="review-table">
+<thead><tr><th>Function</th><th>Derivative</th><th>Conditions</th></tr></thead>
+<tbody>
+<tr><td>$e^x$</td><td>$e^x$</td><td>all $x$</td></tr>
+<tr><td>$a^x$ ($a>0$)</td><td>$a^x \ln a$</td><td>all $x$</td></tr>
+<tr><td>$\ln x$</td><td>$\dfrac{1}{x}$</td><td>$x > 0$</td></tr>
+<tr><td>$\log_a x$</td><td>$\dfrac{1}{x \ln a}$</td><td>$x > 0$</td></tr>
+</tbody>
+</table>
+<p>The constant $e \approx 2.71828$ is the unique base for which $\dfrac{d}{dx}(e^x) = e^x$.</p>
+</div>
+
+<h3>Worked Example — Logarithmic Differentiation</h3>
+<div class="example">
+<h4>Example 3.9.1</h4>
+<p>Differentiate $f(x) = x^x$ for $x > 0$.</p>
+<p><strong>Step 1:</strong> Take the natural logarithm of both sides.</p>
+$$\ln(f(x)) = \ln(x^x) = x \ln x$$
+<p><strong>Step 2:</strong> Differentiate implicitly with respect to $x$.</p>
+$$\frac{f'(x)}{f(x)} = \ln x + x \cdot \frac{1}{x} = \ln x + 1$$
+<p><strong>Step 3:</strong> Solve for $f'(x)$.</p>
+$$f'(x) = f(x)(\ln x + 1) = x^x(\ln x + 1)$$
+</div>
+
+<h3>Exponential Growth Curve</h3>
+<div class="visual-aid">
+<h4>Figure 3.9 — Exponential Growth and Its Derivative</h4>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <line x1="40" y1="230" x2="460" y2="230" stroke="#000" stroke-width="1.5"/>
+    <line x1="240" y1="20" x2="240" y2="240" stroke="#000" stroke-width="1"/>
+    <text x="450" y="245" font-size="12" fill="#000">x</text>
+    <text x="250" y="30" font-size="12" fill="#000">y</text>
+    <path d="M 60,220 C 120,210 160,190 200,150 S 280,70 340,40 S 420,10 460,5" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+    <path d="M 60,220 C 120,210 160,190 200,150 S 280,70 340,40 S 420,10 460,5" fill="none" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,4"/>
+    <text x="60" y="210" font-size="11" fill="#1a3a5c">$f(x) = e^x$</text>
+    <text x="60" y="195" font-size="11" fill="#e74c3c">$f'(x) = e^x$</text>
+    <text x="160" y="170" font-size="10" fill="#999">$f = f'$!</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.9: The exponential function $e^x$ is its own derivative. At every point, the slope equals the function value.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Differentiate $f(x) = e^{3x} + \ln(x^2 + 1)$.</li>
+<li>Differentiate $f(x) = 2^{x^2}$.</li>
+<li>Use logarithmic differentiation to find $f'(x)$ for $f(x) = (x+1)^{\sqrt{x}}$.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Memorize $\frac{d}{dx}(e^x) = e^x$ cold — it is the most useful derivative in all of calculus.</li>
+<li>For $a^x$, recall the proof: $a^x = e^{x\ln a}$, so the Chain Rule gives $a^x \ln a$.</li>
+<li>Logarithmic differentiation shines for $x^x$, products of many factors, or quotients with exponents.</li>
+<li>Always check the domain: $\ln x$ requires $x > 0$; $\log_a x$ requires $x > 0$ and $a \ne 1$.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ============================================================
+     SECTION 3.10 — Derivatives of Inverse Trigonometric Functions
+     ============================================================ -->
+</section>
+
+<nav class="chapter-nav" aria-label="Section navigation">
+    <a href="3.8.html" class="nav-btn">← 3.8 — Implicit Differentiation</a>
+    <span class="nav-indicator">02.Derivatives</span>
+    <a href="3.10.html" class="nav-btn">3.10 — Derivatives of Inverse Trigonometric Functions →</a>
+</nav>
+
+
+    </main>
+</div>
+
+<button class="note-btn note-sidebar-toggle" type="button">Notes</button>
+
+<script src="js/app.js"></script>
+<script>
+window.CalculusChapters = CHAPTERS_LIST_JSON;
+window.CurrentChapterId = "derivatives";
+</script>
+</body>
+</html>

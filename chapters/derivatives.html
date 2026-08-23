@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>02. Derivatives — Calculus Foundations</title>
+<link rel="stylesheet" href="css/styles.css">
+<script>
+window.MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        tags: 'ams'
+    },
+    svg: { fontCache: 'global' },
+    options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+        ignoreHtmlClass: 'no-mathjax'
+    }
+};
+</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<header>
+    <h1>Calculus Foundations</h1>
+    <p class="subtitle">A Structured, Beginner-Friendly Path Through Calculus</p>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="chapters/limits.html">Curriculum</a>
+        <a href="reviews/index.html">Review Sheets</a>
+        <a href="https://github.com/Jimmyu2foru18/Calculus-Notes" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+</header>
+
+<div class="container">
+<main>
+
+<div class="chapter">
+    <h2>Derivatives</h2>
+</div>
+
+<div class="lead">Chapter 2 of Calculus Foundations. Work through each section in order, then test yourself with the review sheet. Use the built-in notepad (bottom-right) to work through examples.</div>
+<div class="section-heading">Chapter Sections</div>
+<div class="toc">
+    <ul>
+        <li><a href="3.1.html">3.1 — Introducing the Derivative</a></li>
+        <li><a href="3.2.html">3.2 — Working with Derivatives</a></li>
+        <li><a href="3.3.html">3.3 — Rules of Differentiation</a></li>
+        <li><a href="3.4.html">3.4 — The Product and Quotient Rules</a></li>
+        <li><a href="3.5.html">3.5 — Derivatives of Trigonometric Functions</a></li>
+        <li><a href="3.6.html">3.6 — Derivatives as Rates of Change</a></li>
+        <li><a href="3.7.html">3.7 — The Chain Rule</a></li>
+        <li><a href="3.8.html">3.8 — Implicit Differentiation</a></li>
+        <li><a href="3.9.html">3.9 — Derivatives of Logarithmic and Exponential Functions</a></li>
+        <li><a href="3.10.html">3.10 — Derivatives of Inverse Trigonometric Functions</a></li>
+        <li><a href="higher-order.html">higher-order — Higher-Order Derivatives</a></li>
+    </ul>
+</div>
+
+
+
+
+
+
+<!-- ============================================================
+     SECTION 3.1 — Introducing the Derivative
+     ============================================================ -->
+<section class="topic-section" id="section-3.1">
+<h2>3.1 — Introducing the Derivative</h2>
+
+<p>
+Calculus is the mathematics of <strong>change</strong>. While limits let us describe behavior near a point, 
+<strong>derivatives</strong> let us measure <em>how fast</em> something is changing at an instant. 
+The derivative is the single most important tool in calculus — it bridges algebra, geometry, and real-world motion.
+</p>
+
+<h3>Key Definitions</h3>
+<div class="notes">
+<h4>Definition — The Derivative</h4>
+<p>
+Let $f$ be a function defined on an open interval containing $x$. The <strong>derivative</strong> of $f$ at $x$ is
+</p>
+$$f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h},$$
+<p>
+provided the limit exists. If the limit exists, we say $f$ is <strong>differentiable</strong> at $x$.
+</p>
+<p>
+The expression $\dfrac{f(x+h)-f(x)}{h}$ is the <strong>difference quotient</strong>. 
+Geometrically, it is the slope of the <strong>secant line</strong> through the points $(x, f(x))$ and $(x+h, f(x+h))$.
+As $h \to 0$, the secant line approaches the <strong>tangent line</strong>, and its slope becomes the derivative.
+</p>
+</div>
+
+<h3>Worked Example — Using the Limit Definition</h3>
+<div class="example">
+<h4>Example 3.1.1</h4>
+<p>Find $f'(x)$ for $f(x) = x^2 - 3x + 2$ using the limit definition.</p>
+<p><strong>Step 1:</strong> Write $f(x+h)$ and form the difference quotient.</p>
+$$f(x+h) = (x+h)^2 - 3(x+h) + 2 = x^2 + 2xh + h^2 - 3x - 3h + 2$$
+$$f(x+h) - f(x) = \underbrace{x^2 + 2xh + h^2 - 3x - 3h + 2}_{f(x+h)} - \underbrace{(x^2 - 3x + 2)}_{f(x)}$$
+$$= 2xh + h^2 - 3h$$
+<p><strong>Step 2:</strong> Divide by $h$ and simplify.</p>
+$$\frac{f(x+h) - f(x)}{h} = \frac{2xh + h^2 - 3h}{h} = \frac{h(2x + h - 3)}{h} = 2x + h - 3$$
+<p><strong>Step 3:</strong> Take the limit as $h \to 0$.</p>
+$$f'(x) = \lim_{h \to 0} (2x + h - 3) = 2x - 3$$
+<p class="mnemonic"><strong>Answer:</strong> $f'(x) = \boxed{2x - 3}$</p>
+</div>
+
+<h3>Visualizing the Secant-to-Tangent Transition</h3>
+<div class="visual-aid">
+<h4>Figure 3.1 — Secant Lines Approaching the Tangent Line</h4>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <defs>
+        <marker id="arrow" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+            <path d="M0,0 L6,3 L0,6 Z" fill="#999"/>
+        </marker>
+    </defs>
+    <line x1="40" y1="230" x2="460" y2="230" stroke="#000" stroke-width="1.5"/>
+    <line x1="240" y1="20" x2="240" y2="240" stroke="#000" stroke-width="1"/>
+    <text x="450" y="245" font-size="12" fill="#000">x</text>
+    <text x="250" y="30" font-size="12" fill="#000">y</text>
+    <path d="M 60,180 C 120,170 180,130 240,100 S 360,60 440,40" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+    <line x1="160" y1="220" x2="340" y2="80" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="5,4"/>
+    <circle cx="240" cy="100" r="3.5" fill="#1a3a5c"/>
+    <line x1="240" y1="100" x2="340" y2="80" stroke="#e74c3c" stroke-width="1.2" stroke-dasharray="3,3"/>
+    <text x="345" y="75" font-size="11" fill="#e74c3c">secant</text>
+    <line x1="240" y1="100" x2="320" y2="95" stroke="#27ae60" stroke-width="2"/>
+    <text x="325" y="90" font-size="11" fill="#27ae60">tangent</text>
+    <text x="145" y="212" font-size="10" fill="#666">x − h</text>
+    <text x="345" y="212" font-size="10" fill="#666">x + h</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.1: As $h$ shrinks, the secant line (red, dashed) rotates toward the tangent line (green) at $(x, f(x))$.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Use the limit definition to find $f'(x)$ for $f(x) = 3x - 7$.</li>
+<li>Use the limit definition to find $f'(x)$ for $f(x) = x^2 + 4$.</li>
+<li>Show that $f(x) = |x|$ is <strong>not</strong> differentiable at $x = 0$ by computing the left- and right-hand limits.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Memorize the limit definition verbatim — every other rule derives from it.</li>
+<li>When expanding $(x+h)^n$, use the binomial theorem for $n \ge 3$.</li>
+<li>Always cancel $h$ before substituting $h = 0$; a $0$ in the denominator signals an algebraic mistake.</li>
+<li>Sketch the curve and tangent line before computing; the picture tells you whether your answer is reasonable.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ============================================================
+     SECTION 3.2 — Working with Derivatives
+     ============================================================ -->
+<section class="topic-section" id="section-3.2">
+<h2>3.2 — Working with Derivatives</h2>
+
+<p>
+Once we know the derivative exists, what does it <em>mean</em>? The derivative $f'(x)$ is the 
+<strong>instantaneous rate of change</strong> of $f$ with respect to $x$. 
+Its value tells us the slope of the tangent line, and its <strong>sign</strong> tells us whether $f$ is increasing, decreasing, or flat at that point.
+</p>
+
+<h3>Key Definitions</h3>
+<div class="notes">
+<h4>Definition — Increasing, Decreasing, and Constant</h4>
+<p>Let $f$ be differentiable on an interval $I$.</p>
+<ul>
+<li>$f$ is <strong>increasing</strong> on $I$ if $f'(x) > 0$ for all $x \in I$.</li>
+<li>$f$ is <strong>decreasing</strong> on $I$ if $f'(x) < 0$ for all $x \in I$.</li>
+<li>$f$ is <strong>constant</strong> on $I$ if $f'(x) = 0$ for all $x \in I$.</li>
+</ul>
+</div>
+
+<h3>Worked Example — Interpreting the Derivative</h3>
+<div class="example">
+<h4>Example 3.2.1</h4>
+<p>Let $f(x) = x^3 - 6x^2 + 9x + 1$. Determine where $f$ is increasing and decreasing.</p>
+<p><strong>Step 1:</strong> Compute $f'(x)$ using the Power Rule.</p>
+$$f'(x) = 3x^2 - 12x + 9$$
+<p><strong>Step 2:</strong> Factor $f'(x)$ to find critical points.</p>
+$$f'(x) = 3(x^2 - 4x + 3) = 3(x-1)(x-3)$$
+<p><strong>Step 3:</strong> Test the sign of $f'$ on each interval.</p>
+<ul>
+<li>On $(-\infty, 1)$: pick $x = 0 \Rightarrow f'(0) = 3(0-1)(0-3) = 9 > 0$ → <strong>increasing</strong></li>
+<li>On $(1, 3)$: pick $x = 2 \Rightarrow f'(2) = 3(1)(-1) = -3 < 0$ → <strong>decreasing</strong></li>
+<li>On $(3, \infty)$: pick $x = 4 \Rightarrow f'(4) = 3(3)(1) = 9 > 0$ → <strong>increasing</strong></li>
+</ul>
+<p class="mnemonic"><strong>Conclusion:</strong> $f$ increases on $(-\infty, 1) \cup (3, \infty)$ and decreases on $(1, 3)$.</p>
+</div>
+
+<h3>Derivative as Slope</h3>
+<div class="visual-aid">
+<h4>Figure 3.2 — The Derivative Gives the Slope of the Tangent Line</h4>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <line x1="40" y1="230" x2="460" y2="230" stroke="#000" stroke-width="1.5"/>
+    <line x1="240" y1="20" x2="240" y2="240" stroke="#000" stroke-width="1"/>
+    <text x="450" y="245" font-size="12" fill="#000">x</text>
+    <text x="250" y="30" font-size="12" fill="#000">y</text>
+    <path d="M 60,200 C 140,180 180,120 240,100 S 340,60 440,30" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+    <line x1="180" y1="230" x2="300" y2="70" stroke="#e74c3c" stroke-width="2"/>
+    <circle cx="240" cy="100" r="4" fill="#fff" stroke="#1a3a5c" stroke-width="2"/>
+    <text x="255" y="95" font-size="11" fill="#1a3a5c">$(x, f(x))$</text>
+    <line x1="240" y1="100" x2="240" y2="230" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="240" y1="100" x2="300" y2="70" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="305" y="65" font-size="10" fill="#27ae60">slope = $f'(x)$</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.2: The derivative $f'(x)$ equals the slope of the tangent line at $(x, f(x))$.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Find $f'(x)$ for $f(x) = 4x^3 - x^2 + 7$. Where is $f$ increasing?</li>
+<li>Find $f'(x)$ for $f(x) = \frac{1}{3}x^3 - 2x^2 + 3x$. Determine the intervals of increase and decrease.</li>
+<li>True or False: If $f'(2) = 0$, then $f$ has a local maximum at $x = 2$. Explain.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Sign charts are your friend — draw them for every sign-analysis problem.</li>
+<li>Always factor the derivative completely before testing intervals.</li>
+<li>Remember: $f'(c) = 0$ is necessary but not sufficient for a local extremum.</li>
+<li>Relate the algebraic result back to the graph: "positive slope → rising curve."</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ============================================================
+     SECTION 3.3 — Rules of Differentiation
+     ============================================================ -->
+<section class="topic-section" id="section-3.3">
+<h2>3.3 — Rules of Differentiation</h2>
+
+<p>
+Computing derivatives from the limit definition every time is tedious. 
+<strong>Differentiation rules</strong> are proven shortcuts that let us compute derivatives mechanically.
+Mastering these rules is essential — they are the "grammar" of calculus.
+</p>
+
+<h3>Key Theorems</h3>
+<div class="derivation">
+<h4>Theorem — Power Rule</h4>
+<p>For any real number $n$ and $x > 0$:</p>
+$$\frac{d}{dx}\left[x^n\right] = n x^{n-1}$$
+<p><em>Proof sketch:</em> Expand $(x+h)^n$ with the binomial theorem, subtract $x^n$, divide by $h$, and let $h \to 0$. All terms containing $h$ vanish except $n x^{n-1}$.</p>
+</div>
+
+<div class="derivation">
+<h4>Theorem — Constant Multiple and Sum/Difference Rules</h4>
+<p>If $c$ is a constant and $f, g$ are differentiable:</p>
+$$\frac{d}{dx}[c \cdot f(x)] = c \cdot f'(x)$$
+$$\frac{d}{dx}[f(x) \pm g(x)] = f'(x) \pm g'(x)$$
+</div>
+
+<div class="derivation">
+<h4>Theorem — Constant Rule</h4>
+<p>If $c$ is any real constant:</p>
+$$\frac{d}{dx}[c] = 0$$
+</div>
+
+<h3>Worked Example — Applying Multiple Rules</h3>
+<div class="example">
+<h4>Example 3.3.1</h4>
+<p>Differentiate $f(x) = 3x^5 - 4\sqrt{x} + \frac{7}{x^2}$.</p>
+<p><strong>Step 1:</strong> Rewrite all terms using rational exponents.</p>
+$$f(x) = 3x^5 - 4x^{1/2} + 7x^{-2}$$
+<p><strong>Step 2:</strong> Apply the Power Rule term-by-term.</p>
+$$f'(x) = 3 \cdot 5x^4 - 4 \cdot \tfrac{1}{2}x^{-1/2} + 7 \cdot (-2)x^{-3}$$
+<p><strong>Step 3:</strong> Simplify and rewrite with radicals.</p>
+$$f'(x) = 15x^4 - \frac{2}{\sqrt{x}} - \frac{14}{x^3}$$
+</div>
+
+<h3>Power Rule Visualization</h3>
+<div class="visual-aid">
+<h4>Figure 3.3 — How the Power Rule Affects the Graph</h4>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <line x1="40" y1="230" x2="460" y2="230" stroke="#000" stroke-width="1.5"/>
+    <line x1="240" y1="20" x2="240" y2="240" stroke="#000" stroke-width="1"/>
+    <text x="450" y="245" font-size="12" fill="#000">x</text>
+    <text x="250" y="30" font-size="12" fill="#000">y</text>
+    <path d="M 60,210 Q 150,200 200,150 T 350,50" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+    <path d="M 60,210 Q 150,190 200,100 T 350,20" fill="none" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,4"/>
+    <text x="60" y="225" font-size="11" fill="#1a3a5c">$f(x) = x^2$</text>
+    <text x="60" y="195" font-size="11" fill="#e74c3c">$f'(x) = 2x$</text>
+    <line x1="200" y1="100" x2="200" y2="230" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+    <circle cx="200" cy="100" r="3" fill="#e74c3c"/>
+    <text x="210" y="95" font-size="10" fill="#666">same $x$, lower slope</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.3: The derivative of $x^2$ is $2x$. Where the original curve is steep, $f'$ is large; where it flattens, $f'$ approaches zero.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Differentiate $f(x) = x^7 - 3x^4 + x^2 - 5$.</li>
+<li>Differentiate $f(x) = \sqrt[3]{x^2} + 4x^{-3}$.</li>
+<li>Find the equation of the tangent line to $y = x^2$ at $x = 3$.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Convert roots and reciprocals to rational exponents before differentiating.</li>
+<li>The Power Rule applies <em>term by term</em> — never distribute the derivative across a sum incorrectly.</li>
+<li>Write $f'(x)$ in the same form as the original problem unless asked otherwise (e.g., keep radicals if the problem has them).</li>
+<li>Check units: if $f(x)$ is in meters, $f'(x)$ is in meters per unit of $x$.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ============================================================
+     SECTION 3.4 — The Product and Quotient Rules
+     ============================================================ -->
+<section class="topic-section" id="section-3.4">
+<h2>3.4 — The Product and Quotient Rules</h2>
+
+<p>
+The derivative of a sum is the sum of derivatives, but <strong>multiplication and division require special rules</strong>. 
+The Product Rule and Quotient Rule are easy to misapply — memorizing them is half the battle; using them correctly is the other half.
+</p>
+
+<h3>Key Theorems</h3>
+<div class="derivation">
+<h4>Theorem — Product Rule</h4>
+<p>If $f(x) = u(x) \cdot v(x)$, where $u$ and $v$ are differentiable:</p>
+$$f'(x) = u(x) \cdot v'(x) + v(x) \cdot u'(x)$$
+<p><em>Memory aid:</em> "First times derivative of second, plus second times derivative of first."</p>
+</div>
+
+<div class="derivation">
+<h4>Theorem — Quotient Rule</h4>
+<p>If $f(x) = \dfrac{u(x)}{v(x)}$, where $v(x) \ne 0$ and both are differentiable:</p>
+$$f'(x) = \frac{v(x) \cdot u'(x) - u(x) \cdot v'(x)}{[v(x)]^2}$$
+<p><em>Memory aid:</em> "Low d-high minus high d-low, over the square of what's below."</p>
+</div>
+
+<h3>Worked Example — Product Rule</h3>
+<div class="example">
+<h4>Example 3.4.1</h4>
+<p>Differentiate $f(x) = (3x^2 - 1)(x^3 + 2x)$.</p>
+<p><strong>Step 1:</strong> Identify $u$ and $v$ and their derivatives.</p>
+$$u(x) = 3x^2 - 1 \quad \Rightarrow \quad u'(x) = 6x$$
+$$v(x) = x^3 + 2x \quad \Rightarrow \quad v'(x) = 3x^2 + 2$$
+<p><strong>Step 2:</strong> Apply the Product Rule.</p>
+$$f'(x) = u(x) \cdot v'(x) + v(x) \cdot u'(x)$$
+$$= (3x^2 - 1)(3x^2 + 2) + (x^3 + 2x)(6x)$$
+<p><strong>Step 3:</strong> Expand and simplify.</p>
+$$= (9x^4 + 6x^2 - 3x^2 - 2) + (6x^4 + 12x^2)$$
+$$= 15x^4 + 15x^2 - 2$$
+</div>
+
+<h3>Product and Quotient Rule Diagrams</h3>
+<div class="visual-aid">
+<h4>Figure 3.4 — Visualizing the Product Rule</h4>
+<svg viewBox="0 0 480 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <rect x="60" y="40" width="160" height="120" fill="#e8eef3" stroke="#1a3a5c" stroke-width="1.5"/>
+    <rect x="260" y="40" width="160" height="120" fill="#fef9e7" stroke="#b08800" stroke-width="1.5"/>
+    <text x="140" y="75" font-size="13" text-anchor="middle" fill="#1a3a5c" font-weight="bold">$u(x)$</text>
+    <text x="340" y="75" font-size="13" text-anchor="middle" fill="#b08800" font-weight="bold">$v(x)$</text>
+    <text x="140" y="105" font-size="11" text-anchor="middle" fill="#333">original</text>
+    <text x="340" y="105" font-size="11" text-anchor="middle" fill="#333">original</text>
+    <text x="140" y="130" font-size="11" text-anchor="middle" fill="#e74c3c">$u'(x)$</text>
+    <text x="340" y="130" font-size="11" text-anchor="middle" fill="#e74c3c">$v'(x)$</text>
+    <text x="140" y="155" font-size="11" text-anchor="middle" fill="#666">"keep one,"</text>
+    <text x="340" y="155" font-size="11" text-anchor="middle" fill="#666">"keep one,"</text>
+    <text x="220" y="105" font-size="16" text-anchor="middle" fill="#e74c3c">+</text>
+    <text x="420" y="105" font-size="14" text-anchor="middle" fill="#333">$f' = u v' + v u'$</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.4: The Product Rule keeps one factor unchanged and differentiates the other, then adds the two results.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Differentiate $f(x) = (2x+1)(x^2 - 3x)$ using the Product Rule.</li>
+<li>Differentiate $f(x) = \dfrac{x^2 + 1}{x - 2}$ using the Quotient Rule.</li>
+<li>Simplify $(x^2+1)(x^3-2)' + (x^3-2)(x^2+1)'$ using the Product Rule.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Label $u$ and $v$ (or "high" and "low") explicitly before writing the rule — it prevents mix-ups.</li>
+<li>For the Quotient Rule, remember the <strong>minus sign</strong>: it's $v \cdot u' \mathbf{-} u \cdot v'$, not plus.</li>
+<li>Never simplify the denominator of the Quotient Rule prematurely; you may need to factor it later.</li>
+<li>The Product Rule generalizes to three or more factors: take the derivative of <em>exactly one</em> factor at a time.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ============================================================
+     SECTION 3.5 — Derivatives of Trigonometric Functions
+     ============================================================ -->
+<section class="topic-section" id="section-3.5">
+<h2>3.5 — Derivatives of Trigonometric Functions</h2>
+
+<p>
+Trigonometric functions model periodic phenomena — sound waves, tides, seasonal temperature. 
+Their derivatives follow beautiful patterns that mirror the original functions, shifted by phase.
+The proofs rely on the squeeze theorem and two key limits: 
+$\displaystyle\lim_{\theta \to 0} \frac{\sin \theta}{\theta} = 1$ 
+and $\displaystyle\lim_{\theta \to 0} \frac{1 - \cos \theta}{\theta} = 0$.
+</p>
+
+<h3>Key Theorems</h3>
+<div class="notes">
+<h4>Theorem — Basic Trigonometric Derivatives</h4>
+<p>Assuming $x$ is measured in <strong>radians</strong>:</p>
+<table class="review-table">
+<thead><tr><th>Function</th><th>Derivative</th></tr></thead>
+<tbody>
+<tr><td>$\sin x$</td><td>$\cos x$</td></tr>
+<tr><td>$\cos x$</td><td>$-\sin x$</td></tr>
+<tr><td>$\tan x$</td><td>$\sec^2 x$</td></tr>
+<tr><td>$\cot x$</td><td>$-\csc^2 x$</td></tr>
+<tr><td>$\sec x$</td><td>$\sec x \tan x$</td></tr>
+<tr><td>$\csc x$</td><td>$-\csc x \cot x$</td></tr>
+</tbody>
+</table>
+<p><em>Important:</em> These formulas are valid <strong>only in radians</strong>. In degrees, the Chain Rule introduces an extra factor of $\pi/180$.</p>
+</div>
+
+<h3>Worked Example — Derivative of a Trig Function</h3>
+<div class="example">
+<h4>Example 3.5.1</h4>
+<p>Differentiate $f(x) = x^2 \sin x + \cos(3x)$.</p>
+<p><strong>Step 1:</strong> Apply the Product Rule to the first term and the Chain Rule to the second.</p>
+$$f'(x) = \underbrace{(2x)\sin x + x^2(\cos x)}_{\text{Product Rule}} + \underbrace{(-\sin(3x)) \cdot 3}_{\text{Chain Rule}}$$
+<p><strong>Step 2:</strong> Simplify.</p>
+$$f'(x) = 2x\sin x + x^2\cos x - 3\sin(3x)$$
+</div>
+
+<h3>Unit Circle with Trig Derivatives</h3>
+<div class="visual-aid">
+<h4>Figure 3.5 — The Unit Circle and Trigonometric Derivatives</h4>
+<svg viewBox="0 0 480 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <circle cx="160" cy="160" r="100" fill="none" stroke="#000" stroke-width="1.5"/>
+    <line x1="160" y1="20" x2="160" y2="300" stroke="#ccc" stroke-width="1"/>
+    <line x1="60" y1="160" x2="260" y2="160" stroke="#ccc" stroke-width="1"/>
+    <line x1="160" y1="160" x2="230" y2="80" stroke="#1a3a5c" stroke-width="2"/>
+    <line x1="160" y1="160" x2="260" y2="160" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <line x1="230" y1="80" x2="230" y2="160" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <circle cx="230" cy="80" r="3" fill="#1a3a5c"/>
+    <text x="175" y="60" font-size="12" fill="#1a3a5c">$\theta$</text>
+    <text x="240" y="175" font-size="11" fill="#e74c3c">$\cos\theta$</text>
+    <text x="232" y="70" font-size="11" fill="#27ae60">$\sin\theta$</text>
+    <text x="70" y="175" font-size="11" fill="#333">$-1$</text>
+    <text x="240" y="175" font-size="11" fill="#333">$1$</text>
+    <text x="175" y="300" font-size="11" fill="#333">$-1$</text>
+    <text x="175" y="20" font-size="11" fill="#333">$1$</text>
+    <rect x="300" y="40" width="160" height="220" fill="#f7f7f7" stroke="#ccc" stroke-width="1"/>
+    <text x="380" y="65" font-size="12" text-anchor="middle" fill="#333" font-weight="bold">Derivative Summary</text>
+    <text x="315" y="90" font-size="11" fill="#1a3a5c">$(\sin x)' = \cos x$</text>
+    <text x="315" y="115" font-size="11" fill="#1a3a5c">$(\cos x)' = -\sin x$</text>
+    <text x="315" y="140" font-size="11" fill="#1a3a5c">$(\tan x)' = \sec^2 x$</text>
+    <text x="315" y="165" font-size="11" fill="#e74c3c">$(\cot x)' = -\csc^2 x$</text>
+    <text x="315" y="190" font-size="11" fill="#27ae60">$(\sec x)' = \sec x\tan x$</text>
+    <text x="315" y="215" font-size="11" fill="#27ae60">$(\csc x)' = -\csc x\cot x$</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.5: On the unit circle, $\sin\theta$ and $\cos\theta$ are coordinates. Their derivatives are the <em>other</em> coordinate (up to sign).</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Differentiate $f(x) = \sin(2x) \cos(x)$.</li>
+<li>Differentiate $f(x) = \tan(x^2)$.</li>
+<li>Find $f'(\pi/4)$ if $f(x) = \sec x + \csc x$.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Always check the angle mode: calculus <em>requires radians</em>.</li>
+<li>Memorize $\sin x \to \cos x$ and $\cos x \to -\sin x$ first; the others follow from Quotient Rule.</li>
+<li>When differentiating $\tan x$, rewrite as $\sin x / \cos x$ and use the Quotient Rule if you forget the formula.</li>
+<li>For products like $\sin x \cos x$, the Product Rule gives $\cos^2 x - \sin^2 x = \cos(2x)$ — a useful identity to recognize.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ============================================================
+     SECTION 3.6 — Derivatives as Rates of Change
+     ============================================================ -->
+<section class="topic-section" id="section-3.6">
+<h2>3.6 — Derivatives as Rates of Change</h2>
+
+<p>
+In physics and engineering, the derivative is rarely just a slope — it is a <strong>rate</strong>: 
+velocity is the rate of change of position, acceleration is the rate of change of velocity, 
+and marginal cost is the rate of change of total cost. 
+The units of $f'(x)$ are $\dfrac{\text{units of }f}{\text{units of }x}$.
+</p>
+
+<h3>Key Definitions</h3>
+<div class="notes">
+<h4>Definition — Average and Instantaneous Rates</h4>
+<p>The <strong>average rate of change</strong> of $f$ on $[a, b]$ is:</p>
+$$\frac{f(b) - f(a)}{b - a}$$
+<p>The <strong>instantaneous rate of change</strong> at $x = c$ is $f'(c)$. 
+This is the limit of the average rate as $b \to c$.</p>
+</div>
+
+<h3>Worked Example — Related Rates</h3>
+<div class="example">
+<h4>Example 3.6.1</h4>
+<p>A ladder 10 ft long rests against a vertical wall. The bottom slides away from the wall at $2$ ft/s. 
+How fast is the top sliding down when the bottom is 6 ft from the wall?</p>
+<p><strong>Step 1:</strong> Let $x$ = distance of bottom from wall, $y$ = height of top on wall. By Pythagoras:</p>
+$$x^2 + y^2 = 100$$
+<p><strong>Step 2:</strong> Differentiate implicitly with respect to time $t$.</p>
+$$2x\frac{dx}{dt} + 2y\frac{dy}{dt} = 0$$
+<p><strong>Step 3:</strong> Solve for $\dfrac{dy}{dt}$ and substitute known values.</p>
+$$\frac{dy}{dt} = -\frac{x}{y}\frac{dx}{dt}$$
+When $x = 6$: $y = \sqrt{100 - 36} = 8$, and $\dfrac{dx}{dt} = 2$.
+$$\frac{dy}{dt} = -\frac{6}{8}(2) = -\frac{12}{8} = -\frac{3}{2}$$
+<p class="mnemonic"><strong>Answer:</strong> The top is sliding down at $\boxed{1.5\text{ ft/s}}$.</p>
+</div>
+
+<h3>Related Rates Diagram</h3>
+<div class="visual-aid">
+<h4>Figure 3.6 — Ladder Sliding Against a Wall</h4>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <line x1="60" y1="230" x2="460" y2="230" stroke="#000" stroke-width="2"/>
+    <line x1="60" y1="230" x2="60" y2="20" stroke="#000" stroke-width="2"/>
+    <line x1="60" y1="230" x2="240" y2="80" stroke="#1a3a5c" stroke-width="2.5"/>
+    <line x1="240" y1="80" x2="240" y2="230" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="60" y1="230" x2="260" y2="230" stroke="#e74c3c" stroke-width="2"/>
+    <polygon points="60,230 240,80 240,230" fill="#e8eef3" opacity="0.5"/>
+    <text x="140" y="245" font-size="11" fill="#e74c3c">$x(t)$</text>
+    <text x="245" y="160" font-size="11" fill="#666">$y(t)$</text>
+    <text x="100" y="170" font-size="10" fill="#999">ladder</text>
+    <text x="270" y="245" font-size="10" fill="#e74c3c">$\frac{dx}{dt}=2$</text>
+    <text x="275" y="120" font-size="10" fill="#27ae60">$\frac{dy}{dt}=?$</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.6: Related rates connect the motion of two linked quantities through an equation like $x^2 + y^2 = L^2$.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>A spherical balloon is inflated so that its radius increases at $3$ cm/s. How fast is the volume increasing when $r = 10$ cm? $(V = \frac{4}{3}\pi r^3)$</li>
+<li>A plane flies horizontally at $500$ mph at an altitude of $3$ miles. How fast is the distance from the plane to a point on the ground increasing when the plane is $4$ miles away horizontally?</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Draw a diagram and label every quantity with a variable before writing equations.</li>
+<li>Differentiate <em>implicitly</em> with respect to time — every variable depends on $t$.</li>
+<li>Substitute known values <em>after</em> differentiating; don't plug in too early or you'll lose variables.</li>
+<li>Always check units on your final answer. A negative rate means the quantity is decreasing.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ============================================================
+     SECTION 3.7 — The Chain Rule
+     ============================================================ -->
+<section class="topic-section" id="section-3.7">
+<h2>3.7 — The Chain Rule</h2>
+
+<p>
+Many functions are built by <strong>composition</strong>: one function applied inside another. 
+The Chain Rule tells us how to differentiate such "function-within-a-function" expressions. 
+It is arguably the most powerful differentiation rule and the one most often misapplied by beginners.
+</p>
+
+<h3>Key Theorem</h3>
+<div class="derivation">
+<h4>Theorem — Chain Rule</h4>
+<p>If $f$ and $g$ are differentiable and $h(x) = f(g(x))$, then:</p>
+$$h'(x) = f'(g(x)) \cdot g'(x)$$
+<p>In Leibniz notation, if $y = f(u)$ and $u = g(x)$:</p>
+$$\frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}$$
+<p><em>Memory aid:</em> "Derivative of the outside, leave the inside alone, times derivative of the inside."</p>
+</div>
+
+<h3>Worked Example — Applying the Chain Rule</h3>
+<div class="example">
+<h4>Example 3.7.1</h4>
+<p>Differentiate $f(x) = (3x^2 + 1)^5$.</p>
+<p><strong>Step 1:</strong> Identify the outer function $f(u) = u^5$ and inner function $u = g(x) = 3x^2 + 1$.</p>
+<p><strong>Step 2:</strong> Differentiate the outside: $f'(u) = 5u^4$.</p>
+<p><strong>Step 3:</strong> Differentiate the inside: $g'(x) = 6x$.</p>
+<p><strong>Step 4:</strong> Multiply and substitute back:</p>
+$$f'(x) = 5(3x^2 + 1)^4 \cdot 6x = 30x(3x^2 + 1)^4$$
+</div>
+
+<h3>Chain Rule as Composition</h3>
+<div class="visual-aid">
+<h4>Figure 3.7 — The Chain Rule as Function Composition</h4>
+<svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <rect x="30" y="20" width="130" height="60" rx="5" fill="#e8eef3" stroke="#1a3a5c" stroke-width="1.5"/>
+    <text x="95" y="45" font-size="13" text-anchor="middle" fill="#1a3a5c" font-weight="bold">$u = g(x)$</text>
+    <text x="95" y="65" font-size="11" text-anchor="middle" fill="#333">inner function</text>
+    <rect x="320" y="20" width="130" height="60" rx="5" fill="#fef9e7" stroke="#b08800" stroke-width="1.5"/>
+    <text x="385" y="45" font-size="13" text-anchor="middle" fill="#b08800" font-weight="bold">$y = f(u)$</text>
+    <text x="385" y="65" font-size="11" text-anchor="middle" fill="#333">outer function</text>
+    <rect x="160" y="120" width="160" height="60" rx="5" fill="#f0fff4" stroke="#22863a" stroke-width="1.5"/>
+    <text x="240" y="145" font-size="13" text-anchor="middle" fill="#22863a" font-weight="bold">$h(x) = f(g(x))$</text>
+    <text x="240" y="165" font-size="11" text-anchor="middle" fill="#333">composite function</text>
+    <line x1="130" y1="50" x2="170" y2="130" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <line x1="350" y1="50" x2="280" y2="130" stroke="#666" stroke-width="1.5" marker-end="url(#arrow)"/>
+    <text x="155" y="85" font-size="10" fill="#999">$u$ feeds into</text>
+    <text x="310" y="85" font-size="10" fill="#999">$u$ feeds into</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.7: The composite $h(x) = f(g(x))$ chains the inner function's output into the outer function's input. The derivative multiplies the rates.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Differentiate $f(x) = \sin(x^3 + 2x)$.</li>
+<li>Differentiate $f(x) = e^{x^2} \ln(x)$ (use both Chain Rule and Product Rule).</li>
+<li>Find the slope of the tangent line to $y = \sqrt{4x+1}$ at $x = 2$.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Work from <strong>outside in</strong>: identify the outermost operation first.</li>
+<li>Use parentheses liberally: $(3x^2+1)^4$ means the whole inner expression is raised to the 4th.</li>
+<li>The Chain Rule appears in disguise whenever you see a power, exponential, trig, or log of a complicated expression.</li>
+<li>Check your work: if $f(x) = (2x+1)^3$, then $f'(x) = 3(2x+1)^2 \cdot 2 = 6(2x+1)^2$ — the inner derivative must appear.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ============================================================
+     SECTION 3.8 — Implicit Differentiation
+     ============================================================ -->
+<section class="topic-section" id="section-3.8">
+<h2>3.8 — Implicit Differentiation</h2>
+
+<p>
+Most curves in calculus — circles, ellipses, hyperbolas — are not functions $y = f(x)$ at all. 
+They are defined <strong>implicitly</strong> by an equation involving both $x$ and $y$, like $x^2 + y^2 = 1$. 
+<strong>Implicit differentiation</strong> lets us find $\dfrac{dy}{dx}$ without solving for $y$ explicitly, 
+by differentiating both sides of the equation and remembering that $y$ is a function of $x$.
+</p>
+
+<h3>Key Technique</h3>
+<div class="notes">
+<h4>Procedure for Implicit Differentiation</h4>
+<ol>
+<li>Differentiate both sides of the equation with respect to $x$.</li>
+<li>Treat $y$ as a function of $x$: when differentiating $y$, write $\dfrac{dy}{dx}$ (or $y'$).</li>
+<li>Collect all terms containing $\dfrac{dy}{dx}$ on one side.</li>
+<li>Factor out $\dfrac{dy}{dx}$ and solve for it.</li>
+</ol>
+</div>
+
+<h3>Worked Example — Circle</h3>
+<div class="example">
+<h4>Example 3.8.1</h4>
+<p>Find $\dfrac{dy}{dx}$ for the circle $x^2 + y^2 = 25$.</p>
+<p><strong>Step 1:</strong> Differentiate both sides with respect to $x$.</p>
+$$\frac{d}{dx}(x^2) + \frac{d}{dx}(y^2) = \frac{d}{dx}(25)$$
+$$2x + 2y\frac{dy}{dx} = 0$$
+<p><strong>Step 2:</strong> Solve for $\dfrac{dy}{dx}$.</p>
+$$2y\frac{dy}{dx} = -2x$$
+$$\frac{dy}{dx} = -\frac{x}{y}$$
+<p class="mnemonic"><strong>Answer:</strong> For any point $(x,y)$ on the circle, the slope is $\boxed{-\dfrac{x}{y}}$.</p>
+</div>
+
+<h3>Implicit Curve</h3>
+<div class="visual-aid">
+<h4>Figure 3.8 — An Implicit Curve and Its Tangent</h4>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <line x1="40" y1="230" x2="460" y2="230" stroke="#000" stroke-width="1.5"/>
+    <line x1="240" y1="20" x2="240" y2="240" stroke="#000" stroke-width="1"/>
+    <text x="450" y="245" font-size="12" fill="#000">x</text>
+    <text x="250" y="30" font-size="12" fill="#000">y</text>
+    <ellipse cx="240" cy="130" rx="150" ry="80" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+    <circle cx="340" cy="70" r="4" fill="#e74c3c"/>
+    <line x1="300" y1="130" x2="380" y2="10" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <text x="385" y="15" font-size="10" fill="#e74c3c">tangent</text>
+    <text x="305" y="170" font-size="10" fill="#666">$(x,y)$ on curve $F(x,y)=0$</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.8: Implicit curves cannot be written as $y = f(x)$, but they still have tangent lines with slopes found by implicit differentiation.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Find $\dfrac{dy}{dx}$ for the ellipse $4x^2 + 9y^2 = 36$.</li>
+<li>Find $\dfrac{dy}{dx}$ for $x^3 + y^3 = 6xy$ (the folium of Descartes).</li>
+<li>Find the equation of the tangent line to $x^2 + xy + y^2 = 7$ at the point $(1, 2)$.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>When differentiating $y^n$, use the Chain Rule: $\dfrac{d}{dx}(y^n) = n y^{n-1} \dfrac{dy}{dx}$.</li>
+<li>Don't solve for $y$ first — that's usually harder and often impossible in closed form.</li>
+<li>After finding $\dfrac{dy}{dx}$, check its sign against the curve's shape to verify.</li>
+<li>At points where the tangent is vertical, $\dfrac{dy}{dx}$ is undefined but $\dfrac{dx}{dy}$ may be zero.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ============================================================
+     SECTION 3.9 — Derivatives of Logarithmic and Exponential Functions
+     ============================================================ -->
+<section class="topic-section" id="section-3.9">
+<h2>3.9 — Derivatives of Logarithmic and Exponential Functions</h2>
+
+<p>
+Exponential and logarithmic functions model growth, decay, and information scales. 
+Their derivatives have a remarkable property: <strong>the exponential function is its own derivative</strong> (up to a constant factor). 
+This makes $e^x$ the natural choice for modeling continuous growth.
+</p>
+
+<h3>Key Theorems</h3>
+<div class="notes">
+<h4>Theorem — Exponential and Logarithmic Derivatives</h4>
+<table class="review-table">
+<thead><tr><th>Function</th><th>Derivative</th><th>Conditions</th></tr></thead>
+<tbody>
+<tr><td>$e^x$</td><td>$e^x$</td><td>all $x$</td></tr>
+<tr><td>$a^x$ ($a>0$)</td><td>$a^x \ln a$</td><td>all $x$</td></tr>
+<tr><td>$\ln x$</td><td>$\dfrac{1}{x}$</td><td>$x > 0$</td></tr>
+<tr><td>$\log_a x$</td><td>$\dfrac{1}{x \ln a}$</td><td>$x > 0$</td></tr>
+</tbody>
+</table>
+<p>The constant $e \approx 2.71828$ is the unique base for which $\dfrac{d}{dx}(e^x) = e^x$.</p>
+</div>
+
+<h3>Worked Example — Logarithmic Differentiation</h3>
+<div class="example">
+<h4>Example 3.9.1</h4>
+<p>Differentiate $f(x) = x^x$ for $x > 0$.</p>
+<p><strong>Step 1:</strong> Take the natural logarithm of both sides.</p>
+$$\ln(f(x)) = \ln(x^x) = x \ln x$$
+<p><strong>Step 2:</strong> Differentiate implicitly with respect to $x$.</p>
+$$\frac{f'(x)}{f(x)} = \ln x + x \cdot \frac{1}{x} = \ln x + 1$$
+<p><strong>Step 3:</strong> Solve for $f'(x)$.</p>
+$$f'(x) = f(x)(\ln x + 1) = x^x(\ln x + 1)$$
+</div>
+
+<h3>Exponential Growth Curve</h3>
+<div class="visual-aid">
+<h4>Figure 3.9 — Exponential Growth and Its Derivative</h4>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <line x1="40" y1="230" x2="460" y2="230" stroke="#000" stroke-width="1.5"/>
+    <line x1="240" y1="20" x2="240" y2="240" stroke="#000" stroke-width="1"/>
+    <text x="450" y="245" font-size="12" fill="#000">x</text>
+    <text x="250" y="30" font-size="12" fill="#000">y</text>
+    <path d="M 60,220 C 120,210 160,190 200,150 S 280,70 340,40 S 420,10 460,5" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+    <path d="M 60,220 C 120,210 160,190 200,150 S 280,70 340,40 S 420,10 460,5" fill="none" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,4"/>
+    <text x="60" y="210" font-size="11" fill="#1a3a5c">$f(x) = e^x$</text>
+    <text x="60" y="195" font-size="11" fill="#e74c3c">$f'(x) = e^x$</text>
+    <text x="160" y="170" font-size="10" fill="#999">$f = f'$!</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.9: The exponential function $e^x$ is its own derivative. At every point, the slope equals the function value.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Differentiate $f(x) = e^{3x} + \ln(x^2 + 1)$.</li>
+<li>Differentiate $f(x) = 2^{x^2}$.</li>
+<li>Use logarithmic differentiation to find $f'(x)$ for $f(x) = (x+1)^{\sqrt{x}}$.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Memorize $\frac{d}{dx}(e^x) = e^x$ cold — it is the most useful derivative in all of calculus.</li>
+<li>For $a^x$, recall the proof: $a^x = e^{x\ln a}$, so the Chain Rule gives $a^x \ln a$.</li>
+<li>Logarithmic differentiation shines for $x^x$, products of many factors, or quotients with exponents.</li>
+<li>Always check the domain: $\ln x$ requires $x > 0$; $\log_a x$ requires $x > 0$ and $a \ne 1$.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ============================================================
+     SECTION 3.10 — Derivatives of Inverse Trigonometric Functions
+     ============================================================ -->
+<section class="topic-section" id="section-3.10">
+<h2>3.10 — Derivatives of Inverse Trigonometric Functions</h2>
+
+<p>
+Inverse trigonometric functions — $\arcsin x$, $\arccos x$, $\arctan x$ — undo the trig functions. 
+Their derivatives contain radical expressions because the "missing side" of the reference triangle 
+appears when we apply the Chain Rule to $\sin(\arcsin x) = x$.
+</p>
+
+<h3>Key Theorems</h3>
+<div class="notes">
+<h4>Theorem — Inverse Trigonometric Derivatives</h4>
+<table class="review-table">
+<thead><tr><th>Function</th><th>Derivative</th><th>Domain</th></tr></thead>
+<tbody>
+<tr><td>$\arcsin x$</td><td>$\dfrac{1}{\sqrt{1-x^2}}$</td><td>$-1 < x < 1$</td></tr>
+<tr><td>$\arccos x$</td><td>$\dfrac{-1}{\sqrt{1-x^2}}$</td><td>$-1 < x < 1$</td></tr>
+<tr><td>$\arctan x$</td><td>$\dfrac{1}{1+x^2}$</td><td>all $x$</td></tr>
+<tr><td>$\operatorname{arccot} x$</td><td>$\dfrac{-1}{1+x^2}$</td><td>all $x$</td></tr>
+<tr><td>$\operatorname{arcsec} x$</td><td>$\dfrac{1}{|x|\sqrt{x^2-1}}$</td><td>$|x| > 1$</td></tr>
+</tbody>
+</table>
+</div>
+
+<h3>Worked Example — Arctangent Derivative</h3>
+<div class="example">
+<h4>Example 3.10.1</h4>
+<p>Prove that $\dfrac{d}{dx}(\arctan x) = \dfrac{1}{1+x^2}$.</p>
+<p><strong>Step 1:</strong> Let $y = \arctan x$, so $\tan y = x$ and $-\frac{\pi}{2} < y < \frac{\pi}{2}$.</p>
+<p><strong>Step 2:</strong> Differentiate implicitly with respect to $x$:</p>
+$$\sec^2 y \cdot \frac{dy}{dx} = 1$$
+<p><strong>Step 3:</strong> Solve for $\dfrac{dy}{dx}$ and use $\sec^2 y = 1 + \tan^2 y = 1 + x^2$:</p>
+$$\frac{dy}{dx} = \frac{1}{\sec^2 y} = \frac{1}{1 + \tan^2 y} = \frac{1}{1 + x^2}$$
+</div>
+
+<h3>Inverse Trig Graphs</h3>
+<div class="visual-aid">
+<h4>Figure 3.10 — Inverse Trig Functions and Their Derivatives</h4>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <line x1="40" y1="230" x2="460" y2="230" stroke="#000" stroke-width="1.5"/>
+    <line x1="240" y1="20" x2="240" y2="240" stroke="#000" stroke-width="1"/>
+    <text x="450" y="245" font-size="12" fill="#000">x</text>
+    <text x="250" y="30" font-size="12" fill="#000">y</text>
+    <path d="M 140,220 C 180,210 200,150 220,130 S 260,50 340,30" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+    <text x="60" y="215" font-size="11" fill="#1a3a5c">$\arcsin x$</text>
+    <path d="M 140,230 C 180,220 220,200 260,180 S 320,140 380,120" fill="none" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,4"/>
+    <text x="60" y="195" font-size="11" fill="#e74c3c">$\arctan x$</text>
+    <rect x="300" y="40" width="160" height="160" fill="#f7f7f7" stroke="#ccc" stroke-width="1"/>
+    <text x="380" y="60" font-size="11" text-anchor="middle" fill="#333" font-weight="bold">Key Values</text>
+    <text x="315" y="85" font-size="10" fill="#1a3a5c">$\arcsin(0) = 0$</text>
+    <text x="315" y="105" font-size="10" fill="#1a3a5c">$\arcsin(1) = \pi/2$</text>
+    <text x="315" y="125" font-size="10" fill="#e74c3c">$\arctan(0) = 0$</text>
+    <text x="315" y="145" font-size="10" fill="#e74c3c">$\arctan(1) = \pi/4$</text>
+    <text x="315" y="165" font-size="10" fill="#666">$(\arcsin x)' = \frac{1}{\sqrt{1-x^2}}$</text>
+    <text x="315" y="185" font-size="10" fill="#666">$(\arctan x)' = \frac{1}{1+x^2}$</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.10: Inverse trig functions have restricted domains. Their derivatives are rational expressions involving radicals.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Differentiate $f(x) = \arcsin(3x)$.</li>
+<li>Differentiate $f(x) = \arctan(\sqrt{x})$.</li>
+<li>Differentiate $f(x) = \ln(\arccos x)$.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Memorize the derivative of $\arcsin x$ and $\arctan x$; the others are similar or negatives of these.</li>
+<li>The radical $\sqrt{1-x^2}$ in the arcsine derivative comes from the Pythagorean theorem on the reference triangle.</li>
+<li>For $\operatorname{arcsec} x$, remember the absolute value $|x|$ in the denominator — it reflects the two branches.</li>
+<li>Use right triangles to derive these formulas: draw the triangle, label sides, find the missing side, differentiate.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ============================================================
+     HIGHER-ORDER — Higher-Order Derivatives
+     ============================================================ -->
+<section class="topic-section" id="section-higher-order">
+<h2>Higher-Order Derivatives</h2>
+
+<p>
+The <strong>second derivative</strong> is the derivative of the derivative: $f''(x) = \dfrac{d}{dx}(f'(x))$. 
+It measures how the <em>rate of change</em> itself is changing. 
+In physics, if $s(t)$ is position, then $s'(t) = v(t)$ is velocity and $s''(t) = a(t)$ is acceleration.
+In geometry, the second derivative reveals the <strong>concavity</strong> of a curve.
+</p>
+
+<h3>Key Definitions</h3>
+<div class="notes">
+<h4>Definition — Concavity and Inflection Points</h4>
+<p>Let $f$ be twice differentiable on an interval $I$.</p>
+<ul>
+<li>$f$ is <strong>concave up</strong> on $I$ if $f''(x) > 0$ for all $x \in I$.</li>
+<li>$f$ is <strong>concave down</strong> on $I$ if $f''(x) < 0$ for all $x \in I$.</li>
+<li>A point $c$ is an <strong>inflection point</strong> if $f$ changes concavity at $c$.</li>
+</ul>
+</div>
+
+<h3>Worked Example — Second Derivative Test</h3>
+<div class="example">
+<h4>Example — Second Derivative</h4>
+<p>Find $f''(x)$ for $f(x) = x^3 - 6x^2 + 9x + 1$ and determine its concavity.</p>
+<p><strong>Step 1:</strong> Find $f'(x)$.</p>
+$$f'(x) = 3x^2 - 12x + 9$$
+<p><strong>Step 2:</strong> Differentiate again.</p>
+$$f''(x) = 6x - 12$$
+<p><strong>Step 3:</strong> Find where $f''(x) = 0$ (possible inflection point).</p>
+$$6x - 12 = 0 \;\Rightarrow\; x = 2$$
+<p><strong>Step 4:</strong> Test concavity on each side of $x = 2$.</p>
+<ul>
+<li>For $x < 2$ (e.g., $x = 0$): $f''(0) = -12 < 0$ → <strong>concave down</strong></li>
+<li>For $x > 2$ (e.g., $x = 3$): $f''(3) = 6 > 0$ → <strong>concave up</strong></li>
+</ul>
+<p class="mnemonic"><strong>Conclusion:</strong> $f$ has an inflection point at $x = 2$, changing from concave down to concave up.</p>
+</div>
+
+<h3>Second Derivative Concavity</h3>
+<div class="visual-aid">
+<h4>Figure 3.11 — Concavity: $f''(x) > 0$ vs. $f''(x) < 0$</h4>
+<svg viewBox="0 0 480 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <line x1="40" y1="210" x2="460" y2="210" stroke="#000" stroke-width="1.5"/>
+    <line x1="240" y1="20" x2="240" y2="230" stroke="#000" stroke-width="1"/>
+    <text x="450" y="225" font-size="12" fill="#000">x</text>
+    <text x="250" y="35" font-size="12" fill="#000">y</text>
+    <path d="M 60,200 C 120,180 180,80 240,70 S 360,180 440,200" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+    <path d="M 60,200 C 120,60 180,40 240,70 S 360,140 440,200" fill="none" stroke="#e74c3c" stroke-width="2" stroke-dasharray="5,4"/>
+    <text x="100" y="160" font-size="11" fill="#27ae60">concave up ($f''>0$)</text>
+    <text x="280" y="160" font-size="11" fill="#e74c3c">concave down ($f''<0$)</text>
+    <circle cx="240" cy="70" r="4" fill="#b08800"/>
+    <text x="245" y="60" font-size="10" fill="#b08800">inflection</text>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 3.11: When $f''(x) > 0$ the curve holds water (concave up); when $f''(x) < 0$ it spills water (concave down). The transition is an inflection point.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Find $f''(x)$ for $f(x) = x^4 - 4x^3 + 6x^2$. Where is $f$ concave up and concave down?</li>
+<li>A particle has position $s(t) = t^3 - 6t^2 + 9t$. Find its acceleration at $t = 2$.</li>
+<li>Find all inflection points of $f(x) = x^3 - 3x$.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Higher derivatives follow the same rules — just differentiate repeatedly.</li>
+<li>$f''(x) > 0$ means the <em>slope is increasing</em>: the tangent line rotates counterclockwise as $x$ grows.</li>
+<li>An inflection point requires a <em>sign change</em> in $f''(x)$, not just $f''(c) = 0$.</li>
+<li>For polynomials, the number of inflection points is at most degree $- 2$.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ============================================================
+     CHAPTER NAVIGATION
+     ============================================================ -->
+<div class="chapter-nav">
+    <a href="chapters/limits.html" class="nav-btn prev">← Chapter 01: Limits</a>
+    <span class="nav-indicator">Chapter 02 of 05</span>
+    <a href="chapters/applications-derivative.html" class="nav-btn next">Chapter 03: Applications →</a>
+</div>
+
+</main>
+<!-- Chapter Navigation -->
+<nav class="chapter-nav" aria-label="Chapter navigation">
+    <a id="prev-chapter" class="nav-btn" href="chapters/limits.html">&larr; Previous Chapter</a>
+    <span id="chapter-indicator" class="nav-indicator">Chapter 02 of 05</span>
+    <a id="next-chapter" class="nav-btn" href="chapters/applications-derivative.html">Next Chapter &rarr;</a>
+</nav>
+
+</div>
+
+<script src="js/app.js"></script>
+<button class="note-btn note-sidebar-toggle" type="button">Notes</button>
+</body>
+</html>
+
+
+
+

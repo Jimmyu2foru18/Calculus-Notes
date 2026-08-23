@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4.3 — Graphing Functions — Calculus Foundations</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+window.MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        tags: 'ams'
+    },
+    svg: { fontCache: 'global' },
+    options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+        ignoreHtmlClass: 'no-mathjax'
+    }
+};
+</script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<header>
+    <h1>Calculus Foundations</h1>
+    <p class="subtitle">A Structured, Beginner-Friendly Path Through Calculus</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="chapters/limits.html">Curriculum</a>
+        <a href="reviews/index.html">Review Sheets</a>
+        <a href="https://github.com/Jimmyu2foru18/Calculus-Notes" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+</header>
+
+<div class="container">
+    <main>
+        <p><a href="chapters/applications-derivative.html" class="nav-btn">← Back to Applications of the Derivative</a></p>
+        <div class="chapter">
+    <h2>4.3 — Graphing Functions</h2>
+</div>
+
+<section class="topic-section" id="4.3">
+    <h2>4.3 — Graphing Functions</h2>
+
+<p>
+A complete graph of $y = f(x)$ reveals its personality: where it rises and falls, 
+where it bends, and where it has asymptotes. 
+Derivatives give us a <strong>recipe</strong> for sketching accurate graphs 
+without plotting hundreds of points.
+</p>
+
+<h3>Key Definitions</h3>
+<div class="notes">
+<h4>Guidelines for Curve Sketching</h4>
+<p>Given $f$, use the following steps to sketch its graph:</p>
+<ol>
+<li><strong>Domain:</strong> Find where $f$ is defined.</li>
+<li><strong>Intercepts:</strong> Find $x$-intercepts (solve $f(x) = 0$) and $y$-intercept ($f(0)$).</li>
+<li><strong>Symmetry:</strong> Check if $f$ is even, odd, or neither.</li>
+<li><strong>Asymptotes:</strong> Find vertical, horizontal, and slant asymptotes.</li>
+<li><strong>First derivative:</strong> Find critical points and intervals of increase/decrease.</li>
+<li><strong>Second derivative:</strong> Find inflection points and intervals of concavity.</li>
+<li><strong>Local extrema:</strong> Classify critical points using derivative tests.</li>
+</ol>
+</div>
+
+<h3>Worked Example — Sketching a Polynomial</h3>
+<div class="example">
+<h4>Example 4.3.1</h4>
+<p>Sketch the graph of $f(x) = x^3 - 3x^2 - 9x + 5$.</p>
+<p><strong>Step 1:</strong> Find critical points.</p>
+$$f'(x) = 3x^2 - 6x - 9 = 3(x-3)(x+1)$$
+Critical points: $x = -1$ and $x = 3$.
+<p><strong>Step 2:</strong> Sign chart for $f'$.</p>
+<ul>
+<li>On $(-\infty, -1)$: $f'(-2) = 3(-5)(-1) = 15 > 0$ → increasing.</li>
+<li>On $(-1, 3)$: $f'(0) = 3(-3)(1) = -9 < 0$ → decreasing.</li>
+<li>On $(3, \infty)$: $f'(4) = 3(1)(5) = 15 > 0$ → increasing.</li>
+</ul>
+<p><strong>Step 3:</strong> Find $f''(x)$ for concavity.</p>
+$$f''(x) = 6x - 6$$
+Inflection point at $x = 1$. For $x < 1$, $f'' < 0$ (concave down); for $x > 1$, $f'' > 0$ (concave up).
+<p><strong>Step 4:</strong> Evaluate at key points.</p>
+$$f(-1) = (-1)^3 - 3(1) + 9 + 5 = 10$$
+$$f(3) = 27 - 27 - 27 + 5 = -22$$
+$$f(0) = 5$$
+<p><strong>Step 5:</strong> Sketch using this information — local max at $(-1, 10)$, local min at $(3, -22)$, inflection at $(1, -6)$.</p>
+</div>
+
+<h3>Graph Sketching Diagram</h3>
+<div class="visual-aid">
+<h4>Figure 4.3 — Sketching Using First and Second Derivative Information</h4>
+<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+    <line x1="40" y1="230" x2="460" y2="230" stroke="#000" stroke-width="1.5"/>
+    <line x1="240" y1="20" x2="240" y2="240" stroke="#000" stroke-width="1"/>
+    <text x="450" y="245" font-size="12" fill="#000">x</text>
+    <text x="250" y="30" font-size="12" fill="#000">y</text>
+    <path d="M 60,200 C 100,180 140,100 180,80 S 240,180 280,200 S 360,120 440,80" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+    <circle cx="180" cy="80" r="4" fill="#e74c3c"/>
+    <text x="185" y="70" font-size="10" fill="#e74c3c">local max</text>
+    <circle cx="280" cy="200" r="4" fill="#27ae60"/>
+    <text x="285" y="215" font-size="10" fill="#27ae60">local min</text>
+    <circle cx="230" cy="140" r="3.5" fill="#b08800"/>
+    <text x="235" y="130" font-size="10" fill="#b08800">inflection</text>
+    <text x="140" y="170" font-size="10" fill="#27ae60">concave up</text>
+    <text x="300" y="170" font-size="10" fill="#e74c3c">concave down</text>
+    <line x1="60" y1="130" x2="180" y2="130" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+    <line x1="280" y1="200" x2="440" y2="200" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+</svg>
+<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 4.3: The graph of $f$ reflects its first and second derivative information — critical points become peaks and valleys, and the inflection point separates concave-down from concave-up regions.</p>
+</div>
+
+<div class="questions">
+<h4>Practice Problems</h4>
+<ol>
+<li>Sketch the graph of $f(x) = x^4 - 4x^3 + 4x^2$. Identify all local extrema and inflection points.</li>
+<li>Sketch the graph of $f(x) = \frac{x^2}{x-1}$. Find all asymptotes and critical points.</li>
+<li>For $f(x) = \sin x + \cos x$ on $[0, 2\pi]$, find all extrema and sketch one period.</li>
+</ol>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<ul>
+<li>Work through the checklist in order — missing asymptotes ruins the sketch.</li>
+<li>Plot critical points and inflection points <em>first</em>; they anchor the shape.</li>
+<li>Check end behavior: $\lim_{x \to \pm\infty} f(x)$ tells you what happens far left and far right.</li>
+<li>A sign chart for $f'$ and $f''$ is worth a thousand plotted points.</li>
+</ul>
+</div>
+
+</section>
+
+<!-- ============================================================
+     SECTION 4.4 — Optimization Problems
+     ============================================================ -->
+</section>
+
+<nav class="chapter-nav" aria-label="Section navigation">
+    <a href="4.2.html" class="nav-btn">← 4.2 — What Derivatives Tell Us</a>
+    <span class="nav-indicator">03.Applications of the Derivative</span>
+    <a href="4.4.html" class="nav-btn">4.4 — Optimization Problems →</a>
+</nav>
+
+
+    </main>
+</div>
+
+<button class="note-btn note-sidebar-toggle" type="button">Notes</button>
+
+<script src="js/app.js"></script>
+<script>
+window.CalculusChapters = CHAPTERS_LIST_JSON;
+window.CurrentChapterId = "applications-derivative";
+</script>
+</body>
+</html>

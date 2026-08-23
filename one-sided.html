@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>one-sided — One-Sided Limits — Calculus Foundations</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script>
+window.MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        tags: 'ams'
+    },
+    svg: { fontCache: 'global' },
+    options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+        ignoreHtmlClass: 'no-mathjax'
+    }
+};
+</script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<header>
+    <h1>Calculus Foundations</h1>
+    <p class="subtitle">A Structured, Beginner-Friendly Path Through Calculus</p>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="chapters/limits.html">Curriculum</a>
+        <a href="reviews/index.html">Review Sheets</a>
+        <a href="https://github.com/Jimmyu2foru18/Calculus-Notes" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+</header>
+
+<div class="container">
+    <main>
+        <p><a href="chapters/limits.html" class="nav-btn">← Back to Limits</a></p>
+        <div class="chapter">
+    <h2>one-sided — One-Sided Limits</h2>
+</div>
+
+<section class="topic-section" id="one-sided">
+    <h2>One-Sided Limits</h2>
+
+<p>
+A <strong>two-sided limit</strong> $\lim_{x \to c} f(x)$ requires the function to approach 
+the same value from <em>both sides</em> of $c$. When the left and right behaviors differ, 
+we describe them separately using <strong>one-sided limits</strong>.
+</p>
+
+<h3>Definitions</h3>
+<div class="notes">
+<h4>Definition — Left-Hand and Right-Hand Limits</h4>
+<p>
+The <strong>left-hand limit</strong> of $f$ as $x$ approaches $c$ is
+</p>
+$$\lim_{x \to c^-} f(x) = L$$
+<p>
+if $f(x)$ gets arbitrarily close to $L$ when $x$ approaches $c$ through values <em>less than</em> $c$.
+</p>
+<p>
+The <strong>right-hand limit</strong> of $f$ as $x$ approaches $c$ is
+</p>
+$$\lim_{x \to c^+} f(x) = L$$
+<p>
+if $f(x)$ gets arbitrarily close to $L$ when $x$ approaches $c$ through values <em>greater than</em> $c$.
+</p>
+</div>
+
+<h3>Theorem — Existence of a Two-Sided Limit</h3>
+<div class="notes">
+<h4>Theorem</h4>
+<p>
+$\displaystyle\lim_{x \to c} f(x) = L$ <strong>if and only if</strong>
+</p>
+$$\lim_{x \to c^-} f(x) = L \quad \text{and} \quad \lim_{x \to c^+} f(x) = L.$$
+<p>
+If the left-hand and right-hand limits exist but are <em>not equal</em>, 
+the two-sided limit <strong>does not exist (DNE)</strong>.
+</p>
+</div>
+
+<h3>Visualization — Left vs Right</h3>
+<div class="visual-aid">
+<h4>Figure 2.3.1 — One-Sided Limits at a Jump Discontinuity</h4>
+<svg viewBox="0 0 440 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:460px;">
+    <rect x="0" y="0" width="440" height="220" fill="#fafafa" stroke="#ccc" stroke-width="1"/>
+    <line x1="30" y1="180" x2="410" y2="180" stroke="#000" stroke-width="1.5"/>
+    <line x1="220" y1="20" x2="220" y2="200" stroke="#000" stroke-width="1.5"/>
+    <text x="415" y="184" font-size="12" fill="#000">x</text>
+    <text x="224" y="18" font-size="12" fill="#000">y</text>
+    <polyline points="40,140 120,120 200,80" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+    <polyline points="220,50 260,90 340,120 400,140" fill="none" stroke="#b08800" stroke-width="2.5"/>
+    <polygon points="215,85 220,75 225,85" fill="#1a3a5c"/>
+    <text x="180" y="72" font-size="12" fill="#1a3a5c">left branch</text>
+    <polygon points="245,95 250,85 255,95" fill="#b08800"/>
+    <text x="260" y="82" font-size="12" fill="#b08800">right branch</text>
+    <line x1="220" y1="80" x2="220" y2="50" stroke="#b08800" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <circle cx="220" cy="50" r="3.5" fill="#b08800"/>
+    <line x1="220" y1="80" x2="220" y2="180" stroke="#1a3a5c" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <circle cx="220" cy="80" r="3.5" fill="#fff" stroke="#1a3a5c" stroke-width="1.5"/>
+    <text x="224" y="65" font-size="11" fill="#b08800">L+</text>
+    <text x="224" y="105" font-size="11" fill="#1a3a5c">L-</text>
+    <line x1="80" y1="180" x2="80" y2="190" stroke="#000" stroke-width="1"/>
+    <text x="70" y="200" font-size="11" fill="#666">c</text>
+</svg>
+<p>
+At $x = c$, the left-hand limit is $L^-$ (open circle), while the right-hand limit is $L^+$ (filled circle). 
+Since $L^- \neq L^+$, $\lim_{x \to c} f(x)$ does not exist.
+</p>
+</div>
+
+<h3>Worked Example</h3>
+<div class="example">
+<h4>Example 2.3.2 — Step Function</h4>
+<p>
+Let $f(x) = \begin{cases} x + 1, & x < 2 \\ 5, & x = 2 \\ x^2 - 1, & x > 2. \end{cases}$
+Evaluate the one-sided limits at $x = 2$.
+</p>
+<p><strong>Solution:</strong>
+</p>
+<ul>
+<li>Left-hand: $\displaystyle\lim_{x \to 2^-} f(x) = \lim_{x \to 2^-} (x + 1) = 2 + 1 = 3$.</li>
+<li>Right-hand: $\displaystyle\lim_{x \to 2^+} f(x) = \lim_{x \to 2^+} (x^2 - 1) = 4 - 1 = 3$.</li>
+</ul>
+<p>
+Since both one-sided limits equal $3$, the two-sided limit exists and equals $3$:
+</p>
+$$\lim_{x \to 2} f(x) = 3.$$
+<p>
+Note that $f(2) = 5 \neq 3$. The function value at $2$ does not affect the limit.
+</p>
+</div>
+
+<h3>Practice Problems</h3>
+<div class="questions">
+<h4>Exercises</h4>
+<details>
+<summary>Problem 1 — Sign function</summary>
+<p>
+Let $f(x) = \dfrac{|x|}{x}$. Evaluate $\lim_{x \to 0^-} f(x)$ and $\lim_{x \to 0^+} f(x)$.
+Does $\lim_{x \to 0} f(x)$ exist?
+</p>
+<p><strong>Answer:</strong> $\lim_{x \to 0^-} f(x) = -1$ and $\lim_{x \to 0^+} f(x) = 1$. 
+Since they differ, the two-sided limit DNE.
+</p>
+</details>
+<details>
+<summary>Problem 2 — Floor function</summary>
+<p>
+Let $g(x) = \lfloor x \rfloor$ (greatest integer $\leq x$). Find 
+$\lim_{x \to 2^-} g(x)$ and $\lim_{x \to 2^+} g(x)$.
+</p>
+<p><strong>Answer:</strong> Both one-sided limits equal $2$, so $\lim_{x \to 2} \lfloor x \rfloor = 2$.
+(At integers, the floor function has a jump in the function value but not in the limit.)
+</p>
+</details>
+</div>
+
+<div class="strategies">
+<h4>Study Tips</h4>
+<p><strong>1.</strong> For piecewise functions, evaluate each piece separately on its domain side of $c$.</p>
+<p><strong>2.</strong> When limits "match" across a jump (as in the floor example), the limit still exists. 
+Mismatched values cause a DNE.</p>
+<p><strong>3.</strong> One-sided limits are also essential for analyzing endpoints of closed intervals.
+</p>
+</div>
+
+<hr class="section-divider">
+
+<!-- ============================================================
+     SECTION 2.4 — Infinite Limits
+     ============================================================ -->
+</section>
+
+<nav class="chapter-nav" aria-label="Section navigation">
+    <a href="2.3.html" class="nav-btn">← 2.3 — Techniques for Computing Limits</a>
+    <span class="nav-indicator">01.Limits</span>
+    <a href="2.4.html" class="nav-btn">2.4 — Infinite Limits →</a>
+</nav>
+
+
+    </main>
+</div>
+
+<button class="note-btn note-sidebar-toggle" type="button">Notes</button>
+
+<script src="js/app.js"></script>
+<script>
+window.CalculusChapters = CHAPTERS_LIST_JSON;
+window.CurrentChapterId = "limits";
+</script>
+</body>
+</html>
