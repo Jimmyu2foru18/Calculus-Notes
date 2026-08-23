@@ -87,25 +87,26 @@ near a point — not necessarily <em>at</em> the point. That is the role of the 
 
 <h3>Intuitive Definition</h3>
 <p>
-We write $\lim_{x \to c} f(x) = L$ and say 
-"<em>the limit of $f(x)$ as $x$ approaches $c$ is $L$.</em>" 
-This means: as $x$ gets arbitrarily close to $c$ (from either side), 
-the values of $f(x)$ get arbitrarily close to $L$. The actual value $f(c)$ 
-may be different from $L$, or even undefined.
+We write the limit of the function value as the input approaches a specific number equals a target value, 
+written in mathematical notation as $\lim_{x \to c} f(x) = L$. 
+In plain language: as the input variable $x$ gets arbitrarily close to the target input $c$ (from either side), 
+the output values of the function $f(x)$ get arbitrarily close to the target output $L$. 
+The actual function value at $c$ may be different from $L$, or the function may not even be defined at that point.
 </p>
 
 <h3>Key Definitions</h3>
 <div class="notes">
 <h4>Definition — Limit</h4>
 <p>
-Let $f$ be a function defined on an open interval containing $c$, except possibly at $c$ itself. 
-We say $\lim_{x \to c} f(x) = L$ if for every $a > 0$ there exists a $d > 0$ such that
+Let $f$ be a function (a rule that assigns an output to each input) defined on an open interval (a continuous range of inputs) containing $c$, except possibly at $c$ itself. 
+We say the limit of the function as the input approaches $c$ equals $L$ if for every small positive tolerance $a$ there exists a small positive distance $d$ such that
 </p>
 $$0 < |x - c| < d \;\Longrightarrow\; |f(x) - L| < a.$$
 <p>
-Geometrically, this means we can trap the graph of $f$ inside a horizontal band 
-$(L - a,\, L + a)$ by restricting $x$ to a punctured neighborhood 
-$(c - d,\, c) \cup (c,\, c + d)$.
+In plain English: this means we can trap the graph of the function inside a horizontal band 
+of height $2a$ centered at $L$ by restricting the input $x$ to a punctured neighborhood 
+(a neighborhood with the center point removed) of radius $d$ around $c$, 
+excluding $c$ itself.
 </p>
 </div>
 
@@ -196,6 +197,20 @@ Suppose $g(4) = 7$ but $\lim_{x \to 4} g(x) = 3$. Sketch a rough graph illustrat
 Estimate $\lim_{x \to 0} \dfrac{\sin x}{x}$ by evaluating the function at 
 $x = \pm 0.1, \pm 0.01, \pm 0.001$.
 </p>
+    <div class="visual-aid">
+    <h4>Figure — Sine Over x Near Zero</h4>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:420px;border:1px solid #ccc;background:#fafafa;">
+        <line x1="30" y1="180" x2="380" y2="180" stroke="#000" stroke-width="1.5"/>
+        <line x1="200" y1="20" x2="200" y2="200" stroke="#000" stroke-width="1.5"/>
+        <text x="385" y="184" font-size="12" fill="#000">x</text>
+        <text x="205" y="15" font-size="12" fill="#000">y</text>
+        <path d="M 60,170 C 120,160 160,140 200,130 S 280,120 340,110 S 380,100 380,90" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+        <line x1="30" y1="130" x2="380" y2="130" stroke="#b08800" stroke-width="1" stroke-dasharray="6,3"/>
+        <text x="310" y="125" font-size="11" fill="#b08800">$y = 1$</text>
+        <text x="100" y="170" font-size="10" fill="#666">$x \to 0$</text>
+    </svg>
+    <p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure: The function (sine of x) divided by x approaches 1 as x gets close to zero from both sides.</p>
+    </div>
     <details>
     <summary>Show Answer</summary>
     <p><strong>Answer:</strong></p>
@@ -224,4 +239,3 @@ discontinuity can still have a well-defined limit.</p>
     <script src="../js/app.js"></script>
 </body>
 </html>
-
