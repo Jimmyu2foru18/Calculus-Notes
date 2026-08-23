@@ -1,3 +1,9 @@
+# Day 07 — Deriveratives and All Rules
+
+> Verbatim transcription of lecture note images in this folder.
+
+---
+
 ## Page 1 — Derivatives · [Source: 1.png](1.png)
 
 **Derivatives** *(underlined)* — **Pg 1**
@@ -162,3 +168,192 @@ $$f'(x) = g(x)\cdot\frac{h'(x)}{(h(x))^2} - h(x)\cdot\frac{g'(x)}{(g(x))^2}$$
 **Conclusion**
 
 *(boxed in blue)* $f'(x) = \dfrac{g(x)h'(x)-h(x)g'(x)}{(g(x))^2}$ **Proven** *(sparkle/star icon at right)*
+
+---
+
+## Page 4 — Quotient Rule Examples · [Source: 4.png](4.png)
+
+**Quotient Rule Examples** Pg. 4
+
+### Example 1
+
+Find $f'(x)$ for:
+
+$$f(x) = \frac{3x^2 + 5}{4x - 3}$$
+
+**Let...**
+
+$h(x) = 3x^2 + 5$
+
+$g(x) = 4x - 3$
+
+**Quotient Rule Formula**
+
+$$f'(x) = \frac{g(x)h'(x) - h(x)g'(x)}{(g(x))^2}$$
+
+$$f'(x) = \frac{(4x - 3)(6x + 5) - (3x^2 + 5)(4)}{(4x - 3)^2}$$
+
+### Example 2
+
+Find $f'(x)$ for:
+
+$$f(x) = \frac{7x^3 + 3x^2}{5x^2 + 8x - 5}$$
+
+**Let...**
+
+$h(x) = 7x^3 + 3x^2$
+
+$g(x) = 5x^2 + 8x - 5$
+
+**Quotient Rule Formula**
+
+$$f'(x) = \frac{g(x)h'(x) - h(x)g'(x)}{(g(x))^2}$$
+
+$$f'(x) = \frac{(5x^2 + 8x - 5)(2x^2 + 6x) - (7x^3 + 3x^2)(10x + 8)}{(5x^2 + 8x - 5)^2}$$
+
+---
+
+## Page 5 — Derivative Rules · [Source: 5.png](5.png)
+
+**Derivative Rules** Page 5
+
+**Definition:**
+
+If $f(x) = g(h(x))$ then $f'(x) = g'(h(x)) \cdot h'(x)$.
+
+### Example 1
+
+$f(x) = (3x^4 + 9x^2)^{10}$
+
+$h(x) = 3x^4 + 9x^2$
+
+$g(x) = x^{10}$
+
+$$f'(x) = 10(3x^4 + 9x^2)^9 \cdot (12x^3 + 18x)$$
+
+### Example 2
+
+$f(x) = \sqrt[4]{4x^3 - 10x} = (4x^3 - 10x)^{\frac{1}{3}}$
+
+$h(x) = 4x^3 - 10x$
+
+$g(x) = x^{\frac{1}{3}}$
+
+$$f'(x) = \frac{1}{3}(4x^3 - 10x)^{-\frac{2}{3}} \cdot (12x^2 - 10)$$
+
+or
+
+$$f'(x) = \frac{12x^2 - 10}{3\sqrt[4]{(4x^3 - 10x)^2}}$$
+
+$f(x) = (5x - 3)^4 \cdot (x^2 + 10x)$
+
+*Product Rule*
+
+To find "derivative of" $(5x - 3)^4$ we need chain rule.
+
+$$f'(x) = (5x-3)^4 \cdot (2x+10) + (x^2+10x) \cdot 4(5x-3)^3 \cdot 5$$
+
+*Chain Rule*
+
+$$f'(x) = \left[(5x-3)^4 \cdot (2x+10)\right] + \left[(x^2+10x) \cdot (4(5x-3)^3 \cdot 5)\right]$$
+
+*Product Rule Application*
+
+---
+
+## Page 6 — Chain Rule & Transcendental Functions · [Source: 6.png](6.png)
+
+**CALCULUS NOTES: CHAIN RULE & TRANSCENDENTAL FUNCTIONS** Pg. 6
+
+**Example: Chain Rule with Quotient Inside**
+
+$$f(x) = \left(\frac{3x - 5}{12x + 7}\right)^9$$
+
+* Chain Rule with quotient inside *
+
+**Derivative $f'(x)$:**
+
+$$f'(x) = 9\left(\frac{3x - 5}{12x + 7}\right)^8 \cdot \frac{(12x + 7)(3) - (3x - 5)(12)}{(12x + 7)^2}$$
+
+**Derivatives of Exponential and Log functions**
+
+**1.** If $f(x) = e^x$, then $f'(x) = e^x$
+
+EX. $f(x) = e^{x^2}$ *Using Chain rule with $h(x) = x^2$ and $g(x) = e^x$*
+
+$g(x) = e^x$
+
+$$f'(x) = e^{x^2} \cdot 2x$$
+
+EX. $f(x) = e^{3x^3 - 7x} = f'(x) = e^{3x^3 - 7x} \cdot (9x^2 - 7)$
+
+**2.** If $f(x) = a^x$ where 'a' is any positive constant, then
+
+$$f'(x) = a^x \cdot \ln(a)$$
+
+EX. $f(x) = 2^x$ EX. $f(x) = 5^{x^2 + 4}$
+
+$$f'(x) = 2^x \cdot \ln(2)$$ $$f'(x) = 5^{x^2 + 4} \cdot \ln(5) \cdot (2x + 4)$$
+
+**3.** If $f(x) = \ln(x)$, then $f'(x) = \frac{1}{x}$
+
+EX. $f(x) = \ln(3x + 1)$ EX. $f(x) = \ln(3x^2 + 4x)$
+
+$$f'(x) = \frac{1}{3x + 1} \cdot 3 = \boxed{\frac{3}{3x + 1}}$$
+
+$$f'(x) = \frac{1}{3x^2 + 4x} \cdot (6x + 4) = \frac{6x + 4}{3x^2 + 4x}$$
+
+---
+
+## Page 7 — Derivatives of Logarithmic Functions · [Source: 7.png](7.png)
+
+**4.) Derivatives of Logarithmic Functions** *(teal)*
+
+If $f(x) = \log_a(x)$ where "$a$" is any positive constant, then $\underline{f'(x) = \frac{1}{x \ln(a)}}$
+
+Ex. $f(x) = \log_3(x)$ then $\underline{f'(x) = \frac{1}{x \ln(3)}}$
+
+$$\underline{f'(x) = \frac{1}{x \ln(3)}}$$
+
+---
+
+**Rules for Trig-functions - Derived** *(teal)*
+
+**1.)** *(teal)* $f(x) = \sin(x)$ then $f'(x) = \cos(x)$
+
+**2.)** *(teal)* $f(x) = \cos(x)$ then $f'(x) = -\sin(x)$
+
+**3.)** *(green)* $f(x) = \tan(x)$ then $f'(x) = \sec^2(x)$
+
+**4.)** *(green)* $f(x) = \cot(x)$ then $f'(x) = -\csc^2(x)$ **[Corrected to include squared symbol]** *(boxed in green)*
+
+**5.)** *(teal)* $f(x) = \sec(x)$ then $f'(x) = \sec(x) \cdot \tan(x)$
+
+**6.)** *(teal)* $f(x) = \csc(x)$ then $f'(x) = -\csc(x) \cdot \cot(x)$
+
+---
+
+## Page 8 — Rules of Differentiation · [Source: 8.png](8.png)
+
+**Rules of Differentiation**
+
+**Constant Rule** *(blue)*
+If $c$ is a real number (constant), then $\frac{d}{dx}(c) = 0$
+
+**Power Rule** *(green)*
+$\frac{d}{dx}(x^n) = nx^{n-1}$, $n$ is a real number and $x > 0$
+
+**Constant Multiple Rule** *(orange)*
+$\frac{d}{dx}[c \cdot f(x)] = c \cdot f'(x)$, $c$ is a constant
+
+**Sum and Difference Rules** *(purple)*
+$\frac{d}{dx}[f(x) \pm g(x)] = f'(x) \pm g'(x)$
+
+**Product Rule** *(teal)*
+$\frac{d}{dx}[f(x) \cdot g(x)] = f'(x) \cdot g(x) + f(x) \cdot g'(x)$
+
+**Quotient Rule** *(red)*
+$\frac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{g(x)f'(x) - f(x)g'(x)}{[g(x)]^2}$
+
+**Chain Rule** *(yellow)*
+$\frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x)$
