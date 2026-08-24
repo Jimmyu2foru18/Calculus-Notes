@@ -35,7 +35,7 @@
     {'id': 'optimization-problems', 'num': '23', 'title': 'Optimization Problems', 'file': 'chapters/chapter-23.html', 'sections': ['4.4'], 'review': 'review-7'},
     {'id': 'linear-approximation-and-differentials', 'num': '24', 'title': 'Linear Approximation and Differentials', 'file': 'chapters/chapter-24.html', 'sections': ['4.5'], 'review': 'review-7'},
     {'id': 'mean-value-theorem', 'num': '25', 'title': 'Mean Value Theorem', 'file': 'chapters/chapter-25.html', 'sections': ['4.6'], 'review': 'review-7'},
-    {'id': 'lhopitals-rule', 'num': '26', 'title': 'L'Hopital's Rule', 'file': 'chapters/chapter-26.html', 'sections': ['4.7'], 'review': 'review-7'},
+    {'id': 'lhopitals-rule', 'num': '26', 'title': 'L\'Hopital\'s Rule', 'file': 'chapters/chapter-26.html', 'sections': ['4.7'], 'review': 'review-7'},
     {'id': 'antiderivatives', 'num': '27', 'title': 'Antiderivatives', 'file': 'chapters/chapter-27.html', 'sections': ['4.9'], 'review': 'review-8'},
     {'id': 'approximating-areas-under-curves', 'num': '28', 'title': 'Approximating Areas Under Curves', 'file': 'chapters/chapter-28.html', 'sections': ['5.1'], 'review': 'review-8'},
     {'id': 'definite-integrals', 'num': '29', 'title': 'Definite Integrals', 'file': 'chapters/chapter-29.html', 'sections': ['5.2'], 'review': 'review-8'},
