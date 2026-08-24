@@ -24,77 +24,210 @@ window.MathJax = {
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
-<body>
-<header>
-    <h1>Calculus Foundations</h1>
-    <p class="subtitle">A Structured, Beginner-Friendly Path Through Calculus</p>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="../chapters/index.html">Curriculum</a>
-        <a href="index.html">Review Sheets</a>
-        <a href="https://github.com/Jimmyu2foru18/Calculus-Notes" target="_blank" rel="noopener">GitHub</a>
-    </nav>
-</header>
+<body class="review-page">
+<div class="review-container">
 
-<div class="container">
-    <main>
-        
-<div class="review-hero">
-    <h2>Review: Advanced Derivatives</h2>
-    <p>Use this sheet to test your understanding before moving forward. Try each problem without looking at your notes, then check the formulas below.</p>
+    <div class="review-header">
+        <h1>Review: Advanced Derivatives</h1>
+        <nav>
+            <a href="../index.html">← All Reviews</a>
+            <span>Sections 3.9 – 3.10 + Higher-Order</span>
+        </nav>
+    </div>
+
+    <div class="review-hero">
+        <h2>Review: Advanced Derivatives</h2>
+        <p>This sheet covers derivatives of exponential and logarithmic functions, inverse trigonometric derivatives, higher-order derivatives, and related rates formulas.</p>
+    </div>
+
+    <div class="review-tabs" role="tablist">
+        <button class="review-tab active" data-tab="tab-exp-log" role="tab">Exp &amp; Log</button>
+        <button class="review-tab" data-tab="tab-inverse-trig" role="tab">Inverse Trig</button>
+        <button class="review-tab" data-tab="tab-higher" role="tab">Higher-Order Derivatives</button>
+        <button class="review-tab" data-tab="tab-rates" role="tab">Related Rates</button>
+        <button class="review-tab" data-tab="tab-practice" role="tab">Practice Problems</button>
+    </div>
+
+    <div class="review-section active" id="tab-exp-log">
+        <div class="review-card">
+            <h3>Derivatives of Exponential Functions</h3>
+            <p>The natural exponential function is unique: its derivative equals itself.</p>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[e^x] = e^x \]
+                <div class="formula-label">Derivative of $e^x$</div>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[a^x] = a^x \ln a \quad \text{(for } a > 0, a \neq 1\text{)} \]
+                <div class="formula-label">Derivative of $a^x$</div>
+            </div>
+            <div class="review-callout info">
+                <p><strong>Key fact:</strong> $e$ is the only base for which $\dfrac{d}{dx}[a^x] = a^x$ at $x = 0$.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Derivatives of Logarithmic Functions</h3>
+            <p>Natural logs and general logs follow from the inverse relationship with $e^x$:</p>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[\ln x] = \frac{1}{x}, \quad x > 0 \]
+                <div class="formula-label">Derivative of natural log</div>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[\log_a x] = \frac{1}{x \ln a}, \quad x > 0 \]
+                <div class="formula-label">Derivative of general log</div>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>Domain:</strong> $\ln x$ and $\log_a x$ are only defined for $x > 0$. The derivative formula $\frac{1}{x}$ inherits this restriction.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Logarithmic Differentiation Recap</h3>
+            <p>For $y = f(x)^{g(x)}$ or complicated products, take $\ln$ first:</p>
+            <div class="review-formula">
+                \[ \ln y = g(x) \ln f(x) \implies \frac{1}{y}\frac{dy}{dx} = g'(x)\ln f(x) + g(x)\frac{f'(x)}{f(x)} \]
+                <div class="formula-label">Logarithmic differentiation template</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-inverse-trig">
+        <div class="review-card">
+            <h3>Inverse Trig Derivatives (Review)</h3>
+            <p>These are restated here for quick reference. They are derived using implicit differentiation.</p>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[\sin^{-1}(x)] = \frac{1}{\sqrt{1-x^2}}, \quad |x| < 1 \]
+                <div class="formula-label">Arcsine</div>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[\cos^{-1}(x)] = \frac{-1}{\sqrt{1-x^2}}, \quad |x| < 1 \]
+                <div class="formula-label">Arccosine</div>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[\tan^{-1}(x)] = \frac{1}{1+x^2} \]
+                <div class="formula-label">Arctangent</div>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>Absolute value matters:</strong> For $\sec^{-1}$ and $\csc^{-1}$, the denominator is $|x|\sqrt{x^2-1}$, not just $x\sqrt{x^2-1}$.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Worked Example: Inverse Trig with Chain Rule</h3>
+            <p>Find $\dfrac{d}{dx}[\sec^{-1}(5x^3)]$:</p>
+            <div class="review-formula">
+                \[ f'(x) = \frac{1}{|5x^3|\sqrt{(5x^3)^2 - 1}} \cdot 15x^2 = \frac{15x^2}{5x^3\sqrt{25x^6 - 1}} = \frac{3}{x\sqrt{25x^6 - 1}} \]
+                <div class="formula-label">Chain rule + arcsecant derivative</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-higher">
+        <div class="review-card">
+            <h3>Higher-Order Derivatives</h3>
+            <p>The second derivative is the derivative of the first derivative. Higher-order derivatives follow similarly.</p>
+            <div class="review-formula">
+                \[ f''(x) = \frac{d}{dx}[f'(x)] = \frac{d^2y}{dx^2} \]
+                <div class="formula-label">Second derivative notation</div>
+            </div>
+            <div class="review-formula">
+                \[ f^{(n)}(x) = \frac{d^n}{dx^n}[f(x)] \]
+                <div class="formula-label">$n$-th derivative notation</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Worked Examples: Higher-Order Derivatives</h3>
+            <p>Find $f^{(\text{IV})}(x)$ for $f(x) = 3x^6 + 5x^5 - 3x^4 + 3x^3 - 9x^2 + 10x - 4$:</p>
+            <div class="review-formula">
+                \[ f^{(IV)}(x) = 1080x^2 + 60x - 72 \]
+                <div class="formula-label">Fourth derivative of polynomial</div>
+            </div>
+            <p>Find $f^{(\text{IV})}(x)$ for $f(x) = \cos(2x)$:</p>
+            <div class="review-formula">
+                \[ f'(x) = -2\sin(2x), \quad f''(x) = -4\cos(2x), \quad f'''(x) = 8\sin(2x), \quad f^{(IV)}(x) = 16\cos(2x) \]
+                <div class="formula-label">Fourth derivative of $\cos(2x)$</div>
+            </div>
+            <div class="review-callout info">
+                <p><strong>Pattern for trig:</strong> Derivatives of $\sin$ and $\cos$ cycle every 4 derivatives. For $\cos(kx)$, each derivative brings out a factor of $k$.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-rates">
+        <div class="review-card">
+            <h3>Related Rates Method</h3>
+            <p>To solve related rates problems:</p>
+            <ol>
+                <li>Draw a diagram and label all quantities that change with time.</li>
+                <li>Write an equation relating the variables (geometry, physics).</li>
+                <li>Differentiate <em>both sides</em> with respect to $t$.</li>
+                <li>Substitute known values (including rates) and solve for the unknown rate.</li>
+            </ol>
+            <div class="review-callout warning">
+                <p><strong>Critical rule:</strong> Differentiate first, <em>then</em> substitute. If you substitute before differentiating, constant values may hide the time-dependence of other variables.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Worked Example: Airplane and Radar</h3>
+            <p>An airplane flies at constant height 6 km toward a radar station. If the distance $s$ decreases at 400 km/hr when $s = 10$ km, find the horizontal speed.</p>
+            <div class="review-formula">
+                \[ x^2 + 6^2 = s^2 \implies 2x\frac{dx}{dt} = 2s\frac{ds}{dt} \implies \frac{dx}{dt} = \frac{s}{x}\frac{ds}{dt} = \frac{10}{8}(-400) = -500 \text{ km/hr} \]
+                <div class="formula-label">Horizontal speed = 500 km/hr toward the station</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Worked Example: Expanding Circle</h3>
+            <p>If the radius of a circle increases at 2 cm/s, how fast is the area increasing when $r = 5$ cm?</p>
+            <div class="review-formula">
+                \[ A = \pi r^2 \implies \frac{dA}{dt} = 2\pi r \frac{dr}{dt} = 2\pi(5)(2) = 20\pi \text{ cm}^2/\text{s} \]
+                <div class="formula-label">Rate of area change</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-practice">
+        <div class="review-card">
+            <h3>Practice Problems</h3>
+            <ol>
+                <li>Find $\dfrac{d}{dx}[e^{3x^2}]$ using the chain rule.</li>
+                <li>Find $\dfrac{d}{dx}[5^x]$ using the exponential rule.</li>
+                <li>Find $\dfrac{d}{dx}[\ln(x^3 + 1)]$ using the chain rule.</li>
+                <li>Find $\dfrac{d}{dx}[\log_2(x^2 + 3)]$ using the change-of-base formula.</li>
+                <li>Find $\dfrac{d}{dx}[\sin^{-1}(2x)]$ and state the domain restriction.</li>
+                <li>Find $\dfrac{d}{dx}[\tan^{-1}(x^2)]$ using the chain rule.</li>
+                <li>Find $f''(x)$ for $f(x) = x^3 e^x$.</li>
+                <li>Find $f'''(x)$ for $f(x) = \ln(x^2 + 1)$.</li>
+                <li>A spherical balloon is inflated at $10 \text{ cm}^3/\text{s}$. How fast is the radius increasing when $r = 5$ cm?</li>
+                <li>A 10 ft ladder leans against a wall. If the bottom slides away at 1 ft/s, how fast is the top sliding down when the bottom is 6 ft from the wall?</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="review-nav">
+        <a href="../index.html" class="review-nav-btn">← Back to Home</a>
+        <span class="review-nav-indicator">Self-Check</span>
+        <a href="review-6.html" class="review-nav-btn">Next Review →</a>
+    </div>
+
 </div>
-
-<div class="review-card">
-    <h3>Key Formulas at a Glance</h3>
-    <ul>
-        <li><em>(boxed in blue)</em> <strong>Definition of Derivative</strong></li>
-<li><em>Def: \(f' = \lim\limits_{h\to 0}\dfrac{f(x+h)-f(x)}{h}\)</em></li>
-<li>\[f'(x) = \lim_{h\to 0}\frac{\left(\sqrt{3(x+h)-4}-\sqrt{3x-4}\right)\left(\sqrt{3(x+h)-4}+\sqrt{3x-4}\right)}{h\left(\sqrt{3(x+h)-4}+\sqrt{3x-4}\right)}\]</li>
-<li>\[f'(x) = \lim_{h\to 0}\frac{3x+3h-4-3x+4}{h\left(\sqrt{3(x+h)-4}+\sqrt{3x-4}\right)}\]</li>
-<li>\[f'(x) = \lim_{h\to 0}\frac{3}{h\left(\sqrt{3(x+h)-4}+\sqrt{3x-4}\right)} = \frac{3}{\sqrt{3x-4}+\sqrt{3x-4}}\]</li>
-<li>\(LCD = (4x+h+1)(4x+1)\)</li>
-<li>\[f'(x) = \lim_{h\to 0}\frac{5(4x+1+1)-5(4(x+h)+1)}{(4x+h+1)(4x+1)}\]</li>
-<li>\[f'(x) = \lim_{h\to 0}\frac{20x+5-20x-20h-5}{h(4x+h+1)(4x+1)}\]</li>
-<li>\[f'(x) = \lim_{h\to 0}\frac{-20h}{h(4x+h+1)(4x+1)} = \frac{-20}{(4x+h+1)(4x+1)}\]</li>
-<li>\(f(x) = x^{1/2} - 5x^2\)</li>
-<li>\(f'(x) = \frac{1}{2}x^{-1/2} - 10x\)</li>
-<li>\(f'(x) = \frac{1}{2\sqrt{x}} - 10x\)</li>
-<li>\(f(x) = 3x + 7x^{-3}\)</li>
-<li>\(f'(x) = 3 - 21x^{-4}\)</li>
-<li><em>(curved arrows point from \(\sqrt[3]{x^5}\) down to \(x^{5/3}\) and from \(\frac{5}{x^2}\) down to \(5x^{-2}\))</em></li>
-<li>\(x^{5/3} + 2x^{-2} - 5x^{-2}\)</li>
-<li>\(f'(x) = \frac{5}{3}x^{2/3} + 4x + 10x^{-3}\)</li>
-<li>\(f(x) = 3x + 4x^{-1} - 8x^{-3}\)</li>
-<li>\(f'(x) = 3 - 4x^{-2} + 24x^{-4}\)</li>
-<li><em>(boxed)</em> <strong>Product Rule: If \(f(x) = h(x)\cdot g(x)\) then \(f'(x) = h(x)\cdot g'(x) + g(x)\cdot h'(x)\)</strong> <em>(the formula \(f'(x) = h(x)\cdot g'(x) + g(x)\cdot h'(x)\) highlighted in light blue)</em></li>
-    </ul>
-</div>
-
-<div class="review-card">
-    <h3>Practice Problems</h3>
-    <ol>
-        <li>Complete the end-of-section practice problems.</li>
-    </ol>
-</div>
-
-<div class="review-nav">
-    <a href="../index.html" class="review-nav-btn">← Back to Home</a>
-    <span class="review-nav-indicator">Self-Check</span>
-    <a href="review-6.html" class="review-nav-btn">Next Chapter →</a>
-</div>
-
-    </main>
-</div>
-
-<button class="note-btn note-sidebar-toggle" type="button">Notes</button>
 
 <script src="../js/app.js"></script>
 <script>
-window.CalculusChapters = CHAPTERS_LIST_JSON;
-window.CurrentChapterId = "";
+document.querySelectorAll('.review-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        document.querySelectorAll('.review-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.review-section').forEach(s => s.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(target).classList.add('active');
+        if (window.MathJax && MathJax.typesetPromise) {
+            MathJax.typesetPromise();
+        }
+    });
+});
 </script>
 </body>
 </html>
-
-
-

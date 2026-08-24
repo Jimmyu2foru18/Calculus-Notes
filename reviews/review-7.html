@@ -24,91 +24,237 @@ window.MathJax = {
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
-<body>
-<header>
-    <h1>Calculus Foundations</h1>
-    <p class="subtitle">A Structured, Beginner-Friendly Path Through Calculus</p>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="../chapters/index.html">Curriculum</a>
-        <a href="index.html">Review Sheets</a>
-        <a href="https://github.com/Jimmyu2foru18/Calculus-Notes" target="_blank" rel="noopener">GitHub</a>
-    </nav>
-</header>
+<body class="review-page">
+<div class="review-container">
 
-<div class="container">
-    <main>
-        
-<div class="review-hero">
-    <h2>Review: Applications II</h2>
-    <p>Use this sheet to test your understanding before moving forward. Try each problem without looking at your notes, then check the formulas below.</p>
+    <div class="review-header">
+        <h1>Review: Applications II</h1>
+        <nav>
+            <a href="../index.html">← All Reviews</a>
+            <span>Sections 4.4 – 4.7</span>
+        </nav>
+    </div>
+
+    <div class="review-hero">
+        <h2>Review: Applications II</h2>
+        <p>This sheet covers optimization, linear approximation and differentials, the Mean Value Theorem and Rolle's Theorem, and L'Hôpital's Rule for evaluating indeterminate limits.</p>
+    </div>
+
+    <div class="review-tabs" role="tablist">
+        <button class="review-tab active" data-tab="tab-optimization" role="tab">Optimization</button>
+        <button class="review-tab" data-tab="tab-linear" role="tab">Linear Approximation</button>
+        <button class="review-tab" data-tab="tab-mvt" role="tab">Mean Value Theorem</button>
+        <button class="review-tab" data-tab="tab-lhopital" role="tab">L'Hôpital's Rule</button>
+        <button class="review-tab" data-tab="tab-practice" role="tab">Practice Problems</button>
+    </div>
+
+    <div class="review-section active" id="tab-optimization">
+        <div class="review-card">
+            <h3>Optimization Method</h3>
+            <p>Optimization problems ask for the maximum or minimum value of a quantity subject to constraints.</p>
+            <ol>
+                <li>Read the problem carefully and identify the quantity to optimize.</li>
+                <li>Draw a diagram and label variables.</li>
+                <li>Write the objective function $f(x)$ to maximize or minimize.</li>
+                <li>Use the constraint equation to eliminate extra variables.</li>
+                <li>Find critical numbers of the reduced objective function.</li>
+                <li>Evaluate at critical numbers and endpoints (if closed interval).</li>
+                <li>Answer the original question with appropriate units.</li>
+            </ol>
+            <div class="review-callout info">
+                <p><strong>Key principle:</strong> Always reduce to a single-variable function before differentiating. Use the constraint to express everything in terms of one variable.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Worked Example: Box with Maximum Volume</h3>
+            <p>A box with a square base and open top is made from 48 in² of cardboard. Find dimensions for maximum volume.</p>
+            <div class="review-formula">
+                \[ \text{Surface area: } x^2 + 4xh = 48 \implies h = \frac{48 - x^2}{4x} \]
+                \[ V(x) = x^2h = \frac{48x - x^3}{4} \]
+                \[ V'(x) = \frac{48 - 3x^2}{4} = 0 \implies x = 4, h = 2 \]
+                <div class="formula-label">Max volume: $4 \times 4 \times 2$ inches</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Common Optimization Formulas</h3>
+            <div class="review-table">
+                <table>
+                    <thead>
+                        <tr><th>Shape</th><th>Quantity to Optimize</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Rectangle (perimeter $P$)</td><td>Area $A = xy$, constraint $2x + 2y = P$</td></tr>
+                        <tr><td>Right cylinder</td><td>Volume $V = \pi r^2 h$, surface area $S = 2\pi r^2 + 2\pi rh$</td></tr>
+                        <tr><td>Cone</td><td>Volume $V = \frac{1}{3}\pi r^2 h$, slant height $l = \sqrt{r^2 + h^2}$</td></tr>
+                        <tr><td>Box with square base</td><td>Volume $V = x^2 h$, surface area $S = x^2 + 4xh$</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-linear">
+        <div class="review-card">
+            <h3>Linear Approximation (Linearization)</h3>
+            <p>Near $x = a$, a differentiable function $f$ can be approximated by its tangent line:</p>
+            <div class="review-formula">
+                \[ L(x) = f(a) + f'(a)(x - a) \]
+                <div class="formula-label">Linear approximation (linearization) of $f$ at $a$</div>
+            </div>
+            <div class="review-callout info">
+                <p><strong>Intuition:</strong> The tangent line at $(a, f(a))$ is the best linear approximation to $f$ near $a$. As $x \to a$, the error in approximation goes to zero faster than $|x - a|$.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Differentials</h3>
+            <p>The differential $dy$ approximates the actual change $\Delta y$ for a small change $dx$:</p>
+            <div class="review-formula">
+                \[ dy = f'(x)\, dx \]
+                <div class="formula-label">Differential of $y = f(x)$</div>
+            </div>
+            <div class="review-formula">
+                \[ \Delta y \approx dy = f'(x)\, dx \]
+                <div class="formula-label">Approximation: actual change $\approx$ differential</div>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>Important:</strong> $dy$ approximates $\Delta y$ only for <em>small</em> $dx$. The approximation error grows as $dx$ gets larger.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Worked Example: Approximation</h3>
+            <p>Use linearization to approximate $\sqrt{4.1}$:</p>
+            <div class="review-formula">
+                \[ f(x) = \sqrt{x}, \quad a = 4, \quad f'(x) = \frac{1}{2\sqrt{x}} \]
+                \[ L(x) = 2 + \frac{1}{4}(x - 4) = 2 + \frac{x - 4}{4} \]
+                \[ L(4.1) = 2 + \frac{0.1}{4} = 2.025 \quad (\text{actual } \approx 2.0248) \]
+                <div class="formula-label">Linear approximation of $\sqrt{4.1}$</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-mvt">
+        <div class="review-card">
+            <h3>Rolle's Theorem</h3>
+            <p>If $f$ satisfies three conditions on $[a, b]$, then there is at least one point where $f'(c) = 0$:</p>
+            <div class="review-formula">
+                \[ \text{If } \begin{cases} f \text{ continuous on } [a, b] \\ f \text{ differentiable on } (a, b) \\ f(a) = f(b) \end{cases} \implies \exists c \in (a, b) : f'(c) = 0 \]
+                <div class="formula-label">Rolle's Theorem</div>
+            </div>
+            <div class="review-callout info">
+                <p><strong>Geometric meaning:</strong> There is at least one horizontal tangent between two points at the same height.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Mean Value Theorem (MVT)</h3>
+            <p>The MVT generalizes Rolle's Theorem to cases where $f(a) \neq f(b)$:</p>
+            <div class="review-formula">
+                \[ \text{If } \begin{cases} f \text{ continuous on } [a, b] \\ f \text{ differentiable on } (a, b) \end{cases} \implies \exists c \in (a, b) : f'(c) = \frac{f(b) - f(a)}{b - a} \]
+                <div class="formula-label">Mean Value Theorem</div>
+            </div>
+            <div class="review-callout info">
+                <p><strong>Interpretation:</strong> The instantaneous rate of change equals the average rate of change at some point $c$ in the interval.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Consequences of the MVT</h3>
+            <ul>
+                <li>If $f'(x) = 0$ on $(a, b)$ and $f$ is continuous on $[a, b]$, then $f$ is constant on $[a, b]$.</li>
+                <li>If $f'(x) > 0$ on $(a, b)$, then $f$ is strictly increasing on $[a, b]$.</li>
+                <li>If $f'(x) < 0$ on $(a, b)$, then $f$ is strictly decreasing on $[a, b]$.</li>
+                <li>If $f'(x) = g'(x)$ on $(a, b)$, then $f(x) = g(x) + C$ on $[a, b]$.</li>
+            </ul>
+            <div class="review-callout warning">
+                <p><strong>Continuity at endpoints is required.</strong> A function with a jump discontinuity (e.g., step function) can violate the MVT even if differentiable on $(a, b)$.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-lhopital">
+        <div class="review-card">
+            <h3>L'Hôpital's Rule</h3>
+            <p>For indeterminate forms, differentiate the numerator and denominator separately:</p>
+            <div class="review-formula">
+                \[ \text{If } \lim_{x \to a} \frac{f(x)}{g(x)} \text{ is } \frac{0}{0} \text{ or } \frac{\infty}{\infty}, \text{ then } \lim_{x \to a} \frac{f(x)}{g(x)} = \lim_{x \to a} \frac{f'(x)}{g'(x)} \]
+                <div class="formula-label">L'Hôpital's Rule (indeterminate forms)</div>
+            </div>
+            <div class="review-callout info">
+                <p><strong>Indeterminate forms covered:</strong> $\frac{0}{0}$, $\frac{\infty}{\infty}$, $0 \cdot \infty$, $\infty - \infty$, $0^0$, $1^\infty$, $\infty^0$ (convert to $0/0$ or $\infty/\infty$ first).</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Applying L'Hôpital's Rule</h3>
+            <p>Check conditions every time. If the new limit is still indeterminate, apply the rule again.</p>
+            <div class="review-formula">
+                \[ \lim_{x \to 0} \frac{\sin x}{x} \xrightarrow{\text{L'H}} \lim_{x \to 0} \frac{\cos x}{1} = 1 \]
+                <div class="formula-label">Classic $0/0$ example</div>
+            </div>
+            <div class="review-formula">
+                \[ \lim_{x \to \infty} \frac{\ln x}{x} \xrightarrow{\text{L'H}} \lim_{x \to \infty} \frac{1/x}{1} = 0 \]
+                <div class="formula-label">Classic $\infty/\infty$ example</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Converting to Indeterminate Form</h3>
+            <p>Some limits are not initially in $0/0$ or $\infty/\infty$ form:</p>
+            <div class="review-formula">
+                \[ \lim_{x \to 0^+} x \ln x = \lim_{x \to 0^+} \frac{\ln x}{1/x} = \lim_{x \to 0^+} \frac{1/x}{-1/x^2} = \lim_{x \to 0^+} (-x) = 0 \]
+                <div class="formula-label">$0 \cdot \infty$ converted to $\infty/\infty$</div>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>Do NOT apply L'Hôpital's Rule unless the form is indeterminate.</strong> $\lim_{x \to 0} \frac{x^2}{x} = 0$ is NOT $0/0$ after the first simplification — cancel first.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-practice">
+        <div class="review-card">
+            <h3>Practice Problems</h3>
+            <ol>
+                <li>Maximize the area of a rectangle with perimeter 40 cm.</li>
+                <li>Find the dimensions of a cylinder with volume $1000\pi$ cm³ that minimizes surface area.</li>
+                <li>Use linearization to approximate $\sqrt[3]{8.1}$ near $a = 8$.</li>
+                <li>Find the differential $dy$ for $y = x^3 + 2x$ when $x = 1$ and $dx = 0.1$.</li>
+                <li>Verify that $f(x) = x^3 - 3x$ satisfies the MVT on $[0, 2]$ and find all such $c$.</li>
+                <li>Verify that $f(x) = \ln x$ satisfies the MVT on $[1, e]$ and find $c$.</li>
+                <li>Evaluate $\lim_{x \to 0} \dfrac{e^x - 1}{x}$ using L'Hôpital's Rule.</li>
+                <li>Evaluate $\lim_{x \to 0} \dfrac{\sin(3x)}{\tan(5x)}$ using L'Hôpital's Rule.</li>
+                <li>Evaluate $\lim_{x \to \infty} \dfrac{\ln x}{x^2}$ using L'Hôpital's Rule.</li>
+                <li>Evaluate $\lim_{x \to 0^+} x^2 \ln x$ by converting to an indeterminate fraction.</li>
+                <li>Evaluate $\lim_{x \to \infty} (1 + \frac{1}{x})^x$ by converting to exponential/log form.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="review-nav">
+        <a href="../index.html" class="review-nav-btn">← Back to Home</a>
+        <span class="review-nav-indicator">Self-Check</span>
+        <a href="review-8.html" class="review-nav-btn">Next Review →</a>
+    </div>
+
 </div>
-
-<div class="review-card">
-    <h3>Key Formulas at a Glance</h3>
-    <ul>
-        <li>\[f(x) = \frac{x^2-3}{2x-4}\]</li>
-<li>\[\text{Domain: } (-\infty, 2) \cup (2, \infty) \quad \text{from setting denominator = 0}\]</li>
-<li>\(y\)-intercept: \(f(0) = \frac{0^2-3}{2(0)-4} = \frac{-3}{-4} = \frac{3}{4} \implies \left(0, \frac{3}{4}\right) \quad \text{The points are}\)</li>
-<li>Horizontal Asymptote: <em>No</em> \(\quad \lim_{x \to \infty} \frac{x^2-3}{2x-4} = \infty\). <em>(No H-Asymptote)</em></li>
-<li>Oblique Asymptote: \(2x - 4\sqrt{x^2} + 0x - 3 = \frac{1}{2}x + 1 \implies y = \frac{1}{2}x + 1\)</li>
-<li>\[x < 0 \quad 1 < x \quad 1.5 = 2 \quad x > 3 \quad x > 4\]</li>
-<li>\(f'(0) = \frac{2(0)^2 + 8(0) + 6}{(-4)^2} = \frac{+6}{16} = \boxed{+}\) \(\quad f'(2) = \frac{2(0)^2 + 8(0) + 6}{(-4)^2} = \frac{+6}{16} = \boxed{+}\)</li>
-<li>\(f'(2) = \frac{(0)^2 - 4(2)^2)}{(-4)^2)} = \frac{-8}{16} = \frac{1}{2}\) \(\quad f'(4) = \frac{2(0)^2 + 4}{(-4+2)^2)} = \frac{3}{8} = \boxed{+}\)</li>
-<li>\(\frac{3}{8} \longrightarrow +\) \(\quad \frac{4}{16} \longrightarrow \boxed{-}\) \(\quad \frac{2.5-24}{-16} \longrightarrow \boxed{+}\) \(\quad \frac{6+32+6}{x(2-4)^2} \longrightarrow \boxed{+}\)</li>
-<li>\(\quad \quad \quad \frac{4}{-16} \longrightarrow \boxed{-}\) \(\quad \frac{4}{-16} \longrightarrow \boxed{-}\)</li>
-<li>\(\frac{-8}{x} \longrightarrow \frac{-8}{8} = -1\) \(\quad \frac{-8}{x} = -1\) \(\quad \frac{-8}{x} = -1\)</li>
-<li>So: \(\begin{cases} x = 3 \\ x = 1 \end{cases}\)</li>
-<li>So: Increasing on: \((-\infty, 1) \cup (3, \infty)\)</li>
-<li>Decreasing on: \((1, 2) \cup (2, 3)\)</li>
-<li>Relative max: \(x = 1\)</li>
-<li>Relative min: \(x = 3\)</li>
-<li>\(f''(x) = \frac{8(x-2)}{(2x-4)^3}\)</li>
-<li>Concave up on: \((-\infty, 2)\)</li>
-<li>Concave down on: \((-2, \infty)\)</li>
-<li>\(\begin{cases} x = \sqrt{3}: f(\sqrt{3}) = \frac{3-3}{2\sqrt{3}-4} = 0 \implies (-\sqrt{3}, 0) \\ x = -\sqrt{3}: f(-\sqrt{3}) = \frac{3-3}{-2\sqrt{3}-4} = 0 \implies (\sqrt{3}, 0) \end{cases}\)</li>
-    </ul>
-</div>
-
-<div class="review-card">
-    <h3>Practice Problems</h3>
-    <ol>
-        <li>1. Draw a Diagram (if applicable)</li>
-<li>2. Write the Objective Function ("Thing to minimize or maximize")</li>
-<li>3. If necessary, write an equation or constraint, to eliminate extra variables in the objective function through substitution.</li>
-<li>4. Take the derivative of the objective function.</li>
-<li>5. Set the derivative equal to zero and solve.</li>
-<li>6. Answer the question asked of us.</li>
-<li>1) <strong>Increasing on:</strong> \((-4,0)\)</li>
-<li>2) <strong>Decreasing on:</strong> \((-\infty,-4) \cup (0,2) \cup (2,\infty)\)</li>
-<li>3) <strong>Concave up on:</strong> \((-\infty,-2) \cup (1,2)\)</li>
-<li>4) <strong>Concave down on:</strong> \((-2,1) \cup (2,\infty)\)</li>
-<li>5) <strong>Relative Maximum at:</strong> \(x=0\)</li>
-<li>6) <strong>Relative Minimum at:</strong> \(x=-4\)</li>
-<li>7) <strong>Plateau on:</strong> \(x=2\)</li>
-<li>8) <strong>Points of Inflection at:</strong> Turning points \(x=[-2,1,2]\)</li>
-<li>1) <strong>Objective function:</strong> \(A = L \cdot W\)</li>
-    </ol>
-</div>
-
-<div class="review-nav">
-    <a href="../index.html" class="review-nav-btn">← Back to Home</a>
-    <span class="review-nav-indicator">Self-Check</span>
-    <a href="../chapters/integration.html" class="review-nav-btn">Next Chapter →</a>
-</div>
-
-    </main>
-</div>
-
-<button class="note-btn note-sidebar-toggle" type="button">Notes</button>
 
 <script src="../js/app.js"></script>
 <script>
-window.CalculusChapters = CHAPTERS_LIST_JSON;
-window.CurrentChapterId = "";
+document.querySelectorAll('.review-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        document.querySelectorAll('.review-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.review-section').forEach(s => s.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(target).classList.add('active');
+        if (window.MathJax && MathJax.typesetPromise) {
+            MathJax.typesetPromise();
+        }
+    });
+});
 </script>
 </body>
 </html>
-
-
-

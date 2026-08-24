@@ -24,81 +24,246 @@ window.MathJax = {
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
-<body>
-<header>
-    <h1>Calculus Foundations</h1>
-    <p class="subtitle">A Structured, Beginner-Friendly Path Through Calculus</p>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="../chapters/index.html">Curriculum</a>
-        <a href="index.html">Review Sheets</a>
-        <a href="https://github.com/Jimmyu2foru18/Calculus-Notes" target="_blank" rel="noopener">GitHub</a>
-    </nav>
-</header>
+<body class="review-page">
+<div class="review-container">
 
-<div class="container">
-    <main>
-        
-<div class="review-hero">
-    <h2>Review: Differentiation Rules</h2>
-    <p>Use this sheet to test your understanding before moving forward. Try each problem without looking at your notes, then check the formulas below.</p>
+    <div class="review-header">
+        <h1>Review: Differentiation Rules</h1>
+        <nav>
+            <a href="../index.html">← All Reviews</a>
+            <span>Sections 3.5 – 3.8</span>
+        </nav>
+    </div>
+
+    <div class="review-hero">
+        <h2>Review: Differentiation Rules</h2>
+        <p>This sheet covers advanced trigonometric derivatives, related rates setup, the chain rule, implicit differentiation, and logarithmic differentiation — key tools for handling composite and implicitly-defined functions.</p>
+    </div>
+
+    <div class="review-tabs" role="tablist">
+        <button class="review-tab active" data-tab="tab-advanced-trig" role="tab">Advanced Trig</button>
+        <button class="review-tab" data-tab="tab-related-rates" role="tab">Rates of Change</button>
+        <button class="review-tab" data-tab="tab-chain" role="tab">Chain Rule</button>
+        <button class="review-tab" data-tab="tab-implicit" role="tab">Implicit Differentiation</button>
+        <button class="review-tab" data-tab="tab-practice" role="tab">Practice Problems</button>
+    </div>
+
+    <div class="review-section active" id="tab-advanced-trig">
+        <div class="review-card">
+            <h3>Derivatives of Inverse Trig Functions</h3>
+            <p>These derivatives require implicit differentiation to derive. Memorize the formulas and their domain restrictions.</p>
+            <div class="review-formula">
+                \[ \frac{d}{dx}\left[\sin^{-1}(x)\right] = \frac{1}{\sqrt{1-x^2}}, \quad |x| < 1 \]
+                <div class="formula-label">Derivative of arcsine</div>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}\left[\cos^{-1}(x)\right] = \frac{-1}{\sqrt{1-x^2}}, \quad |x| < 1 \]
+                <div class="formula-label">Derivative of arccosine</div>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}\left[\tan^{-1}(x)\right] = \frac{1}{1+x^2} \]
+                <div class="formula-label">Derivative of arctangent</div>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>Watch the domains:</strong> $\sin^{-1}$ and $\cos^{-1}$ require $|x| < 1$. $\tan^{-1}$ is defined for all real $x$.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Remaining Inverse Trig Derivatives</h3>
+            <div class="review-formula">
+                \[ \frac{d}{dx}\left[\cot^{-1}(x)\right] = \frac{-1}{1+x^2} \]
+                <div class="formula-label">Derivative of arccotangent</div>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}\left[\sec^{-1}(x)\right] = \frac{1}{|x|\sqrt{x^2-1}}, \quad |x| > 1 \]
+                <div class="formula-label">Derivative of arcsecant</div>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}\left[\csc^{-1}(x)\right] = \frac{-1}{|x|\sqrt{x^2-1}}, \quad |x| > 1 \]
+                <div class="formula-label">Derivative of arccosecant</div>
+            </div>
+            <div class="review-table">
+                <table>
+                    <thead>
+                        <tr><th>Function</th><th>Derivative</th><th>Domain</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>$\sin^{-1}(x)$</td><td>$\dfrac{1}{\sqrt{1-x^2}}$</td><td>$|x| < 1$</td></tr>
+                        <tr><td>$\cos^{-1}(x)$</td><td>$\dfrac{-1}{\sqrt{1-x^2}}$</td><td>$|x| < 1$</td></tr>
+                        <tr><td>$\tan^{-1}(x)$</td><td>$\dfrac{1}{1+x^2}$</td><td>all $x$</td></tr>
+                        <tr><td>$\cot^{-1}(x)$</td><td>$\dfrac{-1}{1+x^2}$</td><td>all $x$</td></tr>
+                        <tr><td>$\sec^{-1}(x)$</td><td>$\dfrac{1}{|x|\sqrt{x^2-1}}$</td><td>$|x| > 1$</td></tr>
+                        <tr><td>$\csc^{-1}(x)$</td><td>$\dfrac{-1}{|x|\sqrt{x^2-1}}$</td><td>$|x| > 1$</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-related-rates">
+        <div class="review-card">
+            <h3>Related Rates Setup</h3>
+            <p>Related rates problems involve finding how one quantity changes with respect to time when other related quantities are also changing.</p>
+            <ol>
+                <li>Draw a diagram and label all relevant quantities.</li>
+                <li>Write an equation relating the quantities (geometry, physics, etc.).</li>
+                <li>Differentiate <em>both sides</em> with respect to $t$.</li>
+                <li>Substitute known values and solve for the unknown rate.</li>
+            </ol>
+            <div class="review-callout info">
+                <p><strong>Key principle:</strong> All variables are functions of time $t$. Differentiate first, <em>then</em> substitute known values.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Common Geometric Formulas for Related Rates</h3>
+            <div class="review-table">
+                <table>
+                    <thead>
+                        <tr><th>Shape</th><th>Formula</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Circle (area)</td><td>$A = \pi r^2$</td></tr>
+                        <tr><td>Circle (circumference)</td><td>$C = 2\pi r$</td></tr>
+                        <tr><td>Sphere (volume)</td><td>$V = \frac{4}{3}\pi r^3$</td></tr>
+                        <tr><td>Cone (volume)</td><td>$V = \frac{1}{3}\pi r^2 h$</td></tr>
+                        <tr><td>Cylinder (volume)</td><td>$V = \pi r^2 h$</td></tr>
+                        <tr><td>Right triangle (Pythagorean)</td><td>$a^2 + b^2 = c^2$</td></tr>
+                        <tr><td>Similar triangles</td><td>$\dfrac{x}{h} = \dfrac{d}{H}$ (shadow problems)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Related Rates Example: Shadow Problem</h3>
+            <p>A 6 ft tall person walks away from a 15 ft lamppost at 5 ft/s. How fast is the tip of the shadow moving when the person is 10 ft from the pole?</p>
+            <div class="review-formula">
+                \[ \frac{x}{6} = \frac{x+y}{15} \implies \frac{dx}{dt} = \frac{6}{9} \cdot \frac{d(x+y)}{dt} = \frac{2}{3} \cdot 5 = \frac{10}{3} \text{ ft/s} \]
+                <div class="formula-label">Similar triangles rate setup</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-chain">
+        <div class="review-card">
+            <h3>The Chain Rule</h3>
+            <p>If $y = f(u)$ and $u = g(x)$, then $y$ is a composite function of $x$:</p>
+            <div class="review-formula">
+                \[ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx} \]
+                <div class="formula-label">Chain rule in Leibniz notation</div>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[f(g(x))] = f'(g(x)) \cdot g'(x) \]
+                <div class="formula-label">Chain rule in prime notation</div>
+            </div>
+            <div class="review-callout info">
+                <p><strong>Generalized power rule:</strong> $\dfrac{d}{dx}[u^n] = nu^{n-1} \cdot u'$, where $u$ is any differentiable function of $x$.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Applying the Chain Rule</h3>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[\sin(x^2)] = \cos(x^2) \cdot 2x \]
+                <div class="formula-label">Chain rule example: outer $\sin$, inner $x^2$</div>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[(3x+1)^5] = 5(3x+1)^4 \cdot 3 = 15(3x+1)^4 \]
+                <div class="formula-label">Generalized power rule example</div>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>Common mistake:</strong> Forgetting to multiply by $u'$. $\dfrac{d}{dx}[\sin(x^2)] = \cos(x^2)$, <em>not</em> $\cos(x^2) \cdot 2x$? No — you MUST include $u'$.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Chain Rule with Multiple Layers</h3>
+            <p>For compositions of three or more functions, apply the chain rule repeatedly.</p>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[\sin(e^{x^2})] = \cos(e^{x^2}) \cdot e^{x^2} \cdot 2x \]
+                <div class="formula-label">Triple composition example</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-implicit">
+        <div class="review-card">
+            <h3>Implicit Differentiation</h3>
+            <p>When $y$ is not isolated, differentiate both sides of the equation with respect to $x$, treating $y$ as a function of $x$ and using the chain rule on every $y$ term.</p>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[y^3] = 3y^2 \cdot \frac{dy}{dx} \]
+                <div class="formula-label">Differentiating an implicit $y$ term</div>
+            </div>
+            <div class="review-callout info">
+                <p><strong>Goal:</strong> Solve for $\dfrac{dy}{dx}$. After differentiating, collect all $\dfrac{dy}{dx}$ terms on one side, factor, and solve.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Worked Example: Circle</h3>
+            <p>Find $\dfrac{dy}{dx}$ for $x^2 + y^2 = 25$:</p>
+            <div class="review-formula">
+                \[ 2x + 2y\frac{dy}{dx} = 0 \implies \frac{dy}{dx} = -\frac{x}{y} \]
+                <div class="formula-label">Implicit differentiation of $x^2 + y^2 = 25$</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Logarithmic Differentiation</h3>
+            <p>For complicated products, quotients, or powers, take $\ln$ of both sides first, then differentiate implicitly:</p>
+            <div class="review-formula">
+                \[ y = x^x \implies \ln y = x \ln x \implies \frac{1}{y}\frac{dy}{dx} = \ln x + 1 \implies \frac{dy}{dx} = x^x(\ln x + 1) \]
+                <div class="formula-label">Logarithmic differentiation of $y = x^x$</div>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>When to use:</strong> Use logarithmic differentiation when the function is a product of many factors, a variable raised to a variable power, or has a complicated structure.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-practice">
+        <div class="review-card">
+            <h3>Practice Problems</h3>
+            <ol>
+                <li>Find $\dfrac{d}{dx}[\sec^{-1}(5x^3)]$ using the inverse trig rule and chain rule.</li>
+                <li>Find the 4th derivative of $f(x) = 3x^6 + 5x^5 - 3x^4 + 3x^3 - 9x^2 + 10x - 4$.</li>
+                <li>Find the 4th derivative of $f(x) = \cos(2x)$.</li>
+                <li>Differentiate $f(x) = x^{5/3} + 2x^{-2} - 5x^{-2}$ using the power rule.</li>
+                <li>Differentiate $f(x) = \sqrt[3]{x^5}$ by rewriting as $x^{5/3}$.</li>
+                <li>Find $\dfrac{dy}{dx}$ for $x^2 + y^2 = 25$ at the point $(3, 4)$.</li>
+                <li>Find $\dfrac{dy}{dx}$ for $x^3 + y^3 = 6xy$ (folium of Descartes).</li>
+                <li>Use logarithmic differentiation to find $\dfrac{dy}{dx}$ for $y = x^x$.</li>
+                <li>Use logarithmic differentiation for $y = \dfrac{(x+1)^3(x-2)^2}{\sqrt{x^2+1}}$.</li>
+                <li>Airplane problem: An airplane flies at constant height 6 km toward a radar station. If the distance $s$ is decreasing at 400 km/hr when $s = 10$ km, find the horizontal speed.</li>
+                <li>Shadow problem: A 6 ft person walks away from a 15 ft lamppost at 5 ft/s. Find the rate the tip of the shadow moves when the person is 10 ft from the base.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="review-nav">
+        <a href="../index.html" class="review-nav-btn">← Back to Home</a>
+        <span class="review-nav-indicator">Self-Check</span>
+        <a href="review-5.html" class="review-nav-btn">Next Review →</a>
+    </div>
+
 </div>
-
-<div class="review-card">
-    <h3>Key Formulas at a Glance</h3>
-    <ul>
-        <li><em>(boxed in blue)</em> <strong>Definition of Derivative</strong></li>
-<li><em>Def: \(f' = \lim\limits_{h\to 0}\dfrac{f(x+h)-f(x)}{h}\)</em></li>
-<li>\[f'(x) = \lim_{h\to 0}\frac{\left(\sqrt{3(x+h)-4}-\sqrt{3x-4}\right)\left(\sqrt{3(x+h)-4}+\sqrt{3x-4}\right)}{h\left(\sqrt{3(x+h)-4}+\sqrt{3x-4}\right)}\]</li>
-<li>\[f'(x) = \lim_{h\to 0}\frac{3x+3h-4-3x+4}{h\left(\sqrt{3(x+h)-4}+\sqrt{3x-4}\right)}\]</li>
-<li>\[f'(x) = \lim_{h\to 0}\frac{3}{h\left(\sqrt{3(x+h)-4}+\sqrt{3x-4}\right)} = \frac{3}{\sqrt{3x-4}+\sqrt{3x-4}}\]</li>
-<li>\(LCD = (4x+h+1)(4x+1)\)</li>
-<li>\[f'(x) = \lim_{h\to 0}\frac{5(4x+1+1)-5(4(x+h)+1)}{(4x+h+1)(4x+1)}\]</li>
-<li>\[f'(x) = \lim_{h\to 0}\frac{20x+5-20x-20h-5}{h(4x+h+1)(4x+1)}\]</li>
-<li>\[f'(x) = \lim_{h\to 0}\frac{-20h}{h(4x+h+1)(4x+1)} = \frac{-20}{(4x+h+1)(4x+1)}\]</li>
-<li>\(f(x) = x^{1/2} - 5x^2\)</li>
-<li>\(f'(x) = \frac{1}{2}x^{-1/2} - 10x\)</li>
-<li>\(f'(x) = \frac{1}{2\sqrt{x}} - 10x\)</li>
-<li>\(f(x) = 3x + 7x^{-3}\)</li>
-<li>\(f'(x) = 3 - 21x^{-4}\)</li>
-<li><em>(curved arrows point from \(\sqrt[3]{x^5}\) down to \(x^{5/3}\) and from \(\frac{5}{x^2}\) down to \(5x^{-2}\))</em></li>
-<li>\(x^{5/3} + 2x^{-2} - 5x^{-2}\)</li>
-<li>\(f'(x) = \frac{5}{3}x^{2/3} + 4x + 10x^{-3}\)</li>
-<li>\(f(x) = 3x + 4x^{-1} - 8x^{-3}\)</li>
-<li>\(f'(x) = 3 - 4x^{-2} + 24x^{-4}\)</li>
-<li><em>(boxed)</em> <strong>Product Rule: If \(f(x) = h(x)\cdot g(x)\) then \(f'(x) = h(x)\cdot g'(x) + g(x)\cdot h'(x)\)</strong> <em>(the formula \(f'(x) = h(x)\cdot g'(x) + g(x)\cdot h'(x)\) highlighted in light blue)</em></li>
-    </ul>
-</div>
-
-<div class="review-card">
-    <h3>Practice Problems</h3>
-    <ol>
-        <li>1. Be <strong>continuous</strong> at \(x = c\).</li>
-<li>2. Be <strong>smooth</strong> (No sharp points) at \(x = c\).</li>
-<li>3. Not have a <strong>vertical tangent</strong> at \(x = c\).</li>
-<li>1. Evaluate function at the endpoints:</li>
-<li>2. Examine for a root:</li>
-    </ol>
-</div>
-
-<div class="review-nav">
-    <a href="../index.html" class="review-nav-btn">← Back to Home</a>
-    <span class="review-nav-indicator">Self-Check</span>
-    <a href="review-5.html" class="review-nav-btn">Next Chapter →</a>
-</div>
-
-    </main>
-</div>
-
-<button class="note-btn note-sidebar-toggle" type="button">Notes</button>
 
 <script src="../js/app.js"></script>
 <script>
-window.CalculusChapters = CHAPTERS_LIST_JSON;
-window.CurrentChapterId = "";
+document.querySelectorAll('.review-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        document.querySelectorAll('.review-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.review-section').forEach(s => s.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(target).classList.add('active');
+        if (window.MathJax && MathJax.typesetPromise) {
+            MathJax.typesetPromise();
+        }
+    });
+});
 </script>
 </body>
 </html>
-
-
-

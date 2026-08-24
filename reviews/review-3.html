@@ -24,81 +24,275 @@ window.MathJax = {
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
-<body>
-<header>
-    <h1>Calculus Foundations</h1>
-    <p class="subtitle">A Structured, Beginner-Friendly Path Through Calculus</p>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="../chapters/index.html">Curriculum</a>
-        <a href="index.html">Review Sheets</a>
-        <a href="https://github.com/Jimmyu2foru18/Calculus-Notes" target="_blank" rel="noopener">GitHub</a>
-    </nav>
-</header>
+<body class="review-page">
+<div class="review-container">
 
-<div class="container">
-    <main>
-        
-<div class="review-hero">
-    <h2>Review: Derivative Basics</h2>
-    <p>Use this sheet to test your understanding before moving forward. Try each problem without looking at your notes, then check the formulas below.</p>
+    <div class="review-header">
+        <h1>Review: Derivative Basics</h1>
+        <nav>
+            <a href="../index.html">← All Reviews</a>
+            <span>Sections 3.1 – 3.4</span>
+        </nav>
+    </div>
+
+    <div class="review-hero">
+        <h2>Review: Derivative Basics</h2>
+        <p>This sheet covers the definition of the derivative, differentiability vs. continuity, basic differentiation rules (constant, power, sum/difference), product and quotient rules, and derivatives of the six trig functions.</p>
+    </div>
+
+    <div class="review-tabs" role="tablist">
+        <button class="review-tab active" data-tab="tab-derivative" role="tab">The Derivative</button>
+        <button class="review-tab" data-tab="tab-basic-rules" role="tab">Basic Rules</button>
+        <button class="review-tab" data-tab="tab-product" role="tab">Product &amp; Quotient</button>
+        <button class="review-tab" data-tab="tab-trig" role="tab">Trig Derivatives</button>
+        <button class="review-tab" data-tab="tab-practice" role="tab">Practice Problems</button>
+    </div>
+
+    <div class="review-section active" id="tab-derivative">
+        <div class="review-card">
+            <h3>Definition of the Derivative</h3>
+            <p>The derivative of $f$ at $x$ is the slope of the tangent line, defined as the limit of the difference quotient:</p>
+            <div class="review-formula">
+                \[ f'(x) = \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} \]
+                <div class="formula-label">Limit definition of the derivative</div>
+            </div>
+            <div class="review-formula">
+                \[ f'(a) = \lim_{x \to a} \frac{f(x) - f(a)}{x - a} \]
+                <div class="formula-label">Alternative form at a specific point</div>
+            </div>
+            <div class="review-callout info">
+                <p><strong>Geometric meaning:</strong> $f'(a)$ is the slope of the tangent line to $y = f(x)$ at the point $(a, f(a))$. It also gives the instantaneous rate of change.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Differentiability Implies Continuity</h3>
+            <p>If $f$ is differentiable at $x = a$, then $f$ is continuous at $x = a$. The converse is false.</p>
+            <div class="review-formula">
+                \[ f'(a) \text{ exists } \implies \lim_{x \to a} f(x) = f(a) \]
+                <div class="formula-label">Differentiability implies continuity</div>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>Three requirements for differentiability:</strong> (1) $f$ is continuous at $x = c$, (2) the graph is smooth (no sharp corners), (3) no vertical tangent at $x = c$.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Notation for Derivatives</h3>
+            <div class="review-table">
+                <table>
+                    <thead>
+                        <tr><th>Notation</th><th>Meaning</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>$f'(x)$</td><td>Lagrange / prime notation</td></tr>
+                        <tr><td>$\dfrac{dy}{dx}$</td><td>Leibniz notation (derivative of $y$ w.r.t. $x$)</td></tr>
+                        <tr><td>$\dfrac{d}{dx}[f(x)]$</td><td>Operator notation</td></tr>
+                        <tr><td>$\dot{y}$</td><td>Newton notation (time derivative)</td></tr>
+                        <tr><td>$D_x[f(x)]$</td><td>Euler notation</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-basic-rules">
+        <div class="review-card">
+            <h3>Constant and Power Rules</h3>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[c] = 0 \]
+                <div class="formula-label">Constant rule</div>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[x^n] = nx^{n-1} \quad \text{(Power Rule, for any real } n\text{)} \]
+                <div class="formula-label">Power rule</div>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[x^{1/2}] = \frac{1}{2}x^{-1/2} = \frac{1}{2\sqrt{x}} \]
+                <div class="formula-label">Example: $f(x) = \sqrt{x}$</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Sum, Difference, and Constant Multiple Rules</h3>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[f(x) \pm g(x)] = f'(x) \pm g'(x) \]
+                <div class="formula-label">Sum / difference rule</div>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[c \cdot f(x)] = c \cdot f'(x) \]
+                <div class="formula-label">Constant multiple rule</div>
+            </div>
+            <div class="review-callout info">
+                <p><strong>Worked example:</strong> $f(x) = 3x^4 + 5x^2 + 10 \implies f'(x) = 12x^3 + 10x$.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Negative and Fractional Exponents</h3>
+            <p>Rewrite using exponent rules before differentiating:</p>
+            <div class="review-formula">
+                \[ \frac{d}{dx}\left[x^{-n}\right] = -nx^{-n-1}, \quad \frac{d}{dx}\left[x^{m/n}\right] = \frac{m}{n}x^{\frac{m}{n}-1} \]
+                <div class="formula-label">Negative and fractional power rules</div>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>Pitfall:</strong> $\dfrac{d}{dx}[x^{-n}] \neq nx^{-n-1}$ — the sign matters: it is $-nx^{-n-1}$.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-product">
+        <div class="review-card">
+            <h3>Product Rule</h3>
+            <p>If $f(x) = u(x) \cdot v(x)$, then:</p>
+            <div class="review-formula">
+                \[ f'(x) = u(x)v'(x) + v(x)u'(x) \]
+                <div class="formula-label">Product rule</div>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>Common mistake:</strong> The derivative of a product is <em>not</em> the product of the derivatives. $[uv]' \neq u'v'$.</p>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[x^2 \sin x] = x^2 \cos x + 2x \sin x \]
+                <div class="formula-label">Product rule example</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Quotient Rule</h3>
+            <p>If $f(x) = \dfrac{u(x)}{v(x)}$ with $v(x) \neq 0$, then:</p>
+            <div class="review-formula">
+                \[ f'(x) = \frac{v(x)u'(x) - u(x)v'(x)}{[v(x)]^2} \]
+                <div class="formula-label">Quotient rule</div>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>Mnemonic:</strong> "Lo D Hi minus Hi D Lo, over Lo Lo." The order matters — the minus sign is between the two terms in the numerator.</p>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}\left[\frac{x^2}{\cos x}\right] = \frac{\cos x \cdot 2x - x^2 \cdot (-\sin x)}{\cos^2 x} = \frac{2x\cos x + x^2\sin x}{\cos^2 x} \]
+                <div class="formula-label">Quotient rule example</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>When to Use Each Rule</h3>
+            <div class="review-table">
+                <table>
+                    <thead>
+                        <tr><th>Situation</th><th>Use</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Function is a product of two (or more) simpler functions</td><td>Product rule</td></tr>
+                        <tr><td>Function is a quotient of two functions</td><td>Quotient rule</td></tr>
+                        <tr><td>Quotient with a constant numerator</td><td>Rewrite as constant $\cdot$ (denominator)$^{-1}$; use chain rule</td></tr>
+                        <tr><td>Product of 3+ functions</td><td>Product rule iteratively, or logarithmic differentiation</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-trig">
+        <div class="review-card">
+            <h3>Derivatives of Sine and Cosine</h3>
+            <p>These require a geometric proof using the squeeze theorem:</p>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[\sin x] = \cos x \]
+                <div class="formula-label">Derivative of sine</div>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[\cos x] = -\sin x \]
+                <div class="formula-label">Derivative of cosine</div>
+            </div>
+            <div class="review-callout info">
+                <p><strong>Memory tip:</strong> "Sine keeps its sign, cosine changes." The derivative of $\sin x$ is $\cos x$ (same sign), and the derivative of $\cos x$ is $-\sin x$ (sign change).</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Derivatives of Tangent and Secant</h3>
+            <p>Derived from the quotient rule applied to $\sin x / \cos x$:</p>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[\tan x] = \sec^2 x \]
+                <div class="formula-label">Derivative of tangent</div>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[\sec x] = \sec x \tan x \]
+                <div class="formula-label">Derivative of secant</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Derivatives of Cotangent and Cosecant</h3>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[\cot x] = -\csc^2 x \]
+                <div class="formula-label">Derivative of cotangent</div>
+            </div>
+            <div class="review-formula">
+                \[ \frac{d}{dx}[\csc x] = -\csc x \cot x \]
+                <div class="formula-label">Derivative of cosecant</div>
+            </div>
+            <div class="review-table">
+                <table>
+                    <thead>
+                        <tr><th>Function</th><th>Derivative</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>$\sin x$</td><td>$\cos x$</td></tr>
+                        <tr><td>$\cos x$</td><td>$-\sin x$</td></tr>
+                        <tr><td>$\tan x$</td><td>$\sec^2 x$</td></tr>
+                        <tr><td>$\cot x$</td><td>$-\csc^2 x$</td></tr>
+                        <tr><td>$\sec x$</td><td>$\sec x \tan x$</td></tr>
+                        <tr><td>$\csc x$</td><td>$-\csc x \cot x$</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>Watch the negative signs:</strong> The derivatives of $\cos x$, $\cot x$, and $\csc x$ all carry a negative sign. The derivatives of $\sin x$, $\sec x$, and $\tan x$ do not.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-practice">
+        <div class="review-card">
+            <h3>Practice Problems</h3>
+            <ol>
+                <li>Use the limit definition to find $f'(x)$ for $f(x) = \sqrt{3x - 4}$.</li>
+                <li>Use the limit definition to find $f'(x)$ for $f(x) = \dfrac{5}{4x + 1}$.</li>
+                <li>Differentiate $f(x) = x^{1/2} - 5x^2$ using the power rule.</li>
+                <li>Differentiate $f(x) = 3x + 7x^{-3}$.</li>
+                <li>Differentiate $f(x) = \sqrt[3]{x^5} + \dfrac{5}{x^2}$.</li>
+                <li>Differentiate $f(x) = 3x + 4x^{-1} - 8x^{-3}$.</li>
+                <li>Find $f'(x)$ for $f(x) = x^2 \sin x$ using the product rule.</li>
+                <li>Find $f'(x)$ for $f(x) = \dfrac{x^2}{\cos x}$ using the quotient rule.</li>
+                <li>Find $f'(x)$ for $f(x) = \tan x \cdot \sec x$ using the product rule.</li>
+                <li>Find $f'(x)$ for $f(x) = \dfrac{\sin x}{x^2}$ using the quotient rule.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="review-nav">
+        <a href="../index.html" class="review-nav-btn">← Back to Home</a>
+        <span class="review-nav-indicator">Self-Check</span>
+        <a href="review-4.html" class="review-nav-btn">Next Review →</a>
+    </div>
+
 </div>
-
-<div class="review-card">
-    <h3>Key Formulas at a Glance</h3>
-    <ul>
-        <li>1. \(f(x)=\dfrac{x^2+2x-3}{x^2-9}\)</li>
-<li>Factor \(f(x)=\dfrac{(x-1)(x+3)}{(x-3)(x+3)}\)</li>
-<li>Removable Discontinuity at \(x=-3\)</li>
-<li>Infinite discontinuity at \(x=3\)</li>
-<li>2. \(f(x)=\dfrac{x^2+9x+22}{x^2-10x+25}\)</li>
-<li>\(f(x)=\dfrac{(x+1)(x+5)}{(x-5)(x+5)}\)</li>
-<li>\(x+5=0 \Rightarrow x=-5\) — Removable discontinuity (hole) at \(x=-5\)</li>
-<li>\(x-5=0 \Rightarrow x=5\) — Infinite discontinuity at \(x=5\)</li>
-<li>3. \(f(x)=\begin{cases} \dfrac{3x-2}{x^2-4x+4}, & x<0 \text{ — Rational function} \\ x^2-4x+4, & 0 \le x \le 3 \text{ = Polynomial} \\ \dfrac{-7}{(x+4)(x-4)}, & x > 4 \text{ — Rational function} \end{cases}\)</li>
-    <li>At \(x=0\)</li>
-    <li>Bl(1), \(-0.5\)</li>
-    <li>Bl(2), \(4\)</li>
-    <li>Jump discontinuity at \(x=0\)</li>
-    <li>At \(x=3\)</li>
-    <li>LHL, \(1\)</li>
-    <li>\(f(3)\), \(1\)</li>
-    <li>Infinite discontinuity at \(x=4\)</li>
-<li>4. \(f(x)=\dfrac{|x-1|}{x^2-1}\)</li>
-<li>discontinuity at \(x=1\) = undefined</li>
-<li>Bl(1), \(\dfrac{1}{1+1}=\dfrac{1}{2}\)</li>
-    </ul>
-</div>
-
-<div class="review-card">
-    <h3>Practice Problems</h3>
-    <ol>
-        <li>1. \(f(x)=\dfrac{x^2+2x-3}{x^2-9}\)</li>
-<li>2. \(f(x)=\dfrac{x^2+9x+22}{x^2-10x+25}\)</li>
-<li>3. \(f(x)=\begin{cases} \dfrac{3x-2}{x^2-4x+4}, & x<0 \text{ — Rational function} \\ x^2-4x+4, & 0 \le x \le 3 \text{ = Polynomial} \\ \dfrac{-7}{(x+4)(x-4)}, & x > 4 \text{ — Rational function} \end{cases}\)</li>
-<li>4. \(f(x)=\dfrac{|x-1|}{x^2-1}\)</li>
-<li>5. Find a value "\(C\)" such that \(f(x)\) is continuous for all "\(x\)"</li>
-    </ol>
-</div>
-
-<div class="review-nav">
-    <a href="../index.html" class="review-nav-btn">← Back to Home</a>
-    <span class="review-nav-indicator">Self-Check</span>
-    <a href="review-4.html" class="review-nav-btn">Next Chapter →</a>
-</div>
-
-    </main>
-</div>
-
-<button class="note-btn note-sidebar-toggle" type="button">Notes</button>
 
 <script src="../js/app.js"></script>
 <script>
-window.CalculusChapters = CHAPTERS_LIST_JSON;
-window.CurrentChapterId = "";
+document.querySelectorAll('.review-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        document.querySelectorAll('.review-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.review-section').forEach(s => s.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(target).classList.add('active');
+        if (window.MathJax && MathJax.typesetPromise) {
+            MathJax.typesetPromise();
+        }
+    });
+});
 </script>
 </body>
 </html>
-
-
-

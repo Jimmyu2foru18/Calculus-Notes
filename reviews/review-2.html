@@ -24,78 +24,252 @@ window.MathJax = {
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
-<body>
-<header>
-    <h1>Calculus Foundations</h1>
-    <p class="subtitle">A Structured, Beginner-Friendly Path Through Calculus</p>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="../chapters/index.html">Curriculum</a>
-        <a href="index.html">Review Sheets</a>
-        <a href="https://github.com/Jimmyu2foru18/Calculus-Notes" target="_blank" rel="noopener">GitHub</a>
-    </nav>
-</header>
+<body class="review-page">
+<div class="review-container">
 
-<div class="container">
-    <main>
-        
-<div class="review-hero">
-    <h2>Review: Advanced Limits</h2>
-    <p>Use this sheet to test your understanding before moving forward. Try each problem without looking at your notes, then check the formulas below.</p>
+    <div class="review-header">
+        <h1>Review: Advanced Limits</h1>
+        <nav>
+            <a href="../index.html">← All Reviews</a>
+            <span>Sections 2.4 – 2.6</span>
+        </nav>
+    </div>
+
+    <div class="review-hero">
+        <h2>Review: Advanced Limits</h2>
+        <p>This sheet covers one-sided limits, infinite limits with vertical asymptotes, limits at infinity with horizontal and oblique asymptotes, continuity on intervals, and the Intermediate Value Theorem.</p>
+    </div>
+
+    <div class="review-tabs" role="tablist">
+        <button class="review-tab active" data-tab="tab-one-sided" role="tab">One-Sided Limits</button>
+        <button class="review-tab" data-tab="tab-infinite" role="tab">Infinite Limits</button>
+        <button class="review-tab" data-tab="tab-infinity" role="tab">Limits at Infinity</button>
+        <button class="review-tab" data-tab="tab-ivt" role="tab">Continuity &amp; IVT</button>
+        <button class="review-tab" data-tab="tab-practice" role="tab">Practice Problems</button>
+    </div>
+
+    <div class="review-section active" id="tab-one-sided">
+        <div class="review-card">
+            <h3>Left and Right Limits</h3>
+            <p>One-sided limits examine the behavior of $f(x)$ as $x$ approaches $a$ from only one side.</p>
+            <div class="review-formula">
+                \[ \lim_{x \to a^-} f(x) = L \quad \text{and} \quad \lim_{x \to a^+} f(x) = M \]
+                <div class="formula-label">Left-hand and right-hand limit notation</div>
+            </div>
+            <div class="review-table">
+                <table>
+                    <thead>
+                        <tr><th>Condition</th><th>Conclusion</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>$\lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L$</td><td>$\lim_{x \to a} f(x) = L$</td></tr>
+                        <tr><td>$\lim_{x \to a^-} f(x) \neq \lim_{x \to a^+} f(x)$</td><td>Two-sided limit does not exist</td></tr>
+                        <tr><td>Either one-sided limit is $\pm\infty$</td><td>Two-sided limit is $\pm\infty$ or DNE</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Evaluating One-Sided Limits</h3>
+            <p>When a piecewise function changes definition at $x = a$, the two-sided limit may not exist even though both one-sided limits exist.</p>
+            <div class="review-formula">
+                \[ f(x) = \begin{cases} x^2 - 1, & x < 2 \\ 3x - 4, & x \ge 2 \end{cases} \implies \lim_{x \to 2^-} f(x) = 3, \quad \lim_{x \to 2^+} f(x) = 2 \]
+                <div class="formula-label">Piecewise function example — limit DNE</div>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>Common mistake:</strong> For piecewise functions, always substitute the <em>adjacent</em> expression for each one-sided limit, not the value at the point.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Limits of Piecewise and Step Functions</h3>
+            <p>For greatest integer (floor) functions and step functions, use the graph or definition to determine one-sided behavior.</p>
+            <div class="review-formula">
+                \[ \lim_{x \to n^-} \lfloor x \rfloor = n - 1, \quad \lim_{x \to n^+} \lfloor x \rfloor = n \]
+                <div class="formula-label">Floor function one-sided limits at integer $n$</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-infinite">
+        <div class="review-card">
+            <h3>Infinite Limits</h3>
+            <p>We write $\lim_{x \to a} f(x) = \infty$ when $f(x)$ grows without bound as $x \to a$. Similarly for $-\infty$. These are not real numbers — the limit <strong>does not exist</strong> in the strict sense.</p>
+            <div class="review-formula">
+                \[ \lim_{x \to a} f(x) = \infty \iff \forall M > 0, \exists \delta > 0 : 0 < |x - a| < \delta \implies f(x) > M \]
+                <div class="formula-label">Precise definition of an infinite limit</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Vertical Asymptotes</h3>
+            <p>The line $x = a$ is a vertical asymptote if at least one of:</p>
+            <div class="review-formula">
+                \[ \lim_{x \to a} f(x) = \pm\infty, \quad \lim_{x \to a^+} f(x) = \pm\infty, \quad \text{or} \quad \lim_{x \to a^-} f(x) = \pm\infty \]
+                <div class="formula-label">Vertical asymptote criteria</div>
+            </div>
+            <div class="review-callout info">
+                <p><strong>Finding VAs:</strong> For rational $f(x) = p(x)/q(x)$, check where $q(x) = 0$ and $p(x) \neq 0$. If both $p$ and $q$ are zero, you may have a hole instead.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Algebraic Forms Leading to Infinite Limits</h3>
+            <div class="review-table">
+                <table>
+                    <thead>
+                        <tr><th>Form</th><th>Behavior</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>$\frac{k}{x - a}$ as $x \to a$</td><td>$\pm\infty$ depending on sign of $k$ and side</td></tr>
+                        <tr><td>$\frac{p(x)}{q(x)}$, $q(a)=0$, $p(a)\neq0$</td><td>Vertical asymptote at $x = a$</td></tr>
+                        <tr><td>$\ln|x|$ as $x \to 0^+$</td><td>$-\infty$</td></tr>
+                        <tr><td>$\ln|x|$ as $x \to 0^-$</td><td>Undefined (approaches $-\infty$ from right)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>Always check both sides:</strong> $\lim_{x \to a^+} f(x) = \infty$ and $\lim_{x \to a^-} f(x) = -\infty$ are both infinite, but they are not "equal." The two-sided limit DNE.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-infinity">
+        <div class="review-card">
+            <h3>Limits at Infinity</h3>
+            <p>Limits at infinity describe end behavior: what happens to $f(x)$ as $x \to \infty$ or $x \to -\infty$.</p>
+            <div class="review-formula">
+                \[ \lim_{x \to \infty} f(x) = L \iff \forall \epsilon > 0, \exists M > 0 : x > M \implies |f(x) - L| < \epsilon \]
+                <div class="formula-label">Precise definition of limit at infinity</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Horizontal and Oblique Asymptotes</h3>
+            <p>For rational functions $f(x) = \dfrac{p(x)}{q(x)}$, compare degrees:</p>
+            <div class="review-table">
+                <table>
+                    <thead>
+                        <tr><th>Degree of $p$ vs $q$</th><th>Horizontal Asymptote</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>$\deg p < \deg q$</td><td>$y = 0$</td></tr>
+                        <tr><td>$\deg p = \deg q$</td><td>$y = \text{ratio of leading coefficients}$</td></tr>
+                        <tr><td>$\deg p = \deg q + 1$</td><td>Oblique (slant) asymptote — use long division</td></tr>
+                        <tr><td>$\deg p > \deg q + 1$</td><td>No horizontal or oblique asymptote</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="review-formula">
+                \[ f(x) = \frac{3x^2 + 4x - 5}{9x^2 + 3x - 1} \implies \lim_{x \to \infty} f(x) = \frac{3}{9} = \frac{1}{3} \]
+                <div class="formula-label">Horizontal asymptote example (balanced)</div>
+            </div>
+            <div class="review-formula">
+                \[ f(x) = \frac{3x^3 + 4x^2 + 2x + 1}{3x - 9} \implies \lim_{x \to \infty} f(x) = \infty \text{ (no HA, degree diff > 1)} \]
+                <div class="formula-label">No horizontal asymptote (top-heavy)</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Horizontal Asymptote Rules for Rational Functions</h3>
+            <ol>
+                <li><strong>Bottom Heavy:</strong> If $\deg q > \deg p$, HA is $y = 0$.</li>
+                <li><strong>Balanced:</strong> If $\deg p = \deg q$, HA is ratio of leading coefficients.</li>
+                <li><strong>Top Heavy (degree diff = 1):</strong> Perform polynomial long division to find the slant asymptote.</li>
+                <li><strong>Top Heavy (degree diff > 1):</strong> No horizontal or oblique asymptote.</li>
+            </ol>
+            <div class="review-callout info">
+                <p><strong>Remember:</strong> Horizontal asymptotes describe end behavior. A function can cross its HA any number of times.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-ivt">
+        <div class="review-card">
+            <h3>Continuity on Intervals</h3>
+            <p>A function is continuous on an interval if it is continuous at every point in that interval.</p>
+            <div class="review-table">
+                <table>
+                    <thead>
+                        <tr><th>Interval Type</th><th>Condition</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Open interval $(a, b)$</td><td>Continuous at every point in $(a, b)$</td></tr>
+                        <tr><td>Closed interval $[a, b]$</td><td>Continuous on $(a, b)$ AND $\lim_{x \to a^+} f(x) = f(a)$ AND $\lim_{x \to b^-} f(x) = f(b)$</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Intermediate Value Theorem (IVT)</h3>
+            <div class="review-formula">
+                \[ \text{If } f \text{ is continuous on } [a, b] \text{ and } N \text{ is between } f(a) \text{ and } f(b), \text{ then } \exists c \in [a, b] : f(c) = N. \]
+                <div class="formula-label">Intermediate Value Theorem</div>
+            </div>
+            <div class="review-callout success">
+                <p><strong>IVT guarantees existence, not uniqueness:</strong> There may be multiple values of $c$ satisfying $f(c) = N$.</p>
+            </div>
+            <div class="review-callout info">
+                <p><strong>Root-finding application:</strong> If $f(a)$ and $f(b)$ have opposite signs and $f$ is continuous on $[a, b]$, then $f(c) = 0$ for some $c \in (a, b)$.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Continuity on Closed Intervals</h3>
+            <p>A function continuous on a closed interval $[a, b]$ satisfies:</p>
+            <ul>
+                <li>Continuous at every interior point of $(a, b)$</li>
+                <li>$\lim_{x \to a^+} f(x) = f(a)$ (right-continuous at $a$)</li>
+                <li>$\lim_{x \to b^-} f(x) = f(b)$ (left-continuous at $b$)</li>
+            </ul>
+            <div class="review-callout warning">
+                <p><strong>Common mistake:</strong> For the closed interval, you must check one-sided continuity at the <em>endpoints</em>, not just interior points.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-practice">
+        <div class="review-card">
+            <h3>Practice Problems</h3>
+            <ol>
+                <li>Evaluate $\lim_{x \to 5} \dfrac{x^2 + 2x - 35}{x^2 - 25}$ by factoring.</li>
+                <li>Evaluate $\lim_{x \to -\infty} \dfrac{3x^2 + 5x - 2}{-2x + 4}$ (compare leading terms).</li>
+                <li>Evaluate $\lim_{x \to 3} \dfrac{x^2 - 9}{2 - \sqrt{x+1}}$ by rationalizing the denominator.</li>
+                <li>Evaluate $\lim_{x \to 0} \dfrac{\frac{1}{x-4} + \frac{1}{4}}{x}$ by finding the LCD.</li>
+                <li>Evaluate $\lim_{x \to 1} \left(\frac{1}{x-1} - \frac{2}{x^2-1}\right)$ by combining fractions.</li>
+                <li>Evaluate $\lim_{x \to 5} \dfrac{\sqrt{x+4} - 2}{3 - \sqrt{x-1}}$ by rationalizing.</li>
+                <li>Find all vertical and horizontal asymptotes of $f(x) = \dfrac{x^2 - 3}{2x - 4}$.</li>
+                <li>Use IVT to show $f(x) = x^3 - x - 1$ has a root in $[1, 2]$.</li>
+                <li>Classify the discontinuities of $f(x) = \dfrac{|x-1|}{x^2 - 1}$.</li>
+                <li>Find the slant asymptote of $f(x) = \dfrac{x^2 - 3}{2x - 4}$ using long division.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="review-nav">
+        <a href="../index.html" class="review-nav-btn">← Back to Home</a>
+        <span class="review-nav-indicator">Self-Check</span>
+        <a href="review-3.html" class="review-nav-btn">Next Review →</a>
+    </div>
+
 </div>
-
-<div class="review-card">
-    <h3>Key Formulas at a Glance</h3>
-    <ul>
-        <li>\[\lim_{x\to 5}\frac{x^2+2x-35}{x^2-25}=\left(\frac{x^2+7x-5x-35}{(x+5)(x-5)}\right)=\frac{x(x+7)-5(x+7)}{(x-5)(x+5)}=\frac{(x-5)(x+7)}{(x-5)(x+5)}\]</li>
-<li><em>(gray note, top right, with arrows pointing to</em> \(x^2+7x-5x-35\) <em>and to</em> \(x(x+7)-5(x+7)\)<em>):</em> <strong>\* Factor out (x+7)</strong></li>
-<li><em>(the matching</em> \((x-5)\) <em>factors in numerator and denominator are crossed out in red)</em></li>
-<li>\[=\frac{x+7}{x+5}=\frac{(5)+7}{(5)+5}=\frac{12}{10}=\frac{6}{5}\]</li>
-<li>\[\lim_{x\to 3}\frac{x^2-9}{2-\sqrt{x+1}}\cdot\frac{2+\sqrt{x+1}}{2+\sqrt{x+1}}=\frac{(x-3)(x+3)(2+\sqrt{x+1})}{\left(2-\sqrt{x+1}\right)\left(2+\sqrt{x+1}\right)}=\frac{(x-3)(x+3)(2+\sqrt{x+1})}{4-x-1}=\frac{(x-3)(x+3)(2+\sqrt{x+1})}{3-x}\]</li>
-<li>\[=\frac{(x-3)(x+3)(2+\sqrt{x+1})}{3-x}=(3+3)\left(-(\,2+\sqrt{x+1})\right)=-6-2+\sqrt{4}=-6.2+2=\]</li>
-<li>\[-6\cdot 4=-24\]</li>
-<li>\[\lim_{x\to 0}\frac{\frac{1}{x-4}+\frac{1}{4}}{x}\qquad \text{LCD}: 4(x-4)\]</li>
-<li>\[=\frac{\frac{1}{x-4}+\frac{1}{4}}{x}\cdot\frac{4(x-4)}{4(x-4)}=\frac{4x+4}{4x(x-4)}-\frac{4x}{4x(x-4)}\]</li>
-<li><em>(both numerators</em> \(4x+4\) <em>and</em> \(4x\) <em>are crossed out in red)</em></li>
-<li>\[=\frac{1}{4(x-4)}=\frac{1}{4(0-4)}=\frac{1}{4x-16}=\frac{1}{-16}\]</li>
-<li>\[\lim_{x\to 1}\left(\frac{1}{x-1}-\frac{2}{x^2-1}\right)=\left(\frac{1}{x-1}-\frac{2}{x^2-1}\right)\]</li>
-<li><em>(gray note below):</em> <strong>\*LCD: (x−1)(x+1)</strong></li>
-<li>\[=\frac{x+1}{(x-1)(x+1)}-\frac{2}{(x-1)(x+1)}=\frac{x+1-2}{(x-1)(x+1)}=\frac{x-1}{(x-1)(x+1)}=\frac{1}{x+1}=\frac{1}{2}\]</li>
-<li><em>(the matching</em> \((x-1)\) <em>factors are crossed out in red)</em></li>
-<li>\[\lim_{x\to 5}\frac{\sqrt{x+4}-2}{3-\sqrt{x-1}}=\frac{\sqrt{5+4}-2}{3-\sqrt{5-1}}=\frac{\sqrt{9}-2}{3-\sqrt{4}}=\frac{3-2}{3-2}=\frac{1}{1}=1\]</li>
-<li><em>(orange starburst callout with arrow pointing up at problem 5):<strong></em>\* This is a Reminder + Always plug in FIRST!</strong></li>
-<li>Ex. \(\lim_{x\to 0}\left(\frac{4}{x^2+x}-\frac{4}{x}\right)\) — <em>(speech-bubble callout):</em> Plug in: \(\frac{4}{0^2+0}=\frac{4}{0}=\infty-\infty\) <strong>Indeterminate.</strong></li>
-<li>\[\lim_{x\to 0}\frac{4}{x(x+1)}-\frac{4}{x}\qquad \text{LCD} = x(x+1)\]</li>
-<li>\[=\frac{4}{x(x+1)}-\frac{4}{x}\cdot\frac{x+1}{x+1}=\frac{4}{x(x+1)}-\frac{4(x+1)}{x(x+1)}=\frac{4-4x-4}{x(x+1)}\]</li>
-    </ul>
-</div>
-
-<div class="review-card">
-    <h3>Practice Problems</h3>
-    <ol>
-        <li>1. \(\lim_{x \to 5} \frac{x^2+2x-35}{x^2-25}\) → Plug-in in → \(\frac{5^2+2(5)-35}{5^2-25} = \frac{0}{0}\) → <strong>Vertical Asymptote Note.</strong></li>
-<li>2. \(\lim_{x \to -\infty} \frac{3x^2+5x-2}{-2x+4}\) <strong>Top Heavy</strong> → \(\lim_{x \to -\infty} \frac{3x^2}{-2x} = \frac{+}{-} = -\infty\)</li>
-    </ol>
-</div>
-
-<div class="review-nav">
-    <a href="../index.html" class="review-nav-btn">← Back to Home</a>
-    <span class="review-nav-indicator">Self-Check</span>
-    <a href="../chapters/derivatives.html" class="review-nav-btn">Next Chapter →</a>
-</div>
-
-    </main>
-</div>
-
-<button class="note-btn note-sidebar-toggle" type="button">Notes</button>
 
 <script src="../js/app.js"></script>
 <script>
-window.CalculusChapters = CHAPTERS_LIST_JSON;
-window.CurrentChapterId = "";
+document.querySelectorAll('.review-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        document.querySelectorAll('.review-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.review-section').forEach(s => s.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(target).classList.add('active');
+        if (window.MathJax && MathJax.typesetPromise) {
+            MathJax.typesetPromise();
+        }
+    });
+});
 </script>
 </body>
 </html>
-
-
-

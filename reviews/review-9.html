@@ -24,91 +24,248 @@ window.MathJax = {
 </script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
-<body>
-<header>
-    <h1>Calculus Foundations</h1>
-    <p class="subtitle">A Structured, Beginner-Friendly Path Through Calculus</p>
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="../chapters/index.html">Curriculum</a>
-        <a href="index.html">Review Sheets</a>
-        <a href="https://github.com/Jimmyu2foru18/Calculus-Notes" target="_blank" rel="noopener">GitHub</a>
-    </nav>
-</header>
+<body class="review-page">
+<div class="review-container">
 
-<div class="container">
-    <main>
-        
-<div class="review-hero">
-    <h2>Review: Integration Techniques</h2>
-    <p>Use this sheet to test your understanding before moving forward. Try each problem without looking at your notes, then check the formulas below.</p>
+    <div class="review-header">
+        <h1>Review: Integration Techniques</h1>
+        <nav>
+            <a href="../index.html">← All Reviews</a>
+            <span>Sections 5.4 – 5.5 + Area/Volumes</span>
+        </nav>
+    </div>
+
+    <div class="review-hero">
+        <h2>Review: Integration Techniques</h2>
+        <p>This sheet covers u-substitution, area between curves (vertical and horizontal slices), the disk and washer methods for volumes of revolution, and the cylindrical shells method.</p>
+    </div>
+
+    <div class="review-tabs" role="tablist">
+        <button class="review-tab active" data-tab="tab-substitution" role="tab">Substitution Rule</button>
+        <button class="review-tab" data-tab="tab-area" role="tab">Area Between Curves</button>
+        <button class="review-tab" data-tab="tab-disks" role="tab">Disks &amp; Washers</button>
+        <button class="review-tab" data-tab="tab-shells" role="tab">Cylindrical Shells</button>
+        <button class="review-tab" data-tab="tab-practice" role="tab">Practice Problems</button>
+    </div>
+
+    <div class="review-section active" id="tab-substitution">
+        <div class="review-card">
+            <h3>The Substitution Rule (u-Substitution)</h3>
+            <p>Substitution reverses the chain rule. If $u = g(x)$, then $du = g'(x)\, dx$ and:</p>
+            <div class="review-formula">
+                \[ \int f(g(x))g'(x)\, dx = \int f(u)\, du = F(u) + C = F(g(x)) + C \]
+                <div class="formula-label">General substitution rule</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Substitution Method Steps</h3>
+            <ol>
+                <li>Identify $u$ as the inner function (often in parentheses, under a root, or in the denominator exponent).</li>
+                <li>Compute $du = \dfrac{du}{dx}\, dx$.</li>
+                <li>Solve for $dx$ and substitute into the integral.</li>
+                <li>Complete the problem in terms of $u$.</li>
+                <li>If bounds were given, convert them to $u$-values and evaluate directly. Otherwise, convert back to $x$ before substituting bounds.</li>
+            </ol>
+            <div class="review-callout info">
+                <p><strong>Strategy:</strong> If you can't spot the substitution immediately, try rewriting the integrand using algebra or trig identities to expose a composition of functions.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Worked Examples: u-Substitution</h3>
+            <p>Evaluate $\int (3x^4 + 5x^2 + 10)\, dx$:</p>
+            <div class="review-formula">
+                \[ \int (3x^4 + 5x^2 + 10)\, dx = \frac{3}{5}x^5 + \frac{5}{3}x^3 + 10x + C \]
+                <div class="formula-label">Direct power rule (no substitution needed)</div>
+            </div>
+            <p>Evaluate $\int \dfrac{5x^3 - 3x + 2}{x^5}\, dx$ by rewriting first:</p>
+            <div class="review-formula">
+                \[ \int (5x^{-2} - 3x^{-4} + 2x^{-5})\, dx = -\frac{5}{x} + \frac{1}{x^3} - \frac{1}{2x^4} + C \]
+                <div class="formula-label">Rewriting as powers of $x$</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-area">
+        <div class="review-card">
+            <h3>Area Between Curves — Vertical Slices</h3>
+            <p>If $f(x) \ge g(x)$ on $[a, b]$, the area between the curves is:</p>
+            <div class="review-formula">
+                \[ A = \int_a^b [f(x) - g(x)]\, dx \]
+                <div class="formula-label">Area between curves (vertical slices)</div>
+            </div>
+            <div class="review-callout info">
+                <p><strong>Procedure:</strong> Find intersection points (these are the bounds $a$ and $b$), then subtract the lower curve from the upper curve.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Area Between Curves — Horizontal Slices</h3>
+            <p>If the curves are more naturally expressed as $x = f(y)$ and $x = g(y)$, integrate with respect to $y$:</p>
+            <div class="review-formula">
+                \[ A = \int_c^d [f(y) - g(y)]\, dy \]
+                <div class="formula-label">Area between curves (horizontal slices)</div>
+            </div>
+            <div class="review-table">
+                <table>
+                    <thead>
+                        <tr><th>Orientation</th><th>When to Use</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Vertical slices ($dx$)</td><td>Upper and lower functions given as $y = f(x)$</td></tr>
+                        <tr><td>Horizontal slices ($dy$)</td><td>Left and right functions given as $x = g(y)$</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Area Example</h3>
+            <p>Find the area between $y = x^2$ and $y = x + 2$:</p>
+            <div class="review-formula">
+                \[ x^2 = x + 2 \implies x^2 - x - 2 = 0 \implies (x-2)(x+1) = 0 \implies x = -1, 2 \]
+                \[ A = \int_{-1}^2 [(x+2) - x^2]\, dx = \left[\frac{x^2}{2} + 2x - \frac{x^3}{3}\right]_{-1}^2 = \frac{9}{2} \]
+                <div class="formula-label">Area between parabola and line</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-disks">
+        <div class="review-card">
+            <h3>Disk Method</h3>
+            <p>When a region is revolved around an axis and there is <strong>no gap</strong> between the region and the axis, use disks:</p>
+            <div class="review-formula">
+                \[ V = \pi \int_a^b [R(x)]^2\, dx \quad \text{(rotation about a horizontal axis)} \]
+                <div class="formula-label">Disk method — vertical slices</div>
+            </div>
+            <div class="review-callout info">
+                <p><strong>When to use:</strong> Use the disk method when the axis of rotation is a boundary of the region. The cross-section is a solid disk of radius $R(x)$.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Washer Method</h3>
+            <p>When there is a <strong>gap</strong> between the region and the axis of rotation (inner radius $r$, outer radius $R$):</p>
+            <div class="review-formula">
+                \[ V = \pi \int_a^b \left([R(x)]^2 - [r(x)]^2\right)\, dx \]
+                <div class="formula-label">Washer method — outer radius squared minus inner radius squared</div>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>Common mistake:</strong> The integrand is $R^2 - r^2$, NOT $(R - r)^2$. The area of a washer is $\pi(R^2 - r^2)$, not $\pi(R - r)^2$.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Disk/Washer Example</h3>
+            <p>Find the volume when $y = \sqrt{x}$ on $[0, 4]$ is revolved about the $x$-axis:</p>
+            <div class="review-formula">
+                \[ V = \pi \int_0^4 (\sqrt{x})^2\, dx = \pi \int_0^4 x\, dx = \pi\left[\frac{x^2}{2}\right]_0^4 = \pi \cdot 8 = 8\pi \]
+                <div class="formula-label">Disk method example</div>
+            </div>
+            <p>Find the volume when the region between $y = x$ and $y = x^2$ on $[0, 1]$ is revolved about the $x$-axis:</p>
+            <div class="review-formula">
+                \[ V = \pi \int_0^1 \left(x^2 - (x^2)^2\right)\, dx = \pi \int_0^1 (x^2 - x^4)\, dx = \pi\left[\frac{1}{3} - \frac{1}{5}\right] = \frac{2\pi}{15} \]
+                <div class="formula-label">Washer method example</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-shells">
+        <div class="review-card">
+            <h3>Cylindrical Shells Method</h3>
+            <p>When revolving around a vertical axis, use shells with radius $r(x)$ and height $h(x)$:</p>
+            <div class="review-formula">
+                \[ V = 2\pi \int_a^b r(x)h(x)\, dx \]
+                <div class="formula-label">Shell method — vertical axis of rotation</div>
+            </div>
+            <div class="review-callout info">
+                <p><strong>When to use shells:</strong> Shells are often easier when the axis of rotation is parallel to the axis of the slices (vertical slices for vertical axis of rotation). You do NOT need to solve for $x$ in terms of $y$.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Shell Method Setup</h3>
+            <p>For vertical axis of rotation ($x = k$):</p>
+            <div class="review-table">
+                <table>
+                    <thead>
+                        <tr><th>Quantity</th><th>Formula</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Radius</td><td>$r(x) = |x - k|$ (distance from slice to axis)</td></tr>
+                        <tr><td>Height</td><td>$h(x) = f(x) - g(x)$ (top minus bottom)</td></tr>
+                        <tr><td>Circumference</td><td>$2\pi r(x)$</td></tr>
+                        <tr><td>Volume element</td><td>$dV = 2\pi r(x)h(x)\, dx$</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Choosing a Method</h3>
+            <div class="review-table">
+                <table>
+                    <thead>
+                        <tr><th>Scenario</th><th>Recommended Method</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Axis of rotation is a boundary; easy to integrate</td><td>Disk method</td></tr>
+                        <tr><td>Gap between region and axis; easy to integrate</td><td>Washer method</td></tr>
+                        <tr><td>Vertical axis; solving for $x$ is hard</td><td>Cylindrical shells</td></tr>
+                        <tr><td>Horizontal axis; $y$ as function of $x$ is easy</td><td>Disk or washer</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>Shells about the y-axis:</strong> When rotating about the $y$-axis ($x = 0$), the radius is simply $r(x) = x$.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-practice">
+        <div class="review-card">
+            <h3>Practice Problems</h3>
+            <ol>
+                <li>Evaluate $\int (3x^4 + 5x^2 + 10)\, dx$ using basic integration rules.</li>
+                <li>Evaluate $\int (14x^3 - \sqrt[4]{x})\, dx$ by rewriting as powers.</li>
+                <li>Evaluate $\int \left(\dfrac{2}{3x^5} + \dfrac{3}{4x^2}\right)\, dx$.</li>
+                <li>Evaluate $\int \dfrac{5x^3 - 3x + 2}{x^5}\, dx$.</li>
+                <li>Evaluate $\int \left(\dfrac{1}{x} + \sqrt{x^7}\right)\, dx$.</li>
+                <li>Evaluate $\int (3\sin x - 4e^x + x^3)\, dx$.</li>
+                <li>Evaluate $\int (3\sec^2 x + 2\cos x)\, dx$.</li>
+                <li>Find the area between $y = x^2$ and $y = x + 2$ on $[-1, 2]$.</li>
+                <li>Find the volume when $y = \sqrt{x}$ on $[0, 4]$ is revolved about the $x$-axis (disk method).</li>
+                <li>Find the volume when the region between $y = x$ and $y = x^2$ on $[0, 1]$ is revolved about the $x$-axis (washer method).</li>
+                <li>Find the volume when the region under $y = x^2$ on $[0, 1]$ is revolved about the $y$-axis (shell method).</li>
+                <li>Evaluate $\int x\cos(x^2)\, dx$ using u-substitution.</li>
+                <li>Evaluate $\int x\sqrt{x^2+1}\, dx$ using u-substitution.</li>
+            </ol>
+        </div>
+    </div>
+
+    <div class="review-nav">
+        <a href="../index.html" class="review-nav-btn">← Back to Home</a>
+        <span class="review-nav-indicator">Self-Check</span>
+        <a href="../index.html" class="review-nav-btn">All Reviews Complete</a>
+    </div>
+
 </div>
-
-<div class="review-card">
-    <h3>Key Formulas at a Glance</h3>
-    <ul>
-        <li>1.) Find the left, right, Midpoint, and Trapezoid Sums to estimate the area under \(f(x) = 2x^3\) on \([1,5]\), using <strong>four</strong> subintervals.</li>
-<li>\(\Delta x = \frac{b-a}{n} = \frac{5-1}{4} = \frac{4}{4} = 1\)</li>
-<li>\(L_4 = \Delta x(f(1), f(2), f(3), f(4))\)</li>
-<li>\(L_4 = 1\left(2(1)^3 + 2(2)^3 + 2(3)^3 + 2(4)^3\right)\)</li>
-<li>\(L_4 = 1\left(2 + 16 + 54 + 128\right) = 1(200) = \boxed{200}\)</li>
-<li>\(R_4 = \Delta x(f(2), f(3), f(4), f(5))\)</li>
-<li>\(R_4 = 1\left(2(2)^3 + 2(3)^3 + 2(4)^3 + 2(5)^3\right)\)</li>
-<li>\(R_4 = 1\left(16 + 54 + 128 + 250\right)\)</li>
-<li>\(R_4 = 1(448) = \boxed{448}\)</li>
-<li>\(M_4 = 1\left(f(1.5) + f(2.5) + f(3.5) + f(4.5)\right)\)</li>
-<li>\(M_4 = 1\left(2(1.5)^3 + 2(2.5)^3 + 2(3.5)^3 + 2(4.5)^3\right)\)</li>
-<li>\(M_4 = 1\left(6.75 + 31.25 + 85.75 + \right)\)</li>
-<li>\(M_4 = 1\left(6.75 + 31.25 + 85.75 + 182.25\right)\)</li>
-<li>\(M_4 = 1(306) = \boxed{306}\)</li>
-<li>\(T_4 = \frac{1}{2}\Delta x\left(f(1) + f(2) + f(3) + f(4) + f(5)\right)\)</li>
-<li>\(T_4 = \frac{1}{2}(1)\left(2(1)^3 + 2(2)^3 + 2(3)^3 + 2(4)^3 + 2(5)^3\right)\)</li>
-<li>\(T_4 = \frac{1}{2}\left(2 + 16 + 54 + 128 + 250\right)\)</li>
-<li>\(T_4 = \frac{1}{2}(648) = \boxed{324}\)</li>
-<li>or \(T_4 = \frac{L_4 + R_4}{2} = \frac{200+448}{2} = \boxed{324}\)</li>
-<li>2.) Find the left, right, midpoint, and trapezoid sums to estimate the area under \(f(x) = 2x^3\) on \([1,5]\), using eight subintervals.</li>
-    </ul>
-</div>
-
-<div class="review-card">
-    <h3>Practice Problems</h3>
-    <ol>
-        <li>1.) Find the left, right, Midpoint, and Trapezoid Sums to estimate the area under \(f(x) = 2x^3\) on \([1,5]\), using <strong>four</strong> subintervals.</li>
-<li>2.) Find the left, right, midpoint, and trapezoid sums to estimate the area under \(f(x) = 2x^3\) on \([1,5]\), using eight subintervals.</li>
-<li>1. Convert the bounds to equivalent values of <em>u</em>, and complete the problem <strong>in terms of <em>u</strong></em>.</li>
-<li>2. Leave bounds <strong>in terms of <em>x</strong></em>: convert back to <em>x</em> before plugging them in.</li>
-<li>1) \(\int (3x^4 + 5x^2 + 10)dx =\)</li>
-<li>2) \(\int (14x^3 - \sqrt[4]{x})dx =\)</li>
-<li>3) \(\int \left(\frac{2}{3x^5} + \frac{3}{4x^2}\right)dx =\)</li>
-<li>4) \(\int \frac{5x^3 - 3x + 2}{x^5}dx =\)</li>
-<li>5) \(\int \left(\frac{1}{x} + \sqrt{x^7}\right)dx =\)</li>
-<li>6) \(\int (3\sin(x) - 4e^x + x^3)dx =\)</li>
-<li>a) \(\int (3\sec^2(x) + 2\cos(x))dx =\)</li>
-<li>b) \(\int \left(\frac{4}{x^5} + 3\csc(x)\cot(x)\right)dx =\)</li>
-<li>10) \(\int (x^4 + 4^x)dx =\)</li>
-<li>11) \(\int \left(\sqrt[3]{x^4} + 5e^x - \frac{8}{x}\right)dx =\)</li>
-<li>12) \(\int \left(\frac{3}{4} + \frac{1}{4x^2}\right)dx =\)</li>
-    </ol>
-</div>
-
-<div class="review-nav">
-    <a href="../index.html" class="review-nav-btn">← Back to Home</a>
-    <span class="review-nav-indicator">Self-Check</span>
-    <a href="../chapters/applications-integration.html" class="review-nav-btn">Next Chapter →</a>
-</div>
-
-    </main>
-</div>
-
-<button class="note-btn note-sidebar-toggle" type="button">Notes</button>
 
 <script src="../js/app.js"></script>
 <script>
-window.CalculusChapters = CHAPTERS_LIST_JSON;
-window.CurrentChapterId = "";
+document.querySelectorAll('.review-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        document.querySelectorAll('.review-tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.review-section').forEach(s => s.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(target).classList.add('active');
+        if (window.MathJax && MathJax.typesetPromise) {
+            MathJax.typesetPromise();
+        }
+    });
+});
 </script>
 </body>
 </html>
-
-
-
