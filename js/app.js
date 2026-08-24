@@ -241,15 +241,14 @@ Notes are saved per chapter and persist across sessions.">${escapeHtml(currentNo
         const currentFile = window.location.pathname.split('/').pop() || '';
         const currentIndex = CHAPTERS.findIndex(ch => ch.file.endsWith(currentFile));
 
+        if (currentIndex === -1) return;
+
         const prevBtn = document.getElementById('prev-chapter');
         const nextBtn = document.getElementById('next-chapter');
         const indicator = document.getElementById('chapter-indicator');
 
         if (indicator) {
-            const currentChapter = CHAPTERS[currentIndex];
-            if (currentChapter) {
-                indicator.textContent = `Chapter ${currentChapter.num} of ${CHAPTERS.length}`;
-            }
+            indicator.textContent = `Chapter ${CHAPTERS[currentIndex].num} of ${CHAPTERS.length}`;
         }
 
         if (prevBtn) {
