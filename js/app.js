@@ -10,41 +10,41 @@
         storagePrefix: 'calc_notes_'
     };
 
-    const CHAPTERS = [{'id': 'introduction-to-limits', 'num': '01', 'title': 'Introduction to Limits', 'file': 'chapters/chapter-01.html', 'sections': ['2.1'], 'review': 'review-1'},
-    {'id': 'definition-of-limits', 'num': '02', 'title': 'Definition of Limits', 'file': 'chapters/chapter-02.html', 'sections': ['2.2'], 'review': 'review-1'},
-    {'id': 'techniques-for-computing-limits', 'num': '03', 'title': 'Techniques for Computing Limits', 'file': 'chapters/chapter-03.html', 'sections': ['2.3'], 'review': 'review-1'},
-    {'id': 'one-sided-limits', 'num': '04', 'title': 'One-Sided Limits', 'file': 'chapters/chapter-04.html', 'sections': ['one-sided'], 'review': 'review-2'},
-    {'id': 'infinite-limits', 'num': '05', 'title': 'Infinite Limits', 'file': 'chapters/chapter-05.html', 'sections': ['2.4'], 'review': 'review-2'},
-    {'id': 'limits-at-infinity', 'num': '06', 'title': 'Limits at Infinity', 'file': 'chapters/chapter-06.html', 'sections': ['2.5'], 'review': 'review-2'},
-    {'id': 'continuity-and-the-intermediate-value-theorem', 'num': '07', 'title': 'Continuity and the Intermediate Value Theorem', 'file': 'chapters/chapter-07.html', 'sections': ['2.6'], 'review': 'review-2'},
-    {'id': 'introducing-the-derivative', 'num': '08', 'title': 'Introducing the Derivative', 'file': 'chapters/chapter-08.html', 'sections': ['3.1'], 'review': 'review-3'},
-    {'id': 'working-with-derivatives', 'num': '09', 'title': 'Working with Derivatives', 'file': 'chapters/chapter-09.html', 'sections': ['3.2'], 'review': 'review-3'},
-    {'id': 'rules-of-differentiation', 'num': '10', 'title': 'Rules of Differentiation', 'file': 'chapters/chapter-10.html', 'sections': ['3.3'], 'review': 'review-3'},
-    {'id': 'product-and-quotient-rules', 'num': '11', 'title': 'Product and Quotient Rules', 'file': 'chapters/chapter-11.html', 'sections': ['3.4'], 'review': 'review-3'},
-    {'id': 'derivatives-of-trigonometric-functions', 'num': '12', 'title': 'Derivatives of Trigonometric Functions', 'file': 'chapters/chapter-12.html', 'sections': ['3.5'], 'review': 'review-4'},
-    {'id': 'derivatives-as-rates-of-change', 'num': '13', 'title': 'Derivatives as Rates of Change', 'file': 'chapters/chapter-13.html', 'sections': ['3.6'], 'review': 'review-4'},
-    {'id': 'the-chain-rule', 'num': '14', 'title': 'The Chain Rule', 'file': 'chapters/chapter-14.html', 'sections': ['3.7'], 'review': 'review-4'},
-    {'id': 'implicit-differentiation', 'num': '15', 'title': 'Implicit Differentiation', 'file': 'chapters/chapter-15.html', 'sections': ['3.8'], 'review': 'review-4'},
-    {'id': 'derivatives-of-logarithmic-and-exponential-functions', 'num': '16', 'title': 'Derivatives of Logarithmic and Exponential Functions', 'file': 'chapters/chapter-16.html', 'sections': ['3.9'], 'review': 'review-5'},
-    {'id': 'derivatives-of-inverse-trigonometric-functions', 'num': '17', 'title': 'Derivatives of Inverse Trigonometric Functions', 'file': 'chapters/chapter-17.html', 'sections': ['3.10'], 'review': 'review-5'},
-    {'id': 'higher-order-derivatives', 'num': '18', 'title': 'Higher-Order Derivatives', 'file': 'chapters/chapter-18.html', 'sections': ['higher-order'], 'review': 'review-5'},
-    {'id': 'related-rates', 'num': '19', 'title': 'Related Rates', 'file': 'chapters/chapter-19.html', 'sections': ['3.11'], 'review': 'review-6'},
-    {'id': 'maxima-and-minima', 'num': '20', 'title': 'Maxima and Minima', 'file': 'chapters/chapter-20.html', 'sections': ['4.1'], 'review': 'review-6'},
-    {'id': 'what-derivatives-tell-us', 'num': '21', 'title': 'What Derivatives Tell Us', 'file': 'chapters/chapter-21.html', 'sections': ['4.2'], 'review': 'review-6'},
-    {'id': 'graphing-functions', 'num': '22', 'title': 'Graphing Functions', 'file': 'chapters/chapter-22.html', 'sections': ['4.3'], 'review': 'review-6'},
-    {'id': 'optimization-problems', 'num': '23', 'title': 'Optimization Problems', 'file': 'chapters/chapter-23.html', 'sections': ['4.4'], 'review': 'review-7'},
-    {'id': 'linear-approximation-and-differentials', 'num': '24', 'title': 'Linear Approximation and Differentials', 'file': 'chapters/chapter-24.html', 'sections': ['4.5'], 'review': 'review-7'},
-    {'id': 'mean-value-theorem', 'num': '25', 'title': 'Mean Value Theorem', 'file': 'chapters/chapter-25.html', 'sections': ['4.6'], 'review': 'review-7'},
-    {'id': 'lhopitals-rule', 'num': '26', 'title': 'L\'Hopital\'s Rule', 'file': 'chapters/chapter-26.html', 'sections': ['4.7'], 'review': 'review-7'},
-    {'id': 'antiderivatives', 'num': '27', 'title': 'Antiderivatives', 'file': 'chapters/chapter-27.html', 'sections': ['4.9'], 'review': 'review-8'},
-    {'id': 'approximating-areas-under-curves', 'num': '28', 'title': 'Approximating Areas Under Curves', 'file': 'chapters/chapter-28.html', 'sections': ['5.1'], 'review': 'review-8'},
-    {'id': 'definite-integrals', 'num': '29', 'title': 'Definite Integrals', 'file': 'chapters/chapter-29.html', 'sections': ['5.2'], 'review': 'review-8'},
-    {'id': 'fundamental-theorem-of-calculus', 'num': '30', 'title': 'Fundamental Theorem of Calculus', 'file': 'chapters/chapter-30.html', 'sections': ['5.3'], 'review': 'review-8'},
-    {'id': 'working-with-integrals', 'num': '31', 'title': 'Working with Integrals', 'file': 'chapters/chapter-31.html', 'sections': ['5.4'], 'review': 'review-9'},
-    {'id': 'substitution-rule', 'num': '32', 'title': 'Substitution Rule', 'file': 'chapters/chapter-32.html', 'sections': ['5.5'], 'review': 'review-9'},
-    {'id': 'area-between-curves', 'num': '33', 'title': 'Area Between Curves', 'file': 'chapters/chapter-33.html', 'sections': ['area-between'], 'review': 'review-9'},
-    {'id': 'volumes-of-revolution-disks-and-washers', 'num': '34', 'title': 'Volumes of Revolution: Disks and Washers', 'file': 'chapters/chapter-34.html', 'sections': ['volumes-disks'], 'review': 'review-9'},
-    {'id': 'volumes-using-cylindrical-shells', 'num': '35', 'title': 'Volumes Using Cylindrical Shells', 'file': 'chapters/chapter-35.html', 'sections': ['volumes-shells'], 'review': 'review-9'}];
+    const CHAPTERS = [{'id': 'introduction-to-limits', 'num': '01', 'title': 'Introduction to Limits', 'file': 'chapter-01.html', 'sections': ['2.1'], 'review': 'review-1'},
+    {'id': 'definition-of-limits', 'num': '02', 'title': 'Definition of Limits', 'file': 'chapter-02.html', 'sections': ['2.2'], 'review': 'review-1'},
+    {'id': 'techniques-for-computing-limits', 'num': '03', 'title': 'Techniques for Computing Limits', 'file': 'chapter-03.html', 'sections': ['2.3'], 'review': 'review-1'},
+    {'id': 'one-sided-limits', 'num': '04', 'title': 'One-Sided Limits', 'file': 'chapter-04.html', 'sections': ['one-sided'], 'review': 'review-2'},
+    {'id': 'infinite-limits', 'num': '05', 'title': 'Infinite Limits', 'file': 'chapter-05.html', 'sections': ['2.4'], 'review': 'review-2'},
+    {'id': 'limits-at-infinity', 'num': '06', 'title': 'Limits at Infinity', 'file': 'chapter-06.html', 'sections': ['2.5'], 'review': 'review-2'},
+    {'id': 'continuity-and-the-intermediate-value-theorem', 'num': '07', 'title': 'Continuity and the Intermediate Value Theorem', 'file': 'chapter-07.html', 'sections': ['2.6'], 'review': 'review-2'},
+    {'id': 'introducing-the-derivative', 'num': '08', 'title': 'Introducing the Derivative', 'file': 'chapter-08.html', 'sections': ['3.1'], 'review': 'review-3'},
+    {'id': 'working-with-derivatives', 'num': '09', 'title': 'Working with Derivatives', 'file': 'chapter-09.html', 'sections': ['3.2'], 'review': 'review-3'},
+    {'id': 'rules-of-differentiation', 'num': '10', 'title': 'Rules of Differentiation', 'file': 'chapter-10.html', 'sections': ['3.3'], 'review': 'review-3'},
+    {'id': 'product-and-quotient-rules', 'num': '11', 'title': 'Product and Quotient Rules', 'file': 'chapter-11.html', 'sections': ['3.4'], 'review': 'review-3'},
+    {'id': 'derivatives-of-trigonometric-functions', 'num': '12', 'title': 'Derivatives of Trigonometric Functions', 'file': 'chapter-12.html', 'sections': ['3.5'], 'review': 'review-4'},
+    {'id': 'derivatives-as-rates-of-change', 'num': '13', 'title': 'Derivatives as Rates of Change', 'file': 'chapter-13.html', 'sections': ['3.6'], 'review': 'review-4'},
+    {'id': 'the-chain-rule', 'num': '14', 'title': 'The Chain Rule', 'file': 'chapter-14.html', 'sections': ['3.7'], 'review': 'review-4'},
+    {'id': 'implicit-differentiation', 'num': '15', 'title': 'Implicit Differentiation', 'file': 'chapter-15.html', 'sections': ['3.8'], 'review': 'review-4'},
+    {'id': 'derivatives-of-logarithmic-and-exponential-functions', 'num': '16', 'title': 'Derivatives of Logarithmic and Exponential Functions', 'file': 'chapter-16.html', 'sections': ['3.9'], 'review': 'review-5'},
+    {'id': 'derivatives-of-inverse-trigonometric-functions', 'num': '17', 'title': 'Derivatives of Inverse Trigonometric Functions', 'file': 'chapter-17.html', 'sections': ['3.10'], 'review': 'review-5'},
+    {'id': 'higher-order-derivatives', 'num': '18', 'title': 'Higher-Order Derivatives', 'file': 'chapter-18.html', 'sections': ['higher-order'], 'review': 'review-5'},
+    {'id': 'related-rates', 'num': '19', 'title': 'Related Rates', 'file': 'chapter-19.html', 'sections': ['3.11'], 'review': 'review-6'},
+    {'id': 'maxima-and-minima', 'num': '20', 'title': 'Maxima and Minima', 'file': 'chapter-20.html', 'sections': ['4.1'], 'review': 'review-6'},
+    {'id': 'what-derivatives-tell-us', 'num': '21', 'title': 'What Derivatives Tell Us', 'file': 'chapter-21.html', 'sections': ['4.2'], 'review': 'review-6'},
+    {'id': 'graphing-functions', 'num': '22', 'title': 'Graphing Functions', 'file': 'chapter-22.html', 'sections': ['4.3'], 'review': 'review-6'},
+    {'id': 'optimization-problems', 'num': '23', 'title': 'Optimization Problems', 'file': 'chapter-23.html', 'sections': ['4.4'], 'review': 'review-7'},
+    {'id': 'linear-approximation-and-differentials', 'num': '24', 'title': 'Linear Approximation and Differentials', 'file': 'chapter-24.html', 'sections': ['4.5'], 'review': 'review-7'},
+    {'id': 'mean-value-theorem', 'num': '25', 'title': 'Mean Value Theorem', 'file': 'chapter-25.html', 'sections': ['4.6'], 'review': 'review-7'},
+    {'id': 'lhopitals-rule', 'num': '26', 'title': 'L\'Hopital\'s Rule', 'file': 'chapter-26.html', 'sections': ['4.7'], 'review': 'review-7'},
+    {'id': 'antiderivatives', 'num': '27', 'title': 'Antiderivatives', 'file': 'chapter-27.html', 'sections': ['4.9'], 'review': 'review-8'},
+    {'id': 'approximating-areas-under-curves', 'num': '28', 'title': 'Approximating Areas Under Curves', 'file': 'chapter-28.html', 'sections': ['5.1'], 'review': 'review-8'},
+    {'id': 'definite-integrals', 'num': '29', 'title': 'Definite Integrals', 'file': 'chapter-29.html', 'sections': ['5.2'], 'review': 'review-8'},
+    {'id': 'fundamental-theorem-of-calculus', 'num': '30', 'title': 'Fundamental Theorem of Calculus', 'file': 'chapter-30.html', 'sections': ['5.3'], 'review': 'review-8'},
+    {'id': 'working-with-integrals', 'num': '31', 'title': 'Working with Integrals', 'file': 'chapter-31.html', 'sections': ['5.4'], 'review': 'review-9'},
+    {'id': 'substitution-rule', 'num': '32', 'title': 'Substitution Rule', 'file': 'chapter-32.html', 'sections': ['5.5'], 'review': 'review-9'},
+    {'id': 'area-between-curves', 'num': '33', 'title': 'Area Between Curves', 'file': 'chapter-33.html', 'sections': ['area-between'], 'review': 'review-9'},
+    {'id': 'volumes-of-revolution-disks-and-washers', 'num': '34', 'title': 'Volumes of Revolution: Disks and Washers', 'file': 'chapter-34.html', 'sections': ['volumes-disks'], 'review': 'review-9'},
+    {'id': 'volumes-using-cylindrical-shells', 'num': '35', 'title': 'Volumes Using Cylindrical Shells', 'file': 'chapter-35.html', 'sections': ['volumes-shells'], 'review': 'review-9'}];
 
     function initMathJax() {
         if (typeof window.MathJax === 'undefined') return;
@@ -255,8 +255,10 @@ Notes are saved per chapter and persist across sessions.">${escapeHtml(currentNo
             if (currentIndex > 0) {
                 prevBtn.href = CHAPTERS[currentIndex - 1].file;
                 prevBtn.classList.remove('disabled');
+                prevBtn.style.display = '';
             } else {
                 prevBtn.classList.add('disabled');
+                prevBtn.style.display = 'none';
             }
         }
 
@@ -264,8 +266,10 @@ Notes are saved per chapter and persist across sessions.">${escapeHtml(currentNo
             if (currentIndex < CHAPTERS.length - 1) {
                 nextBtn.href = CHAPTERS[currentIndex + 1].file;
                 nextBtn.classList.remove('disabled');
+                nextBtn.style.display = '';
             } else {
                 nextBtn.classList.add('disabled');
+                nextBtn.style.display = 'none';
             }
         }
     }
