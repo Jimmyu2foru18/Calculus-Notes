@@ -150,13 +150,33 @@ The limit depends only on nearby values, not the value at $c$.
 <details>
 <summary>Problem 1 — Reading a graph</summary>
 <p>
-From the graph above, what is $\lim_{x \to -1} f(x)$? (Hint: trace the curve near $x = -1$.)
+From the graph below, what is $\lim_{x \to -1} f(x)$? (Hint: trace the curve near $x = -1$.)
 </p>
+    <div class="visual-aid">
+    <h4>Figure — Function Behavior Near $x = -1$</h4>
+    <svg viewBox="0 0 400 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:420px;border:1px solid #ccc;background:#fafafa;">
+        <line x1="30" y1="180" x2="380" y2="180" stroke="#000" stroke-width="1.5"/>
+        <line x1="200" y1="20" x2="200" y2="200" stroke="#000" stroke-width="1.5"/>
+        <text x="385" y="184" font-size="12" fill="#000">x</text>
+        <text x="205" y="15" font-size="12" fill="#000">y</text>
+        <path d="M 60,100 C 100,90 140,80 170,75 S 195,70 200,70" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+        <path d="M 210,70 C 240,75 280,85 340,100 S 370,110 380,115" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+        <circle cx="200" cy="70" r="4" fill="#fff" stroke="#000" stroke-width="1.5"/>
+        <line x1="200" y1="70" x2="200" y2="180" stroke="#b08800" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="210" y="65" font-size="12" fill="#000">hole at $(-1, 2.5)$</text>
+        <text x="40" y="195" font-size="11" fill="#666">-3</text>
+        <text x="190" y="195" font-size="11" fill="#666">-1</text>
+        <text x="340" y="195" font-size="11" fill="#666">3</text>
+        <text x="15" y="75" font-size="11" fill="#666">2.5</text>
+        <text x="15" y="115" font-size="11" fill="#666">0</text>
+        <text x="170" y="215" font-size="12" fill="#1a3a5c" font-style="italic">f(x)</text>
+    </svg>
+    <p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure: The function has a hole at $(-1, 2.5)$. Both branches approach the same height, so the limit exists and equals $2.5$.</p>
+    </div>
+    <p><strong>Answer:</strong></p>
     <details>
     <summary>Show Answer</summary>
-    <p><strong>Answer:</strong></p>
-    <p>The left and right branches both approach $y \approx 2.5$, so the limit is about $2.5$.
-    (More precise values would be read directly from the plotted curve.)</p>
+    <p>The left and right branches both approach $y = 2.5$, so $\lim_{x \to -1} f(x) = 2.5$.</p>
     </details>
 </details>
 <details>
