@@ -70,15 +70,15 @@ we describe this with **infinite limits**. These capture the behavior near a
 
 #### Definition — Infinite Limit
 
-We write $\displaystyle\lim_{x \to c} f(x) = \infty$ if for every $M > 0$ there exists 
-$\delta > 0$ such that
+We write $\displaystyle\lim_{x \to c} f(x) = \infty$ when the function grows 
+without bound as $x$ approaches $c$. Geometrically, the graph shoots upward 
+along the vertical line $x = c$.
 
-$$0 < |x - c| < \delta \;\Longrightarrow\; f(x) > M.$$
-
-Similarly, $\lim_{x \to c} f(x) = -\infty$ if $f(x) < -M$ for all $x$ sufficiently close to $c$.
+Similarly, $\lim_{x \to c} f(x) = -\infty$ when the function dives downward 
+without bound as $x$ approaches $c$.
 
 *Note:* Saying a limit "equals infinity" is a shorthand for **unbounded growth**. 
-Technically, the limit does not exist, but the description tells us *how* it fails to exist.
+The limit does not exist as a finite number, but the description tells us *how* it fails to exist.
 
 ### Vertical Asymptotes
 

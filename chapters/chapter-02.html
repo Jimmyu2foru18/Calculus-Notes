@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chapter 02: Definition of Limits — Calculus Foundations</title>
+    <title>Chapter 02: Graphical Limits — Calculus Foundations</title>
     <link rel="stylesheet" href="../css/styles.css">
     <script>
     window.MathJax = {
@@ -25,7 +25,7 @@
 <body>
     <header>
         <h1>Calculus Foundations</h1>
-        <p class="subtitle">Chapter 02: Definition of Limits</p>
+        <p class="subtitle">Chapter 02: Graphical Limits</p>
         <nav>
             <a href="../index.html">Home</a>
             <a href="index.html">Curriculum</a>
@@ -36,20 +36,20 @@
 
     <div class="container">
         <main class="chapter">
-            <h2>Chapter 02: Definition of Limits</h2>
-            <p class="lead">The epsilon-delta definition of limits and rigorous proof techniques.</p>
+            <h2>Chapter 02: Graphical Limits</h2>
+            <p class="lead">Reading limits from graphs and tables — no formal proofs needed.</p>
 
             <div class="video-section">
                 <h4>Core Lecture</h4>
                 <div class="video-container">
-                    <iframe src="https://www.youtube.com/embed/A_VZ-fXSUy8" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/kfF40MiS7zA" allowfullscreen></iframe>
                 </div>
             </div>
 
             <div class="video-grid">
                 <div class="video-card">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/9vKqVkMQHKk" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/WUvTyaaNkzM" allowfullscreen></iframe>
                     </div>
                     <div class="video-card-caption">
                         <h5>3Blue1Brown — Essence of Calculus</h5>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="video-card">
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/962lLfW-8Jo" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/watch?v=FfFGjHSi6Kk" allowfullscreen></iframe>
                     </div>
                     <div class="video-card-caption">
                         <h5>Khan Academy — Calculus</h5>
@@ -76,142 +76,196 @@
                 </div>
             </div>
 
-            <h2>2.2 — Definition of Limits</h2>
+            <h2>2.2 — Reading Limits from Graphs and Tables</h2>
 
-<p>
-In Section 2.1 we treated limits informally. Now we formalize the idea using the 
-<strong>epsilon–delta ($\varepsilon$–$\delta$) definition</strong>, which removes all ambiguity 
-and becomes the foundation for rigorous proofs.
-</p>
+            <h3>What Does a Limit Tell Us?</h3>
+            <div class="notes">
+            <p>
+            A <strong>limit</strong> answers the question: <em>What value does the function 
+            approach as $x$ gets closer and closer to a specific point?</em>
+            </p>
+            <p>
+            The key word is <strong>approach</strong>. We do not care what happens 
+            <em>at</em> the point itself — only what happens nearby.
+            </p>
+            
+            <h4>Reading Limits Graphically</h4>
+            <p>To find a limit from a graph:</p>
+            <ol>
+            <li><strong>Trace from the left:</strong> Follow the curve as $x$ approaches 
+            the target value from the left side. What $y$-value does it get close to?</li>
+            <li><strong>Trace from the right:</strong> Follow the curve as $x$ approaches 
+            from the right side. What $y$-value does it get close to?</li>
+            <li><strong>Compare:</strong> If both sides approach the same value, that is 
+            the limit. If they approach different values, the limit does not exist.</li>
+            </ol>
+            
+            <p><strong>Visual patterns to recognize:</strong></p>
+            <ul>
+            <li><strong>Hole:</strong> The curve approaches the same height from both sides, 
+            but the point is missing. The limit still exists.</li>
+            <li><strong>Jump:</strong> The left and right sides approach different heights. 
+            The limit does not exist.</li>
+            <li><strong>Vertical asymptote:</strong> The curve shoots upward or downward 
+            without bound. The limit does not exist.</li>
+            <li><strong>Horizontal asymptote:</strong> The curve flattens out toward a 
+            specific height as $x \to \pm\infty$.</li>
+            </ul>
+            </div>
 
-<h3>The Epsilon–Delta Definition</h3>
-<div class="notes">
-<h4>Definition — Epsilon–Delta Limit</h4>
-<p>
-Let $f$ be a function defined on an open interval containing $c$, except possibly at $c$. 
-We say
-</p>
-$$\lim_{x \to c} f(x) = L$$
-<p>
-if for <em>every</em> $\varepsilon > 0$ there exists a $\delta > 0$ such that
-</p>
-$$0 < |x - c| < \delta \quad \Longrightarrow \quad |f(x) - L| < \varepsilon.$$
-<p>
-In words: <em>for any tolerance $\varepsilon$ around $L$, we can find a window 
-$\delta$ around $c$ that keeps the function within that tolerance.</em>
-</p>
-</div>
+            <h3>Estimating Limits Numerically</h3>
+            <div class="notes">
+            <p>When a graph is not available, build a table of values approaching the 
+            target from both sides:</p>
+            <table>
+            <tr><th>$x$ (from left)</th><th>$f(x)$</th><th>$x$ (from right)</th><th>$f(x)$</th></tr>
+            <tr><td>target $-$ 0.1</td><td>...</td><td>target $+$ 0.1</td><td>...</td></tr>
+            <tr><td>target $-$ 0.01</td><td>...</td><td>target $+$ 0.01</td><td>...</td></tr>
+            <tr><td>target $-$ 0.001</td><td>...</td><td>target $+$ 0.001</td><td>...</td></tr>
+            </table>
+            <p>If the values converge to the same number from both sides, that is the limit.</p>
+            </div>
 
-<h3>Visualizing $\varepsilon$ and $\delta$</h3>
-<div class="visual-aid">
-<h4>Figure 2.2.1 — Epsilon–Delta Geometry</h4>
-<svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:440px;">
-    <rect x="0" y="0" width="420" height="260" fill="#fafafa"/>
-    <line x1="30" y1="230" x2="400" y2="230" stroke="#000" stroke-width="1"/>
-    <line x1="210" y1="20" x2="210" y2="240" stroke="#000" stroke-width="1"/>
-    <text x="405" y="234" font-size="12" fill="#000">x</text>
-    <text x="214" y="18" font-size="12" fill="#000">y</text>
-    <text x="180" y="250" font-size="11" fill="#666">c</text>
-    <line x1="210" y1="230" x2="210" y2="248" stroke="#000" stroke-width="1"/>
-    <path d="M 80,140 Q 140,120 210,100 T 340,80" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
-    <line x1="210" y1="100" x2="210" y2="20" stroke="#b08800" stroke-width="1.2" stroke-dasharray="5,3"/>
-    <text x="215" y="40" font-size="11" fill="#b08800">L</text>
-    <rect x="140" y="70" width="140" height="60" fill="none" stroke="#22863a" stroke-width="1.2" stroke-dasharray="6,3"/>
-    <text x="145" y="85" font-size="11" fill="#22863a">|f(x) - L| < ε</text>
-    <line x1="160" y1="230" x2="160" y2="248" stroke="#1a3a5c" stroke-width="1"/>
-    <line x1="260" y1="230" x2="260" y2="248" stroke="#1a3a5c" stroke-width="1"/>
-    <line x1="160" y1="230" x2="260" y2="230" stroke="#1a3a5c" stroke-width="1.5"/>
-    <text x="155" y="262" font-size="11" fill="#1a3a5c">c - δ</text>
-    <text x="265" y="262" font-size="11" fill="#1a3a5c">c + δ</text>
-    <text x="110" y="265" font-size="11" fill="#1a3a5c">0 < |x - c| < δ</text>
-    <polygon points="75,140 85,145 85,135" fill="#1a3a5c"/>
-    <text x="50" y="138" font-size="10" fill="#1a3a5c">f(x)</text>
-    
-    <text x="210" y="250" font-size="11" fill="#666" text-anchor="start">0</text>
-</svg>
-<p>
-The horizontal green band traps $f(x)$ near $L$; the bottom interval traps $x$ near $c$. 
-If every $\varepsilon$-band forces some $\delta$-window, the limit exists.
-</p>
-</div>
+            <h3>Worked Examples</h3>
+            
+            <div class="example">
+            <h4>Example 2.2.1 — Reading a Graph</h4>
+            <p><strong>Problem:</strong> From the graph below, find the limit as $x$ approaches 2.</p>
+            
+            <div class="visual-aid">
+            <h4>Figure 2.2.1 — Function with a Hole</h4>
+            <svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:440px;">
+                <rect x="0" y="0" width="420" height="260" fill="#fafafa"/>
+                <line x1="30" y1="230" x2="400" y2="230" stroke="#000" stroke-width="1.5"/>
+                <line x1="210" y1="20" x2="210" y2="240" stroke="#000" stroke-width="1"/>
+                <text x="405" y="234" font-size="12" fill="#000">x</text>
+                <text x="214" y="18" font-size="12" fill="#000">y</text>
+                <path d="M 80,140 Q 140,120 190,100 T 340,80" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+                <path d="M 230,100 Q 280,120 340,140" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+                <circle cx="190" cy="100" r="5" fill="#fff" stroke="#1a3a5c" stroke-width="2"/>
+                <circle cx="230" cy="100" r="5" fill="#e74c3c"/>
+                <text x="235" y="95" font-size="11" fill="#e74c3c">$f(2) = 7$</text>
+                <line x1="190" y1="100" x2="190" y2="230" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+                <text x="180" y="250" font-size="11" fill="#666">2</text>
+                <text x="210" y="250" font-size="11" fill="#666" text-anchor="start">0</text>
+            </svg>
+            </div>
+            
+            <p><strong>Solution:</strong> As $x$ approaches 2 from the left, the curve rises toward 
+            $y = 5$. As $x$ approaches 2 from the right, the curve also approaches $y = 5$. 
+            Both sides agree, so:</p>
+            $$\lim_{x \to 2} f(x) = 5$$
+            <p>Note that $f(2) = 7$ (the filled dot), but the limit depends only on the 
+            approach path, not the actual value at the point.</p>
+            </div>
 
-<h3>Worked Example — Proving a Limit</h3>
-<div class="example">
-<h4>Example 2.2.1</h4>
-<p>
-<strong>Claim:</strong> $\displaystyle\lim_{x \to 3} (2x + 1) = 7$.
-</p>
-<p><strong>Proof sketch:</strong> Let $\varepsilon > 0$ be given. We need $\delta > 0$ such that
-</p>
-$$0 < |x - 3| < \delta \;\Longrightarrow\; |(2x + 1) - 7| < \varepsilon.$$
-<p>
-Simplify the right-hand side:
-</p>
-$$|2x + 1 - 7| = |2x - 6| = 2|x - 3|.$$
-<p>
-We want $2|x - 3| < \varepsilon$, so choose $\delta = \varepsilon / 2$. 
-Then $0 < |x - 3| < \delta$ implies
-</p>
-$$|2x + 1 - 7| = 2|x - 3| < 2\delta = \varepsilon.$$
-<p>
-Thus, by definition, $\lim_{x \to 3} (2x + 1) = 7$. $\blacksquare$
-</p>
-</div>
+            <div class="example">
+            <h4>Example 2.2.2 — Jump Discontinuity</h4>
+            <p><strong>Problem:</strong> Find the limit as $x$ approaches the jump point.</p>
+            
+            <div class="visual-aid">
+            <h4>Figure 2.2.2 — Jump Discontinuity</h4>
+            <svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:440px;">
+                <rect x="0" y="0" width="420" height="260" fill="#fafafa"/>
+                <line x1="30" y1="230" x2="400" y2="230" stroke="#000" stroke-width="1.5"/>
+                <line x1="210" y1="20" x2="210" y2="240" stroke="#000" stroke-width="1"/>
+                <text x="405" y="234" font-size="12" fill="#000">x</text>
+                <text x="214" y="18" font-size="12" fill="#000">y</text>
+                <path d="M 80,180 Q 140,160 190,130 T 210,100" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+                <path d="M 230,80 Q 260,100 340,120" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+                <circle cx="190" cy="130" r="4" fill="#fff" stroke="#1a3a5c" stroke-width="1.5"/>
+                <circle cx="230" cy="80" r="4" fill="#1a3a5c"/>
+                <line x1="210" y1="20" x2="210" y2="230" stroke="#b08800" stroke-width="1.5" stroke-dasharray="5,3"/>
+                <text x="215" y="40" font-size="11" fill="#b08800">Jump at $x = 0$</text>
+                <text x="190" y="250" font-size="11" fill="#666">-1</text>
+                <text x="230" y="250" font-size="11" fill="#666">1</text>
+                <text x="210" y="250" font-size="11" fill="#666" text-anchor="start">0</text>
+            </svg>
+            </div>
+            
+            <p><strong>Solution:</strong> Approaching from the left, the curve heads toward $y = -1$. 
+            Approaching from the right, the curve heads toward $y = 1$. Since $-1 \neq 1$, 
+            the left and right limits disagree:</p>
+            $$\lim_{x \to 0^-} f(x) = -1, \quad \lim_{x \to 0^+} f(x) = 1$$
+            <p>Therefore, the two-sided limit <strong>does not exist</strong>.</p>
+            </div>
 
-<h3>Practice Problems</h3>
-<div class="questions">
-<h4>Exercises</h4>
-<details>
-<summary>Problem 1 — Finding $\delta$ for a linear function</summary>
-<p>
-Prove $\lim_{x \to 1} (3x - 2) = 1$ using the $\varepsilon$–$\delta$ definition.
-</p>
-<p><strong>Hint:</strong> $|3x - 2 - 1| = 3|x - 1|$. Choose $\delta = \varepsilon / 3$.
-</p>
-    <details>
-    <summary>Show Answer</summary>
-    <p><strong>Proof:</strong></p>
-    <p>Let $\varepsilon > 0$ be given. Choose $\delta = \varepsilon / 3$. Then for any $x$ satisfying $0 < |x - 1| < \delta$:</p>
-    $$|(3x - 2) - 1| = |3x - 3| = 3|x - 1| < 3\delta = 3 \cdot \frac{\varepsilon}{3} = \varepsilon.$$
-    <p>Therefore, by the epsilon–delta definition, $\lim_{x \to 1} (3x - 2) = 1$.</p>
-    </details>
-</details>
-<details>
-<summary>Problem 2 — Conceptual check</summary>
-<p>
-If $\lim_{x \to c} f(x) = L$, does $f(c) = L$ necessarily hold? Explain.
-</p>
-<p><strong>Answer:</strong></p>
-<details>
-<summary>Show Answer</summary>
-<p>No. The limit describes behavior <em>near</em> $c$, not <em>at</em> $c$.
-For example, define $f(x) = \dfrac{x^2 - 1}{x - 1}$. Then $\lim_{x \to 1} f(x) = 2$, 
-but $f(1)$ is undefined.</p>
-</details>
-</details>
-<details>
-<summary>Problem 3 — Diagram interpretation</summary>
-<p>
-In the epsilon–delta diagram above, what happens to $\delta$ as $\varepsilon$ gets smaller?
-</p>
-<p><strong>Answer:</strong></p>
-<details>
-<summary>Show Answer</summary>
-<p>$\delta$ must also shrink. A tighter tolerance on $y$ forces a tighter window on $x$.</p>
-</details>
-</details>
-</div>
+            <div class="example">
+            <h4>Example 2.2.3 — Vertical Asymptote</h4>
+            <p><strong>Problem:</strong> Evaluate the one-sided limits of $\frac{1}{x}$ as 
+            $x$ approaches 0.</p>
+            
+            <div class="visual-aid">
+            <h4>Figure 2.2.3 — Vertical Asymptote</h4>
+            <svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:440px;">
+                <rect x="0" y="0" width="420" height="260" fill="#fafafa"/>
+                <line x1="30" y1="230" x2="400" y2="230" stroke="#000" stroke-width="1.5"/>
+                <line x1="210" y1="20" x2="210" y2="240" stroke="#000" stroke-width="1"/>
+                <text x="405" y="234" font-size="12" fill="#000">x</text>
+                <text x="214" y="18" font-size="12" fill="#000">y</text>
+                <line x1="210" y1="20" x2="210" y2="240" stroke="#b08800" stroke-width="1.5" stroke-dasharray="6,3"/>
+                <text x="215" y="40" font-size="11" fill="#b08800">$x = 0$ (V.A.)</text>
+                <path d="M 60,240 C 100,220 140,200 180,160 S 200,100 205,60" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+                <path d="M 215,60 C 220,100 230,160 250,200 S 300,240 340,240" fill="none" stroke="#e74c3c" stroke-width="2.5"/>
+                <polygon points="205,65 212,75 198,75" fill="#1a3a5c"/>
+                <polygon points="215,65 222,75 208,75" fill="#e74c3c"/>
+                <text x="120" y="80" font-size="10" fill="#1a3a5c">$x \to 0^+$</text>
+                <text x="270" y="80" font-size="10" fill="#e74c3c">$x \to 0^-$</text>
+                <text x="210" y="250" font-size="11" fill="#666" text-anchor="start">0</text>
+            </svg>
+            </div>
+            
+            <p><strong>Solution:</strong></p>
+            <ul>
+            <li>As $x$ approaches 0 from the right ($x > 0$), $\frac{1}{x}$ grows 
+            without bound upward: $\lim_{x \to 0^+} \frac{1}{x} = +\infty$.</li>
+            <li>As $x$ approaches 0 from the left ($x < 0$), $\frac{1}{x}$ dives 
+            without bound downward: $\lim_{x \to 0^-} \frac{1}{x} = -\infty$.</li>
+            </ul>
+            <p>Because the one-sided limits disagree in sign, the two-sided limit 
+            $\lim_{x \to 0} \frac{1}{x}$ <strong>does not exist</strong>. 
+            The line $x = 0$ is a <strong>vertical asymptote</strong>.</p>
+            </div>
 
-<div class="strategies">
-<h4>Study Tips</h4>
-<p><strong>1.</strong> Algebraic manipulation of $|f(x) - L|$ is the heart of every $\varepsilon$–$\delta$ proof. 
-Factor, rationalize, or bound as needed.</p>
-<p><strong>2.</strong> You may assume $\delta \leq 1$ (or any convenient constant) to simplify expressions — 
-this is standard and does not weaken the proof.</p>
-<p><strong>3.</strong> The definition is <em>universal</em>: once you master the linear case, 
-quadratics and rationals follow the same pattern.
-</p>
-</div>
+            <h3>Practice Problems</h3>
+            <div class="questions">
+            <h4>Exercises</h4>
+            <details>
+            <summary>Problem 1 — Reading a graph</summary>
+            <p>From a graph with a hole at $x = -1$ where both branches approach 
+            $y \approx 2.5$, find $\lim_{x \to -1} f(x)$.</p>
+            <p><strong>Answer:</strong> The left and right branches both approach 
+            $y \approx 2.5$, so the limit is about $2.5$.</p>
+            </details>
+            
+            <details>
+            <summary>Problem 2 — When the limit differs from the function value</summary>
+            <p>Suppose $g(4) = 7$ but $\lim_{x \to 4} g(x) = 3$. Sketch a rough graph 
+            illustrating this situation.</p>
+            </details>
+            
+            <details>
+            <summary>Problem 3 — Numerical estimation</summary>
+            <p>Estimate $\lim_{x \to 0} \dfrac{\sin x}{x}$ by evaluating the function 
+            at $x = \pm 0.1, \pm 0.01, \pm 0.001$.</p>
+            <p><strong>Answer:</strong> The values approach $1$ from both sides, 
+            so the limit is $1$.</p>
+            </details>
+            </div>
+
+            <div class="strategies">
+            <h4>Study Tips</h4>
+            <p><strong>1.</strong> Always trace from <em>both</em> sides of the target 
+            point. A limit exists only when the left-hand and right-hand approaches agree.</p>
+            <p><strong>2.</strong> The actual value at the point does not matter for the limit. 
+            A hole, jump, or removable discontinuity can still have a well-defined limit.</p>
+            <p><strong>3.</strong> Draw a quick sketch whenever possible. 
+            Visual intuition guides your algebraic work.</p>
+            <p><strong>4.</strong> For rational functions, factor first to identify 
+            holes versus vertical asymptotes.</p>
+            <p><strong>5.</strong> Use tables of values when graphs are unavailable; 
+            approaching from both sides is essential.</p>
+            </div>
 
             <nav class="chapter-nav">
                 <a href="chapter-01.html" class="nav-btn prev" id="prev-chapter">Previous</a>
@@ -224,4 +278,3 @@ quadratics and rationals follow the same pattern.
     <script src="../js/app.js"></script>
 </body>
 </html>
-

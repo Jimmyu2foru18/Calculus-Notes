@@ -29,20 +29,19 @@ functions and define **horizontal asymptotes**.
 
 #### Definition — Limit at $+\infty$
 
-$\displaystyle\lim_{x \to \infty} f(x) = L$ means: for every $\varepsilon > 0$ there exists 
-$M > 0$ such that
+$\displaystyle\lim_{x \to \infty} f(x) = L$ means: as $x$ grows larger and larger, 
+the values of $f(x)$ get arbitrarily close to $L$. 
 
-$$x > M \;\Longrightarrow\; |f(x) - L| < \varepsilon.$$
+Geometrically: the right tail of the graph enters and stays inside a horizontal 
+neighborhood of $L$.
 
 #### Definition — Limit at $-\infty$
 
-$\displaystyle\lim_{x \to -\infty} f(x) = L$ means: for every $\varepsilon > 0$ there exists 
-$M < 0$ such that
+$\displaystyle\lim_{x \to -\infty} f(x) = L$ means: as $x$ grows more and more negative, 
+the values of $f(x)$ get arbitrarily close to $L$.
 
-$$x < M \;\Longrightarrow\; |f(x) - L| < \varepsilon.$$
-
-Geometrically: the graph enters and stays inside the horizontal band $(L - \varepsilon,\, L + \varepsilon)$ 
-as $x$ moves far to the right (or left).
+Geometrically: the left tail of the graph enters and stays inside a horizontal 
+neighborhood of $L$.
 
 ### Horizontal Asymptotes
 

@@ -6,55 +6,53 @@
 
 ## Lecture Notes
 
-### Definite Integral Properties
+### Linear Approximation
 
-$$\int_a^a f(x)\,dx = 0$$
+If $f$ is differentiable at $a$, then for $x$ near $a$:
 
-$$\int_b^a f(x)\,dx = -\int_a^b f(x)\,dx$$
+$$f(x) \approx L(x) = f(a) + f'(a)(x - a)$$
 
-$$\int_a^b f(x)\,dx + \int_b^c f(x)\,dx = \int_a^c f(x)\,dx$$
+The line $y = L(x)$ is the **tangent line approximation** to $f$ at $a$.
+Linear approximation works best when the change in $x$ is small.
 
-### Fundamental Theorem of Calculus
+### Differentials
 
-**Part I:** $\displaystyle\int_a^b f(x)\,dx = F(b) - F(a)$ where $F'(x) = f(x)$.
+Let $y = f(x)$ be differentiable. The **differential** $dy$ is:
 
-**Part II:** If $g(x) = \int_c^x f(t)\,dt$, then $g'(x) = f(x)$.
+$$dy = f'(x)\,dx$$
 
-**Example:** $\displaystyle\int_1^5 2x^3\,dx = \frac{1}{2}x^4\bigg|_1^5 = \frac{625}{2} - \frac{1}{2} = 312$.
+If $\Delta x$ is a small change in $x$, then the actual change $\Delta y$ satisfies:
 
-### Average Value of a Function
+$$\Delta y \approx dy = f'(x)\,\Delta x$$
 
-For $f$ continuous on $[a, b]$:
+The **error** in the linear approximation is $E = \Delta y - dy$.
 
-$$f_{\text{avg}} = \frac{1}{b - a}\int_a^b f(x)\,dx$$
+### Error Estimation
 
-**Example:** $f(x) = x^3$ on $[1, 4]$:
-$$f_{\text{avg}} = \frac{1}{3}\cdot\frac{x^4}{4}\bigg|_1^4 = \frac{255}{12}$$
+- **Absolute error:** $E = \Delta y - dy$
+- **Relative error:** $\dfrac{E}{\Delta y}$
+- **Percentage error:** $\dfrac{E}{\Delta y} \times 100\%$
 
-### Mean Value Theorem for Integrals
+### Worked Examples
 
-If $f$ is continuous on $[a, b]$, there exists $c \in [a, b]$ such that:
+**Example 1:** Use linear approximation to estimate $\sqrt{17}$.
 
-$$f(c) = \frac{1}{b - a}\int_a^b f(x)\,dx$$
+Choose $f(x) = \sqrt{x}$ and $a = 16$ (a nearby perfect square).
 
-### Area Between Two Curves
+$$f(16) = 4, \quad f'(x) = \frac{1}{2\sqrt{x}}, \quad f'(16) = \frac{1}{8}$$
 
-For $g(x) \ge f(x)$ on $[a, b]$:
+$$\sqrt{17} \approx f(16) + f'(16)(17 - 16) = 4 + \frac{1}{8}(1) = 4.125$$
 
-$$A = \int_a^b [g(x) - f(x)]\,dx$$
+Actual: $4.1231\ldots$; error $\approx 0.002$.
 
-**Example:** Area between $f(x) = x^2$ and $g(x) = x^3$ on $[0, 1]$:
-$$A = \int_0^1 (x^2 - x^3)\,dx = \left[\frac{x^3}{3} - \frac{x^4}{4}\right]_0^1 = \frac{1}{3} - \frac{1}{4} = \frac{1}{12}$$
+**Example 2:** A cube has side $10$ cm measured with possible error $0.05$ cm. 
+Estimate the error in volume.
 
-### Mean Value Theorem for Derivatives
+$V = s^3$, so $dV = 3s^2\,ds$. At $s = 10$ and $ds = 0.05$:
 
-If $f$ is continuous on $[a, b]$ and differentiable on $(a, b)$, there exists $c \in (a, b)$ such that:
+$$dV = 3(10)^2(0.05) = 15 \text{ cm}^3$$
 
-$$f'(c) = \frac{f(b) - f(a)}{b - a}$$
-
-**Example:** $f(x) = 5x^2 + 10x - 3$ on $[2, 4]$:
-$$\text{Slope of secant} = \frac{f(4) - f(2)}{4 - 2} = \frac{117 - 37}{2} = 40$$
-$$f'(x) = 10x + 10 = 40 \Rightarrow x = 3$$
+The volume error is approximately $15$ cm$^3$.
 
 ## Video Resources
 

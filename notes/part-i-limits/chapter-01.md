@@ -77,16 +77,14 @@ may be different from $L$, or even undefined.
 
 ### Key Definitions
 
-**Definition — Limit**
+**Definition — Limit (Geometric/Intuitive)**
 
-Let $f$ be a function defined on an open interval containing $c$, except possibly at $c$ itself. 
-We say $\lim_{x \to c} f(x) = L$ if for every $\varepsilon > 0$ there exists a $\delta > 0$ such that
+Let $f$ be a function defined near $c$ (except possibly at $c$ itself). 
+We say $\lim_{x \to c} f(x) = L$ when the values of $f(x)$ get arbitrarily 
+close to $L$ as $x$ approaches $c$ from both sides.
 
-$$0 < |x - c| < \delta \;\Longrightarrow\; |f(x) - L| < \varepsilon.$$
-
-Geometrically, this means we can trap the graph of $f$ inside a horizontal band 
-$(L - \varepsilon,\, L + \varepsilon)$ by restricting $x$ to a punctured neighborhood 
-$(c - \delta,\, c) \cup (c,\, c + \delta)$.
+Geometrically, this means: as we zoom in on the point $(c, L)$ on the graph, 
+the curve approaches the height $L$ from both the left and the right.
 
 ### Worked Example — Estimating from a Graph
 

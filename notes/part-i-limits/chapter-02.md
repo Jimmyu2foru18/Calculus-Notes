@@ -1,8 +1,8 @@
-# Chapter 02: Definition of Limits
+# Chapter 02: Graphical Limits and Function Analysis
 
 [Home](../index.html) • [Curriculum](INDEX.md) • [Review Sheets](../reviews/index.html) • [GitHub](https://github.com/Jimmyu2foru18/Calculus-Notes)
 
-> The epsilon-delta definition of limits and rigorous proof techniques.
+> Analyzing functions graphically and numerically to understand limit behavior.
 
 ## Lecture Notes
 
@@ -54,97 +54,99 @@ $f(x) = \log_b(x)$, inverse of $g(x) = b^x$:
 - [Khan Academy — Calculus](https://www.youtube.com/watch?v=FfFGjHSi6Kk) - Step-by-step tutorials and practice
 - [Professor Leonard — Calculus Lecture](https://www.youtube.com/watch?v=kfF40MiS7zA) - Full lecture coverage with worked examples
 
-## 2.2 — Definition of Limits
+## 2.2 — Limits from Graphs and Tables
 
-In Section 2.1 we treated limits informally. Now we formalize the idea using the 
-**epsilon–delta ($\varepsilon$–$\delta$) definition**, which removes all ambiguity 
-and becomes the foundation for rigorous proofs.
+### Reading Limits Graphically
 
-### The Epsilon–Delta Definition
+To find $\lim_{x \to c} f(x)$ from a graph:
 
-#### Definition — Epsilon–Delta Limit
+1. **Approach from the left:** Trace the curve as $x$ approaches $c$ from the left side. What $y$-value does it approach?
+2. **Approach from the right:** Trace the curve as $x$ approaches $c$ from the right side. What $y$-value does it approach?
+3. **Compare:** If both sides approach the same value $L$, then $\lim_{x \to c} f(x) = L$. If they differ, the limit DNE.
 
-Let $f$ be a function defined on an open interval containing $c$, except possibly at $c$. 
-We say
+**Key visual cues:**
+- **Hole (removable discontinuity):** The limit exists even if $f(c)$ is undefined.
+- **Jump discontinuity:** Left and right limits exist but are not equal.
+- **Vertical asymptote:** The function shoots to $\pm\infty$; the limit DNE.
+- **Horizontal asymptote:** The function approaches a finite value as $x \to \pm\infty$.
 
-$$\lim_{x \to c} f(x) = L$$
+### Estimating Limits Numerically
 
-if for *every* $\varepsilon > 0$ there exists a $\delta > 0$ such that
+When a graph is not available, build a table of values approaching $c$ from both sides:
 
-$$0 < |x - c| < \delta \quad \Longrightarrow \quad |f(x) - L| < \varepsilon.$$
+| $x$ (left) | $f(x)$ | $x$ (right) | $f(x)$ |
+|------------|--------|-------------|--------|
+| $c - 0.1$ | ... | $c + 0.1$ | ... |
+| $c - 0.01$ | ... | $c + 0.01$ | ... |
+| $c - 0.001$ | ... | $c + 0.001$ | ... |
 
-In words: *for any tolerance $\varepsilon$ around $L$, we can find a window 
-$\delta$ around $c$ that keeps the function within that tolerance.*
+If the values converge to the same number from both sides, that is the limit.
 
-### Visualizing $\varepsilon$ and $\delta$
+### Worked Examples
 
-> **Figure:** Figure 2.2.1 — Epsilon–Delta Geometry
+#### Example 2.2.1 — Reading a Graph
 
-The horizontal green band traps $f(x)$ near $L$; the bottom interval traps $x$ near $c$. 
-If every $\varepsilon$-band forces some $\delta$-window, the limit exists.
+**Problem:** From the graph below, find $\lim_{x \to 2} f(x)$.
 
-### Worked Example — Proving a Limit
+> **Figure:** A graph showing a function with a hole at $(2, 5)$. The left and right branches both approach $y = 5$.
 
-**Example 2.2.1**
+**Solution:** As $x$ approaches $2$ from either side, the $y$-values approach $5$. 
+Therefore, $\lim_{x \to 2} f(x) = 5$.
 
-**Claim:** $\displaystyle\lim_{x \to 3} (2x + 1) = 7$.
+Note that $f(2)$ itself does not exist (open circle), but the limit depends only on nearby values.
 
-**Proof sketch:** Let $\varepsilon > 0$ be given. We need $\delta > 0$ such that
+#### Example 2.2.2 — Jump Discontinuity
 
-$$0 < |x - 3| < \delta \;\Longrightarrow\; |(2x + 1) - 7| < \varepsilon.$$
+**Problem:** Find $\lim_{x \to -2} f(x)$ for the piecewise function shown.
 
-Simplify the right-hand side:
+> **Figure:** A graph with a jump at $x = -2$. Left limit is $-1$, right limit is $1$.
 
-$$|2x + 1 - 7| = |2x - 6| = 2|x - 3|.$$
+**Solution:** The left-hand limit is $-1$ and the right-hand limit is $1$. 
+Since $-1 \neq 1$, the two-sided limit **does not exist**.
 
-We want $2|x - 3| < \varepsilon$, so choose $\delta = \varepsilon / 2$. 
-Then $0 < |x - 3| < \delta$ implies
+#### Example 2.2.3 — Vertical Asymptote
 
-$$|2x + 1 - 7| = 2|x - 3| < 2\delta = \varepsilon.$$
+**Problem:** Evaluate $\displaystyle\lim_{x \to 0^+} \frac{1}{x}$ and $\displaystyle\lim_{x \to 0^-} \frac{1}{x}$.
 
-Thus, by definition, $\lim_{x \to 3} (2x + 1) = 7$. $\blacksquare$
+**Solution:**
+- For $x > 0$ small, $\frac{1}{x}$ is large and positive, so $\lim_{x \to 0^+} \frac{1}{x} = +\infty$.
+- For $x < 0$ small, $\frac{1}{x}$ is large and negative, so $\lim_{x \to 0^-} \frac{1}{x} = -\infty$.
+
+Because the one-sided limits disagree in sign, $\lim_{x \to 0} \frac{1}{x}$ does not exist.
+The line $x = 0$ is a vertical asymptote.
 
 ### Practice Problems
 
-**Problem 1 — Finding $\delta$ for a linear function**
+**Problem 1 — Reading a graph**
 
-Prove $\lim_{x \to 1} (3x - 2) = 1$ using the $\varepsilon$–$\delta$ definition.
+From a graph with a hole at $x = -1$ where both branches approach $y \approx 2.5$, find $\lim_{x \to -1} f(x)$.
 
-**Hint:** $|3x - 2 - 1| = 3|x - 1|$. Choose $\delta = \varepsilon / 3$.
-
----
-
-**Problem 2 — Conceptual check**
-
-If $\lim_{x \to c} f(x) = L$, does $f(c) = L$ necessarily hold? Explain.
-
-**Answer:**
-
-No. The limit describes behavior *near* $c$, not *at* $c$.
-For example, define $f(x) = \dfrac{x^2 - 1}{x - 1}$. Then $\lim_{x \to 1} f(x) = 2$, 
-but $f(1)$ is undefined.
+**Answer:** The left and right branches both approach $y \approx 2.5$, so the limit is about $2.5$.
 
 ---
 
-**Problem 3 — Diagram interpretation**
+**Problem 2 — When the limit differs from the function value**
 
-In the epsilon–delta diagram above, what happens to $\delta$ as $\varepsilon$ gets smaller?
-
-**Answer:**
-
-$\delta$ must also shrink. A tighter tolerance on $y$ forces a tighter window on $x$.
+Suppose $g(4) = 7$ but $\lim_{x \to 4} g(x) = 3$. Sketch a rough graph illustrating this.
 
 ---
+
+**Problem 3 — Numerical estimation**
+
+Estimate $\lim_{x \to 0} \dfrac{\sin x}{x}$ by evaluating the function at $x = \pm 0.1, \pm 0.01, \pm 0.001$.
+
+**Answer:** The values approach $1$ from both sides, so the limit is $1$.
 
 ### Study Tips
 
-**1.** Algebraic manipulation of $|f(x) - L|$ is the heart of every $\varepsilon$–$\delta$ proof. 
-Factor, rationalize, or bound as needed.
+**1.** Always check both sides of $c$. A limit exists only when the left-hand and right-hand limits agree.
 
-**2.** You may assume $\delta \leq 1$ (or any convenient constant) to simplify expressions — 
-this is standard and does not weaken the proof.
+**2.** The value $f(c)$ is irrelevant to the limit. A hole, jump, or removable discontinuity can still have a well-defined limit.
 
-**3.** The definition is *universal*: once you master the linear case, 
-quadratics and rationals follow the same pattern.
+**3.** Draw a quick sketch whenever possible. Visual intuition guides algebraic work.
+
+**4.** For rational functions, factor first to identify holes versus vertical asymptotes.
+
+**5.** Use tables of values when graphs are unavailable; approaching from both sides is essential.
 
 [Previous](chapter-01.html) • [Curriculum](INDEX.md) • [Next](chapter-03.html)

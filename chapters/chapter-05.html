@@ -37,7 +37,7 @@
     <div class="container">
         <main class="chapter">
             <h2>Chapter 05: Infinite Limits</h2>
-            <p class="lead">Infinite limits and vertical asymptotes — when functions grow without bound.</p>
+            <p class="lead">When functions grow without bound near a vertical asymptote.</p>
 
             <div class="video-section">
                 <h4>Core Lecture</h4>
@@ -78,139 +78,133 @@
 
             <h2>2.4 — Infinite Limits</h2>
 
-<p>
-Not every limit produces a finite number. When $f(x)$ grows without bound as $x$ approaches $c$, 
-we describe this with <strong>infinite limits</strong>. These capture the behavior near a 
-<strong>vertical asymptote</strong>.
-</p>
+            <p>
+            Not every limit produces a finite number. When $f(x)$ grows without bound 
+            as $x$ approaches $c$, we describe this with <strong>infinite limits</strong>. 
+            These capture the behavior near a <strong>vertical asymptote</strong>.
+            </p>
 
-<h3>Definition</h3>
-<div class="notes">
-<h4>Definition — Infinite Limit</h4>
-<p>
-We write $\displaystyle\lim_{x \to c} f(x) = \infty$ if for every $M > 0$ there exists 
-$\delta > 0$ such that
-</p>
-$$0 < |x - c| < \delta \;\Longrightarrow\; f(x) > M.$$
-<p>
-Similarly, $\lim_{x \to c} f(x) = -\infty$ if $f(x) < -M$ for all $x$ sufficiently close to $c$.
-</p>
-<p>
-<em>Note:</em> Saying a limit "equals infinity" is a shorthand for <strong>unbounded growth</strong>. 
-Technically, the limit does not exist, but the description tells us <em>how</em> it fails to exist.
-</p>
-</div>
+            <h3>Definition</h3>
+            <div class="notes">
+            <h4>Definition — Infinite Limit</h4>
+            <p>
+            We write $\displaystyle\lim_{x \to c} f(x) = \infty$ when the function 
+            grows larger and larger without bound as $x$ approaches $c$ from either side. 
+            Geometrically, the graph shoots upward along the vertical line $x = c$.
+            </p>
+            <p>
+            Similarly, $\lim_{x \to c} f(x) = -\infty$ when the function dives downward 
+            without bound as $x$ approaches $c$. Geometrically, the graph shoots downward 
+            along the vertical line $x = c$.
+            </p>
+            <p>
+            <em>Note:</em> Saying a limit "equals infinity" is a shorthand for 
+            <strong>unbounded growth</strong>. Technically, the limit does not exist 
+            as a finite number, but the description tells us <em>how</em> it fails to exist.
+            </p>
+            </div>
 
-<h3>Vertical Asymptotes</h3>
-<p>
-The line $x = c$ is a <strong>vertical asymptote</strong> of $f$ if at least one of 
-$\lim_{x \to c^-} f(x)$, $\lim_{x \to c^+} f(x)$ equals $\pm\infty$.
-</p>
+            <h3>Vertical Asymptotes</h3>
+            <p>
+            The line $x = c$ is a <strong>vertical asymptote</strong> of $f$ if at least 
+            one of the one-sided limits $\lim_{x \to c^-} f(x)$ or $\lim_{x \to c^+} f(x)$ 
+            equals $\pm\infty$.
+            </p>
 
-<h3>Visualization</h3>
-<div class="visual-aid">
-<h4>Figure 2.4.1 — Vertical Asymptote</h4>
-<svg viewBox="0 0 440 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:460px;">
-    <rect x="0" y="0" width="440" height="220" fill="#fafafa" stroke="#ccc" stroke-width="1"/>
-    <line x1="30" y1="180" x2="410" y2="180" stroke="#000" stroke-width="1.5"/>
-    <line x1="220" y1="20" x2="220" y2="200" stroke="#000" stroke-width="1.5"/>
-    <text x="415" y="184" font-size="12" fill="#000">x</text>
-    <text x="224" y="18" font-size="12" fill="#000">y</text>
-    <line x1="328" y1="20" x2="328" y2="200" stroke="#b08800" stroke-width="1.5" stroke-dasharray="6,3"/>
-    <text x="330" y="35" font-size="12" fill="#b08800">x = 2 (V.A.)</text>
-    <path d="M 40,160 C 80,150 140,140 322,40" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
-    <path d="M 335,40 C 345,100 365,150 400,160" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
-    <polygon points="322,45 330,55 314,55" fill="#1a3a5c"/>
-    <polygon points="335,45 343,55 327,55" fill="#1a3a5c"/>
-    <text x="130" y="80" font-size="11" fill="#1a3a5c">$f(x) \to +\infty$</text>
-    <text x="340" y="80" font-size="11" fill="#1a3a5c">$f(x) \to +\infty$</text>
-    <line x1="80" y1="180" x2="80" y2="190" stroke="#000" stroke-width="1"/>
-    <text x="70" y="200" font-size="11" fill="#666">-2</text>
-    <line x1="350" y1="180" x2="350" y2="190" stroke="#000" stroke-width="1"/>
-    <text x="340" y="200" font-size="11" fill="#666">3</text>
-    
-    <text x="220" y="200" font-size="11" fill="#666" text-anchor="start">0</text>
-</svg>
-<p>
-As $x \to 2$ from either side, $f(x) \to +\infty$. The dashed orange line at $x = 2$ is the 
-vertical asymptote.
-</p>
-</div>
+            <h3>Visualization</h3>
+            <div class="visual-aid">
+            <h4>Figure 2.4.1 — Vertical Asymptote</h4>
+            <svg viewBox="0 0 440 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:460px;">
+                <rect x="0" y="0" width="440" height="220" fill="#fafafa" stroke="#ccc" stroke-width="1"/>
+                <line x1="30" y1="180" x2="410" y2="180" stroke="#000" stroke-width="1.5"/>
+                <line x1="220" y1="20" x2="220" y2="200" stroke="#000" stroke-width="1.5"/>
+                <text x="415" y="184" font-size="12" fill="#000">x</text>
+                <text x="224" y="18" font-size="12" fill="#000">y</text>
+                <line x1="328" y1="20" x2="328" y2="200" stroke="#b08800" stroke-width="1.5" stroke-dasharray="6,3"/>
+                <text x="330" y="35" font-size="12" fill="#b08800">x = 2 (V.A.)</text>
+                <path d="M 40,160 C 80,150 140,140 322,40" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+                <path d="M 335,40 C 345,100 365,150 400,160" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+                <polygon points="322,45 330,55 314,55" fill="#1a3a5c"/>
+                <polygon points="335,45 343,55 327,55" fill="#1a3a5c"/>
+                <text x="130" y="80" font-size="11" fill="#1a3a5c">$f(x) \to +\infty$</text>
+                <text x="340" y="80" font-size="11" fill="#1a3a5c">$f(x) \to +\infty$</text>
+                <line x1="80" y1="180" x2="80" y2="190" stroke="#000" stroke-width="1"/>
+                <text x="70" y="200" font-size="11" fill="#666">-2</text>
+                <line x1="350" y1="180" x2="350" y2="190" stroke="#000" stroke-width="1"/>
+                <text x="340" y="200" font-size="11" fill="#666">3</text>
+                
+                <text x="220" y="200" font-size="11" fill="#666" text-anchor="start">0</text>
+            </svg>
+            <p>
+            As $x \to 2$ from either side, $f(x) \to +\infty$. The dashed orange line at 
+            $x = 2$ is the vertical asymptote.
+            </p>
+            </div>
 
-<h3>Worked Examples</h3>
+            <h3>Worked Examples</h3>
 
-<div class="example">
-<h4>Example 2.4.1</h4>
-<p>
-Evaluate $\displaystyle\lim_{x \to 0^+} \frac{1}{x}$ and $\displaystyle\lim_{x \to 0^-} \frac{1}{x}$.
-</p>
-<p><strong>Solution:</strong> 
-</p>
-<ul>
-<li>For $x > 0$ small, $\frac{1}{x}$ is large and positive, so $\lim_{x \to 0^+} \frac{1}{x} = +\infty$.</li>
-<li>For $x < 0$ small, $\frac{1}{x}$ is large and negative, so $\lim_{x \to 0^-} \frac{1}{x} = -\infty$.</li>
-</ul>
-<p>
-Because the one-sided limits disagree in sign, $\lim_{x \to 0} \frac{1}{x}$ does not exist.
-</p>
-</div>
+            <div class="example">
+            <h4>Example 2.4.1</h4>
+            <p>Evaluate $\displaystyle\lim_{x \to 0^+} \frac{1}{x}$ and $\displaystyle\lim_{x \to 0^-} \frac{1}{x}$.</p>
+            <p><strong>Solution:</strong> </p>
+            <ul>
+            <li>For $x > 0$ small, $\frac{1}{x}$ is large and positive, so 
+            $\lim_{x \to 0^+} \frac{1}{x} = +\infty$.</li>
+            <li>For $x < 0$ small, $\frac{1}{x}$ is large and negative, so 
+            $\lim_{x \to 0^-} \frac{1}{x} = -\infty$.</li>
+            </ul>
+            <p>Because the one-sided limits disagree in sign, $\lim_{x \to 0} \frac{1}{x}$ 
+            does not exist.</p>
+            </div>
 
-<div class="example">
-<h4>Example 2.4.2</h4>
-<p>
-Evaluate $\displaystyle\lim_{x \to 2} \frac{3}{x - 2}$.
-</p>
-<p><strong>Solution:</strong> As $x \to 2^+$, $x - 2 > 0$ and small, so the fraction $\to +\infty$. 
-As $x \to 2^-$, $x - 2 < 0$ and small, so the fraction $\to -\infty$. 
-The two-sided limit DNE. The line $x = 2$ is a vertical asymptote.
-</p>
-</div>
+            <div class="example">
+            <h4>Example 2.4.2</h4>
+            <p>Evaluate $\displaystyle\lim_{x \to 2} \frac{3}{x - 2}$.</p>
+            <p><strong>Solution:</strong> As $x \to 2^+$, $x - 2 > 0$ and small, 
+            so the fraction $\to +\infty$. As $x \to 2^-$, $x - 2 < 0$ and small, 
+            so the fraction $\to -\infty$. The two-sided limit DNE. 
+            The line $x = 2$ is a vertical asymptote.</p>
+            </div>
 
-<h3>Practice Problems</h3>
-<div class="questions">
-<h4>Exercises</h4>
-<details>
-<summary>Problem 1 — Infinite logarithmic limit</summary>
-<p>
-Show that $\displaystyle\lim_{x \to 0^+} \ln x = -\infty$.
-</p>
-<p><strong>Hint:</strong> As $x \to 0^+$, values like $e^{-10}$, $e^{-100}$, $e^{-1000}$ show 
-the logarithm dives without bound.
-</p>
-    <details>
-    <summary>Show Answer</summary>
-    <p><strong>Proof:</strong></p>
-    <p>For any $M > 0$, we need to find $\delta > 0$ such that $0 < x < \delta$ implies $\ln x < -M$.</p>
-    <p>Take $\delta = e^{-M}$. Then for $0 < x < \delta = e^{-M}$:</p>
-    $$\ln x < \ln(e^{-M}) = -M.$$
-    <p>Since $M$ was arbitrary, $\ln x \to -\infty$ as $x \to 0^+$.</p>
-    </details>
-</details>
-<details>
-<summary>Problem 2 — Squared denominator</summary>
-<p>
-Evaluate $\displaystyle\lim_{x \to 1} \frac{1}{(x - 1)^2}$.
-</p>
-<p><strong>Answer:</strong></p>
-<details>
-<summary>Show Answer</summary>
-<p>Both one-sided limits are $+\infty$ because $(x-1)^2 > 0$ for $x \neq 1$.
-We write $\lim_{x \to 1} \frac{1}{(x - 1)^2} = +\infty$.</p>
-</details>
-</details>
-</div>
+            <h3>Practice Problems</h3>
+            <div class="questions">
+            <h4>Exercises</h4>
+            <details>
+            <summary>Problem 1 — Infinite logarithmic limit</summary>
+            <p>Show that $\displaystyle\lim_{x \to 0^+} \ln x = -\infty$.</p>
+            <p><strong>Hint:</strong> As $x \to 0^+$, values like $e^{-10}$, 
+            $e^{-100}$, $e^{-1000}$ show the logarithm dives without bound.</p>
+            <details>
+            <summary>Show Answer</summary>
+            <p>As $x$ gets closer to 0 from the right, $\ln(x)$ becomes more and 
+            more negative without bound. For example, $\ln(0.001) \approx -6.9$, 
+            $\ln(0.000001) \approx -13.8$, and so on. Thus $\ln x \to -\infty$ 
+            as $x \to 0^+$.</p>
+            </details>
+            </details>
+            
+            <details>
+            <summary>Problem 2 — Squared denominator</summary>
+            <p>Evaluate $\displaystyle\lim_{x \to 1} \frac{1}{(x - 1)^2}$.</p>
+            <p><strong>Answer:</strong></p>
+            <details>
+            <summary>Show Answer</summary>
+            <p>Both one-sided limits are $+\infty$ because $(x-1)^2 > 0$ for 
+            $x \neq 1$. We write $\lim_{x \to 1} \frac{1}{(x - 1)^2} = +\infty$.</p>
+            </details>
+            </details>
+            </div>
 
-<div class="strategies">
-<h4>Study Tips</h4>
-<p><strong>1.</strong> Infinite limits describe <em>unbounded behavior</em>, not actual numbers. 
-Never write $\infty$ as a term in an algebraic equation.</p>
-<p><strong>2.</strong> A two-sided infinite limit requires <em>both</em> one-sided limits to be $+\infty$ 
-(or both $-\infty$). Mixed signs mean DNE.</p>
-<p><strong>3.</strong> Rational functions with a factor $(x - c)^n$ in the denominator 
-(and not canceled) always have a vertical asymptote at $x = c$. The sign of $n$ and 
-the remaining numerator determine the direction of blow-up.
-</p>
-</div>
+            <div class="strategies">
+            <h4>Study Tips</h4>
+            <p><strong>1.</strong> Infinite limits describe <em>unbounded behavior</em>, 
+            not actual numbers. Never write $\infty$ as a term in an algebraic equation.</p>
+            <p><strong>2.</strong> A two-sided infinite limit requires <em>both</em> 
+            one-sided limits to be $+\infty$ (or both $-\infty$). Mixed signs mean DNE.</p>
+            <p><strong>3.</strong> Rational functions with a factor $(x - c)^n$ in the 
+            denominator (and not canceled) always have a vertical asymptote at $x = c$. 
+            The sign of $n$ and the remaining numerator determine the direction of blow-up.</p>
+            </div>
 
             <nav class="chapter-nav">
                 <a href="chapter-04.html" class="nav-btn prev" id="prev-chapter">Previous</a>
@@ -223,4 +217,3 @@ the remaining numerator determine the direction of blow-up.
     <script src="../js/app.js"></script>
 </body>
 </html>
-
