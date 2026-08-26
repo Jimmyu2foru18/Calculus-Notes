@@ -1,225 +1,227 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Review: Limits Foundations — Calculus Foundations</title>
-<link rel="stylesheet" href="../css/styles.css">
-<script>
-
-window.MathJax = {
-    tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        processEscapes: true,
-        tags: 'ams'
-    },
-    svg: { fontCache: 'global' },
-    options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-        ignoreHtmlClass: 'no-mathjax'
-    }
-};
-
-</script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review: Advanced Limits — Calculus Foundations</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            tags: 'ams'
+        },
+        svg: { fontCache: 'global' },
+        options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            ignoreHtmlClass: 'no-mathjax'
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body class="review-page">
 <div class="review-container">
 
     <div class="review-header">
-        <h1>Review: Limits Foundations</h1>
+        <h1>Review: Advanced Limits</h1>
         <nav>
             <a href="../index.html">← All Reviews</a>
-            <span>Sections 2.1 – 2.3</span>
+            <span>Sections 2.4 – 2.6</span>
         </nav>
     </div>
 
     <div class="review-hero">
-        <h2>Review: Limits Foundations</h2>
-        <p>This sheet covers the formal definition of a limit, epsilon-delta proofs, limit laws, the squeeze theorem, and continuity. Master these before moving to advanced limits and derivatives.</p>
+        <h2>Review: Advanced Limits</h2>
+        <p>This sheet covers one-sided limits, infinite limits with vertical asymptotes, limits at infinity with horizontal and oblique asymptotes, continuity on intervals, and the Intermediate Value Theorem.</p>
     </div>
 
     <div class="review-tabs" role="tablist">
-        <button class="review-tab active" data-tab="tab-basics" role="tab">Limit Basics</button>
-        <button class="review-tab" data-tab="tab-epsilon" role="tab">Epsilon-Delta</button>
-        <button class="review-tab" data-tab="tab-laws" role="tab">Limit Laws</button>
-        <button class="review-tab" data-tab="tab-continuity" role="tab">Continuity</button>
+        <button class="review-tab active" data-tab="tab-one-sided" role="tab">One-Sided Limits</button>
+        <button class="review-tab" data-tab="tab-infinite" role="tab">Infinite Limits</button>
+        <button class="review-tab" data-tab="tab-infinity" role="tab">Limits at Infinity</button>
+        <button class="review-tab" data-tab="tab-ivt" role="tab">Continuity &amp; IVT</button>
         <button class="review-tab" data-tab="tab-practice" role="tab">Practice Problems</button>
     </div>
 
-    <div class="review-section active" id="tab-basics">
+    <div class="review-section active" id="tab-one-sided">
         <div class="review-card">
-            <h3>Definition of a Limit</h3>
-            <p>We write $\lim\limits_{x \to a} f(x) = L$ when the values of $f(x)$ can be made arbitrarily close to $L$ by taking $x$ sufficiently close to $a$ (but $x \neq a$).</p>
+            <h3>Left and Right Limits</h3>
+            <p>One-sided limits examine the behavior of $f(x)$ as $x$ approaches $a$ from only one side.</p>
             <div class="review-formula">
-                \[ \lim_{x \to a} f(x) = L \iff \forall \epsilon > 0, \exists \delta > 0 : 0 < |x - a| < \delta \implies |f(x) - L| < \epsilon \]
-                <div class="formula-label">Precise epsilon-delta definition</div>
+                \[ \lim_{x \to a^-} f(x) = L \quad \text{and} \quad \lim_{x \to a^+} f(x) = M \]
+                <div class="formula-label">Left-hand and right-hand limit notation</div>
             </div>
-            <div class="review-callout info">
-                <p><strong>Key insight:</strong> The limit describes the value a function <em>approaches</em>, not necessarily the value at the point. $f(a)$ may be undefined, different from $L$, or $L$ may not exist at all.</p>
+            <div class="review-table">
+                <table>
+                    <thead>
+                        <tr><th>Condition</th><th>Conclusion</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>$\lim_{x \to a^-} f(x) = \lim_{x \to a^+} f(x) = L$</td><td>$\lim_{x \to a} f(x) = L$</td></tr>
+                        <tr><td>$\lim_{x \to a^-} f(x) \neq \lim_{x \to a^+} f(x)$</td><td>Two-sided limit does not exist</td></tr>
+                        <tr><td>Either one-sided limit is $\pm\infty$</td><td>Two-sided limit is $\pm\infty$ or DNE</td></tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
         <div class="review-card">
-            <h3>Left and Right Limits</h3>
-            <p>A two-sided limit exists <strong>if and only if</strong> both one-sided limits exist and are equal.</p>
-            <div class="review-table">
-                <table>
-                    <thead>
-                        <tr><th>Notation</th><th>Meaning</th></tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>$\lim_{x \to a^-} f(x)$</td><td>Left-hand limit ($x$ approaches $a$ from below)</td></tr>
-                        <tr><td>$\lim_{x \to a^+} f(x)$</td><td>Right-hand limit ($x$ approaches $a$ from above)</td></tr>
-                        <tr><td>$\lim_{x \to a} f(x)$</td><td>Two-sided limit exists iff left = right</td></tr>
-                    </tbody>
-                </table>
+            <h3>Evaluating One-Sided Limits</h3>
+            <p>When a piecewise function changes definition at $x = a$, the two-sided limit may not exist even though both one-sided limits exist.</p>
+            <div class="review-formula">
+                \[ f(x) = \begin{cases} x^2 - 1, & x < 2 \\ 3x - 4, & x \ge 2 \end{cases} \implies \lim_{x \to 2^-} f(x) = 3, \quad \lim_{x \to 2^+} f(x) = 2 \]
+                <div class="formula-label">Piecewise function example — limit DNE</div>
+            </div>
+            <div class="review-callout warning">
+                <p><strong>Common mistake:</strong> For piecewise functions, always substitute the <em>adjacent</em> expression for each one-sided limit, not the value at the point.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Limits of Piecewise and Step Functions</h3>
+            <p>For greatest integer (floor) functions and step functions, use the graph or definition to determine one-sided behavior.</p>
+            <div class="review-formula">
+                \[ \lim_{x \to n^-} \lfloor x \rfloor = n - 1, \quad \lim_{x \to n^+} \lfloor x \rfloor = n \]
+                <div class="formula-label">Floor function one-sided limits at integer $n$</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section" id="tab-infinite">
+        <div class="review-card">
+            <h3>Infinite Limits</h3>
+            <p>We write $\lim_{x \to a} f(x) = \infty$ when $f(x)$ grows without bound as $x \to a$. Similarly for $-\infty$. These are not real numbers — the limit <strong>does not exist</strong> in the strict sense.</p>
+            <div class="review-callout info">
+                <p><strong>Intuitive meaning:</strong> The function grows larger and larger without bound as $x$ approaches $a$. The graph shoots upward (or downward) along the vertical line $x = a$.</p>
             </div>
         </div>
 
         <div class="review-card">
             <h3>Vertical Asymptotes</h3>
-            <p>The line $x = a$ is a vertical asymptote of $y = f(x)$ if at least one of the following holds:</p>
-            <ul>
-                <li>$\lim_{x \to a} f(x) = \infty$</li>
-                <li>$\lim_{x \to a} f(x) = -\infty$</li>
-                <li>$\lim_{x \to a^+} f(x) = \infty$ or $\lim_{x \to a^-} f(x) = -\infty$</li>
-            </ul>
-            <div class="review-callout warning">
-                <p><strong>Common mistake:</strong> A function can have a vertical asymptote even if it is defined at that point. Check the limit behavior, not just $f(a)$.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="review-section" id="tab-epsilon">
-        <div class="review-card">
-            <h3>The Epsilon-Delta Game</h3>
-            <p>To prove $\lim_{x \to a} f(x) = L$, we must show that for <em>every</em> $\epsilon > 0$, there exists a $\delta > 0$ such that $x$ within $\delta$ of $a$ guarantees $f(x)$ within $\epsilon$ of $L$.</p>
+            <p>The line $x = a$ is a vertical asymptote if at least one of:</p>
             <div class="review-formula">
-                \[ 0 < |x - a| < \delta \implies |f(x) - L| < \epsilon \]
-                <div class="formula-label">The epsilon-delta implication chain</div>
+                \[ \lim_{x \to a} f(x) = \pm\infty, \quad \lim_{x \to a^+} f(x) = \pm\infty, \quad \text{or} \quad \lim_{x \to a^-} f(x) = \pm\infty \]
+                <div class="formula-label">Vertical asymptote criteria</div>
             </div>
             <div class="review-callout info">
-                <p><strong>Strategy:</strong> Start with $|f(x) - L| < \epsilon$ and algebraically derive a bound of the form $|x - a| < \delta$. Use that bound as your $\delta$.</p>
+                <p><strong>Finding VAs:</strong> For rational $f(x) = p(x)/q(x)$, check where $q(x) = 0$ and $p(x) \neq 0$. If both $p$ and $q$ are zero, you may have a hole instead.</p>
             </div>
         </div>
 
         <div class="review-card">
-            <h3>Proof Template: Linear Functions</h3>
-            <p>For $f(x) = mx + b$, proving $\lim_{x \to a} (mx + b) = ma + b$:</p>
-            <div class="review-formula">
-                \[ |(mx + b) - (ma + b)| = |m||x - a| < \epsilon \implies |x - a| < \frac{\epsilon}{|m|} \]
-                <div class="formula-label">Choose $\delta = \epsilon / |m|$</div>
-            </div>
-        </div>
-
-        <div class="review-card">
-            <h3>Proof Template: Quadratic Functions</h3>
-            <p>For $f(x) = x^2$, proving $\lim_{x \to a} x^2 = a^2$:</p>
-            <div class="review-formula">
-                \[ |x^2 - a^2| = |x - a||x + a| < \delta \cdot (|a| + \delta + |a|) \]
-                <div class="formula-label">Restrict $\delta \le 1$, then $|x + a| \le 2|a| + 1$</div>
-            </div>
-            <div class="review-callout warning">
-                <p><strong>Pitfall:</strong> You cannot simply set $\delta = \epsilon / |x + a|$ because $\delta$ must depend only on $a$ and $\epsilon$, not on $x$.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="review-section" id="tab-laws">
-        <div class="review-card">
-            <h3>Limit Laws</h3>
-            <p>Assume $\lim_{x \to a} f(x) = L$ and $\lim_{x \to a} g(x) = M$ exist. Then:</p>
+            <h3>Algebraic Forms Leading to Infinite Limits</h3>
             <div class="review-table">
                 <table>
                     <thead>
-                        <tr><th>Law</th><th>Formula</th></tr>
+                        <tr><th>Form</th><th>Behavior</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Sum</td><td>$\lim_{x \to a} [f(x) + g(x)] = L + M$</td></tr>
-                        <tr><td>Difference</td><td>$\lim_{x \to a} [f(x) - g(x)] = L - M$</td></tr>
-                        <tr><td>Constant Multiple</td><td>$\lim_{x \to a} [c \cdot f(x)] = cL$</td></tr>
-                        <tr><td>Product</td><td>$\lim_{x \to a} [f(x) \cdot g(x)] = LM$</td></tr>
-                        <tr><td>Quotient</td><td>$\lim_{x \to a} \frac{f(x)}{g(x)} = \frac{L}{M}$, provided $M \neq 0$</td></tr>
-                        <tr><td>Power</td><td>$\lim_{x \to a} [f(x)]^n = L^n$</td></tr>
-                        <tr><td>Root</td><td>$\lim_{x \to a} \sqrt[n]{f(x)} = \sqrt[n]{L}$ (for $n$ even, require $L > 0$)</td></tr>
+                        <tr><td>$\frac{k}{x - a}$ as $x \to a$</td><td>$\pm\infty$ depending on sign of $k$ and side</td></tr>
+                        <tr><td>$\frac{p(x)}{q(x)}$, $q(a)=0$, $p(a)\neq0$</td><td>Vertical asymptote at $x = a$</td></tr>
+                        <tr><td>$\ln|x|$ as $x \to 0^+$</td><td>$-\infty$</td></tr>
+                        <tr><td>$\ln|x|$ as $x \to 0^-$</td><td>Undefined (approaches $-\infty$ from right)</td></tr>
                     </tbody>
                 </table>
             </div>
-        </div>
-
-        <div class="review-card">
-            <h3>The Squeeze (Sandwich) Theorem</h3>
-            <p>If $g(x) \le f(x) \le h(x)$ near $a$ (except possibly at $a$) and $\lim_{x \to a} g(x) = \lim_{x \to a} h(x) = L$, then $\lim_{x \to a} f(x) = L$.</p>
-            <div class="review-formula">
-                \[ \text{If } g(x) \le f(x) \le h(x) \text{ and } \lim_{x \to a} g(x) = \lim_{x \to a} h(x) = L, \text{ then } \lim_{x \to a} f(x) = L \]
-                <div class="formula-label">Squeeze Theorem</div>
-            </div>
-            <div class="review-callout info">
-                <p><strong>Classic example:</strong> $\lim_{x \to 0} x^2 \sin(1/x) = 0$ because $-x^2 \le x^2\sin(1/x) \le x^2$ and both outer limits are $0$.</p>
-            </div>
-        </div>
-
-        <div class="review-card">
-            <h3>Evaluating Limits Algebraically</h3>
-            <p>Always try <strong>direct substitution first</strong>. If you get $0/0$, use algebraic manipulation.</p>
             <div class="review-callout warning">
-                <p><strong>Common mistake:</strong> Do not conclude a limit is $\infty$ just because the denominator approaches $0$. You must check the left and right limits separately.</p>
-            </div>
-            <div class="review-formula">
-                \[ \lim_{x \to a} \frac{f(x)}{g(x)} = \frac{0}{0} \text{ — factor and cancel, or rationalize, or use LCD} \]
-                <div class="formula-label">Indeterminate form $0/0$</div>
+                <p><strong>Always check both sides:</strong> $\lim_{x \to a^+} f(x) = \infty$ and $\lim_{x \to a^-} f(x) = -\infty$ are both infinite, but they are not "equal." The two-sided limit DNE.</p>
             </div>
         </div>
     </div>
 
-    <div class="review-section" id="tab-continuity">
+    <div class="review-section" id="tab-infinity">
         <div class="review-card">
-            <h3>Definition of Continuity</h3>
-            <p>A function $f$ is continuous at $x = a$ if three conditions hold:</p>
+            <h3>Limits at Infinity</h3>
+            <p>Limits at infinity describe end behavior: what happens to $f(x)$ as $x \to \infty$ or $x \to -\infty$.</p>
+            <div class="review-callout info">
+                <p><strong>Intuitive meaning:</strong> As $x$ grows larger and larger (or more and more negative), the function values approach a specific number $L$. The graph enters and stays inside a horizontal band around $L$.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Horizontal and Oblique Asymptotes</h3>
+            <p>For rational functions $f(x) = \dfrac{p(x)}{q(x)}$, compare degrees:</p>
+            <div class="review-table">
+                <table>
+                    <thead>
+                        <tr><th>Degree of $p$ vs $q$</th><th>Horizontal Asymptote</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>$\deg p < \deg q$</td><td>$y = 0$</td></tr>
+                        <tr><td>$\deg p = \deg q$</td><td>$y = \text{ratio of leading coefficients}$</td></tr>
+                        <tr><td>$\deg p = \deg q + 1$</td><td>Oblique (slant) asymptote — use long division</td></tr>
+                        <tr><td>$\deg p > \deg q + 1$</td><td>No horizontal or oblique asymptote</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="review-formula">
+                \[ f(x) = \frac{3x^2 + 4x - 5}{9x^2 + 3x - 1} \implies \lim_{x \to \infty} f(x) = \frac{3}{9} = \frac{1}{3} \]
+                <div class="formula-label">Horizontal asymptote example (balanced)</div>
+            </div>
+            <div class="review-formula">
+                \[ f(x) = \frac{3x^3 + 4x^2 + 2x + 1}{3x - 9} \implies \lim_{x \to \infty} f(x) = \infty \text{ (no HA, degree diff > 1)} \]
+                <div class="formula-label">No horizontal asymptote (top-heavy)</div>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Horizontal Asymptote Rules for Rational Functions</h3>
             <ol>
-                <li>$f(a)$ is defined</li>
-                <li>$\lim_{x \to a} f(x)$ exists</li>
-                <li>$\lim_{x \to a} f(x) = f(a)$</li>
+                <li><strong>Bottom Heavy:</strong> If $\deg q > \deg p$, HA is $y = 0$.</li>
+                <li><strong>Balanced:</strong> If $\deg p = \deg q$, HA is ratio of leading coefficients.</li>
+                <li><strong>Top Heavy (degree diff = 1):</strong> Perform polynomial long division to find the slant asymptote.</li>
+                <li><strong>Top Heavy (degree diff > 1):</strong> No horizontal or oblique asymptote.</li>
             </ol>
             <div class="review-callout info">
-                <p><strong>Important theorem:</strong> If $f$ is differentiable at $a$, then $f$ is continuous at $a$. However, continuity does NOT imply differentiability (e.g., $f(x) = |x|$ at $x = 0$).</p>
+                <p><strong>Remember:</strong> Horizontal asymptotes describe end behavior. A function can cross its HA any number of times.</p>
             </div>
         </div>
+    </div>
 
+    <div class="review-section" id="tab-ivt">
         <div class="review-card">
-            <h3>Types of Discontinuities</h3>
+            <h3>Continuity on Intervals</h3>
+            <p>A function is continuous on an interval if it is continuous at every point in that interval.</p>
             <div class="review-table">
                 <table>
                     <thead>
-                        <tr><th>Type</th><th>Description</th><th>Example</th></tr>
+                        <tr><th>Interval Type</th><th>Condition</th></tr>
                     </thead>
                     <tbody>
-                        <tr><td>Removable</td><td>Limit exists but $f(a) \neq L$ or $f(a)$ undefined</td><td>Hole at $x = -2$</td></tr>
-                        <tr><td>Infinite</td><td>Vertical asymptote; limit is $\pm\infty$</td><td>$f(x) = 1/x$ at $x = 0$</td></tr>
-                        <tr><td>Jump</td><td>Left and right limits exist but are unequal</td><td>Piecewise step function</td></tr>
+                        <tr><td>Open interval $(a, b)$</td><td>Continuous at every point in $(a, b)$</td></tr>
+                        <tr><td>Closed interval $[a, b]$</td><td>Continuous on $(a, b)$ AND $\lim_{x \to a^+} f(x) = f(a)$ AND $\lim_{x \to b^-} f(x) = f(b)$</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
         <div class="review-card">
-            <h3>Continuity Theorems</h3>
-            <p>If $f$ and $g$ are continuous at $a$:</p>
-            <ul>
-                <li><strong>Sum/Difference:</strong> $f \pm g$ is continuous at $a$</li>
-                <li><strong>Product:</strong> $f \cdot g$ is continuous at $a$</li>
-                <li><strong>Quotient:</strong> $f/g$ is continuous at $a$ if $g(a) \neq 0$</li>
-                <li><strong>Composition:</strong> $f \circ g$ is continuous at $a$ if $g$ continuous at $a$ and $f$ continuous at $g(a)$</li>
-                <li><strong>Inverse:</strong> If $f$ is continuous and one-to-one on $[a, b]$, then $f^{-1}$ is continuous on $[f(a), f(b)]$</li>
-            </ul>
+            <h3>Intermediate Value Theorem (IVT)</h3>
             <div class="review-formula">
-                \[ \text{Polynomials, rationals, root, trig, inverse trig, exponential, and log functions are continuous on their domains.} \]
-                <div class="formula-label">Continuous function families</div>
+                \[ \text{If } f \text{ is continuous on } [a, b] \text{ and } N \text{ is between } f(a) \text{ and } f(b), \text{ then } \exists c \in [a, b] : f(c) = N. \]
+                <div class="formula-label">Intermediate Value Theorem</div>
             </div>
             <div class="review-callout success">
-                <p><strong>Intermediate Value Theorem (IVT):</strong> If $f$ is continuous on $[a, b]$ and $N$ is between $f(a)$ and $f(b)$, then there exists $c \in [a, b]$ with $f(c) = N$.</p>
+                <p><strong>IVT guarantees existence, not uniqueness:</strong> There may be multiple values of $c$ satisfying $f(c) = N$.</p>
+            </div>
+            <div class="review-callout info">
+                <p><strong>Root-finding application:</strong> If $f(a)$ and $f(b)$ have opposite signs and $f$ is continuous on $[a, b]$, then $f(c) = 0$ for some $c \in (a, b)$.</p>
+            </div>
+        </div>
+
+        <div class="review-card">
+            <h3>Continuity on Closed Intervals</h3>
+            <p>A function continuous on a closed interval $[a, b]$ satisfies:</p>
+            <ul>
+                <li>Continuous at every interior point of $(a, b)$</li>
+                <li>$\lim_{x \to a^+} f(x) = f(a)$ (right-continuous at $a$)</li>
+                <li>$\lim_{x \to b^-} f(x) = f(b)$ (left-continuous at $b$)</li>
+            </ul>
+            <div class="review-callout warning">
+                <p><strong>Common mistake:</strong> For the closed interval, you must check one-sided continuity at the <em>endpoints</em>, not just interior points.</p>
             </div>
         </div>
     </div>
@@ -228,16 +230,16 @@ window.MathJax = {
         <div class="review-card">
             <h3>Practice Problems</h3>
             <ol>
-                <li>Evaluate $\lim_{x \to 1} \dfrac{x^2 - 1}{x - 1}$ by factoring.</li>
-                <li>Evaluate $\lim_{x \to 3} \dfrac{4x - 12}{x^2 - x - 6}$ by factoring.</li>
-                <li>Evaluate $\lim_{x \to 4} \dfrac{x - 4}{\sqrt{x} - 2}$ by rationalizing the denominator.</li>
+                <li>Evaluate $\lim_{x \to 5} \dfrac{x^2 + 2x - 35}{x^2 - 25}$ by factoring.</li>
+                <li>Evaluate $\lim_{x \to -\infty} \dfrac{3x^2 + 5x - 2}{-2x + 4}$ (compare leading terms).</li>
+                <li>Evaluate $\lim_{x \to 3} \dfrac{x^2 - 9}{2 - \sqrt{x+1}}$ by rationalizing the denominator.</li>
                 <li>Evaluate $\lim_{x \to 0} \dfrac{\frac{1}{x-4} + \frac{1}{4}}{x}$ by finding the LCD.</li>
-                <li>Evaluate $\lim_{x \to 1} \left(\frac{1}{x-1} - \frac{2}{x^2-1}\right)$ by combining into a single fraction.</li>
-                <li>Evaluate $\lim_{x \to 5} \dfrac{\sqrt{x+4} - 2}{3 - \sqrt{x-1}}$ by rationalizing the numerator.</li>
-                <li>Find the domain and range of $f(x) = \dfrac{x^2 - 4}{x^2 + 3x + 2}$ and identify any holes or asymptotes.</li>
-                <li>Use the Squeeze Theorem to show $\lim_{x \to 0} x^2 \sin(1/x) = 0$.</li>
-                <li>Prove using epsilon-delta that $\lim_{x \to 3} (2x + 1) = 7$.</li>
-                <li>Determine where $f(x) = \dfrac{x^2 + 2x - 3}{x^2 - 9}$ is discontinuous and classify each discontinuity.</li>
+                <li>Evaluate $\lim_{x \to 1} \left(\frac{1}{x-1} - \frac{2}{x^2-1}\right)$ by combining fractions.</li>
+                <li>Evaluate $\lim_{x \to 5} \dfrac{\sqrt{x+4} - 2}{3 - \sqrt{x-1}}$ by rationalizing.</li>
+                <li>Find all vertical and horizontal asymptotes of $f(x) = \dfrac{x^2 - 3}{2x - 4}$.</li>
+                <li>Use IVT to show $f(x) = x^3 - x - 1$ has a root in $[1, 2]$.</li>
+                <li>Classify the discontinuities of $f(x) = \dfrac{|x-1|}{x^2 - 1}$.</li>
+                <li>Find the slant asymptote of $f(x) = \dfrac{x^2 - 3}{2x - 4}$ using long division.</li>
             </ol>
         </div>
     </div>
@@ -245,7 +247,7 @@ window.MathJax = {
     <div class="review-nav">
         <a href="../index.html" class="review-nav-btn">← Back to Home</a>
         <span class="review-nav-indicator">Self-Check</span>
-        <a href="review-2.html" class="review-nav-btn">Next Review →</a>
+        <a href="review-3.html" class="review-nav-btn">Next Review →</a>
     </div>
 
 </div>

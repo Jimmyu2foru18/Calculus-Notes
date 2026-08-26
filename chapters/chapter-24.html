@@ -37,7 +37,7 @@
     <div class="container">
         <main class="chapter">
             <h2>Chapter 24: Linear Approximation and Differentials</h2>
-            <p class="lead">Linear approximation, differentials, and error estimation.</p>
+            <p class="lead">Using tangent lines to estimate function values and measuring estimation error.</p>
 
             <div class="video-section">
                 <h4>Core Lecture</h4>
@@ -78,89 +78,87 @@
 
             <h2>4.5 — Linear Approximation and Differentials</h2>
 
-<p>
-Calculus gives us two complementary ways to approximate function values near a known point. 
-<strong>Linear approximation</strong> uses the tangent line at $a$ to estimate $f(x)$ nearby. 
-<strong>Differentials</strong> formalize the error in that approximation, 
-writing $\Delta y \approx dy = f'(a)\,dx$.
-</p>
+            <p>
+            Calculus gives us two complementary ways to approximate function values near a known point. 
+            <strong>Linear approximation</strong> uses the tangent line at a known point to estimate 
+            the function nearby. <strong>Differentials</strong> give us a simple way to estimate 
+            how much the function output changes when the input changes by a small amount.
+            </p>
 
-<h3>Key Definitions</h3>
-<div class="notes">
-<h4>Definition — Linear Approximation</h4>
-<p>If $f$ is differentiable at $a$, then for $x$ near $a$:</p>
-$$f(x) \approx L(x) = f(a) + f'(a)(x - a)$$
-<p>The line $y = L(x)$ is the <strong>tangent line approximation</strong> to $f$ at $a$.</p>
-</div>
+            <h3>Key Definitions</h3>
+            <div class="notes">
+            <h4>Definition — Linear Approximation</h4>
+            <p>If a function $f$ is differentiable at a point $a$, then for inputs $x$ near $a$:</p>
+            $$f(x) \approx L(x) = f(a) + f'(a)(x - a)$$
+            <p>The line $y = L(x)$ is the <strong>tangent line approximation</strong> to $f$ at $a$.</p>
+            <p>In plain language: start at the known value $f(a)$, then move along the tangent 
+            line by the horizontal distance $(x - a)$, scaled by the slope $f'(a)$.</p>
+            </div>
 
-<div class="notes">
-<h4>Definition — Differential</h4>
-<p>Let $y = f(x)$ be differentiable. The <strong>differential</strong> $dy$ is:</p>
-$$dy = f'(x)\,dx$$
-<p>If $\Delta x$ is a small change in $x$, then the actual change $\Delta y$ satisfies:</p>
-$$\Delta y \approx dy = f'(x)\,\Delta x$$
-<p>The <strong>error</strong> in the linear approximation is $E = \Delta y - dy$.</p>
-</div>
+            <div class="notes">
+            <h4>Definition — Differential</h4>
+            <p>Let $y = f(x)$ be differentiable. The <strong>differential</strong> $dy$ is:</p>
+            $$dy = f'(x)\,dx$$
+            <p>If $dx$ is a small change in the input, then the actual change in output $\Delta y$ satisfies:</p>
+            $$\Delta y \approx dy = f'(x)\,dx$$
+            <p>The <strong>error</strong> in the linear approximation is the difference between 
+            the actual change and the estimated change: $E = \Delta y - dy$.</p>
+            </div>
 
-<h3>Worked Example — Approximating a Square Root</h3>
-<div class="example">
-<h4>Example 4.5.1</h4>
-<p>Use linear approximation to estimate $\sqrt{17}$.</p>
-<p><strong>Step 1:</strong> Choose $f(x) = \sqrt{x}$ and a nearby perfect square $a = 16$.</p>
-$$f(16) = 4, \quad f'(x) = \frac{1}{2\sqrt{x}}, \quad f'(16) = \frac{1}{8}$$
-<p><strong>Step 2:</strong> Apply the linear approximation formula with $\Delta x = 1$.</p>
-$$\sqrt{17} \approx f(16) + f'(16)(17 - 16) = 4 + \frac{1}{8}(1) = 4.125$$
+            <h3>Worked Example — Approximating a Square Root</h3>
+            <div class="example">
+            <h4>Example 4.5.1</h4>
+            <p>Use linear approximation to estimate $\sqrt{17}$.</p>
+            <p><strong>Step 1:</strong> Choose $f(x) = \sqrt{x}$ and a nearby perfect square $a = 16$.</p>
+            $$f(16) = 4, \quad f'(x) = \frac{1}{2\sqrt{x}}, \quad f'(16) = \frac{1}{8}$$
+            <p><strong>Step 2:</strong> Apply the linear approximation formula with input change $dx = 1$.</p>
+            $$\sqrt{17} \approx f(16) + f'(16)(17 - 16) = 4 + \frac{1}{8}(1) = 4.125$$
+            <p class="mnemonic"><strong>Answer:</strong> $\sqrt{17} \approx \boxed{4.125}$ (actual: $4.1231\ldots$; error $\approx 0.002$).</p>
+            </div>
 
-    <details>
-    <summary>Show Answer</summary>
-    <p class="mnemonic"><strong>Answer:</strong> $\sqrt{17} \approx \boxed{4.125}$ (actual: $4.1231\ldots$; error $\approx 0.002$).</p>
+            <h3>Tangent Line Approximation Diagram</h3>
+            <div class="visual-aid">
+            <h4>Figure 4.5 — Linear Approximation: The Tangent Line Near $x = a$</h4>
+            <svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
+                <line x1="40" y1="230" x2="460" y2="230" stroke="#000" stroke-width="1.5"/>
+                <line x1="240" y1="20" x2="240" y2="240" stroke="#000" stroke-width="1"/>
+                <text x="450" y="245" font-size="12" fill="#000">x</text>
+                <text x="250" y="30" font-size="12" fill="#000">y</text>
+                <path d="M 60,210 C 120,200 180,140 240,120 S 360,80 440,60" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+                <line x1="180" y1="140" x2="300" y2="100" stroke="#e74c3c" stroke-width="2"/>
+                <circle cx="240" cy="120" r="4" fill="#1a3a5c"/>
+                <text x="245" y="110" font-size="10" fill="#1a3a5c">$(a, f(a))$</text>
+                <line x1="240" y1="120" x2="320" y2="93" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+                <line x1="320" y1="80" x2="320" y2="230" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+                <line x1="320" y1="93" x2="320" y2="80" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
+                <circle cx="320" cy="80" r="3.5" fill="#e74c3c"/>
+                <text x="325" y="70" font-size="10" fill="#e74c3c">$L(a+\Delta x)$</text>
+                <text x="325" y="90" font-size="10" fill="#999">$\Delta y$</text>
+                <text x="330" y="115" font-size="10" fill="#e74c3c">$dy$</text>
+                
+                <text x="240" y="250" font-size="11" fill="#666" text-anchor="start">0</text>
+            </svg>
+            <p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 4.5: Near $x = a$, the curve $y = f(x)$ is nearly straight. The tangent line $L(x)$ approximates $f(a+\Delta x)$, and the differential $dy$ approximates the vertical error $\Delta y$.</p>
+            </div>
 
-    </details>
-</div>
+            <div class="questions">
+            <h4>Practice Problems</h4>
+            <ol>
+            <li>Use linear approximation to estimate $\sqrt[3]{28}$.</li>
+            <li>Estimate $\cos(31^\circ)$ using a linear approximation near $x = \pi/6$ (convert to radians first).</li>
+            <li>The side of a cube is measured as $10$ cm with a possible error of $0.05$ cm. Use differentials to estimate the error in the computed volume.</li>
+            </ol>
+            </div>
 
-<h3>Tangent Line Approximation Diagram</h3>
-<div class="visual-aid">
-<h4>Figure 4.5 — Linear Approximation: The Tangent Line Near $x = a$</h4>
-<svg viewBox="0 0 480 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;background:#fafafa;border:1px solid #ccc;">
-    <line x1="40" y1="230" x2="460" y2="230" stroke="#000" stroke-width="1.5"/>
-    <line x1="240" y1="20" x2="240" y2="240" stroke="#000" stroke-width="1"/>
-    <text x="450" y="245" font-size="12" fill="#000">x</text>
-    <text x="250" y="30" font-size="12" fill="#000">y</text>
-    <path d="M 60,210 C 120,200 180,140 240,120 S 360,80 440,60" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
-    <line x1="180" y1="140" x2="300" y2="100" stroke="#e74c3c" stroke-width="2"/>
-    <circle cx="240" cy="120" r="4" fill="#1a3a5c"/>
-    <text x="245" y="110" font-size="10" fill="#1a3a5c">$(a, f(a))$</text>
-    <line x1="240" y1="120" x2="320" y2="93" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
-    <line x1="320" y1="80" x2="320" y2="230" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
-    <line x1="320" y1="93" x2="320" y2="80" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
-    <circle cx="320" cy="80" r="3.5" fill="#e74c3c"/>
-    <text x="325" y="70" font-size="10" fill="#e74c3c">$L(a+\Delta x)$</text>
-    <text x="325" y="90" font-size="10" fill="#999">$\Delta y$</text>
-    <text x="330" y="115" font-size="10" fill="#e74c3c">$dy$</text>
-    
-    <text x="240" y="250" font-size="11" fill="#666" text-anchor="start">0</text>
-</svg>
-<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 4.5: Near $x = a$, the curve $y = f(x)$ is nearly straight. The tangent line $L(x)$ approximates $f(a+\Delta x)$, and the differential $dy$ approximates the vertical error $\Delta y$.</p>
-</div>
-
-<div class="questions">
-<h4>Practice Problems</h4>
-<ol>
-<li>Use linear approximation to estimate $\sqrt[3]{28}$.</li>
-<li>Estimate $\cos(31^\circ)$ using a linear approximation near $x = \pi/6$ (convert to radians first).</li>
-<li>The side of a cube is measured as $10$ cm with a possible error of $0.05$ cm. Use differentials to estimate the error in the computed volume.</li>
-</ol>
-</div>
-
-<div class="strategies">
-<h4>Study Tips</h4>
-<ul>
-<li>Pick $a$ to be a value where $f(a)$ is easy to compute exactly.</li>
-<li>Linear approximation works best when $|\Delta x|$ is small — the tangent line is only locally accurate.</li>
-<li>Differentials measure <strong>absolute</strong> error; for <strong>relative</strong> error, divide by the original value.</li>
-<li>Remember: $\Delta y = f(x+\Delta x) - f(x)$, while $dy = f'(x)\,dx$. They are approximately equal but not identical.</li>
-</ul>
-</div>
+            <div class="strategies">
+            <h4>Study Tips</h4>
+            <ul>
+            <li>Pick $a$ to be a value where $f(a)$ is easy to compute exactly.</li>
+            <li>Linear approximation works best when the input change is small — the tangent line is only locally accurate.</li>
+            <li>Differentials measure <strong>absolute</strong> error; for <strong>relative</strong> error, divide by the original value.</li>
+            <li>Remember: $\Delta y = f(x+\Delta x) - f(x)$, while $dy = f'(x)\,dx$. They are approximately equal but not identical.</li>
+            </ul>
+            </div>
 
             <nav class="chapter-nav">
                 <a href="chapter-23.html" class="nav-btn prev" id="prev-chapter">Previous</a>
@@ -173,4 +171,3 @@ $$\sqrt{17} \approx f(16) + f'(16)(17 - 16) = 4 + \frac{1}{8}(1) = 4.125$$
     <script src="../js/app.js"></script>
 </body>
 </html>
-

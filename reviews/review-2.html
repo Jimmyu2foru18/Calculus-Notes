@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Review: Advanced Limits — Calculus Foundations</title>
-<link rel="stylesheet" href="../css/styles.css">
-<script>
-
-window.MathJax = {
-    tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        processEscapes: true,
-        tags: 'ams'
-    },
-    svg: { fontCache: 'global' },
-    options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-        ignoreHtmlClass: 'no-mathjax'
-    }
-};
-
-</script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review: Advanced Limits — Calculus Foundations</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            tags: 'ams'
+        },
+        svg: { fontCache: 'global' },
+        options: {
+            skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            ignoreHtmlClass: 'no-mathjax'
+        }
+    };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body class="review-page">
 <div class="review-container">
@@ -96,9 +94,8 @@ window.MathJax = {
         <div class="review-card">
             <h3>Infinite Limits</h3>
             <p>We write $\lim_{x \to a} f(x) = \infty$ when $f(x)$ grows without bound as $x \to a$. Similarly for $-\infty$. These are not real numbers — the limit <strong>does not exist</strong> in the strict sense.</p>
-            <div class="review-formula">
-                \[ \lim_{x \to a} f(x) = \infty \iff \forall M > 0, \exists \delta > 0 : 0 < |x - a| < \delta \implies f(x) > M \]
-                <div class="formula-label">Precise definition of an infinite limit</div>
+            <div class="review-callout info">
+                <p><strong>Intuitive meaning:</strong> The function grows larger and larger without bound as $x$ approaches $a$. The graph shoots upward (or downward) along the vertical line $x = a$.</p>
             </div>
         </div>
 
@@ -139,9 +136,8 @@ window.MathJax = {
         <div class="review-card">
             <h3>Limits at Infinity</h3>
             <p>Limits at infinity describe end behavior: what happens to $f(x)$ as $x \to \infty$ or $x \to -\infty$.</p>
-            <div class="review-formula">
-                \[ \lim_{x \to \infty} f(x) = L \iff \forall \epsilon > 0, \exists M > 0 : x > M \implies |f(x) - L| < \epsilon \]
-                <div class="formula-label">Precise definition of limit at infinity</div>
+            <div class="review-callout info">
+                <p><strong>Intuitive meaning:</strong> As $x$ grows larger and larger (or more and more negative), the function values approach a specific number $L$. The graph enters and stays inside a horizontal band around $L$.</p>
             </div>
         </div>
 

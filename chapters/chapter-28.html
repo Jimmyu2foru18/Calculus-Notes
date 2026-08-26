@@ -78,110 +78,110 @@
 
             <h2>5.1 — Approximating Areas Under Curves</h2>
 
-<p>
-The definite integral formalizes the idea of <strong>accumulated area</strong> under a curve. 
-Before defining it precisely, we approximate using <strong>Riemann sums</strong> — sums of 
-rectangular areas that become more accurate as the rectangles grow thinner. 
-The three common choices for the sample point in each subinterval are the 
-<strong>left endpoint</strong>, <strong>right endpoint</strong>, and <strong>midpoint</strong>.
-</p>
+            <p>
+            The definite integral formalizes the idea of <strong>accumulated area</strong> under a curve. 
+            Before defining it precisely, we approximate using <strong>Riemann sums</strong> — sums of 
+            rectangular areas that become more accurate as the rectangles grow thinner. 
+            The three common choices for the sample point in each subinterval are the 
+            <strong>left endpoint</strong>, <strong>right endpoint</strong>, and <strong>midpoint</strong>.
+            </p>
 
-<h3>Key Definitions</h3>
-<div class="notes">
-<h4>Definition — Riemann Sum</h4>
-<p>
-Let $f$ be defined on $[a, b]$. Partition $[a, b]$ into $n$ subintervals of equal width 
-$\Delta x = \dfrac{b-a}{n}$. For each subinterval $[x_{i-1}, x_i]$, choose a sample point 
-$x_i^*$. The <strong>Riemann sum</strong> is:
-</p>
-$$S_n = \sum_{i=1}^{n} f(x_i^*)\,\Delta x$$
-<p>
-As $n \to \infty$ (and $\Delta x \to 0$), the Riemann sum approaches the exact area 
-under the curve (when $f \ge 0$), provided the limit exists.
-</p>
-</div>
+            <h3>Key Definitions</h3>
+            <div class="notes">
+            <h4>Definition — Riemann Sum</h4>
+            <p>
+            Let $f$ be defined on $[a, b]$. Partition $[a, b]$ into $n$ subintervals of equal width 
+            $\Delta x = \dfrac{b-a}{n}$. For each subinterval $[x_{i-1}, x_i]$, choose a sample point 
+            $x_i^*$. The <strong>Riemann sum</strong> is:
+            </p>
+            $$S_n = \sum_{i=1}^{n} f(x_i^*)\,\Delta x$$
+            <p>
+            As $n$ grows larger (and $\Delta x$ shrinks toward zero), the Riemann sum approaches 
+            the exact area under the curve (when $f \ge 0$), provided the limit exists.
+            </p>
+            </div>
 
-<h3>Worked Example — Left, Right, and Midpoint Riemann Sums</h3>
-<div class="example">
-<h4>Example 5.1.1</h4>
-<p>Approximate $\displaystyle\int_0^4 (x^2 + 1)\,dx$ using $n = 4$ subintervals with left, right, and midpoint rules.</p>
-<p><strong>Step 1:</strong> Compute the width of each subinterval.</p>
-$$\Delta x = \frac{4 - 0}{4} = 1$$
-<p><strong>Step 2:</strong> Set up the partition points: $x_0 = 0, x_1 = 1, x_2 = 2, x_3 = 3, x_4 = 4$.</p>
-<p><strong>Step 3:</strong> Left Riemann sum (sample at left endpoints $0, 1, 2, 3$):</p>
-$$L_4 = \sum_{i=0}^{3} f(x_i)\Delta x = [f(0) + f(1) + f(2) + f(3)] \cdot 1$$
-$$= [1 + 2 + 5 + 10] = \boxed{18}$$
-<p><strong>Step 4:</strong> Right Riemann sum (sample at right endpoints $1, 2, 3, 4$):</p>
-$$R_4 = \sum_{i=1}^{4} f(x_i)\Delta x = [f(1) + f(2) + f(3) + f(4)] \cdot 1$$
-$$= [2 + 5 + 10 + 17] = \boxed{34}$$
-<p><strong>Step 5:</strong> Midpoint Riemann sum (sample at midpoints $0.5, 1.5, 2.5, 3.5$):</p>
-$$M_4 = [f(0.5) + f(1.5) + f(2.5) + f(3.5)] \cdot 1$$
-$$= [1.25 + 3.25 + 7.25 + 13.25] = \boxed{25}$$
-<p class="mnemonic"><strong>Note:</strong> The true value is $\displaystyle\int_0^4 (x^2+1)\,dx = \left[\frac{x^3}{3} + x\right]_0^4 = \frac{64}{3} + 4 \approx 25.33$, so the midpoint rule is most accurate here.</p>
-</div>
+            <h3>Worked Example — Left, Right, and Midpoint Riemann Sums</h3>
+            <div class="example">
+            <h4>Example 5.1.1</h4>
+            <p>Approximate $\displaystyle\int_0^4 (x^2 + 1)\,dx$ using $n = 4$ subintervals with left, right, and midpoint rules.</p>
+            <p><strong>Step 1:</strong> Compute the width of each subinterval.</p>
+            $$\Delta x = \frac{4 - 0}{4} = 1$$
+            <p><strong>Step 2:</strong> Set up the partition points: $x_0 = 0, x_1 = 1, x_2 = 2, x_3 = 3, x_4 = 4$.</p>
+            <p><strong>Step 3:</strong> Left Riemann sum (sample at left endpoints $0, 1, 2, 3$):</p>
+            $$L_4 = \sum_{i=0}^{3} f(x_i)\Delta x = [f(0) + f(1) + f(2) + f(3)] \cdot 1$$
+            $$= [1 + 2 + 5 + 10] = \boxed{18}$$
+            <p><strong>Step 4:</strong> Right Riemann sum (sample at right endpoints $1, 2, 3, 4$):</p>
+            $$R_4 = \sum_{i=1}^{4} f(x_i)\Delta x = [f(1) + f(2) + f(3) + f(4)] \cdot 1$$
+            $$= [2 + 5 + 10 + 17] = \boxed{34}$$
+            <p><strong>Step 5:</strong> Midpoint Riemann sum (sample at midpoints $0.5, 1.5, 2.5, 3.5$):</p>
+            $$M_4 = [f(0.5) + f(1.5) + f(2.5) + f(3.5)] \cdot 1$$
+            $$= [1.25 + 3.25 + 7.25 + 13.25] = \boxed{25}$$
+            <p class="mnemonic"><strong>Note:</strong> The true value is $\displaystyle\int_0^4 (x^2+1)\,dx = \left[\frac{x^3}{3} + x\right]_0^4 = \frac{64}{3} + 4 \approx 25.33$, so the midpoint rule is most accurate here.</p>
+            </div>
 
-<h3>Riemann Sum Rectangles</h3>
-<div class="visual-aid">
-<h4>Figure 5.1 — Left, Right, and Midpoint Approximations</h4>
-<svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:550px;background:#fafafa;border:1px solid #ccc;">
-    <defs>
-        <pattern id="hatch-left" patternUnits="userSpaceOnUse" width="6" height="6">
-            <path d="M0,6 L6,0" stroke="#e74c3c" stroke-width="0.8" opacity="0.4"/>
-        </pattern>
-        <pattern id="hatch-right" patternUnits="userSpaceOnUse" width="6" height="6">
-            <path d="M0,0 L6,6" stroke="#27ae60" stroke-width="0.8" opacity="0.4"/>
-        </pattern>
-    </defs>
-    <line x1="60" y1="260" x2="500" y2="260" stroke="#000" stroke-width="1.5"/>
-    <line x1="60" y1="30" x2="60" y2="270" stroke="#000" stroke-width="1"/>
-    <text x="490" y="275" font-size="12" fill="#000">x</text>
-    <text x="70" y="45" font-size="12" fill="#000">y</text>
-    <path d="M 60,230 C 150,210 250,150 340,80 S 460,30 500,20" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
-    <rect x="60" y="225" width="88" height="35" fill="url(#hatch-left)" stroke="#e74c3c" stroke-width="1"/>
-    <rect x="148" y="195" width="88" height="65" fill="url(#hatch-left)" stroke="#e74c3c" stroke-width="1"/>
-    <rect x="236" y="145" width="88" height="115" fill="url(#hatch-left)" stroke="#e74c3c" stroke-width="1"/>
-    <rect x="324" y="65" width="88" height="195" fill="url(#hatch-left)" stroke="#e74c3c" stroke-width="1"/>
-    <rect x="412" y="20" width="88" height="240" fill="none" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,3"/>
-    <line x1="148" y1="225" x2="148" y2="260" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,3"/>
-    <line x1="236" y1="195" x2="236" y2="260" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,3"/>
-    <line x1="324" y1="145" x2="324" y2="260" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,3"/>
-    <text x="80" y="215" font-size="10" fill="#e74c3c">L</text>
-    <text x="168" y="185" font-size="10" fill="#e74c3c">L</text>
-    <text x="256" y="135" font-size="10" fill="#e74c3c">L</text>
-    <text x="344" y="55" font-size="10" fill="#e74c3c">L</text>
-    <rect x="60" y="160" width="88" height="100" fill="none" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,3"/>
-    <rect x="148" y="105" width="88" height="155" fill="none" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,3"/>
-    <rect x="236" y="55" width="88" height="205" fill="none" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,3"/>
-    <rect x="324" y="20" width="88" height="240" fill="none" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,3"/>
-    <line x1="148" y1="230" x2="236" y2="230" stroke="#999" stroke-width="0.8" stroke-dasharray="2,2"/>
-    <text x="240" y="235" font-size="9" fill="#999">midpoint</text>
-    <text x="470" y="250" font-size="10" fill="#666">Right (R)</text>
-    <text x="200" y="290" font-size="10" fill="#666">Left (L) hatched, Right/Mid outlined</text>
-    
-    <text x="60" y="280" font-size="11" fill="#666" text-anchor="start">0</text>
-</svg>
-<p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 5.1: For $f(x) = x^2+1$ on $[0,4]$ with $n=4$: Left endpoints underestimate (concave up), right endpoints overestimate, and midpoints give the best approximation.</p>
-</div>
+            <h3>Riemann Sum Rectangles</h3>
+            <div class="visual-aid">
+            <h4>Figure 5.1 — Left, Right, and Midpoint Approximations</h4>
+            <svg viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:550px;background:#fafafa;border:1px solid #ccc;">
+                <defs>
+                    <pattern id="hatch-left" patternUnits="userSpaceOnUse" width="6" height="6">
+                        <path d="M0,6 L6,0" stroke="#e74c3c" stroke-width="0.8" opacity="0.4"/>
+                    </pattern>
+                    <pattern id="hatch-right" patternUnits="userSpaceOnUse" width="6" height="6">
+                        <path d="M0,0 L6,6" stroke="#27ae60" stroke-width="0.8" opacity="0.4"/>
+                    </pattern>
+                </defs>
+                <line x1="60" y1="260" x2="500" y2="260" stroke="#000" stroke-width="1.5"/>
+                <line x1="60" y1="30" x2="60" y2="270" stroke="#000" stroke-width="1"/>
+                <text x="490" y="275" font-size="12" fill="#000">x</text>
+                <text x="70" y="45" font-size="12" fill="#000">y</text>
+                <path d="M 60,230 C 150,210 250,150 340,80 S 460,30 500,20" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
+                <rect x="60" y="225" width="88" height="35" fill="url(#hatch-left)" stroke="#e74c3c" stroke-width="1"/>
+                <rect x="148" y="195" width="88" height="65" fill="url(#hatch-left)" stroke="#e74c3c" stroke-width="1"/>
+                <rect x="236" y="145" width="88" height="115" fill="url(#hatch-left)" stroke="#e74c3c" stroke-width="1"/>
+                <rect x="324" y="65" width="88" height="195" fill="url(#hatch-left)" stroke="#e74c3c" stroke-width="1"/>
+                <rect x="412" y="20" width="88" height="240" fill="none" stroke="#e74c3c" stroke-width="1" stroke-dasharray="4,3"/>
+                <line x1="148" y1="225" x2="148" y2="260" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,3"/>
+                <line x1="236" y1="195" x2="236" y2="260" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,3"/>
+                <line x1="324" y1="145" x2="324" y2="260" stroke="#e74c3c" stroke-width="1" stroke-dasharray="3,3"/>
+                <text x="80" y="215" font-size="10" fill="#e74c3c">L</text>
+                <text x="168" y="185" font-size="10" fill="#e74c3c">L</text>
+                <text x="256" y="135" font-size="10" fill="#e74c3c">L</text>
+                <text x="344" y="55" font-size="10" fill="#e74c3c">L</text>
+                <rect x="60" y="160" width="88" height="100" fill="none" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,3"/>
+                <rect x="148" y="105" width="88" height="155" fill="none" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,3"/>
+                <rect x="236" y="55" width="88" height="205" fill="none" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,3"/>
+                <rect x="324" y="20" width="88" height="240" fill="none" stroke="#27ae60" stroke-width="1" stroke-dasharray="4,3"/>
+                <line x1="148" y1="230" x2="236" y2="230" stroke="#999" stroke-width="0.8" stroke-dasharray="2,2"/>
+                <text x="240" y="235" font-size="9" fill="#999">midpoint</text>
+                <text x="470" y="250" font-size="10" fill="#666">Right (R)</text>
+                <text x="200" y="290" font-size="10" fill="#666">Left (L) hatched, Right/Mid outlined</text>
+                
+                <text x="60" y="280" font-size="11" fill="#666" text-anchor="start">0</text>
+            </svg>
+            <p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure 5.1: For $f(x) = x^2+1$ on $[0,4]$ with $n=4$: Left endpoints underestimate (concave up), right endpoints overestimate, and midpoints give the best approximation.</p>
+            </div>
 
-<div class="questions">
-<h4>Practice Problems</h4>
-<ol>
-<li>Use $n = 2$ left endpoints to approximate $\displaystyle\int_0^2 x^2\,dx$. Is it an underestimate or overestimate?</li>
-<li>Use $n = 4$ right endpoints to approximate $\displaystyle\int_0^2 x^2\,dx$. Compare to the true value $8/3$.</li>
-<li>Explain why the midpoint rule is generally more accurate than left or right sums for the same $n$.</li>
-</ol>
-</div>
+            <div class="questions">
+            <h4>Practice Problems</h4>
+            <ol>
+            <li>Use $n = 2$ left endpoints to approximate $\displaystyle\int_0^2 x^2\,dx$. Is it an underestimate or overestimate?</li>
+            <li>Use $n = 4$ right endpoints to approximate $\displaystyle\int_0^2 x^2\,dx$. Compare to the true value $8/3$.</li>
+            <li>Explain why the midpoint rule is generally more accurate than left or right sums for the same $n$.</li>
+            </ol>
+            </div>
 
-<div class="strategies">
-<h4>Study Tips</h4>
-<ul>
-<li>Always compute $\Delta x = (b-a)/n$ first — it's the foundation of every Riemann sum.</li>
-<li>For $f \ge 0$: left sums on an increasing function <strong>underestimate</strong>; right sums <strong>overestimate</strong> (and vice versa).</li>
-<li>The midpoint rule error is roughly $\frac{1}{24}$ of the trapezoid rule error for smooth functions.</li>
-<li>Draw the rectangles — the picture tells you whether your sum is too high or too low.</li>
-<li>When $n$ doubles, the midpoint error shrinks by about a factor of 4.</li>
-</ul>
-</div>
+            <div class="strategies">
+            <h4>Study Tips</h4>
+            <ul>
+            <li>Always compute $\Delta x = (b-a)/n$ first — it's the foundation of every Riemann sum.</li>
+            <li>For $f \ge 0$: left sums on an increasing function <strong>underestimate</strong>; right sums <strong>overestimate</strong> (and vice versa).</li>
+            <li>The midpoint rule error is roughly $\frac{1}{24}$ of the trapezoid rule error for smooth functions.</li>
+            <li>Draw the rectangles — the picture tells you whether your sum is too high or too low.</li>
+            <li>When $n$ doubles, the midpoint error shrinks by about a factor of 4.</li>
+            </ul>
+            </div>
 
             <nav class="chapter-nav">
                 <a href="chapter-27.html" class="nav-btn prev" id="prev-chapter">Previous</a>
