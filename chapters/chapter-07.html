@@ -139,14 +139,16 @@ then there exists at least one $c \in [a, b]$ such that $f(c) = N$.
     <line x1="30" y1="140" x2="410" y2="140" stroke="#22863a" stroke-width="1.2" stroke-dasharray="5,3"/>
     <text x="350" y="135" font-size="11" fill="#22863a">N</text>
     <path d="M 40,160 C 80,150 120,100 160,110 C 200,120 240,80 280,60 C 320,40 360,70 400,50" fill="none" stroke="#1a3a5c" stroke-width="2.5"/>
-    <circle cx="280" cy="60" r="3.5" fill="#b08800" stroke="#000" stroke-width="1"/>
-    <text x="285" y="55" font-size="11" fill="#b08800">(c, N)</text>
-    <line x1="280" y1="60" x2="280" y2="140" stroke="#b08800" stroke-width="1" stroke-dasharray="3,2"/>
+    <circle cx="280" cy="140" r="3.5" fill="#b08800" stroke="#000" stroke-width="1"/>
+    <text x="285" y="135" font-size="11" fill="#b08800">(c, N)</text>
+
     <line x1="80" y1="180" x2="80" y2="190" stroke="#000" stroke-width="1"/>
     <text x="60" y="200" font-size="11" fill="#666">a</text>
     <line x1="360" y1="180" x2="360" y2="190" stroke="#000" stroke-width="1"/>
     <text x="350" y="200" font-size="11" fill="#666">b</text>
     <text x="150" y="75" font-size="11" fill="#1a3a5c">continuous curve</text>
+    
+    <text x="220" y="200" font-size="11" fill="#666" text-anchor="start">0</text>
 </svg>
 <p>
 The continuous curve must cross the horizontal line $y = N$ at some $c \in [a, b]$.
@@ -222,13 +224,15 @@ Is $g$ continuous at $x = 1$?
         <line x1="200" y1="20" x2="200" y2="200" stroke="#000" stroke-width="1.5"/>
         <text x="385" y="184" font-size="12" fill="#000">x</text>
         <text x="205" y="15" font-size="12" fill="#000">y</text>
-        <path d="M 60,170 C 120,150 160,130 200,100" fill="none" stroke="#1a3a5c" stroke-width="2"/>
-        <line x1="200" y1="100" x2="360" y2="60" stroke="#b08800" stroke-width="2"/>
-        <circle cx="200" cy="100" r="4" fill="#b08800"/>
-        <text x="210" y="95" font-size="10" fill="#b08800">$(1,1)$</text>
+        <path d="M 60,170 C 120,150 160,130 210,100" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+        <line x1="210" y1="100" x2="360" y2="60" stroke="#b08800" stroke-width="2"/>
+        <circle cx="210" cy="100" r="4" fill="#b08800"/>
+        <text x="220" y="95" font-size="10" fill="#b08800">$(1,1)$</text>
         <text x="100" y="150" font-size="10" fill="#1a3a5c">$y=x^2$</text>
         <text x="280" y="80" font-size="10" fill="#b08800">$y=2x-1$</text>
-    </svg>
+        
+    <text x="200" y="200" font-size="11" fill="#666" text-anchor="start">0</text>
+</svg>
     <p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure: Both pieces meet at $(1,1)$, so $g$ is continuous at $x = 1$.</p>
     </div>
     <p><strong>Answer:</strong></p>
@@ -252,13 +256,15 @@ Prove that $h(x) = \cos x - x$ has a root in $[0, \pi/2]$.
         <text x="205" y="15" font-size="12" fill="#000">y</text>
         <line x1="30" y1="100" x2="380" y2="100" stroke="#22863a" stroke-width="1" stroke-dasharray="5,3"/>
         <text x="350" y="95" font-size="11" fill="#22863a">$y=0$</text>
-        <path d="M 60,80 C 120,60 180,40 240,60 S 340,120 380,160" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+        <path d="M 60,65 C 130,67 200,70 380,160" fill="none" stroke="#1a3a5c" stroke-width="2"/>
         <circle cx="200" cy="70" r="4" fill="#b08800"/>
         <text x="210" y="65" font-size="10" fill="#b08800">$h(0)=1>0$</text>
         <circle cx="340" cy="140" r="4" fill="#e74c3c"/>
         <text x="280" y="155" font-size="10" fill="#e74c3c">$h(\pi/2)<0$</text>
         <text x="280" y="100" font-size="10" fill="#666">root guaranteed</text>
-    </svg>
+        
+    <text x="200" y="200" font-size="11" fill="#666" text-anchor="start">0</text>
+</svg>
     <p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure: $h(x) = \cos x - x$ is positive at $x=0$ and negative at $x=\pi/2$. By IVT, it must cross zero somewhere in between.</p>
     </div>
     <p><strong>Answer:</strong></p>
@@ -284,13 +290,15 @@ Classify the discontinuities of $f(x) = \frac{x^2 - 4}{x^2 - 5x + 6}$.
         <text x="140" y="35" font-size="11" fill="#e74c3c">$x=2$</text>
         <line x1="170" y1="20" x2="170" y2="200" stroke="#b08800" stroke-width="1" stroke-dasharray="6,3"/>
         <text x="180" y="35" font-size="11" fill="#b08800">$x=3$</text>
-        <path d="M 60,140 C 100,130 120,110 140,90 S 160,50 180,40" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+        <path d="M 60,140 C 100,130 120,110 140,90 S 160,50 170,40" fill="none" stroke="#1a3a5c" stroke-width="2"/>
         <circle cx="130" cy="95" r="3.5" fill="#fff" stroke="#1a3a5c" stroke-width="1.5"/>
         <text x="135" y="90" font-size="10" fill="#1a3a5c">hole</text>
         <path d="M 190,40 C 200,80 210,140 220,180" fill="none" stroke="#1a3a5c" stroke-width="2"/>
         <text x="100" y="170" font-size="10" fill="#1a3a5c">removable</text>
         <text x="200" y="170" font-size="10" fill="#b08800">essential</text>
-    </svg>
+        
+    <text x="200" y="200" font-size="11" fill="#666" text-anchor="start">0</text>
+</svg>
     <p style="font-size:0.85rem;color:#555;margin-top:0.5rem;">Figure: At $x=2$, the factor cancels (hole = removable). At $x=3$, the denominator vanishes with no cancellation (vertical asymptote = essential).</p>
     </div>
     <p><strong>Answer:</strong></p>
